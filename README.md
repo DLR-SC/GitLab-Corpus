@@ -26,6 +26,6 @@ pip install .
 **NOTE** In order to use this tool you first need to write a `config-file` in which you provide information about the 
 GitLab instance you want to run this tool on. For further information read the corresponding 
 [python-gitlab docs](https://python-gitlab.readthedocs.io/en/stable/cli.html#content).  
-The tool can be run using the command *tbd*.
+The tool can be run using the command `corpus`.
 
 Running the command without any additional parameters or using the `-h` or `--help` parameter, will print the help page.
