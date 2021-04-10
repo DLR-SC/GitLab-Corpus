@@ -28,4 +28,4 @@ GitLab instance you want to run this tool on. For further information read the c
 [python-gitlab docs](https://python-gitlab.readthedocs.io/en/stable/cli.html#content).  
 The tool can be run using the command `corpus`.
 
-Running the command without any additional parameters or using the `-h` or `--help` parameter, will print the help page.
+Running the command using the `--help` parameter, will print the help page.
