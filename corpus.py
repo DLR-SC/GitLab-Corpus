@@ -15,11 +15,11 @@ def append_to_corpus(obj, category=""):
 
 
 @click.command()
-@click.option('--config-path', default='./gitlab.cfg',
-              help='Path to the config file')
-@click.option('--source',
+@click.option('--config-path', '-cp', default='./gitlab.cfg',
+              help='Path to the config file \t\t\tDEFAULT = ./gitlab.cfg')
+@click.option('--source', '-s',
               help='Name of the GitLab instance, you want to analyse, if not the default value of your configuration')
-@click.option('--all-elements',
+@click.option('--all-elements', '-a',
               help='Get all elements available in the GitLab instance WARNING: This might take a long time and might '
                    'cause problems for the server',
               is_flag=True)
