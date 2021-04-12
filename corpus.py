@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2021 German Aerospace Center (DLR)
+# SPDX-License-Identifier: MIT
+
 import json
 import click
 import gitlab
