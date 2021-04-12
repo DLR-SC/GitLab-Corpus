@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2021 German Aerospace Center (DLR)
+SPDX-License-Identifier: MIT
+-->
+
+
 # GitLab-Corpus
 This tool creates a corpus for publicly accessible repositories in the DLR-GitLab instance. 
 The corpus will primarily contain information about software projects. 
