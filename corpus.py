@@ -4,17 +4,8 @@
 import json
 import click
 import gitlab
-
-corpus_dict = {"projects": [],
-               "groups": [],
-               "mergerequests": []
-               }
-
-
-def append_to_corpus(obj, category=""):
-    """This helper function appends a JSON object to the corpus."""
-    global corpus_dict
-    corpus_dict[category].append(obj)
+from extract import Extractor
+from export import Exporter
 
 
 @click.command()
@@ -32,19 +23,12 @@ def cli(config_path, source, all_elements, out):
     the ``out`` file (default: ``./out.json``)."""
     gl = gitlab.Gitlab.from_config(source, config_path)
 
-    projects = gl.projects.list(all=all_elements)
-    for project in projects:
-        append_to_corpus(project.attributes, category="projects")
+    extractor = Extractor(gl)
+    exporter = Exporter(format_str="console")
 
-    groups = gl.groups.list(all=all_elements)
-    for group in groups:
-        append_to_corpus(group.attributes, category="groups")
+    extractor.extract(all_elements=all_elements)
 
-    mergerequests = gl.mergerequests.list(all=all_elements)
-    for mergerequest in mergerequests:
-        append_to_corpus(mergerequest.attributes, category="mergerequests")
-
-    json.dump(corpus_dict, out, indent=4)
+    exporter.export(corpus=extractor.extracted_corpus, out=out)
 
 
 if __name__ == '__main__':
