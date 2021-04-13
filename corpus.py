@@ -4,7 +4,8 @@
 import json
 import click
 import gitlab
-import extract
+from extract import Extractor
+from export import Exporter
 
 
 @click.command()
@@ -22,11 +23,12 @@ def cli(config_path, source, all_elements, out):
     the ``out`` file (default: ``./out.json``)."""
     gl = gitlab.Gitlab.from_config(source, config_path)
 
-    extractor = extract.Extractor(gl)
+    extractor = Extractor(gl)
+    exporter = Exporter(format_str="console")
 
-    extractor.extract(all_elements)
+    extractor.extract(all_elements=all_elements)
 
-    json.dump(extractor.extracted_corpus, out, indent=4)
+    exporter.export(corpus=extractor.extracted_corpus, out=out)
 
 
 if __name__ == '__main__':
