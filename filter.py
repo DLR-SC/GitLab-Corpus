@@ -1,7 +1,8 @@
 # SPDX-FileCopyrightText: 2021 German Aerospace Center (DLR)
 # SPDX-License-Identifier: MIT
-import json
 
+import json
+import click
 import yaml
 
 
@@ -20,11 +21,14 @@ class Filter:
             self.input_corpus = input_corpus
 
     def load_filters(self, filter_file):
-        with open(filter_file, "r") as f:
-            filters = yaml.full_load(f)
-            if filters["filters"] is not None:
-                for filter_option in filters["filters"]:
-                    self.filters.append(filter_option)
+        try:
+            with open(filter_file, "r") as f:
+                filters = yaml.full_load(f)
+                if filters["filters"] is not None:
+                    for filter_option in filters["filters"]:
+                        self.filters.append(filter_option)
+        except FileNotFoundError:
+            click.echo("No filter configuration file found. No filters will be applied.")
 
     def filter(self):
         projects_dict = self.input_corpus["Projects"]
