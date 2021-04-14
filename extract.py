@@ -24,5 +24,8 @@ class Extractor:
         for manager in self.managers:
             objects = manager.list(all=all_elements)
             category = get_category(str(manager))
-            for obj in objects:
-                self.extracted_corpus[category].append(obj.attributes)
+            if category == 'Projects':
+                for project in objects:
+                    project_dict = project.attributes
+                    project_dict['issue_statistics'] = project.issuesstatistics.get().attributes["statistics"]
+                    self.extracted_corpus[category].append(project_dict)
