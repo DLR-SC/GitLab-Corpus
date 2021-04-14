@@ -11,6 +11,7 @@ setup(
         'Click',
         'python-gitlab',
         'sphinx',
+        'pyyaml',
     ],
     entry_points='''
         [console_scripts]

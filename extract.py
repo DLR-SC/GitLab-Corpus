@@ -14,7 +14,7 @@ class Extractor:
     """This class represents the extraction module."""
 
     extracted_corpus = {"Projects": [],  # This object represents the output corpus and will exist only once
-                        }                # https://docs.python.org/3/tutorial/classes.html#class-and-instance-variables
+                        }  # https://docs.python.org/3/tutorial/classes.html#class-and-instance-variables
 
     def __init__(self, gitlab_manager):
         self.gl = gitlab_manager
