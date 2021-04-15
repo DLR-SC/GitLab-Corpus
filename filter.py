@@ -21,6 +21,8 @@ class Filter:
             self.input_corpus = input_corpus
 
     def load_filters(self, filter_file):
+        """This function loads the filters to be used on the extracted corpus. By default it gets passed the file
+        `./filters.yaml`."""
         try:
             with open(filter_file, "r") as f:
                 filters = yaml.full_load(f)
@@ -31,10 +33,14 @@ class Filter:
             click.echo("No filter configuration file found. No filters will be applied.")
 
     def filter(self):
+        """This function filters the extracted corpus by using the previously loaded filter options. If no filter
+        options were set, all attributes will be kept in the resulting corpus."""
         projects_dict = self.input_corpus["Projects"]
         if len(self.filters) > 0:
-            for project in projects_dict:
-                self.filtered_corpus["Projects"].append({key: value for key, value in project.items()
-                                                         if key in self.filters})
+            click.echo("Filtering...")
+            with click.progressbar(projects_dict) as bar:
+                for project in bar:
+                    self.filtered_corpus["Projects"].append({key: value for key, value in project.items()
+                                                             if key in self.filters})
         else:
             self.filtered_corpus = self.input_corpus
