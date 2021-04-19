@@ -12,7 +12,8 @@ class Filter:
     filtered_corpus = {"Projects": [],
                        }
 
-    def __init__(self, input_corpus, from_file=False, file="-"):
+    def __init__(self, verbose, input_corpus, from_file=False, file="-"):
+        self.verbose = verbose
         self.filters = []
         if from_file:
             with open(file, 'w') as f:
@@ -30,7 +31,10 @@ class Filter:
                     for filter_option in filters["filters"]:
                         self.filters.append(filter_option)
         except FileNotFoundError:
-            click.echo("No filter configuration file found. No filters will be applied.")
+            if self.verbose:
+                click.echo("No filter configuration file found. No filters will be applied.")
+            else:
+                pass
 
     def filter(self):
         """This function filters the extracted corpus by using the previously loaded filter options. If no filter
