@@ -44,28 +44,19 @@ class Extractor:
                             project.issuesstatistics.get(scope="all").attributes["statistics"]
 
                         project_dict['languages'] = project.languages()
-                        project_dict['files'] = project.repository_tree(ref=project_dict['default_branch'])
-                        project_dict['is_software'] = self.get_project_category(project_dict, project)
+
+                        project_dict['is_software'] = True if not project_dict['languages'] else False
+
+                        try:
+                            project_dict['files'] = project.repository_tree(ref=project_dict['default_branch'])
+                        except (gitlab.exceptions.GitlabGetError, gitlab.exceptions.GitlabHttpError, KeyError) as e:
+                            click.echo("\nProject {} doesn't have any files."
+                                       .format(project_dict['name']))
+
                         try:
                             project_dict['project_statistics'] = project.additionalstatistics.get().attributes
                         except gitlab.exceptions.GitlabGetError:
-                            pass
-                            # click.echo("Project statistics for project {} could not be fetched. You need write access "
-                            #            "for the project.".format(project_dict["name"]))
-                        self.extracted_corpus[category].append(project_dict)
+                            click.echo("Project statistics for project {} could not be fetched. You need write access "
+                                       "for the project.".format(project_dict["name"]))
 
-    def get_project_category(self, project_dict, project):
-        if not project_dict['languages']:
-            # TODO check if project has releases
-            tree = project.repository_tree(ref=project_dict['default_branch'])
-            paths = []
-            for file in tree:
-                if file['type'] == 'tree':
-                    paths.append(file['path'])
-                    # TODO check subdirectories
-                elif file['name'].split(".")[1] in self.extensions:
-                    return True
-                else:
-                    return False
-        else:
-            return True
+                        self.extracted_corpus[category].append(project_dict)
