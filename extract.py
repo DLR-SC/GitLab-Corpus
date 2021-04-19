@@ -20,8 +20,9 @@ class Extractor:
     extracted_corpus = {"Projects": [],  # This object represents the output corpus and will exist only once
                         }  # https://docs.python.org/3/tutorial/classes.html#class-and-instance-variables
 
-    def __init__(self, gitlab_manager):
+    def __init__(self, verbose, gitlab_manager):
         self.gl = gitlab_manager
+        self.verbose = verbose
         self.managers = [self.gl.projects]
         self.extensions = []
         with open('extensions.txt') as csv_file:
@@ -30,6 +31,7 @@ class Extractor:
                 self.extensions.append(extension)
 
     def extract(self, all_elements):
+
         for manager in self.managers:
             click.echo("Retrieving projects...")
             objects = manager.list(all=all_elements)
@@ -50,13 +52,15 @@ class Extractor:
                         try:
                             project_dict['files'] = project.repository_tree(ref=project_dict['default_branch'])
                         except (gitlab.exceptions.GitlabGetError, gitlab.exceptions.GitlabHttpError, KeyError) as e:
-                            click.echo("\nProject {} doesn't have any files."
-                                       .format(project_dict['name']))
+                            project_dict['files'] = "None"
 
                         try:
                             project_dict['project_statistics'] = project.additionalstatistics.get().attributes
                         except gitlab.exceptions.GitlabGetError:
-                            click.echo("Project statistics for project {} could not be fetched. You need write access "
-                                       "for the project.".format(project_dict["name"]))
+                            if self.verbose:
+                                click.echo("\n Project statistics for project {} could not be fetched. You might need "
+                                           "write access to fix this.")
+                            else:
+                                pass
 
                         self.extracted_corpus[category].append(project_dict)

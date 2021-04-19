@@ -20,15 +20,18 @@ from filter import Filter
 @click.option('--filter-file', '-f',
               help='File in yaml format which defines the filters to be used on the corpus',
               default='./filters.yaml')
+@click.option('--verbose', '-v',
+              help='More output',
+              is_flag=True)
 @click.argument('out', type=click.File('w'), default='./out.json')
-def cli(config_path, source, all_elements, filter_file, out):
+def cli(config_path, source, all_elements, filter_file, out, verbose):
     """This tool creates a corpus of all available software projects in a GitLab instance and writes its output to
     the ``out`` file (default: ``./out.json``)."""
     gl = gitlab.Gitlab.from_config(source, config_path)
 
-    extractor = Extractor(gl)
-    corpus_filter = Filter(input_corpus=extractor.extracted_corpus)
-    exporter = Exporter(format_str="json")
+    extractor = Extractor(verbose, gl)
+    corpus_filter = Filter(verbose, input_corpus=extractor.extracted_corpus)
+    exporter = Exporter(verbose, format_str="json")
 
     extractor.extract(all_elements=all_elements)
 
