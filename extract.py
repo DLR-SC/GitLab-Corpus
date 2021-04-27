@@ -2,7 +2,6 @@
 # SPDX-License-Identifier: MIT
 import click
 import gitlab
-import csv
 
 
 def get_category(manager_string):
@@ -17,18 +16,11 @@ def get_category(manager_string):
 class Extractor:
     """This class represents the extraction module."""
 
-    extracted_corpus = {"Projects": [],  # This object represents the output corpus and will exist only once
-                        }  # https://docs.python.org/3/tutorial/classes.html#class-and-instance-variables
-
-    def __init__(self, verbose, gitlab_manager):
+    def __init__(self, verbose, gitlab_manager, corpus):
         self.gl = gitlab_manager
         self.verbose = verbose
         self.managers = [self.gl.projects]
-        self.extensions = []
-        with open('extensions.txt') as csv_file:
-            csv_reader = csv.reader(csv_file, delimiter=';')
-            for extension in csv_reader:
-                self.extensions.append(extension)
+        self.corpus = corpus
 
     def extract(self, all_elements):
 
@@ -63,4 +55,4 @@ class Extractor:
                             else:
                                 pass
 
-                        self.extracted_corpus[category].append(project_dict)
+                        self.corpus.data[category].append(project_dict)
