@@ -5,21 +5,23 @@ import json
 import click
 import yaml
 
+from helpers import Corpus
+
 
 class Filter:
     """This class implements the filter possibilities for the corpus"""
 
-    filtered_corpus = {"Projects": [],
-                       }
+    filtered_corpus = Corpus()
 
-    def __init__(self, verbose, input_corpus, from_file=False, file="-"):
+    def __init__(self, verbose, corpus, from_file=False, file="-"):
         self.verbose = verbose
         self.filters = []
+        self.input_corpus = Corpus()
         if from_file:
-            with open(file, 'w') as f:
-                self.input_corpus = json.load(f)
+            with open(file, 'r') as f:
+                self.input_corpus.data = json.load(f)
         else:
-            self.input_corpus = input_corpus
+            self.input_corpus = corpus
 
     def load_filters(self, filter_file):
         """This function loads the filters to be used on the extracted corpus. By default it gets passed the file
@@ -39,12 +41,12 @@ class Filter:
     def filter(self):
         """This function filters the extracted corpus by using the previously loaded filter options. If no filter
         options were set, all attributes will be kept in the resulting corpus."""
-        projects_dict = self.input_corpus["Projects"]
         if len(self.filters) > 0:
+            projects_dict = self.input_corpus.data["Projects"]
             click.echo("Filtering...")
             with click.progressbar(projects_dict) as bar:
                 for project in bar:
-                    self.filtered_corpus["Projects"].append({key: value for key, value in project.items()
-                                                             if key in self.filters})
+                    self.filtered_corpus.data["Projects"].append({key: value for key, value in project.items()
+                                                                  if key in self.filters})
         else:
-            self.filtered_corpus = self.input_corpus
+            self.filtered_corpus.data = self.input_corpus.data
