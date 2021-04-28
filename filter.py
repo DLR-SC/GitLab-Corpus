@@ -15,7 +15,8 @@ class Filter:
 
     def __init__(self, verbose, corpus, from_file=False, file="-"):
         self.verbose = verbose
-        self.filters = []
+        self.filters = {}
+        self.attributes = []
         self.input_corpus = Corpus()
         if from_file:
             with open(file, 'r') as f:
@@ -29,9 +30,14 @@ class Filter:
         try:
             with open(filter_file, "r") as f:
                 filters = yaml.full_load(f)
-                if filters["filters"] is not None:
+                if filters["filters"] is not None:  # add all filters to filter list
                     for filter_option in filters["filters"]:
-                        self.filters.append(filter_option)
+                        for key in filter_option:
+                            self.filters[key] = filter_option[key]
+
+                if filters["attributes"] is not None:  # add all attributes to be shown in corpus
+                    for attribute in filters["attributes"]:
+                        self.attributes.append(attribute)
         except FileNotFoundError:
             if self.verbose:
                 click.echo("No filter configuration file found. No filters will be applied.")
@@ -46,7 +52,32 @@ class Filter:
             click.echo("Filtering...")
             with click.progressbar(projects_dict) as bar:
                 for project in bar:
-                    self.filtered_corpus.data["Projects"].append({key: value for key, value in project.items()
-                                                                  if key in self.filters})
+                    if self.filter_project(project):
+                        self.filtered_corpus.data["Projects"].append({key: value for key, value in project.items()
+                                                                      if key in self.attributes})
         else:
             self.filtered_corpus.data = self.input_corpus.data
+
+    def filter_project(self, project):
+        for filter_option in self.filters:
+            if filter_option == "any_languages":
+                if self.filters[filter_option]:
+                    for language in self.filters[filter_option]:
+                        return any(item in list(project["languages"].keys()) for item in list(language.keys()))
+            elif filter_option == "atleast_languages":
+                if self.filters[filter_option]:
+                    languages = []
+                    for element in self.filters[filter_option]:
+                        languages.append(next(iter(element.keys())))
+                    return all(item in list(project["languages"].keys()) for item in languages)
+            elif filter_option == "explicit_languages":
+                if self.filters[filter_option]:
+                    languages = []
+                    for element in self.filters[filter_option]:
+                        languages.append(next(iter(element.keys())))
+                    return all(item in languages for item in list(project["languages"].keys())) \
+                           and len(project["languages"]) > 0
+                    # TODO fix this
+            else:
+                if project[filter_option] == self.filters[filter_option]:
+                    return True
