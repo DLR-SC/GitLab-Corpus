@@ -40,11 +40,12 @@ def cli(config, config_path, source, verbose):
 def build(config, corpus_data, all_elements, filter_file, out):
     extractor = Extractor(config.verbose, config.gl, corpus=corpus_data)
     corpus_filter = Filter(config.verbose, corpus=corpus_data)
-    exporter = Exporter(config.verbose, corpus=corpus_data, format_str="json")
 
     extractor.extract(all_elements=all_elements)
     corpus_filter.load_filters(filter_file=filter_file)
     corpus_filter.filter()
+
+    exporter = Exporter(config.verbose, corpus=corpus_filter.filtered_corpus, format_str="json")
     exporter.export(out=out)
 
 
@@ -100,4 +101,4 @@ def export(config, corpus_data, input_file, out):
 
 
 if __name__ == '__main__':
-    cli()
+    cli(['build'])
