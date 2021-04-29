@@ -62,8 +62,10 @@ class Filter:
         for filter_option in self.filters:
             if filter_option == "any_languages":
                 if self.filters[filter_option]:
-                    for language in self.filters[filter_option]:
-                        return any(item in list(project["languages"].keys()) for item in list(language.keys()))
+                    languages = []
+                    for element in self.filters[filter_option]:
+                        languages.append(next(iter(element.keys())))
+                    return any(item in list(project["languages"].keys()) for item in languages)
             elif filter_option == "atleast_languages":
                 if self.filters[filter_option]:
                     languages = []
