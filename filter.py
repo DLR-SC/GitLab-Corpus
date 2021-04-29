@@ -76,8 +76,7 @@ class Filter:
                     for element in self.filters[filter_option]:
                         languages.append(next(iter(element.keys())))
                     return all(item in languages for item in list(project["languages"].keys())) \
-                           and len(project["languages"]) > 0
-                    # TODO fix this
+                           and len(project["languages"]) == len(languages)
             else:
                 if project[filter_option] == self.filters[filter_option]:
                     return True
