@@ -2,6 +2,8 @@
 # SPDX-License-Identifier: MIT
 
 import json
+import re
+
 import click
 import yaml
 
@@ -16,6 +18,7 @@ class Filter:
     def __init__(self, verbose, corpus, from_file=False, file="-"):
         self.verbose = verbose
         self.filters = {}
+        self.languages = []
         self.attributes = []
         self.input_corpus = Corpus()
         if from_file:
@@ -32,6 +35,11 @@ class Filter:
                 filters = yaml.full_load(f)
                 if filters["filters"] is not None:  # add all filters to filter list
                     for filter_option in filters["filters"]:
+                        if re.match('.*_languages', next(iter(filter_option.keys()))):
+                            values = list(filter_option.values())
+                            if None not in values:
+                                for element in values[0]:
+                                    self.languages.append(next(iter(element.keys())))
                         for key in filter_option:
                             self.filters[key] = filter_option[key]
 
@@ -59,26 +67,21 @@ class Filter:
             self.filtered_corpus.data = self.input_corpus.data
 
     def filter_project(self, project):
+        project_languages = list(project["languages"].keys())
         for filter_option in self.filters:
             if filter_option == "any_languages":
                 if self.filters[filter_option]:
-                    languages = []
-                    for element in self.filters[filter_option]:
-                        languages.append(next(iter(element.keys())))
-                    return any(item in list(project["languages"].keys()) for item in languages)
+                    return any(item in project_languages for item in self.languages)
             elif filter_option == "atleast_languages":
                 if self.filters[filter_option]:
-                    languages = []
-                    for element in self.filters[filter_option]:
-                        languages.append(next(iter(element.keys())))
-                    return all(item in list(project["languages"].keys()) for item in languages)
+                    return all(item in project_languages for item in self.languages)
             elif filter_option == "explicit_languages":
                 if self.filters[filter_option]:
-                    languages = []
-                    for element in self.filters[filter_option]:
-                        languages.append(next(iter(element.keys())))
-                    return all(item in languages for item in list(project["languages"].keys())) \
-                           and len(project["languages"]) == len(languages)
+                    return all(item in self.languages for item in project_languages) \
+                           and len(project_languages) == len(self.languages)
+            elif filter_option == "atmost_languages":
+                if self.filters[filter_option]:
+                    return set(project_languages).issubset(self.languages) and len(project_languages) > 0
             else:
                 if project[filter_option] == self.filters[filter_option]:
                     return True
