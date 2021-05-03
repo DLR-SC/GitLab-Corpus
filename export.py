@@ -24,7 +24,7 @@ class Exporter:
             click.echo("Exporting...")
             if self.format.lower() == "json":
                 if self.verbose:
-                    click.echo("Output format is JSON.")
+                    click.echo("Output written to {}".format(out))
                 json.dump(self.corpus.data, output, indent=4)
             elif self.format.lower() == "console":
                 if self.verbose:

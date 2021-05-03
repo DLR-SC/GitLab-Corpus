@@ -31,6 +31,8 @@ class Extractor:
             if category == 'Projects':
                 click.echo("Extracting...")
                 with click.progressbar(objects) as bar:
+                    if self.verbose:
+                        click.echo("{} projects found.".format(bar.length))
                     for project in bar:
                         project_dict = project.attributes
 
@@ -51,7 +53,7 @@ class Extractor:
                         except gitlab.exceptions.GitlabGetError:
                             if self.verbose:
                                 click.echo("\n Project statistics for project {} could not be fetched. You might need "
-                                           "write access to fix this.")
+                                           "write access to fix this.".format(project_dict["name"]))
                             else:
                                 pass
 
