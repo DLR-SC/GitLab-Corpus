@@ -16,7 +16,7 @@ command_config = click.make_pass_decorator(Config, ensure=True)
 @click.option('--config-path', '-cp', default='./gitlab.cfg',
               help='Path to the config file', show_default=True)
 @click.option('--source', '-s',
-              help='Name of the GitLab instance, you want to analyse, if not the default value of your configuration')
+              help='Name of the GitLab instance, you want to analyze, if not the default value of your configuration')
 @click.option('--verbose', '-v', default=False,
               help='Prints more output during execution')
 @command_config
@@ -38,6 +38,7 @@ def cli(config, config_path, source, verbose):
 @corpus
 @command_config
 def build(config, corpus_data, all_elements, filter_file, out):
+    """Run the pipeline extract -> filter -> export in one command."""
     extractor = Extractor(config.verbose, config.gl, corpus=corpus_data)
     corpus_filter = Filter(config.verbose, corpus=corpus_data)
 
@@ -59,8 +60,7 @@ def build(config, corpus_data, all_elements, filter_file, out):
 @corpus
 @command_config
 def extract(config, corpus_data, all_elements, out):
-    """This tool creates a corpus of all available software projects in a GitLab instance and writes its output to
-    the ``out`` file (default: ``./out.json``)."""
+    """Extract projects from the specified GitLab instance and write the output to a file."""
     extractor = Extractor(config.verbose, config.gl, corpus=corpus_data)
     exporter = Exporter(config.verbose, corpus=corpus_data, format_str="json")
 
@@ -79,6 +79,7 @@ def extract(config, corpus_data, all_elements, out):
 @corpus
 @command_config
 def filter(config, corpus_data, filter_file, input_file, out):
+    """Apply filters on a previously extracted corpus."""
     corpus_filter = Filter(config.verbose, corpus=corpus_data, from_file=True, file=input_file)
 
     corpus_filter.load_filters(filter_file=filter_file)
@@ -96,6 +97,7 @@ def filter(config, corpus_data, filter_file, input_file, out):
 @corpus
 @command_config
 def export(config, corpus_data, input_file, out):
+    """Export a previously extracted (and maybe filtered) corpus to another format."""
     exporter = Exporter(config.verbose, corpus=corpus_data, format_str="json", from_file=True, file=input_file)
     exporter.export(out=out)
 
