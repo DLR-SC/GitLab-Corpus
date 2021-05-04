@@ -3,17 +3,17 @@
 
 import click
 import gitlab
-from src.extract import Extractor
-from src.export import Exporter
-from src.filter import Filter
-from src.utils.helpers import Corpus, Config
+from extract import Extractor
+from export import Exporter
+from filter import Filter
+from utils.helpers import Corpus, Config
 
 corpus = click.make_pass_decorator(Corpus, ensure=True)
 command_config = click.make_pass_decorator(Config, ensure=True)
 
 
 @click.group()
-@click.option('--config-path', '-cp', default='./gitlab.cfg',
+@click.option('--config-path', '-cp', default='resources/gitlab.cfg',
               help='Path to the config file', show_default=True)
 @click.option('--source', '-s',
               help='Name of the GitLab instance, you want to analyze, if not the default value of your configuration')
@@ -32,8 +32,8 @@ def cli(config, config_path, source, verbose):
               is_flag=True)
 @click.option('--filter-file', '-f',
               help='File in yaml format which defines the filters to be used on the corpus',
-              default='./filters.yaml')
-@click.option('--out', '-o', default='./corpus.json',
+              default='resources/filters.yaml')
+@click.option('--out', '-o', default='out/corpus.json',
               help='Specifies the output file')
 @corpus
 @command_config
@@ -55,7 +55,7 @@ def build(config, corpus_data, all_elements, filter_file, out):
               help='Get all elements available in the GitLab instance WARNING: This might take a long time and might '
                    'cause problems for the server',
               is_flag=True)
-@click.option('--out', '-o', default='./corpus.json',
+@click.option('--out', '-o', default='out/corpus.json',
               help='Specifies the output file')
 @corpus
 @command_config
@@ -71,10 +71,10 @@ def extract(config, corpus_data, all_elements, out):
 @cli.command()
 @click.option('--filter-file', '-f',
               help='File in yaml format which defines the filters to be used on the corpus',
-              default='./filters.yaml')
-@click.option('--input-file', '-i', default='./corpus.json',
+              default='resources/filters.yaml')
+@click.option('--input-file', '-i', default='out/corpus.json',
               help='Specifies the file to load the corpus from')
-@click.option('--out', '-o', default='./corpus.json',
+@click.option('--out', '-o', default='out/corpus.json',
               help='Specifies the output file')
 @corpus
 @command_config
@@ -90,9 +90,9 @@ def filter(config, corpus_data, filter_file, input_file, out):
 
 
 @cli.command()
-@click.option('--input-file', '-i', default='./corpus.json',
+@click.option('--input-file', '-i', default='out/corpus.json',
               help='Specifies the file to load the corpus from')
-@click.option('--out', '-o', default='./corpus.json',
+@click.option('--out', '-o', default='out/corpus.json',
               help='Specifies the output file')
 @corpus
 @command_config
@@ -103,4 +103,4 @@ def export(config, corpus_data, input_file, out):
 
 
 if __name__ == '__main__':
-    cli(['build'])
+    cli(['--config-path=../resources/gitlab.cfg', 'build'])
