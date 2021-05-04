@@ -13,7 +13,7 @@ for url in urls:
     f = urllib.request.FancyURLopener({}).open(url)
     content = f.read()
 
-    with open("extensions.txt", "a") as output:
+    with open("../../out/extensions.txt", "a") as output:
         content_str = str(content)
         extensions = re.findall(r'"\w{5}3">([a-zA-Z0-9]*)<\/\w{6}>', content_str)
         output.writelines(extension + ";" for extension in extensions)

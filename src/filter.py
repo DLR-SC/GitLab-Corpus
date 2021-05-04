@@ -7,7 +7,7 @@ import re
 import click
 import yaml
 
-from helpers import Corpus
+from src.utils.helpers import Corpus
 
 
 class Filter:
