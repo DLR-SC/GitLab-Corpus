@@ -1,0 +1,4 @@
+click~=7.1.2
+python-gitlab~=2.6.0
+PyYAML~=5.4.1
+setuptools~=54.2.0
