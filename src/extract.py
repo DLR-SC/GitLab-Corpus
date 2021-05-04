@@ -7,7 +7,7 @@ import gitlab
 def get_category(manager_string):
     """This helper method extracts the category"""
     start_index = -1
-    for i in range(0, 3):
+    for i in range(0, 4):
         start_index = manager_string.find(".", start_index + 1)
     end_index = manager_string.find("Manager")
     return manager_string[start_index + 1:end_index] + "s"

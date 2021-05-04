@@ -4,7 +4,7 @@
 import json
 import click
 
-from src.utils.helpers import Corpus
+from utils.helpers import Corpus
 
 
 class Exporter:
