@@ -5,8 +5,8 @@
 *.cfg
 
 # Output files
-out.*
-corpus.json
+out/out.json
+out/corpus.json
 
 # yaml configurations
 *.yaml
@@ -87,8 +87,8 @@ docs/_build/
 _build
 _static
 _templates
-Makefile
-make.bat
+docs/Makefile
+docs/make.bat
 index.rst
 conf.py
 
