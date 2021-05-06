@@ -3,11 +3,32 @@
 
 import json
 import re
-
 import click
 import yaml
 
 from utils.helpers import Corpus
+
+
+def eval_percentage(project_language_percentage, evaluation):
+    """This function checks if the evaluation specified in the filter is true for the selected language."""
+    try:
+        operator, value = evaluation.split(" ")
+        if operator == "<":
+            return project_language_percentage < float(value)
+        elif operator == "<=":
+            return project_language_percentage <= float(value)
+        elif operator == ">":
+            return project_language_percentage > float(value)
+        elif operator == ">=":
+            return project_language_percentage >= float(value)
+        elif operator == "==":
+            return project_language_percentage == float(value)
+        elif operator == "!=":
+            return project_language_percentage != float(value)
+        else:
+            return False
+    except AttributeError:
+        return True
 
 
 class Filter:
@@ -18,7 +39,7 @@ class Filter:
     def __init__(self, verbose, corpus, from_file=False, file="-"):
         self.verbose = verbose
         self.filters = {}
-        self.languages = []
+        self.languages = {}
         self.attributes = []
         self.input_corpus = Corpus()
         if from_file:
@@ -36,10 +57,7 @@ class Filter:
                 if filters["filters"] is not None:  # add all filters to filter list
                     for filter_option in filters["filters"]:
                         if re.match('.*_languages', next(iter(filter_option.keys()))):
-                            values = list(filter_option.values())
-                            if None not in values:
-                                for element in values[0]:
-                                    self.languages.append(next(iter(element.keys())))
+                            self.load_languages(filter_option)
                         for key in filter_option:
                             self.filters[key] = filter_option[key]
 
@@ -51,6 +69,12 @@ class Filter:
                 click.echo("No filter configuration file found. No filters will be applied.")
             else:
                 pass
+
+    def load_languages(self, filter_option):
+        values = list(filter_option.values())[0]
+        if values is not None:
+            for element in values:
+                self.languages[next(iter(element.keys()))] = next(iter(element.values()))
 
     def filter(self):
         """This function filters the extracted corpus by using the previously loaded filter options. If no filter
@@ -67,21 +91,38 @@ class Filter:
             self.filtered_corpus.data = self.input_corpus.data
 
     def filter_project(self, project):
-        project_languages = list(project["languages"].keys())
         for filter_option in self.filters:
-            if filter_option == "any_languages":
-                if self.filters[filter_option]:
-                    return any(item in project_languages for item in self.languages)
-            elif filter_option == "atleast_languages":
-                if self.filters[filter_option]:
-                    return all(item in project_languages for item in self.languages)
-            elif filter_option == "explicit_languages":
-                if self.filters[filter_option]:
-                    return all(item in self.languages for item in project_languages) \
-                           and len(project_languages) == len(self.languages)
-            elif filter_option == "atmost_languages":
-                if self.filters[filter_option]:
-                    return set(project_languages).issubset(self.languages) and len(project_languages) > 0
-            else:
-                if project[filter_option] == self.filters[filter_option]:
-                    return True
+            if re.match('.*_languages', filter_option):
+                return self.check_languages(filter_option, project)
+            elif project[filter_option] == self.filters[filter_option]:
+                return True
+
+    def check_languages(self, filter_option, project):
+        project_languages = list(project["languages"].keys())
+        filter_languages = list(self.languages.keys())
+        if filter_option == "any_languages":
+            if self.filters[filter_option]:
+                for item in project_languages:
+                    if item in filter_languages:
+                        return eval_percentage(project["languages"][item], self.languages[item])
+        elif filter_option == "atleast_languages":
+            if self.filters[filter_option]:
+                if filter_languages in project_languages:
+                    self.eval_all_percentages(project_languages, project)
+        elif filter_option == "explicit_languages":
+            if self.filters[filter_option]:
+                if filter_languages in project_languages and len(filter_languages) == len(project_languages):
+                    self.eval_all_percentages(project_languages, project)
+        elif filter_option == "atmost_languages":
+            if self.filters[filter_option]:
+                if project_languages in filter_languages:
+                    self.eval_all_percentages(project_languages, project)
+        else:
+            return False
+
+    def eval_all_percentages(self, project_languages, project):
+        """This method checks if all language evaluations are true for the project"""
+        for item in project_languages:
+            if not eval_percentage(project["languages"][item], self.languages[item]):
+                return False
+        return True
