@@ -93,7 +93,8 @@ class Filter:
     def filter_project(self, project):
         for filter_option in self.filters:
             if re.match('.*_languages', filter_option):
-                return self.check_languages(filter_option, project)
+                if self.check_languages(filter_option, project):
+                    return True
             elif project[filter_option] == self.filters[filter_option]:
                 return True
 
@@ -107,22 +108,25 @@ class Filter:
                         return eval_percentage(project["languages"][item], self.languages[item])
         elif filter_option == "atleast_languages":
             if self.filters[filter_option]:
-                if filter_languages in project_languages:
-                    self.eval_all_percentages(project_languages, project)
+                if all(elem in project_languages for elem in filter_languages):
+                    return self.eval_all_percentages(project_languages, project)
         elif filter_option == "explicit_languages":
             if self.filters[filter_option]:
-                if filter_languages in project_languages and len(filter_languages) == len(project_languages):
-                    self.eval_all_percentages(project_languages, project)
+                if all(elem in filter_languages for elem in project_languages) \
+                        and len(filter_languages) == len(project_languages):
+                    return self.eval_all_percentages(project_languages, project)
         elif filter_option == "atmost_languages":
             if self.filters[filter_option]:
-                if project_languages in filter_languages:
-                    self.eval_all_percentages(project_languages, project)
+                if all(elem in filter_languages for elem in project_languages):
+                    return self.eval_all_percentages(project_languages, project)
         else:
             return False
 
     def eval_all_percentages(self, project_languages, project):
         """This method checks if all language evaluations are true for the project"""
         for item in project_languages:
-            if not eval_percentage(project["languages"][item], self.languages[item]):
-                return False
-        return True
+            try:
+                if eval_percentage(project["languages"][item], self.languages[item]):
+                    return True
+            except KeyError:
+                pass

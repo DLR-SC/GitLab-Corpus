@@ -1,10 +1,11 @@
 filters:
   - any_languages:
-      - C: "< 100.0"
-      - Python: "< 90.0"
   - atleast_languages:
   - atmost_languages:
   - explicit_languages:
+      - C: "< 100.0"
+      - C++: "< 100.0"
+      - C#: "< 100.0"
 
 attributes:
   - id
