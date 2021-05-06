@@ -8,9 +8,8 @@ resources/*.cfg
 out/out.json
 out/corpus.json
 
-# yaml configurations
-*.yaml
-*.yml
+# list of languages from linguist
+languages.yml
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
