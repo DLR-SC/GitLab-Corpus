@@ -20,6 +20,7 @@ class Exporter:
             self.corpus = corpus
 
     def export(self, out):
+        """This method exports the corpus either to json or prints it to the console."""
         with open(out, "w") as output:
             click.echo("Exporting...")
             if self.format.lower() == "json":

@@ -8,19 +8,23 @@ from export import Exporter
 from filter import Filter
 from utils.helpers import Corpus, Config
 
+# instance of a corpus that can be passed as click annotation
 corpus = click.make_pass_decorator(Corpus, ensure=True)
+
+# instance of class config, which stores parameters for later use
 command_config = click.make_pass_decorator(Config, ensure=True)
 
 
 @click.group()
 @click.option('--config-path', '-cp', default='resources/gitlab.cfg',
-              help='Path to the config file', show_default=True)
+              help='Path to the GitLab config file', show_default=True)
 @click.option('--source', '-s',
               help='Name of the GitLab instance, you want to analyze, if not the default value of your configuration')
 @click.option('--verbose', '-v', default=False,
               help='Prints more output during execution')
 @command_config
 def cli(config, config_path, source, verbose):
+    """Entry point to the corpus cli."""
     config.gl = gitlab.Gitlab.from_config(source, config_path)
     config.verbose = verbose
 
