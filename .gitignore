@@ -8,6 +8,10 @@ resources/*.cfg
 out/out.json
 out/corpus.json
 
+# filter
+resources/*.yml
+resources/*.yaml
+
 # list of languages from linguist
 languages.yml
 
