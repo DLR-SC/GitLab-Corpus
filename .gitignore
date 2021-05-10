@@ -2,15 +2,18 @@
 # SPDX-License-Identifier: CC0-1.0
 
 # GitLab config
-*.cfg
+resources/*.cfg
 
 # Output files
-out.*
-corpus.json
+out/out.json
+out/corpus.json
 
-# yaml configurations
-*.yaml
-*.yml
+# filter
+resources/*.yml
+resources/*.yaml
+
+# list of languages from linguist
+languages.yml
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -87,8 +90,8 @@ docs/_build/
 _build
 _static
 _templates
-Makefile
-make.bat
+docs/Makefile
+docs/make.bat
 index.rst
 conf.py
 
