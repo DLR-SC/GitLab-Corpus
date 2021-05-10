@@ -36,25 +36,25 @@ class Extractor:
                     for project in bar:
                         project_dict = project.attributes
 
-                        project_dict['issue_statistics'] = \
-                            project.issuesstatistics.get(scope="all").attributes["statistics"]
+                        if project_dict['visibility'] != "private":
 
-                        project_dict['languages'] = project.languages()
+                            project_dict['issue_statistics'] = \
+                                project.issuesstatistics.get(scope="all").attributes["statistics"]
 
-                        project_dict['is_software'] = True if not project_dict['languages'] else False
+                            project_dict['languages'] = project.languages()
 
-                        try:
-                            project_dict['files'] = project.repository_tree(ref=project_dict['default_branch'])
-                        except (gitlab.exceptions.GitlabGetError, gitlab.exceptions.GitlabHttpError, KeyError) as e:
-                            project_dict['files'] = "None"
+                            try:
+                                project_dict['files'] = project.repository_tree(ref=project_dict['default_branch'])
+                            except (gitlab.exceptions.GitlabGetError, gitlab.exceptions.GitlabHttpError, KeyError) as e:
+                                project_dict['files'] = "None"
 
-                        try:
-                            project_dict['project_statistics'] = project.additionalstatistics.get().attributes
-                        except gitlab.exceptions.GitlabGetError:
-                            if self.verbose:
-                                click.echo("\n Project statistics for project {} could not be fetched. You might need "
-                                           "write access to fix this.".format(project_dict["name"]))
-                            else:
-                                pass
+                            try:
+                                project_dict['project_statistics'] = project.additionalstatistics.get().attributes
+                            except gitlab.exceptions.GitlabGetError:
+                                if self.verbose:
+                                    click.echo("\n Project statistics for project {} could not be fetched. You might "
+                                               "need write access to fix this.".format(project_dict["name"]))
+                                else:
+                                    pass
 
-                        self.corpus.data[category].append(project_dict)
+                            self.corpus.data[category].append(project_dict)
