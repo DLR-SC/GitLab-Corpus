@@ -45,8 +45,13 @@ def eval_all_percentages(project_languages, project, languages):
 
 def eval_condition(attribute, operator, condition):
     """This function evaluates if the condition is true using the specified operator."""
+    # Match types
+    if isinstance(attribute, int):
+        condition = int(condition)
+    elif isinstance(attribute, float):
+        condition = float(condition)
+
     if operator == "==":
-        click.echo(type(attribute) + "\t" + type(condition))
         return attribute == condition
     elif operator == "!=":
         return attribute != condition
