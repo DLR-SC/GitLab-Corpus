@@ -1,0 +1,3785 @@
+{
+    "Projects": [
+        {
+            "id": 12362,
+            "description": "",
+            "name": "cog2021-node-wars",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/cog2021-node-wars",
+            "languages": {
+                "TeX": 99.76,
+                "Makefile": 0.24
+            }
+        },
+        {
+            "id": 12361,
+            "description": "",
+            "name": "vissoft2021-vr-compound-graph",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/vissoft2021-vr-compound-graph",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 12346,
+            "description": "",
+            "name": "ProvAnnotator",
+            "web_url": "https://gitlab.dlr.de/provenance/provannotator",
+            "languages": {
+                "Jupyter Notebook": 99.64,
+                "Python": 0.36
+            }
+        },
+        {
+            "id": 12343,
+            "description": "",
+            "name": "vissoft2021-node-wars",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/vissoft2021-node-wars",
+            "languages": {
+                "TeX": 99.76,
+                "Makefile": 0.24
+            }
+        },
+        {
+            "id": 12287,
+            "description": "cloned from https://github.rcac.purdue.edu/CarloScaloGroup/nato-templates (link discontinued)",
+            "name": "NATO templates",
+            "web_url": "https://gitlab.dlr.de/kloe_ad/nato-templates",
+            "languages": {
+                "TeX": 99.77,
+                "Shell": 0.23
+            }
+        },
+        {
+            "id": 12263,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/moraba/reports/latex-templates",
+            "languages": {
+                "TeX": 99.7,
+                "Batchfile": 0.17,
+                "Lua": 0.08,
+                "Dockerfile": 0.05,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 12254,
+            "description": "",
+            "name": "air_pollution",
+            "web_url": "https://gitlab.dlr.de/rafe_ha/air_pollution",
+            "languages": {
+                "TeX": 96.96,
+                "MATLAB": 3.04
+            }
+        },
+        {
+            "id": 12197,
+            "description": "",
+            "name": "test-language-detection",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/test-language-detection",
+            "languages": {
+                "Jupyter Notebook": 95.42,
+                "PostScript": 4.45,
+                "HTML": 0.13
+            }
+        },
+        {
+            "id": 12148,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/PI-3-DZI/latex-templates",
+            "languages": {
+                "TeX": 99.7,
+                "Batchfile": 0.17,
+                "Lua": 0.08,
+                "Dockerfile": 0.05,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 12087,
+            "description": "Demo project implementing market coupling in FAME / AMIRIS",
+            "name": "Fame Demo Market Coupling",
+            "web_url": "https://gitlab.dlr.de/nits_fe/fame-demo-market-coupling",
+            "languages": {
+                "Java": 75.48,
+                "HTML": 18.31,
+                "C": 5.16,
+                "CSS": 0.41,
+                "Perl": 0.29
+            }
+        },
+        {
+            "id": 12083,
+            "description": "The repo analyses the tweets related to Luca App and how the discussions correlated to the development of the App.",
+            "name": "lucaapp-prov",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/lucaapp-prov",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 12066,
+            "description": "Abstract for the EMS annual meeting 2021",
+            "name": "Ems Abstract",
+            "web_url": "https://gitlab.dlr.de/zech_ma/ems_abstract",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 12046,
+            "description": "A protocol for deploying disciplinary tools on HPC clusters",
+            "name": "Sertlib Protocol",
+            "web_url": "https://gitlab.dlr.de/hpc-cluster-utilities/sertlib-protocol",
+            "languages": {
+                "TeX": 98.45,
+                "Makefile": 1.55
+            }
+        },
+        {
+            "id": 12037,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/bust_sa/latex-templates",
+            "languages": {
+                "TeX": 99.7,
+                "Batchfile": 0.17,
+                "Lua": 0.08,
+                "Dockerfile": 0.05,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 12035,
+            "description": null,
+            "name": "_tex_template",
+            "web_url": "https://gitlab.dlr.de/broe_bj1/_tex_template",
+            "languages": {
+                "TeX": 70.89,
+                "Makefile": 29.11
+            }
+        },
+        {
+            "id": 11996,
+            "description": "",
+            "name": "water-simulation",
+            "web_url": "https://gitlab.dlr.de/govi_ba/water-simulation",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 11927,
+            "description": "This is the internal development autumn branch, The old internal repo has to be archived because it is no longer attached to the original project.",
+            "name": "autumn",
+            "web_url": "https://gitlab.dlr.de/arel_eu/autumn",
+            "languages": {
+                "Jupyter Notebook": 72.41,
+                "Python": 26.34,
+                "TeX": 1.25
+            }
+        },
+        {
+            "id": 11889,
+            "description": "Sammel- / Koordinationspunkt f\u00fcr die Innovationsanalyse und -quantifizierung im DLR",
+            "name": "InnovationsAnalyse",
+            "web_url": "https://gitlab.dlr.de/sche_h3/innovationsanalyse",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 11871,
+            "description": "First autumn workshop repository.",
+            "name": "autumn_workshop",
+            "web_url": "https://gitlab.dlr.de/arel_eu/autumn_workshop",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 11735,
+            "description": "Demo 3D JavaScript website showing the difference between ellipsoidal elevation and orthometric elevation. ",
+            "name": "demo-bshbh-wgs84-dhhn",
+            "web_url": "https://gitlab.dlr.de/ts-spatial-data-processing/others/demo-bshbh-wgs84-dhhn",
+            "languages": {
+                "JavaScript": 94.54,
+                "CSS": 3.26,
+                "HTML": 2.2
+            }
+        },
+        {
+            "id": 11734,
+            "description": "Demo OpenLayers website showing the difference between two consecutive canal depth measures at Hafenbahn Braunschweig.",
+            "name": "demo-bshbh-canal-depths",
+            "web_url": "https://gitlab.dlr.de/ts-spatial-data-processing/others/demo-bshbh-canal-depths",
+            "languages": {
+                "HTML": 100.0
+            }
+        },
+        {
+            "id": 11732,
+            "description": "Demo OpenLayers website showing the difference between digital terrain and digital surface models on an example of Braunschweig.",
+            "name": "demo-dtm-dsm",
+            "web_url": "https://gitlab.dlr.de/ts-spatial-data-processing/others/demo-dtm-dsm",
+            "languages": {
+                "HTML": 100.0
+            }
+        },
+        {
+            "id": 11689,
+            "description": "https://heid_dv.pages.gitlab.dlr.de/hfse",
+            "name": "Resources",
+            "web_url": "https://gitlab.dlr.de/heid_dv/hfse",
+            "languages": {
+                "CSS": 97.23,
+                "TeX": 2.77
+            }
+        },
+        {
+            "id": 11339,
+            "description": "Contains code for prediction of jet fuel properties on the basis of GCxGC data with a QSPR-Sampling approach",
+            "name": "QSPR_Mixing",
+            "web_url": "https://gitlab.dlr.de/hall_ce/qspr_mixing",
+            "languages": {
+                "HTML": 99.9,
+                "Jupyter Notebook": 0.08,
+                "Python": 0.01
+            }
+        },
+        {
+            "id": 11333,
+            "description": "",
+            "name": "Prototype Fund Application",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/prototype-fund-application",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 11160,
+            "description": "",
+            "name": "savar",
+            "web_url": "https://gitlab.dlr.de/tiba_xa/savar",
+            "languages": {
+                "Jupyter Notebook": 89.94,
+                "Python": 10.06
+            }
+        },
+        {
+            "id": 11009,
+            "description": "",
+            "name": "Identifying Root Causes of Unexpected Data in Multidisciplinary Workflows",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/2021-identifying-root-causes-unexpected-data-multidisciplinary-workflows",
+            "languages": {
+                "TeX": 71.59,
+                "Ruby": 26.35,
+                "Makefile": 1.88,
+                "Shell": 0.19
+            }
+        },
+        {
+            "id": 10987,
+            "description": "",
+            "name": "ieee-css-2021-community-access-control-decision",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/ieee-css-2021-community-access-control-decision",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 10986,
+            "description": "",
+            "name": "apns-2021-community-membership-notes-social-network",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/apns-2021-community-membership-notes-social-network",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 10959,
+            "description": "This project aims to develop algorithms in the benefit of the walabot!",
+            "name": "walabot",
+            "web_url": "https://gitlab.dlr.de/pi-dept-2/walabot",
+            "languages": {
+                "HTML": 37.79,
+                "TeX": 36.89,
+                "Python": 10.03,
+                "JavaScript": 6.77,
+                "CSS": 5.38
+            }
+        },
+        {
+            "id": 10934,
+            "description": "Repository for the reactor models developed by DLR within the FlowPhotoChem project.\r\n",
+            "name": "FPC Reactor models",
+            "web_url": "https://gitlab.dlr.de/brus_dv/fpc-reactor-models",
+            "languages": {
+                "Jupyter Notebook": 99.3,
+                "Julia": 0.7
+            }
+        },
+        {
+            "id": 10838,
+            "description": "",
+            "name": "botse-review",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/botse-review",
+            "languages": {
+                "TeX": 76.15,
+                "HTML": 23.72,
+                "Makefile": 0.12
+            }
+        },
+        {
+            "id": 10818,
+            "description": "Tech-studies *3D for ZKI* (DORK for short)",
+            "name": "DORK",
+            "web_url": "https://gitlab.dlr.de/ukis-frontend/DORK",
+            "languages": {
+                "TypeScript": 67.61,
+                "JavaScript": 32.21,
+                "HTML": 0.13,
+                "Dockerfile": 0.05
+            }
+        },
+        {
+            "id": 10805,
+            "description": "Contains code for prediction of net heat of combustion of jet fuels",
+            "name": "net_heat_of_combustion_prediction",
+            "web_url": "https://gitlab.dlr.de/hall_ce/net_heat_of_combustion_prediction",
+            "languages": {
+                "Jupyter Notebook": 86.36,
+                "Python": 13.64
+            }
+        },
+        {
+            "id": 10782,
+            "description": "",
+            "name": "SimBaCon Input Projekthighlights - Zielfeld 5",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/simbacon-input-projekthighlights-zielfeld-5",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 10781,
+            "description": "",
+            "name": "template-decker-dlr-slides",
+            "web_url": "https://gitlab.dlr.de/heid_dv/template-decker-dlr-slides",
+            "languages": {
+                "CSS": 97.23,
+                "TeX": 2.77
+            }
+        },
+        {
+            "id": 10740,
+            "description": "Praxisbericht T1000 f\u00fcr mein Projekt GitLights",
+            "name": "dh-praxisbericht-t1000-sophie-kernchen-gitlights",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/dh-praxisbericht-t1000-sophie-kernchen-gitlights",
+            "languages": {
+                "TeX": 92.0,
+                "Python": 8.0
+            }
+        },
+        {
+            "id": 10739,
+            "description": "Bericht zur Entwicklung einer Python Bibliothek zum Generieren von Kalenderdateien aus Gitlab Issues ,Milestones und Iterations",
+            "name": "dh-praxisbericht-t1000-benjamin-bauer-horen4gim",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/dh-praxisbericht-t1000-benjamin-bauer-horen4gim",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 10656,
+            "description": "DH-Praxisbericht T1000: Semantische Suche von Source Code mittels Machine Learning",
+            "name": "dh-praxisbericht-t1000-niklas-frondorf-code-search",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/dh-praxisbericht-t1000-niklas-frondorf-code-search",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 10301,
+            "description": "Import of multiple provenance files into neo",
+            "name": "BulkProv2Neo",
+            "web_url": "https://gitlab.dlr.de/provenance/bulkprov2neo",
+            "languages": {
+                "HTML": 61.4,
+                "TeX": 37.92,
+                "Python": 0.68
+            }
+        },
+        {
+            "id": 10275,
+            "description": "",
+            "name": "Fragebogen",
+            "web_url": "https://gitlab.dlr.de/dsl-bs/fragebogen",
+            "languages": {
+                "HTML": 100.0
+            }
+        },
+        {
+            "id": 10219,
+            "description": "Frontend Test for Graphs using Flask + Clojurescript",
+            "name": "frontendtest",
+            "web_url": "https://gitlab.dlr.de/sche_h3/frontendtest",
+            "languages": {
+                "Clojure": 67.42,
+                "Python": 20.42,
+                "CSS": 9.87,
+                "HTML": 1.66,
+                "Dockerfile": 0.51
+            }
+        },
+        {
+            "id": 10197,
+            "description": "Contains code for prediction of compunds and mixtures / fuels with:\r\n- GCxGC direct correlation \r\n- QSPR correlation",
+            "name": "fuel_compound_property_models",
+            "web_url": "https://gitlab.dlr.de/hall_ce/fuel_compound_property_models",
+            "languages": {
+                "HTML": 95.22,
+                "Jupyter Notebook": 4.76,
+                "Python": 0.02
+            }
+        },
+        {
+            "id": 10146,
+            "description": "FrontendDummy for Systemmodell",
+            "name": "SystemDummy",
+            "web_url": "https://gitlab.dlr.de/sche_h3/systemdummy",
+            "languages": {
+                "Jupyter Notebook": 99.25,
+                "Python": 0.75
+            }
+        },
+        {
+            "id": 10112,
+            "description": "",
+            "name": "chi2021-collab-graph-vis",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/chi2021-collab-graph-vis",
+            "languages": {
+                "TeX": 95.86,
+                "Ruby": 2.48,
+                "HTML": 0.74,
+                "PostScript": 0.61,
+                "Makefile": 0.29
+            }
+        },
+        {
+            "id": 10110,
+            "description": "",
+            "name": "ai_crash_course",
+            "web_url": "https://gitlab.dlr.de/kuzu_ri/ai_crash_course",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 10069,
+            "description": "",
+            "name": "dh-praxisbericht-t2000-sebastian-nocke  ",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/dh-praxisbericht-t2000-sebastian-nocke",
+            "languages": {
+                "TeX": 65.73,
+                "Ruby": 29.7,
+                "Shell": 2.41,
+                "Makefile": 2.15
+            }
+        },
+        {
+            "id": 10062,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/waxw_ph/latex-templates",
+            "languages": {
+                "TeX": 99.75,
+                "Batchfile": 0.17,
+                "Lua": 0.08,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 9979,
+            "description": "Test suite for LaTeX templates\r\n\r\n**currently not fully functional, because it is a few years old**",
+            "name": "latex_test",
+            "web_url": "https://gitlab.dlr.de/innersource/latex_test",
+            "languages": {
+                "TeX": 97.73,
+                "Batchfile": 2.27
+            }
+        },
+        {
+            "id": 9945,
+            "description": "First Tests for a Systemmodel Architecture",
+            "name": "SystemmodellTest",
+            "web_url": "https://gitlab.dlr.de/sche_h3/systemmodelltest",
+            "languages": {
+                "Python": 99.76,
+                "HTML": 0.24
+            }
+        },
+        {
+            "id": 9839,
+            "description": "Load Tests",
+            "name": "Load Tests",
+            "web_url": "https://gitlab.dlr.de/openvocs/load_tests",
+            "languages": {
+                "Jupyter Notebook": 99.42,
+                "Python": 0.58,
+                "HTML": 0.0
+            }
+        },
+        {
+            "id": 9800,
+            "description": "Repository for the reactor models developed by DLR within the FlowPhotoChem project.",
+            "name": "PEM Water Splitting",
+            "web_url": "https://gitlab.dlr.de/brus_dv/pem-ec",
+            "languages": {
+                "Jupyter Notebook": 99.33,
+                "Julia": 0.67
+            }
+        },
+        {
+            "id": 9782,
+            "description": "",
+            "name": "arangodb",
+            "web_url": "https://gitlab.dlr.de/futuro/wp1/arangodb",
+            "languages": {
+                "Python": 49.31,
+                "Jupyter Notebook": 39.71,
+                "JavaScript": 10.98
+            }
+        },
+        {
+            "id": 9764,
+            "description": "Semantic search for source code with a web-based application",
+            "name": "Code Search",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/code-search",
+            "languages": {
+                "Python": 98.2,
+                "HTML": 1.8
+            }
+        },
+        {
+            "id": 9758,
+            "description": "",
+            "name": "plot_utils",
+            "web_url": "https://gitlab.dlr.de/futuro/code/plot_utils",
+            "languages": {
+                "Jupyter Notebook": 98.75,
+                "Python": 1.25
+            }
+        },
+        {
+            "id": 9757,
+            "description": "",
+            "name": "lrc2021paper",
+            "web_url": "https://gitlab.dlr.de/mapr-hm/lrc2021paper",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 9713,
+            "description": "",
+            "name": "vue-project-boilerplate",
+            "web_url": "https://gitlab.dlr.de/maku_an/vue-project-boilerplate",
+            "languages": {
+                "JavaScript": 90.01,
+                "Vue": 8.1,
+                "HTML": 1.89
+            }
+        },
+        {
+            "id": 9667,
+            "description": "Paper about grouping components in RCE workflows based on graph clustering.",
+            "name": "2021-rce-clustering-workflow-graphs",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/2021-rce-clustering-workflow-graphs",
+            "languages": {
+                "TeX": 80.65,
+                "Ruby": 18.05,
+                "Makefile": 1.16,
+                "Shell": 0.13
+            }
+        },
+        {
+            "id": 9646,
+            "description": "\r\nThis project parses flight Data from .cap files into readable format like a .csv file and python objects saved as .p (pickled files).",
+            "name": "Flight Data Parsing",
+            "web_url": "https://gitlab.dlr.de/arma_fa/parseflightdata",
+            "languages": {
+                "Python": 95.02,
+                "C": 3.31,
+                "C++": 0.66,
+                "XSLT": 0.64,
+                "TeX": 0.16
+            }
+        },
+        {
+            "id": 9622,
+            "description": "",
+            "name": "aies2021-bias-propagation-NLP-transfer-learning",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/aies2021-bias-propagation-nlp-transfer-learning",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 9523,
+            "description": "\r\nThis project parses flight Data from .cap files into readable format like a .csv file and python objects saved as .p (pickled files).",
+            "name": "Flight Data Parsing",
+            "web_url": "https://gitlab.dlr.de/klei_cl/parseflightdata",
+            "languages": {
+                "Python": 95.72,
+                "C": 2.61,
+                "C++": 0.8,
+                "XSLT": 0.55,
+                "TeX": 0.13
+            }
+        },
+        {
+            "id": 9514,
+            "description": "Python library to import, explore and delete Bahnserver Data Explorer specific data stored Oracle database",
+            "name": "oracle-db-bahnserver-data-explorer-handler",
+            "web_url": "https://gitlab.dlr.de/ts-spatial-data-processing/tools/oracle-db-bahnserver-data-explorer-handler",
+            "languages": {
+                "HTML": 61.99,
+                "JavaScript": 15.89,
+                "CSS": 15.01,
+                "Python": 7.11
+            }
+        },
+        {
+            "id": 9512,
+            "description": "This python library contains functions to import infrastructure elements in to the Bahnserver Oracle database",
+            "name": "oracle-db-infrastructure-elements-importer",
+            "web_url": "https://gitlab.dlr.de/ts-spatial-data-processing/tools/oracle-db-infrastructure-elements-importer",
+            "languages": {
+                "HTML": 50.72,
+                "JavaScript": 21.67,
+                "CSS": 20.97,
+                "Python": 6.64
+            }
+        },
+        {
+            "id": 9505,
+            "description": "This python library contains functions to import networks in to the Bahnserver Oracle database",
+            "name": "oracle-db-network-importer",
+            "web_url": "https://gitlab.dlr.de/ts-spatial-data-processing/tools/oracle-db-network-importer",
+            "languages": {
+                "HTML": 49.98,
+                "JavaScript": 21.83,
+                "CSS": 20.94,
+                "Python": 7.24
+            }
+        },
+        {
+            "id": 9459,
+            "description": "",
+            "name": "surveyWTF",
+            "web_url": "https://gitlab.dlr.de/stop_ja/surveywtf",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 9446,
+            "description": "",
+            "name": "icse-2021-BoKSS-software-citation",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/icse-2021-bokss-software-citation",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 9443,
+            "description": "",
+            "name": "HsH Thesis Template",
+            "web_url": "https://gitlab.dlr.de/gilg_jn/hsh-thesis-template",
+            "languages": {
+                "TeX": 90.59,
+                "GLSL": 5.85,
+                "PowerShell": 3.57
+            }
+        },
+        {
+            "id": 9438,
+            "description": "",
+            "name": "dh-praxisbericht-t3000-lukas-rosenbach",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/dh-praxisbericht-t3000-lukas-rosenbach",
+            "languages": {
+                "TeX": 99.6,
+                "Python": 0.4
+            }
+        },
+        {
+            "id": 9326,
+            "description": "",
+            "name": "cyber-security-hackathon",
+            "web_url": "https://gitlab.dlr.de/mi/marlin/cyber-security-hackathon",
+            "languages": {
+                "C++": 88.67,
+                "Python": 8.87,
+                "CMake": 2.28,
+                "HTML": 0.19
+            }
+        },
+        {
+            "id": 9146,
+            "description": "lsapprep",
+            "name": "lsapprep",
+            "web_url": "https://gitlab.dlr.de/stap_sv/lsapprep",
+            "languages": {
+                "Jupyter Notebook": 81.37,
+                "Python": 18.63
+            }
+        },
+        {
+            "id": 9140,
+            "description": "",
+            "name": "Provenance Tracing",
+            "web_url": "https://gitlab.dlr.de/hoff_nl/provenance-tracing",
+            "languages": {
+                "Jupyter Notebook": 76.9,
+                "Python": 23.1
+            }
+        },
+        {
+            "id": 9080,
+            "description": "this repository collects information about the Bachelor's thesis of Sandesh Sharma, working on bringing emergency landing capability to ARDEA.",
+            "name": "ardea-emergency-landing",
+            "web_url": "https://gitlab.dlr.de/shar_sa/ardea-emergency-landing",
+            "languages": {
+                "TeX": 48.4,
+                "C++": 43.75,
+                "CMake": 7.58,
+                "Makefile": 0.25,
+                "Shell": 0.02
+            }
+        },
+        {
+            "id": 9043,
+            "description": "Example API to test generated OpenAPI Clients",
+            "name": "Client Test",
+            "web_url": "https://gitlab.dlr.de/zlp-augsburg/client-test",
+            "languages": {
+                "Java": 65.53,
+                "HTML": 34.04,
+                "Shell": 0.43
+            }
+        },
+        {
+            "id": 9041,
+            "description": "",
+            "name": "masterthesis",
+            "web_url": "https://gitlab.dlr.de/stae_mx/masterthesis",
+            "languages": {
+                "Jupyter Notebook": 91.21,
+                "TeX": 8.52,
+                "Python": 0.27
+            }
+        },
+        {
+            "id": 8852,
+            "description": "Code specific to the SVC spectrometer",
+            "name": "SVC",
+            "web_url": "https://gitlab.dlr.de/opairs/svc",
+            "languages": {
+                "Jupyter Notebook": 94.02,
+                "Standard ML": 3.45,
+                "Python": 2.53
+            }
+        },
+        {
+            "id": 8758,
+            "description": "",
+            "name": "ADSBOverSatellite",
+            "web_url": "https://gitlab.dlr.de/dw-via/adsboversatellite",
+            "languages": {
+                "Jupyter Notebook": 99.2,
+                "Python": 0.8,
+                "Shell": 0.0
+            }
+        },
+        {
+            "id": 8750,
+            "description": "Step UP CPS AP6.1 Demo 2 Update Manager Dashboard/GUI",
+            "name": "update_manager_dashboard",
+            "web_url": "https://gitlab.dlr.de/koer_ad/update_manager_dashboard",
+            "languages": {
+                "HTML": 35.92,
+                "JavaScript": 32.74,
+                "CSS": 26.78,
+                "SCSS": 2.87,
+                "Python": 1.0
+            }
+        },
+        {
+            "id": 8729,
+            "description": "",
+            "name": "InteractiveNotebookTutorialVis8",
+            "web_url": "https://gitlab.dlr.de/dw-via/interactivenotebooktutorialvis8",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 8640,
+            "description": "AutoLap is located on setup_taugrid and automatically generates overlapping regions using matching block interfaces as a starting point. AutoLap is composed of two subroutines: patched_to_chimera and patched_surface_to_chimera_surface.",
+            "name": "AutoLap_documentation",
+            "web_url": "https://gitlab.dlr.de/stre_la/documentation_patched2chimera",
+            "languages": {
+                "TeX": 98.55,
+                "Shell": 1.45
+            }
+        },
+        {
+            "id": 8599,
+            "description": "",
+            "name": "Bias-NLP-transfer_learning",
+            "web_url": "https://gitlab.dlr.de/jent_so/bias-nlp-transfer_learning",
+            "languages": {
+                "Jupyter Notebook": 99.7,
+                "Python": 0.3
+            }
+        },
+        {
+            "id": 8584,
+            "description": "",
+            "name": "ieeevr-2021-igt-2",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/2021-ieee-vr-igt-2",
+            "languages": {
+                "TeX": 99.99,
+                "Batchfile": 0.01
+            }
+        },
+        {
+            "id": 8530,
+            "description": "English version of the 50Mpix-Module software roadmap.",
+            "name": "roadmap50mpixsw-english",
+            "web_url": "https://gitlab.dlr.de/mi/big-data-platform/roadmap50mpixsw-english",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 8479,
+            "description": "Research report for WP2 (WS 2020 / 2021)",
+            "name": "report_ws_20_21",
+            "web_url": "https://gitlab.dlr.de/mapr-hm/report_ws_20_21",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 8344,
+            "description": "LaTex Files",
+            "name": "Dokumentation MaRPAS Simulation",
+            "web_url": "https://gitlab.dlr.de/ehle_ta/dokumentation-marpas-simulation",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 8341,
+            "description": "Step UP CPS Client dashboard",
+            "name": "client_dashboard",
+            "web_url": "https://gitlab.dlr.de/koer_ad/client_dashboard",
+            "languages": {
+                "JavaScript": 51.84,
+                "SCSS": 18.42,
+                "Less": 16.74,
+                "CSS": 10.69,
+                "HTML": 1.24
+            }
+        },
+        {
+            "id": 8329,
+            "description": "",
+            "name": "ba-rene-goekmen",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/ba-rene-goekmen",
+            "languages": {
+                "C#": 77.36,
+                "TeX": 22.64
+            }
+        },
+        {
+            "id": 8290,
+            "description": "HAICU Voucher\r\nAI Enabled Autonome Nervous System Intelligent Monitoring (ANSIM)\r\nDLR Institute for Aerospace Medicine",
+            "name": "haicu-ansim-aerospace-medicine",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/haicu-ansim-aerospace-medicine",
+            "languages": {
+                "Jupyter Notebook": 96.18,
+                "Python": 3.82
+            }
+        },
+        {
+            "id": 8198,
+            "description": "The repository contains the results of a survey concerning the role and practice of research software development at the German Aerospace Center (DLR).",
+            "name": "survey-rse-dlr-mirror",
+            "web_url": "https://gitlab.dlr.de/se-network/survey-rse-dlr-mirror",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 8187,
+            "description": "customizations and macros for the DLR.Wiki space \"Projekte\"",
+            "name": "DLR Project Directory",
+            "web_url": "https://gitlab.dlr.de/dlrwiki/dlr-plugins-for-confluence/dlr-project-directory",
+            "languages": {
+                "Java": 79.96,
+                "JavaScript": 11.51,
+                "CSS": 4.41,
+                "HTML": 4.12
+            }
+        },
+        {
+            "id": 8111,
+            "description": "",
+            "name": "mfc-rodos",
+            "web_url": "https://gitlab.dlr.de/refex-exchange/mfc-rodos",
+            "languages": {
+                "C": 87.05,
+                "C++": 7.71,
+                "MATLAB": 3.47,
+                "Assembly": 0.9,
+                "HTML": 0.29
+            }
+        },
+        {
+            "id": 8107,
+            "description": "IP Core generated by HDL Work Flow Advisor",
+            "name": "HDL_QPSK_ip_v1_0",
+            "web_url": "https://gitlab.dlr.de/shas_sa/hdl_qpsk_ip_v1_0",
+            "languages": {
+                "VHDL": 95.28,
+                "Tcl": 3.38,
+                "HTML": 1.29,
+                "C++": 0.04,
+                "Pascal": 0.02
+            }
+        },
+        {
+            "id": 8092,
+            "description": "",
+            "name": "singhal_himanshi",
+            "web_url": "https://gitlab.dlr.de/laid_do/singhal_himanshi",
+            "languages": {
+                "TeX": 92.12,
+                "Python": 7.88
+            }
+        },
+        {
+            "id": 8084,
+            "description": "Example implementation of importing data from an excel file to a confluence pape property report page + page property pages",
+            "name": "dlr-confluence-example-import-excel",
+            "web_url": "https://gitlab.dlr.de/dlrwiki/confluence-rest-api/dlr-confluence-example-import-excel",
+            "languages": {
+                "Python": 91.2,
+                "HTML": 8.8
+            }
+        },
+        {
+            "id": 8083,
+            "description": "Automated creation of confluence pages.",
+            "name": "glossary-constructor",
+            "web_url": "https://gitlab.dlr.de/dlrwiki/confluence-rest-api/glossary-constructor",
+            "languages": {
+                "Python": 77.03,
+                "HTML": 22.97
+            }
+        },
+        {
+            "id": 8056,
+            "description": "",
+            "name": "prj-pt_website",
+            "web_url": "https://gitlab.dlr.de/dlr-pt/prj-pt-website",
+            "languages": {
+                "CSS": 40.49,
+                "JavaScript": 37.08,
+                "Twig": 13.75,
+                "PHP": 7.73,
+                "SCSS": 0.56
+            }
+        },
+        {
+            "id": 8040,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/nell_da/latex-templates",
+            "languages": {
+                "TeX": 99.75,
+                "Batchfile": 0.17,
+                "Lua": 0.08,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 8006,
+            "description": "",
+            "name": "MatlabScripts",
+            "web_url": "https://gitlab.dlr.de/horizonpaper/matlabscripts",
+            "languages": {
+                "HTML": 69.69,
+                "MATLAB": 30.31
+            }
+        },
+        {
+            "id": 7990,
+            "description": "",
+            "name": "fwm_python",
+            "web_url": "https://gitlab.dlr.de/zap-pqs/fwm_python",
+            "languages": {
+                "HTML": 65.86,
+                "TeX": 21.97,
+                "Python": 12.14,
+                "MATLAB": 0.03
+            }
+        },
+        {
+            "id": 7956,
+            "description": "",
+            "name": "TomoPIV",
+            "web_url": "https://gitlab.dlr.de/as-boa/tomopiv",
+            "languages": {
+                "Fortran": 69.22,
+                "C": 18.49,
+                "HTML": 7.46,
+                "C++": 1.94,
+                "TeX": 1.65
+            }
+        },
+        {
+            "id": 7890,
+            "description": "Binary code to directly deploy on the MDAx server",
+            "name": "MDAx Server Deploy",
+            "web_url": "https://gitlab.dlr.de/buss_js/mdax-server-deploy",
+            "languages": {
+                "JavaScript": 65.43,
+                "CSS": 22.11,
+                "HTML": 11.46,
+                "Shell": 0.77,
+                "Python": 0.24
+            }
+        },
+        {
+            "id": 7866,
+            "description": "",
+            "name": "autumn",
+            "web_url": "https://gitlab.dlr.de/vencopy/autumn",
+            "languages": {
+                "Jupyter Notebook": 96.83,
+                "Python": 3.17
+            }
+        },
+        {
+            "id": 7841,
+            "description": "[D.Move] AP1100 Analysis of NDS, Drone and On Site data to improve SUMO",
+            "name": "2020-09 DMove analysis",
+            "web_url": "https://gitlab.dlr.de/collaboration-space/dmove_analysis",
+            "languages": {
+                "HTML": 99.75,
+                "R": 0.25
+            }
+        },
+        {
+            "id": 7837,
+            "description": "",
+            "name": "HEIMDALL",
+            "web_url": "https://gitlab.dlr.de/kn_git_swex/heimdall",
+            "languages": {
+                "C++": 58.24,
+                "Python": 40.93,
+                "CMake": 0.6,
+                "C": 0.1,
+                "Jupyter Notebook": 0.1
+            }
+        },
+        {
+            "id": 7787,
+            "description": "Test GitLab pages\r\n",
+            "name": "pages_test",
+            "web_url": "https://gitlab.dlr.de/oste_ar/pages_test",
+            "languages": {
+                "HTML": 100.0
+            }
+        },
+        {
+            "id": 7773,
+            "description": "Cosmoscout plugin for the live visualization of flights and vessels",
+            "name": "csp-transport-tracking",
+            "web_url": "https://gitlab.dlr.de/scivis/cosmoscout/csp-transport-tracking",
+            "languages": {
+                "C++": 95.59,
+                "CMake": 2.51,
+                "HTML": 1.9
+            }
+        },
+        {
+            "id": 7749,
+            "description": "Resources needed for the Natural language processing tutorial on 6th Machine learning WAW.",
+            "name": "waw-ml6-nlptutorial",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/waw-ml6-nlptutorial",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 7741,
+            "description": "Pausensignalisierungssoftware",
+            "name": "Dingdong",
+            "web_url": "https://gitlab.dlr.de/dsl-bs/dingdong",
+            "languages": {
+                "JavaScript": 44.27,
+                "PHP": 27.27,
+                "Vue": 13.11,
+                "HTML": 7.84,
+                "Hack": 3.88
+            }
+        },
+        {
+            "id": 7705,
+            "description": "",
+            "name": "ir_unet-nn",
+            "web_url": "https://gitlab.dlr.de/thum_da/ir_unet-nn",
+            "languages": {
+                "Jupyter Notebook": 62.23,
+                "Python": 37.51,
+                "Shell": 0.26
+            }
+        },
+        {
+            "id": 7700,
+            "description": "All sourcecode generated while solving the course [Front-End Web Development with React](https://www.coursera.org/learn/front-end-react/home/welcome)",
+            "name": "ReactTutorial",
+            "web_url": "https://gitlab.dlr.de/dw-via/reacttutorial",
+            "languages": {
+                "JavaScript": 95.77,
+                "HTML": 2.48,
+                "CSS": 1.75
+            }
+        },
+        {
+            "id": 7693,
+            "description": "The package implements SAR focusing (range-Doppler algorithm) for MCRDS data. ",
+            "name": "ice_sar",
+            "web_url": "https://gitlab.dlr.de/hr-sounder-1d/ice_sar",
+            "languages": {
+                "Python": 89.09,
+                "Jupyter Notebook": 10.91
+            }
+        },
+        {
+            "id": 7589,
+            "description": "",
+            "name": "LaTeX-Tutorium",
+            "web_url": "https://gitlab.dlr.de/nell_da/latex-tutorium",
+            "languages": {
+                "TeX": 98.92,
+                "HTML": 1.08
+            }
+        },
+        {
+            "id": 7586,
+            "description": "Main repository for my PhD work",
+            "name": "phd",
+            "web_url": "https://gitlab.dlr.de/drus_st/phd",
+            "languages": {
+                "TeX": 97.55,
+                "Makefile": 2.45
+            }
+        },
+        {
+            "id": 7540,
+            "description": "",
+            "name": "CPC",
+            "web_url": "https://gitlab.dlr.de/arel_eu/cpc",
+            "languages": {
+                "Jupyter Notebook": 98.92,
+                "Python": 1.08
+            }
+        },
+        {
+            "id": 7519,
+            "description": "",
+            "name": "DEM_mosaic",
+            "web_url": "https://gitlab.dlr.de/hr-dem-mosaic/dem_mosaic",
+            "languages": {
+                "Python": 82.12,
+                "TeX": 17.88
+            }
+        },
+        {
+            "id": 7458,
+            "description": "Term paper/work report of Fabrice von der Lehr for 3rd and 4th practical semester at DHBW Mannheim, dealing with data parallel training of neural networks.",
+            "name": "DH_T2000_DPNN",
+            "web_url": "https://gitlab.dlr.de/sc-hpc-iao/dh_t2000_dpnn",
+            "languages": {
+                "TeX": 92.44,
+                "Python": 7.56
+            }
+        },
+        {
+            "id": 7449,
+            "description": "",
+            "name": "vod_configuration",
+            "web_url": "https://gitlab.dlr.de/andresen/vod_configuration",
+            "languages": {
+                "HTML": 100.0
+            }
+        },
+        {
+            "id": 7430,
+            "description": "Internal version of: https://github.com/KnowledgeFinder/knowledgefinder-webapp",
+            "name": "knowledgefinder-webapp",
+            "web_url": "https://gitlab.dlr.de/knowledgefinder/knowledgefinder-webapp",
+            "languages": {
+                "CSS": 34.59,
+                "JavaScript": 33.28,
+                "Java": 27.71,
+                "XSLT": 4.35,
+                "Makefile": 0.08
+            }
+        },
+        {
+            "id": 7429,
+            "description": "DLR Liferay Theme for KnowledgeFinder",
+            "name": "knowledgefinder-theme-dlr",
+            "web_url": "https://gitlab.dlr.de/knowledgefinder/knowledgefinder-theme-dlr",
+            "languages": {
+                "CSS": 96.71,
+                "JavaScript": 3.29
+            }
+        },
+        {
+            "id": 7428,
+            "description": "",
+            "name": "CASSy-IVS",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/cassy-ivs",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 7420,
+            "description": "A GUI module which connects all the necessary units for a full-fledged knowledgefinder",
+            "name": "knowledgefinder-gui",
+            "web_url": "https://gitlab.dlr.de/knowledgefinder/knowledgefinder-gui",
+            "languages": {
+                "Java": 74.99,
+                "HTML": 15.06,
+                "CSS": 9.95
+            }
+        },
+        {
+            "id": 7419,
+            "description": "Configuration for conference schedule data",
+            "name": "knowledgefinder-config-cosda",
+            "web_url": "https://gitlab.dlr.de/knowledgefinder/knowledgefinder-config-cosda",
+            "languages": {
+                "Java": 49.87,
+                "CSS": 23.63,
+                "JavaScript": 22.98,
+                "XSLT": 2.82,
+                "HTML": 0.66
+            }
+        },
+        {
+            "id": 7412,
+            "description": "In the ResearchMine project DataFinder is used to import data to the ResearchMine configuration of KnowledgeFinder. This project contains the scripts used to extend DataFinder for this task.",
+            "name": "researchmine-df-scripts",
+            "web_url": "https://gitlab.dlr.de/datafinder/researchmine-df-scripts",
+            "languages": {
+                "Python": 98.44,
+                "TeX": 1.56
+            }
+        },
+        {
+            "id": 7407,
+            "description": "In the LIME project DataFinder is used to import data to the Lime configuration of KnowledgeFinder. This project contains the scripts used to extend DataFinder for this task.",
+            "name": "lime-df-scripts",
+            "web_url": "https://gitlab.dlr.de/datafinder/lime-df-scripts",
+            "languages": {
+                "Python": 98.46,
+                "TeX": 1.54
+            }
+        },
+        {
+            "id": 7404,
+            "description": "Repository mit lauff\u00e4higen Modellen f\u00fcr und aus den Projekten NGT und NGT-FuN",
+            "name": "commonvirtualtrain",
+            "web_url": "https://gitlab.dlr.de/goet_bj/commonvirtualtrain",
+            "languages": {
+                "Modelica": 81.78,
+                "HTML": 16.62,
+                "MATLAB": 1.59
+            }
+        },
+        {
+            "id": 7401,
+            "description": "Repository for the STAB 2020 publication -Aggarwal,Hartmann, Langer, Leicht",
+            "name": "STAB_2020",
+            "web_url": "https://gitlab.dlr.de/agga_ar/stab_2020",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 7394,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/gens_to/latex-templates",
+            "languages": {
+                "TeX": 99.75,
+                "Batchfile": 0.17,
+                "Lua": 0.08,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 7388,
+            "description": "anomaly detection with NN",
+            "name": "AnomalyDetection",
+            "web_url": "https://gitlab.dlr.de/hieb_ti/anomalydetection",
+            "languages": {
+                "Python": 76.35,
+                "TeX": 23.65
+            }
+        },
+        {
+            "id": 7322,
+            "description": "PROV model for LOD-GEOSS project",
+            "name": "lod-geoss-prov-model",
+            "web_url": "https://gitlab.dlr.de/provenance/lod-geoss-prov-model",
+            "languages": {
+                "Jupyter Notebook": 68.46,
+                "Python": 31.54
+            }
+        },
+        {
+            "id": 7300,
+            "description": "The eyetracking library.",
+            "name": "etl",
+            "web_url": "https://gitlab.dlr.de/nzm/etl",
+            "languages": {
+                "Jupyter Notebook": 98.77,
+                "Python": 1.23
+            }
+        },
+        {
+            "id": 7247,
+            "description": "This project contains the source code for a modified version of the Jenkins Valgrind plug-in (Version 0.28-Snapshot).\r\nThe changes in this plug-in allows the user to use the Valgrind publisher in Jenkins pipeline jobs as well as in Freebuild jobs.",
+            "name": "sc-utilities_jenkins-valgrind",
+            "web_url": "https://gitlab.dlr.de/sc/sc-intern/sc-utilities_jenkins-valgrind",
+            "languages": {
+                "Java": 99.14,
+                "HTML": 0.4,
+                "Shell": 0.29,
+                "Batchfile": 0.17
+            }
+        },
+        {
+            "id": 7243,
+            "description": "This project contains the source code for a modified version of the Jenkins Cppcheck plug-in (Version 1.22-SNAPSHOT).\r\nThe changes in this plug-in allows the user to use the Cppcheck publisher in Jenkins pipeline jobs as well as in freebuild jobs.",
+            "name": "sc-utilities_jenkins-cppcheck",
+            "web_url": "https://gitlab.dlr.de/sc/sc-intern/sc-utilities_jenkins-cppcheck",
+            "languages": {
+                "Java": 98.87,
+                "HTML": 0.62,
+                "C++": 0.51
+            }
+        },
+        {
+            "id": 7217,
+            "description": "",
+            "name": "lod-geoss",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/lod-geoss",
+            "languages": {
+                "Jupyter Notebook": 98.79,
+                "PowerShell": 0.76,
+                "Python": 0.39,
+                "Batchfile": 0.05
+            }
+        },
+        {
+            "id": 7186,
+            "description": "openvocs relevant paper",
+            "name": "research",
+            "web_url": "https://gitlab.dlr.de/openvocs/research",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 7184,
+            "description": "",
+            "name": "repository-synergy",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/repository-synergy",
+            "languages": {
+                "Jupyter Notebook": 97.39,
+                "Python": 1.59,
+                "HTML": 0.67,
+                "CSS": 0.29,
+                "JavaScript": 0.04
+            }
+        },
+        {
+            "id": 7164,
+            "description": "This project serves as a way to translate flight data to fdr files for use in xplane 11. Also it is a mean for me to get started in python programming. ",
+            "name": "CODEdata2FDR",
+            "web_url": "https://gitlab.dlr.de/klei_cl/codedata2fdr",
+            "languages": {
+                "Python": 91.47,
+                "QML": 7.04,
+                "C": 1.13,
+                "C++": 0.2,
+                "TeX": 0.08
+            }
+        },
+        {
+            "id": 7144,
+            "description": "Praxisbericht f\u00fcr die DHBW Mannheim",
+            "name": "dh-praxisbericht-t1000-sebastian-nocke",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/dh-praxisbericht-t1000-sebastian-nocke",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 7073,
+            "description": "This is a test project to show how to access the GitLab pages",
+            "name": "GitLab Pages Test",
+            "web_url": "https://gitlab.dlr.de/2pasd/gitlab-pages-test",
+            "languages": {
+                "HTML": 67.67,
+                "Ruby": 32.33
+            }
+        },
+        {
+            "id": 7017,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/pert_ja/latex-templates",
+            "languages": {
+                "TeX": 99.75,
+                "Batchfile": 0.17,
+                "Lua": 0.08,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 6998,
+            "description": "",
+            "name": "ln_bridge_websocket",
+            "web_url": "https://gitlab.dlr.de/git-fof/ln_bridge_websocket",
+            "languages": {
+                "Python": 85.12,
+                "JavaScript": 11.77,
+                "HTML": 3.0,
+                "Objective-C": 0.11
+            }
+        },
+        {
+            "id": 6965,
+            "description": "Mirror of Amirs bachelor thesis on the propagation of human biases through transfer learning in sentiment classification. Data and Code can be found in an extra repository.",
+            "name": "ba-al-amir-ahmed-overleaf",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/ba-al-amir-ahmed-overleaf",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6888,
+            "description": "This project contains works related to text-mining for documents classification using ML models.",
+            "name": "Text Mining",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/text-mining",
+            "languages": {
+                "Jupyter Notebook": 98.58,
+                "Java": 0.92,
+                "Python": 0.47,
+                "Shell": 0.02
+            }
+        },
+        {
+            "id": 6883,
+            "description": "This is the software catalog entry registration and editing form.",
+            "name": "Software Catalog - Project Registration",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/software-catalog-project-registration",
+            "languages": {
+                "JavaScript": 40.67,
+                "CSS": 31.31,
+                "HTML": 15.38,
+                "Python": 12.56,
+                "Shell": 0.08
+            }
+        },
+        {
+            "id": 6880,
+            "description": "This is the static main webpage of the software catalog.",
+            "name": "Software Catalog - Catalog Website",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/software-catalog-catalog-website",
+            "languages": {
+                "CSS": 54.69,
+                "HTML": 44.07,
+                "Ruby": 1.01,
+                "Shell": 0.23
+            }
+        },
+        {
+            "id": 6879,
+            "description": "Trying some software analytics with jupyter, pandas, and mathplotlib.",
+            "name": "Software Analytics",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/software-analytics",
+            "languages": {
+                "Jupyter Notebook": 71.44,
+                "JavaScript": 18.49,
+                "Python": 7.21,
+                "HTML": 2.86
+            }
+        },
+        {
+            "id": 6872,
+            "description": "",
+            "name": "Evaluation Research Software",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/evaluation-research-software",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 6871,
+            "description": "Prototype of DLR-M.A.X. backend",
+            "name": "DLR MAX Backend Prototype",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/dlr-max-backend-prototype",
+            "languages": {
+                "Roff": 98.46,
+                "JavaScript": 1.22,
+                "Python": 0.17,
+                "CSS": 0.13,
+                "HTML": 0.02
+            }
+        },
+        {
+            "id": 6766,
+            "description": "",
+            "name": "Side By Side",
+            "web_url": "https://gitlab.dlr.de/luen_on/side_by_side",
+            "languages": {
+                "JavaScript": 65.0,
+                "Python": 21.01,
+                "CSS": 9.66,
+                "HTML": 4.33
+            }
+        },
+        {
+            "id": 6754,
+            "description": "",
+            "name": "static-html",
+            "web_url": "https://gitlab.dlr.de/luen_on/static-html",
+            "languages": {
+                "CSS": 33.76,
+                "Python": 32.2,
+                "JavaScript": 28.35,
+                "HTML": 5.69
+            }
+        },
+        {
+            "id": 6711,
+            "description": "",
+            "name": "Side By Side",
+            "web_url": "https://gitlab.dlr.de/zech_ma/side_by_side",
+            "languages": {
+                "JavaScript": 64.05,
+                "Python": 22.17,
+                "CSS": 9.52,
+                "HTML": 4.27
+            }
+        },
+        {
+            "id": 6690,
+            "description": "This is a mirror of the official CosmoScout VR repository at https://github.com/cosmoscout/cosmoscout-vr. Only the master and develop branch are mirrored.",
+            "name": "CosmoScout VR",
+            "web_url": "https://gitlab.dlr.de/scivis/cosmoscout/cosmoscout-vr",
+            "languages": {
+                "C++": 79.67,
+                "JavaScript": 5.36,
+                "HTML": 4.46,
+                "CMake": 3.64,
+                "CSS": 2.39
+            }
+        },
+        {
+            "id": 6644,
+            "description": "Submission to Open Search Symposium 2020 on Discovery of Software Innovations using Repository Mining",
+            "name": "OSSYM 2020 Hecking et al. Repo Mining",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/ossym-2020-hecking-et-al.-repo-mining",
+            "languages": {
+                "TeX": 86.82,
+                "HTML": 11.96,
+                "Makefile": 1.23
+            }
+        },
+        {
+            "id": 6629,
+            "description": "Web-based Log-Console (LoCo) for monitoring log output of cluster-processing applications.",
+            "name": "LoCo",
+            "web_url": "https://gitlab.dlr.de/hr-caramba/loco",
+            "languages": {
+                "JavaScript": 61.08,
+                "Python": 30.42,
+                "CSS": 7.97,
+                "HTML": 0.53
+            }
+        },
+        {
+            "id": 6541,
+            "description": "",
+            "name": "Measurement Control System",
+            "web_url": "https://gitlab.dlr.de/as-boa/measurement-control-system",
+            "languages": {
+                "JavaScript": 68.61,
+                "Python": 26.65,
+                "CSS": 4.65,
+                "Dockerfile": 0.08,
+                "Shell": 0.02
+            }
+        },
+        {
+            "id": 6508,
+            "description": "",
+            "name": "Aim-RefStr-Map",
+            "web_url": "https://gitlab.dlr.de/ts-v2x/aim-refstr-map",
+            "languages": {
+                "JavaScript": 66.79,
+                "Python": 17.34,
+                "CSS": 10.17,
+                "HTML": 5.69
+            }
+        },
+        {
+            "id": 6493,
+            "description": "",
+            "name": "mapr_sissy",
+            "web_url": "https://gitlab.dlr.de/mapr-hm/mapr_sissy",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6468,
+            "description": "Master thesis Regina Struminksi: PROV Comics",
+            "name": "PROV Comics",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/provcomics",
+            "languages": {
+                "TeX": 87.1,
+                "JavaScript": 9.53,
+                "CSS": 2.58,
+                "HTML": 0.61,
+                "Makefile": 0.17
+            }
+        },
+        {
+            "id": 6466,
+            "description": "DLR Topic Network Graph",
+            "name": "DLR Topic Network Graph",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-intern/dlr-topic-network-visualization",
+            "languages": {
+                "JavaScript": 88.34,
+                "Python": 10.74,
+                "HTML": 0.79,
+                "Dockerfile": 0.07,
+                "Shell": 0.06
+            }
+        },
+        {
+            "id": 6465,
+            "description": "",
+            "name": "Standalone 3D Graph Visualisation for KnowledgeFinder",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/graph-visualization-knowledgefinder",
+            "languages": {
+                "JavaScript": 99.85,
+                "HTML": 0.15
+            }
+        },
+        {
+            "id": 6447,
+            "description": "Masterarbeit Martin Stoffers: Generierung vertrauensw\u00fcrdiger Provenance-Dokumente durch Verwendung von Blockchains (Mirrored from https://gitlab.fastreboot.de/Dr4k3/master-thesis)",
+            "name": "ma-martin-stoffers",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/ma_stoffers",
+            "languages": {
+                "TeX": 99.59,
+                "Python": 0.22,
+                "Makefile": 0.19
+            }
+        },
+        {
+            "id": 6439,
+            "description": "SPARK 2014 repository for the Alt-Ergo SMT solver. ",
+            "name": "alt-ergo",
+            "web_url": "https://gitlab.dlr.de/koer_ad/alt-ergo",
+            "languages": {
+                "OCaml": 97.56,
+                "Shell": 1.31,
+                "Makefile": 0.59,
+                "Standard ML": 0.3,
+                "Roff": 0.21
+            }
+        },
+        {
+            "id": 6437,
+            "description": "SPARK 2014 is the new version of SPARK, a software development technology specifically designed for engineering high-reliability applications. ",
+            "name": "spark2014",
+            "web_url": "https://gitlab.dlr.de/koer_ad/spark2014",
+            "languages": {
+                "Ada": 97.38,
+                "Python": 1.55,
+                "TeX": 0.45,
+                "C": 0.31,
+                "Coq": 0.2
+            }
+        },
+        {
+            "id": 6433,
+            "description": "",
+            "name": "Heat_Transfer",
+            "web_url": "https://gitlab.dlr.de/werk_ph/heat_transfer",
+            "languages": {
+                "Jupyter Notebook": 95.36,
+                "Python": 4.64
+            }
+        },
+        {
+            "id": 6406,
+            "description": "Provenienz-basierte Prozessanalyse von GitLab-Projekten am Beispiel der DLR Software BACARDI",
+            "name": "ba-claas-de-boer",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/ba-claas-de-boer",
+            "languages": {
+                "Jupyter Notebook": 95.12,
+                "TeX": 4.88
+            }
+        },
+        {
+            "id": 6388,
+            "description": "Amirs bachelor thesis on the propagation of human biases through transfer learning in sentiment classification.\r\nRepo includes data and for training, experiments and analysis. The Overleaf Report is mirrored into another Repository.\r\n",
+            "name": "ba-al-amir-ahmed",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/ba-al-amir-ahmed",
+            "languages": {
+                "TeX": 74.31,
+                "Jupyter Notebook": 22.78,
+                "Python": 2.91
+            }
+        },
+        {
+            "id": 6384,
+            "description": "",
+            "name": "ma-marcel-bock",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/ma-marcel-bock",
+            "languages": {
+                "TeX": 87.58,
+                "Python": 12.42
+            }
+        },
+        {
+            "id": 6383,
+            "description": "DH-Praxisbericht T2000: Vorbereitung und Ver\u00f6ffentlichung von KnowledgeFinderII als Open Source Software",
+            "name": "dh-praxisbericht-t2000-florian-lamprecht",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/dh-praxisbericht-t2000-florian-lamprecht",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6381,
+            "description": "Repository f\u00fcr den Text der Bachelorarbeit",
+            "name": "ba-florian-lamprecht",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/ba-florian-lamprecht",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6380,
+            "description": "DH-Praxisbericht T3000: Evaluation von Technologien f\u00fcr eine \u00dcberarbeitung von DataFinder",
+            "name": "dh-praxisbericht-t3000-florian-lamprecht",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/dh-praxisbericht-t3000-florian-lamprecht",
+            "languages": {
+                "TeX": 96.32,
+                "Python": 3.02,
+                "Shell": 0.66
+            }
+        },
+        {
+            "id": 6379,
+            "description": "Eine Microservice-Architektur zum konversationsbasierten Erkunden von Softwarevisualisierungen",
+            "name": "ba-stefan-bielauskas",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/ba-stefan-bielauskas",
+            "languages": {
+                "HTML": 95.47,
+                "Shell": 4.53
+            }
+        },
+        {
+            "id": 6365,
+            "description": "",
+            "name": "Paper Vissoft 2016",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/paper-vissoft-2016",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6364,
+            "description": "",
+            "name": "OSGi Visualization D3",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/osgi-visualization-d3",
+            "languages": {
+                "JavaScript": 57.25,
+                "CSS": 41.72,
+                "HTML": 1.03
+            }
+        },
+        {
+            "id": 6348,
+            "description": "TiGL paper for SoftwareX",
+            "name": "softwarex-tigl",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/softwarex-tigl",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6347,
+            "description": "A Provenance Model for Quantified Self Data, HCI International 2016",
+            "name": "HCII2016",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/HCII2016",
+            "languages": {
+                "TeX": 97.95,
+                "Python": 1.56,
+                "Makefile": 0.49
+            }
+        },
+        {
+            "id": 6346,
+            "description": "KnowledgeFinder paper for SoftwareX",
+            "name": "softwarex-knowledgefinder",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/softwarex-knowledgefinder",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6345,
+            "description": "This paper discusses the TravisTorrent dataset as part of the MSR-Challenge 2017.",
+            "name": "MSR2017-Challenge-meinel",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/MSR2017-Challenge-meinel",
+            "languages": {
+                "Jupyter Notebook": 92.65,
+                "TeX": 7.11,
+                "Makefile": 0.23
+            }
+        },
+        {
+            "id": 6344,
+            "description": "Paper showing a general approach to requirements definition and verification via BDD.",
+            "name": "XXX2017-BDD-mwag",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/XXX2017-BDD-mwag",
+            "languages": {
+                "TeX": 90.5,
+                "HTML": 9.5
+            }
+        },
+        {
+            "id": 6343,
+            "description": "Catalogue of literature for the SE group.",
+            "name": "IVS-SE-Bibliography",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/IVS-SE-Bibliography",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6342,
+            "description": "Interactive VR Visualization of Software Components using Oculus Rift\r\n5th IEEE Working Conference on Software Visualization (VISSOFT 2017) \r\nhttp://vissoft17.dcc.uchile.cl/",
+            "name": "vissoft2017-softvis-vr",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/vissoft2017-softvis-vr",
+            "languages": {
+                "TeX": 99.78,
+                "Makefile": 0.22
+            }
+        },
+        {
+            "id": 6341,
+            "description": "Paper on Open Source in DLR for OpenSym 2017 http://opensym.lero.ie/",
+            "name": "OpenSym2017",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/OpenSym2017",
+            "languages": {
+                "TeX": 99.04,
+                "Makefile": 0.96
+            }
+        },
+        {
+            "id": 6340,
+            "description": "9th International Workshop on Theory and Practice of Provenance \r\nSeattle, Washington \r\nhttp://batesa.web.engr.illinois.edu/tapp17/",
+            "name": "TaPP2017",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/TaPP2017",
+            "languages": {
+                "TeX": 99.34,
+                "Makefile": 0.66
+            }
+        },
+        {
+            "id": 6339,
+            "description": "Tracing Personal Data Using Comics\r\nHCI International 2017, Vancouver, Canada, 9 - 14 July 2017\r\nhttp://2017.hci.international/",
+            "name": "HCII2017",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/HCII2017",
+            "languages": {
+                "TeX": 99.45,
+                "Makefile": 0.55
+            }
+        },
+        {
+            "id": 6338,
+            "description": "Visualizing the Provenance of Personal Data using Comics\r\nJournal paper (http://www.mdpi.com/journal/computers/special_issues/session_HCII2017)",
+            "name": "mdpi-prov-comics",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/mdpi-prov-comics",
+            "languages": {
+                "PostScript": 74.39,
+                "TeX": 25.5,
+                "Makefile": 0.11
+            }
+        },
+        {
+            "id": 6336,
+            "description": "A Conversational User Interface for Software Visualization\r\n5th IEEE Working Conference on Software Visualization (VISSOFT 2017)\r\nhttp://vissoft17.dcc.uchile.cl/",
+            "name": "vissoft2017-conversational-ui",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/vissoft2017-conversational-ui",
+            "languages": {
+                "TeX": 99.84,
+                "Makefile": 0.16
+            }
+        },
+        {
+            "id": 6332,
+            "description": "This paper discusses the TravisTorrent dataset and provides new research opportunities for SWAN 2017.",
+            "name": "SWAN2017-meinel",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/SWAN2017-meinel",
+            "languages": {
+                "Jupyter Notebook": 92.13,
+                "TeX": 7.64,
+                "Makefile": 0.23
+            }
+        },
+        {
+            "id": 6328,
+            "description": "Paper for Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1) - http://wssspe.researchcomputing.org.uk/wssspe5-1",
+            "name": "wssspe5-1-software-engineering-community",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/wssspe5-1-software-engineering-community",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6327,
+            "description": "Sharing and Training Knowledge about Open Source Licenses in Aeronautics\r\n\r\nhttp://aeroconf.org/",
+            "name": "ieee-aerospace2018-open-source-licensing",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/ieee-aerospace2017-open-source-licensing",
+            "languages": {
+                "TeX": 99.12,
+                "Makefile": 0.88
+            }
+        },
+        {
+            "id": 6326,
+            "description": "Sharing Knowledge about Open Source Licenses at DLR\r\n\r\nhttp://opensym.lero.ie/",
+            "name": "opensym2017-open-source-knowledge-sharing",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/opensym2017-open-source-knowledge-sharing",
+            "languages": {
+                "TeX": 98.63,
+                "Makefile": 1.37
+            }
+        },
+        {
+            "id": 6325,
+            "description": "OSGi Visualisation as islands (http://ieeevr.org/2018/)",
+            "name": "ieeevr2018-osgi-islandviz",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/ieeevr2018-osgi-islandviz",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6323,
+            "description": "Paper for  2018 International Workshop on Software Engineering for Science (SE4SCIENCE'18) - http://se4science.org/workshops/se4science18/cfp.htm",
+            "name": "se4science18-se-community",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/chase2018-se-community",
+            "languages": {
+                "TeX": 99.35,
+                "Makefile": 0.65
+            }
+        },
+        {
+            "id": 6322,
+            "description": "Paper for First International Workshop on Security Awareness from Design to Deployment: http://design.se.rit.edu/SEAD2018/pages/papers.html",
+            "name": "sead18-sse-vision",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/sead18-sse-vision",
+            "languages": {
+                "TeX": 99.58,
+                "Makefile": 0.42
+            }
+        },
+        {
+            "id": 6316,
+            "description": "Abstract for the Conference of Research Software Engineers 2017 Manchester on the 3-4 September 2018 (http://rse.ac.uk/conf2018/call-talks-posters/) ",
+            "name": "rse2018-rse-training-at-DLR",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/rse2018-rse-training-at-DLR",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 6314,
+            "description": "Data for paper for Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE6.1) - http://wssspe.researchcomputing.org.uk/wssspe6-1\r\n\r\nPaper: https://gitlab-ee.sc.dlr.de/ivs-paper/wssspe6-1-knowledge-exchange-workshops",
+            "name": "wssspe6-1-knowledge-exchange-workshops-data",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/wssspe6-1-knowledge-exchange-workshops-data",
+            "languages": {
+                "Jupyter Notebook": 99.09,
+                "Python": 0.91
+            }
+        },
+        {
+            "id": 6313,
+            "description": "Paper for Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE6.1) - http://wssspe.researchcomputing.org.uk/wssspe6-1 Related data set: https://gitlab-ee.sc.dlr.de/ivs-paper/analysis-dlr-se-waws",
+            "name": "wssspe6-1-knowledge-exchange-workshops",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/wssspe6-1-knowledge-exchange-workshops",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6312,
+            "description": "This project mirrors the original on GitHub. ",
+            "name": "analysis-dlr-se-waws",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/analysis-dlr-se-waws",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 6311,
+            "description": "Further details: https://aeroconf.org/\r\n\r\nThe paper makes use of the following data set: https://gitlab-ee.sc.dlr.de/ivs-paper/analysis-dlr-se-waws",
+            "name": "ieee-aerospace2019-analytics-dlr-se-community",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/ieee-aerospace2019-analytics-dlr-se-community",
+            "languages": {
+                "TeX": 78.29,
+                "HTML": 20.88,
+                "Makefile": 0.83
+            }
+        },
+        {
+            "id": 6310,
+            "description": "Visualizing Software Architectures in Virtual Reality with an Island Metaphor\r\nHCI International 2018\r\nhttp://2018.hci.international",
+            "name": "hcii2018-vamr-softvis-vr",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/hcii2018-vamr-softvis-vr",
+            "languages": {
+                "TeX": 99.57,
+                "Makefile": 0.43
+            }
+        },
+        {
+            "id": 6309,
+            "description": "IslandViz: A Tool for Visualizing Modular Software Systems in Virtual Reality\r\nVISSOFT 2018 Tool Paper\r\nhttp://vissoft18.etsii.urjc.es/",
+            "name": "vissoft2018-tool-islandviz",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/vissoft2018-tool-islandviz",
+            "languages": {
+                "TeX": 99.78,
+                "Makefile": 0.22
+            }
+        },
+        {
+            "id": 6308,
+            "description": "Visualization of Software Architectures in Virtual Reality and Augmented Reality\r\nhttps://aeroconf.org/",
+            "name": "aerospace2019-software-visualization",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/aerospace2019-software-visualization",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6307,
+            "description": "Paper about F2x for PyHPC 2018",
+            "name": "pyhpc18-F2x",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/pyhpc18-F2x",
+            "languages": {
+                "TeX": 80.09,
+                "Perl 6": 7.56,
+                "Python": 6.41,
+                "Makefile": 2.38,
+                "Fortran": 2.18
+            }
+        },
+        {
+            "id": 6306,
+            "description": "Graph-Based GUI for RBAC Administration (Late Breaking Work)",
+            "name": "CHI2019",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/chi2019",
+            "languages": {
+                "TeX": 99.51,
+                "Makefile": 0.49
+            }
+        },
+        {
+            "id": 6290,
+            "description": "",
+            "name": "vrst2019-igt",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/2019-vrst-igt",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6289,
+            "description": "",
+            "name": "chi2020-islandviz-progressbar",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/chi2020-islandviz-progressbar",
+            "languages": {
+                "C#": 67.22,
+                "TeX": 11.44,
+                "HTML": 7.77,
+                "JavaScript": 5.29,
+                "CSS": 4.57
+            }
+        },
+        {
+            "id": 6288,
+            "description": "",
+            "name": "arxiv2019-rce",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/arxiv2019-rce",
+            "languages": {
+                "TeX": 99.23,
+                "Makefile": 0.77
+            }
+        },
+        {
+            "id": 6286,
+            "description": "",
+            "name": "ieee-vr2020-igt-results",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/ieee-vr2020-igt-results",
+            "languages": {
+                "TeX": 95.97,
+                "CSS": 3.68,
+                "PostScript": 0.35
+            }
+        },
+        {
+            "id": 6285,
+            "description": "IEEE AeroSpace 2020 Paper:\r\nGraph-Based GUI for User Management of Voice Communication Systems\r\n\r\nabstract excepted",
+            "name": "ieee-aerospace2020-rbac-admin-interface",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/ieee-aerospace2020-rbac-admin-interface",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6284,
+            "description": "",
+            "name": "ICW2020 Practical Collaboration",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/icw2020-practical-collaboration",
+            "languages": {
+                "TeX": 99.35,
+                "Makefile": 0.65
+            }
+        },
+        {
+            "id": 6282,
+            "description": "AeroSpace Conference 2020 Paper Mirror from [Overleaf](https://www.overleaf.com/project/5d039d91aa894d7b4d4525e2)\r\n\r\n[elib](https://elib.dlr.de/135850/)",
+            "name": "ieee-aerospace2020-mining-repository-BACARDI",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/ieee-aerospace2020-mining-repository-bacardi",
+            "languages": {
+                "TeX": 99.66,
+                "Makefile": 0.34
+            }
+        },
+        {
+            "id": 6281,
+            "description": "Paper about including software history in IslandViz. The focus is on island layouts.",
+            "name": "nip2020-software-evolution",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/nip2020-islandviz-software-evolution-layout",
+            "languages": {
+                "TeX": 99.43,
+                "Makefile": 0.57
+            }
+        },
+        {
+            "id": 6280,
+            "description": "CHASE 2020 http://www.chaseresearch.org/workshops/chase2020",
+            "name": "chase20-development-of-software-at-dlr",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/5e14545c88bca600015c0a7d",
+            "languages": {
+                "TeX": 99.54,
+                "Makefile": 0.46
+            }
+        },
+        {
+            "id": 6279,
+            "description": "",
+            "name": "hci-2020-sugiyama-styled-graphs",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/hci-2020-sugiyama-styled-graphs",
+            "languages": {
+                "TeX": 72.14,
+                "HTML": 26.92,
+                "Makefile": 0.94
+            }
+        },
+        {
+            "id": 6278,
+            "description": "",
+            "name": "desire-2020-conversational-news",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/desire-2020-conversational-news",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6276,
+            "description": "",
+            "name": "muc2019-islandviz-demo",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/muc2019-islandviz-demo",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6275,
+            "description": "",
+            "name": "Cikm 2020 Repository Mining",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/cikm-2020-repository-mining",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6274,
+            "description": "",
+            "name": "Apns2020 Network Text Analysis",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/apns2020-network-text-analysis",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6273,
+            "description": "A Qualitative Study of Machine Learning Practices andEngineering Challenges in Earth Observation",
+            "name": "esem2020_ml_in_eo",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/paper/eseiw2020-xyz",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 6174,
+            "description": "This repository stores the work related to Long Short Term Memory - LSTM.",
+            "name": "lstm",
+            "web_url": "https://gitlab.dlr.de/pi-dept-2/gruvi/lstm",
+            "languages": {
+                "HTML": 71.91,
+                "Jupyter Notebook": 28.03,
+                "Python": 0.06
+            }
+        },
+        {
+            "id": 6170,
+            "description": "Ansible configuration of our hpda cluster ",
+            "name": "Ansible-HPDA-Cluster",
+            "web_url": "https://gitlab.dlr.de/sc/sc-intern/ansible-hpda-cluster",
+            "languages": {
+                "Shell": 62.26,
+                "Perl": 18.62,
+                "Python": 17.42,
+                "HTML": 1.7
+            }
+        },
+        {
+            "id": 6145,
+            "description": "customizations and macros for DLR's Confluence instance",
+            "name": "DLR Essentials",
+            "web_url": "https://gitlab.dlr.de/dlrwiki/dlr-plugins-for-confluence/dlr-essentials",
+            "languages": {
+                "Java": 68.63,
+                "CSS": 28.16,
+                "JavaScript": 3.21
+            }
+        },
+        {
+            "id": 6006,
+            "description": "solrev - WP 2.2",
+            "name": "solrev_ap2.2",
+            "web_url": "https://gitlab.dlr.de/zech_ma/solrev_ap2_2",
+            "languages": {
+                "Jupyter Notebook": 98.1,
+                "Shell": 1.9
+            }
+        },
+        {
+            "id": 5984,
+            "description": "",
+            "name": "heat",
+            "web_url": "https://gitlab.dlr.de/helmholtz-analytics/heat",
+            "languages": {
+                "Python": 98.13,
+                "Jupyter Notebook": 1.84,
+                "Dockerfile": 0.02
+            }
+        },
+        {
+            "id": 5884,
+            "description": "",
+            "name": "OADpost",
+            "web_url": "https://gitlab.dlr.de/froe_bn/oadpost",
+            "languages": {
+                "Python": 97.05,
+                "TeX": 2.95
+            }
+        },
+        {
+            "id": 5872,
+            "description": "A client webpage for nl2pl models for demonstration purposes.",
+            "name": "nl2pl-demo",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/nl2pl-demo",
+            "languages": {
+                "JavaScript": 96.79,
+                "HTML": 2.49,
+                "Python": 0.73
+            }
+        },
+        {
+            "id": 5829,
+            "description": "",
+            "name": "SimBenchmark",
+            "web_url": "https://gitlab.dlr.de/aiara_workspace/simbenchmark",
+            "languages": {
+                "C++": 36.88,
+                "Python": 28.27,
+                "Jupyter Notebook": 25.39,
+                "CMake": 3.91,
+                "Java": 3.28
+            }
+        },
+        {
+            "id": 5804,
+            "description": "",
+            "name": "Cara Architecture paper",
+            "web_url": "https://gitlab.dlr.de/dlr-sp/cara-architecture-paper",
+            "languages": {
+                "Python": 62.56,
+                "TeX": 35.74,
+                "Makefile": 1.7
+            }
+        },
+        {
+            "id": 5786,
+            "description": "",
+            "name": "ba-dominik-schneider",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/student-reports/bachelor-arbeit",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 5757,
+            "description": "Example plain HTML site using GitLab Pages: https://pages.gitlab.io/plain-html",
+            "name": "data analysis meetup",
+            "web_url": "https://gitlab.dlr.de/psl/data-analysis-meetup",
+            "languages": {
+                "HTML": 66.88,
+                "CSS": 33.12
+            }
+        },
+        {
+            "id": 5663,
+            "description": "This repo holds the code to transfer REMix results to BENOPT",
+            "name": "REMix-BENOPT interface",
+            "web_url": "https://gitlab.dlr.de/beniver/remix-benopt-interface",
+            "languages": {
+                "Jupyter Notebook": 95.44,
+                "Python": 4.56
+            }
+        },
+        {
+            "id": 5641,
+            "description": "This repository contains NLP Tutorial for WAW Machine learning-6. ",
+            "name": "waw-ml-6",
+            "web_url": "https://gitlab.dlr.de/sant_si/waw-ml-6",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 5417,
+            "description": "repository with LaTeX templates for MMX-Rover documents.\r\n\r\nforked from the HB-RY-AVS DRL document templates: https://hbryavsci1l.hb.dlr.de:8929/avionics-software/xetex-document-base",
+            "name": "xetex-document-mmx",
+            "web_url": "https://gitlab.dlr.de/pass_fe/xetex-document-mmx",
+            "languages": {
+                "TeX": 81.53,
+                "Makefile": 9.08,
+                "Python": 8.91,
+                "Shell": 0.48
+            }
+        },
+        {
+            "id": 5381,
+            "description": "Provenance model and templates for Quantified Self data.",
+            "name": "Quantified Self PROV",
+            "web_url": "https://gitlab.dlr.de/provenance/quantified-self-prov",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 5275,
+            "description": "Template for a report using Latex",
+            "name": "DLR report  latex template ",
+            "web_url": "https://gitlab.dlr.de/west_an/dlr-report-latex-template",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 5234,
+            "description": "SVN to git import from https://svn.sistec.dlr.de/svn/paper/trunk/",
+            "name": "Paper",
+            "web_url": "https://gitlab.dlr.de/sc/sc-intern/paper",
+            "languages": {
+                "TeX": 47.38,
+                "PostScript": 31.27,
+                "Java": 11.11,
+                "HTML": 5.58,
+                "GAP": 1.72
+            }
+        },
+        {
+            "id": 5166,
+            "description": "This repository contains the source of the Web site: https://rse.dlr.de",
+            "name": "rse.dlr.de",
+            "web_url": "https://gitlab.dlr.de/se-network/rse.dlr.de",
+            "languages": {
+                "SCSS": 77.94,
+                "HTML": 17.69,
+                "Ruby": 4.37
+            }
+        },
+        {
+            "id": 5138,
+            "description": "",
+            "name": "Thesis",
+            "web_url": "https://gitlab.dlr.de/oste_ar/thesis",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 5093,
+            "description": "",
+            "name": "csp-space-debris",
+            "web_url": "https://gitlab.dlr.de/scivis/cosmoscout/csp-space-debris",
+            "languages": {
+                "C++": 95.21,
+                "GLSL": 3.13,
+                "CMake": 1.05,
+                "JavaScript": 0.32,
+                "HTML": 0.29
+            }
+        },
+        {
+            "id": 4999,
+            "description": "Interface between Mobile Measurement System and Measurement Control System",
+            "name": "freeControlsInterface",
+            "web_url": "https://gitlab.dlr.de/as-boa/freeControlsInterface",
+            "languages": {
+                "HTML": 40.57,
+                "JavaScript": 34.63,
+                "CSS": 20.02,
+                "Python": 4.75,
+                "Shell": 0.02
+            }
+        },
+        {
+            "id": 4996,
+            "description": "",
+            "name": "Mobile Measurement System",
+            "web_url": "https://gitlab.dlr.de/as-boa/mobile-measurement-system",
+            "languages": {
+                "Python": 67.98,
+                "HTML": 25.99,
+                "Shell": 4.74,
+                "Makefile": 1.07,
+                "Dockerfile": 0.22
+            }
+        },
+        {
+            "id": 4931,
+            "description": "Automatic defect detection for selective laser melting using machine learning - Masterthesis Philipp Rosauer in coorporation with the Institute for Materials Research - Metallic Structures and Hybrid Material Systems",
+            "name": "ML for SLM Thesis Philipp",
+            "web_url": "https://gitlab.dlr.de/sc-hpc-iao/ml-for-slm-thesis-philipp",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 4929,
+            "description": "",
+            "name": "humanoids2020contact",
+            "web_url": "https://gitlab.dlr.de/mapr-hm/humanoids2020contact",
+            "languages": {
+                "TeX": 99.47,
+                "Makefile": 0.53
+            }
+        },
+        {
+            "id": 4928,
+            "description": "",
+            "name": "report_ss2020",
+            "web_url": "https://gitlab.dlr.de/mapr-hm/report_ss2020",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 4927,
+            "description": "",
+            "name": "arc2020abstract",
+            "web_url": "https://gitlab.dlr.de/mapr-hm/arc2020abstract",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 4925,
+            "description": "Repo zur Bachelorarbeit zu Vorkonditionieren f\u00fcr das FESIM Modell",
+            "name": "ba_fesim",
+            "web_url": "https://gitlab.dlr.de/sc-hpc/ba_fesim",
+            "languages": {
+                "Jupyter Notebook": 61.33,
+                "C": 17.35,
+                "Fortran": 12.29,
+                "C++": 4.69,
+                "Python": 3.62
+            }
+        },
+        {
+            "id": 4889,
+            "description": "Abstract, paper, research report for semester 1 of MAPR (futuro wp1)",
+            "name": "semester1",
+            "web_url": "https://gitlab.dlr.de/mapr-hm/semester1",
+            "languages": {
+                "TeX": 99.46,
+                "Makefile": 0.54
+            }
+        },
+        {
+            "id": 4712,
+            "description": "",
+            "name": "ScOSA Modeling Paper",
+            "web_url": "https://gitlab.dlr.de/kova_an/scosa-modeling-paper",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 4655,
+            "description": "Reusable components for Deep Learning",
+            "name": "Deep Learning",
+            "web_url": "https://gitlab.dlr.de/heid_ko/deep_learning",
+            "languages": {
+                "Jupyter Notebook": 85.05,
+                "Python": 14.95
+            }
+        },
+        {
+            "id": 4532,
+            "description": "",
+            "name": "cpacs-basefile-generator",
+            "web_url": "https://gitlab.dlr.de/maku_an/cpacs-basefile-generator",
+            "languages": {
+                "HTML": 94.47,
+                "Python": 5.53
+            }
+        },
+        {
+            "id": 4464,
+            "description": "",
+            "name": "selec_shape_matching_ba_philipp",
+            "web_url": "https://gitlab.dlr.de/sc-hpc-iao/selec_shape_matching_ba_philipp",
+            "languages": {
+                "Python": 81.06,
+                "TeX": 18.94
+            }
+        },
+        {
+            "id": 4457,
+            "description": "",
+            "name": "paper_esco_optimization_of_turbfan_engine",
+            "web_url": "https://gitlab.dlr.de/sc-hpc-iao/paper_esco_optimization_of_turbfan_engine",
+            "languages": {
+                "TeX": 99.53,
+                "PostScript": 0.47
+            }
+        },
+        {
+            "id": 4450,
+            "description": "",
+            "name": "berichte_archiv",
+            "web_url": "https://gitlab.dlr.de/sc-hpc/berichte_archiv",
+            "languages": {
+                "TeX": 99.36,
+                "LOLCODE": 0.62,
+                "Makefile": 0.02,
+                "Shell": 0.0
+            }
+        },
+        {
+            "id": 4351,
+            "description": "Comparison of property models for the prediction of jet fuel properties",
+            "name": "Comparison_Property_Models",
+            "web_url": "https://gitlab.dlr.de/hall_ce/comparison_property_models",
+            "languages": {
+                "HTML": 99.87,
+                "Jupyter Notebook": 0.09,
+                "Python": 0.04
+            }
+        },
+        {
+            "id": 4334,
+            "description": "Classifiers and pre-trained models for physics-based reasoning pipelines",
+            "name": "model_zoo",
+            "web_url": "https://gitlab.dlr.de/futuro/code/model_zoo",
+            "languages": {
+                "Jupyter Notebook": 99.38,
+                "Python": 0.62
+            }
+        },
+        {
+            "id": 4330,
+            "description": "",
+            "name": "SECESA 2020",
+            "web_url": "https://gitlab.dlr.de/dw-dpp/publications/secesa-2020",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 4326,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/stop_ja/latex-templates",
+            "languages": {
+                "TeX": 99.75,
+                "Batchfile": 0.17,
+                "Lua": 0.08,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 4179,
+            "description": "Example plain HTML site using GitLab Pages: https://pages.gitlab.io/plain-html",
+            "name": "testing",
+            "web_url": "https://gitlab.dlr.de/pues_sv/pues_sv.pages.gitlab.dlr.de",
+            "languages": {
+                "HTML": 66.88,
+                "CSS": 33.12
+            }
+        },
+        {
+            "id": 4131,
+            "description": "Analysis of the thermal stability breakpoint jet fuel property with fuels form the DLR database",
+            "name": "Thermal_stability_breakpoint_analysis",
+            "web_url": "https://gitlab.dlr.de/rauc_ba/thermal_stability_breakpoint_analysis",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 4111,
+            "description": "Analysis of the thermal stability breakpoint jet fuel property with fuels form the DLR database",
+            "name": "Thermal_stability_breakpoint_analysis",
+            "web_url": "https://gitlab.dlr.de/hall_ce/thermal_stability_breakpoint_analysis",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 4084,
+            "description": "Customized tasking code generation for scosa.",
+            "name": "ScOSA_TML",
+            "web_url": "https://gitlab.dlr.de/tasking-modeling-language/scosa_tml",
+            "languages": {
+                "Xtend": 83.59,
+                "Java": 10.14,
+                "HTML": 6.27
+            }
+        },
+        {
+            "id": 4081,
+            "description": "",
+            "name": "ma-logClustering-SebastianWiesendahl",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/logClustering-SebastianWiesendahl",
+            "languages": {
+                "Julia": 92.08,
+                "Jupyter Notebook": 7.7,
+                "Python": 0.22
+            }
+        },
+        {
+            "id": 4066,
+            "description": "Since epic games took the wiki offline, here's a dump from wayback machine",
+            "name": "UnrealWikiCapture",
+            "web_url": "https://gitlab.dlr.de/gitlab-tes-val/unrealwikicapture",
+            "languages": {
+                "HTML": 84.18,
+                "JavaScript": 15.7,
+                "Rebol": 0.11
+            }
+        },
+        {
+            "id": 3916,
+            "description": "",
+            "name": "florist",
+            "web_url": "https://gitlab.dlr.de/florist/florist",
+            "languages": {
+                "HTML": 100.0
+            }
+        },
+        {
+            "id": 3903,
+            "description": "This library contains classes to implement a simple satellite terminal over DVB-S2 with ACM.",
+            "name": "satx-libterm",
+            "web_url": "https://gitlab.dlr.de/satx/satx-libterm",
+            "languages": {
+                "Python": 76.78,
+                "Roff": 20.46,
+                "C++": 2.65,
+                "Batchfile": 0.06,
+                "Shell": 0.05
+            }
+        },
+        {
+            "id": 3902,
+            "description": "This project contains a library that implements XOR bi-directional network coding and a simple satellite terminal and gateway that use this method over DVB-S2 with ACM.",
+            "name": "satx-networkcoding",
+            "web_url": "https://gitlab.dlr.de/satx/satx-networkcoding",
+            "languages": {
+                "Python": 76.89,
+                "Roff": 20.51,
+                "C++": 2.48,
+                "Batchfile": 0.06,
+                "Shell": 0.05
+            }
+        },
+        {
+            "id": 3901,
+            "description": "This library handles the interface to NewTec modems and could also handle the interface to other modems.",
+            "name": "satx-libmodem",
+            "web_url": "https://gitlab.dlr.de/satx/satx-libmodem",
+            "languages": {
+                "Python": 77.55,
+                "Roff": 20.67,
+                "C++": 1.65,
+                "Batchfile": 0.06,
+                "Shell": 0.05
+            }
+        },
+        {
+            "id": 3900,
+            "description": "A small library to unify the handling of arbitrary packet sending and removing between FreeBSD and Linux.",
+            "name": "satx-libether",
+            "web_url": "https://gitlab.dlr.de/satx/satx-libether",
+            "languages": {
+                "Python": 77.47,
+                "Roff": 20.64,
+                "C++": 1.79,
+                "Batchfile": 0.06,
+                "Shell": 0.05
+            }
+        },
+        {
+            "id": 3899,
+            "description": "C++ library to parse an XML file with configuration parameters and present it as an easily searchable tree to the user.",
+            "name": "satx-libconfig",
+            "web_url": "https://gitlab.dlr.de/satx/satx-libconfig",
+            "languages": {
+                "Python": 66.04,
+                "Roff": 17.59,
+                "C++": 16.27,
+                "Batchfile": 0.05,
+                "Shell": 0.04
+            }
+        },
+        {
+            "id": 3898,
+            "description": "This library parses and creates L3 (ARP and IPv4/v6) packets. It contains also an ARP cache and a packet filter with a small filter DSL.",
+            "name": "satx-libl3",
+            "web_url": "https://gitlab.dlr.de/satx/satx-libl3",
+            "languages": {
+                "Python": 66.18,
+                "Roff": 17.56,
+                "C++": 16.01,
+                "Yacc": 0.14,
+                "Shell": 0.06
+            }
+        },
+        {
+            "id": 3897,
+            "description": "C and C++ library for satellite layer 2 protocols. Contains GSE and RLE.",
+            "name": "satx-libl2",
+            "web_url": "https://gitlab.dlr.de/satx/satx-libl2",
+            "languages": {
+                "Python": 44.81,
+                "C++": 39.44,
+                "Roff": 11.87,
+                "C": 3.77,
+                "Awk": 0.04
+            }
+        },
+        {
+            "id": 3834,
+            "description": "In this project a DLR poster template based on the tcolorbox package is prepared in a way that it can be transferred into the normal DLR Latex Template. - So this is where the early development phases will be made.",
+            "name": "DLRposter",
+            "web_url": "https://gitlab.dlr.de/beck_rb/dlrposter",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 3766,
+            "description": "Compartmental models are a technique used to simplify the mathematical modelling of infectious disease. The population is divided into compartments, with the assumption that every individual in the same compartment has the same characteristics.",
+            "name": "Epidemiology",
+            "web_url": "https://gitlab.dlr.de/hpc-against-corona/epidemiology",
+            "languages": {
+                "C++": 50.91,
+                "Python": 25.07,
+                "JavaScript": 17.63,
+                "CMake": 3.06,
+                "Jupyter Notebook": 2.41
+            }
+        },
+        {
+            "id": 3735,
+            "description": "",
+            "name": "satx-liblayer",
+            "web_url": "https://gitlab.dlr.de/satx/satx-liblayer",
+            "languages": {
+                "Python": 60.39,
+                "C++": 23.82,
+                "Roff": 15.4,
+                "MATLAB": 0.24,
+                "Shell": 0.07
+            }
+        },
+        {
+            "id": 3646,
+            "description": "",
+            "name": "pupil-dilation",
+            "web_url": "https://gitlab.dlr.de/nzm/pupil-dilation",
+            "languages": {
+                "Jupyter Notebook": 99.91,
+                "Python": 0.09
+            }
+        },
+        {
+            "id": 3622,
+            "description": "openvocs source code repository ",
+            "name": "code",
+            "web_url": "https://gitlab.dlr.de/openvocs/code",
+            "languages": {
+                "C": 89.72,
+                "JavaScript": 4.17,
+                "Python": 2.25,
+                "CSS": 1.76,
+                "Makefile": 0.89
+            }
+        },
+        {
+            "id": 3481,
+            "description": "",
+            "name": "project-coastalx",
+            "web_url": "https://gitlab.dlr.de/ukis-frontend/project-coastalx",
+            "languages": {
+                "TypeScript": 90.07,
+                "HTML": 3.9,
+                "SCSS": 3.14,
+                "Python": 2.25,
+                "JavaScript": 0.63
+            }
+        },
+        {
+            "id": 3407,
+            "description": "",
+            "name": "SupernoVAE",
+            "web_url": "https://gitlab.dlr.de/leng_ch/supernovae",
+            "languages": {
+                "Jupyter Notebook": 98.54,
+                "Python": 1.44,
+                "Shell": 0.02,
+                "CSS": 0.0
+            }
+        },
+        {
+            "id": 3377,
+            "description": "The work of automation is done on top of the benchmarking of evaluation of sast tools: https://gitlab.dlr.de/dw-its-sst/sastevaluation",
+            "name": "Automation of Sastevaluation",
+            "web_url": "https://gitlab.dlr.de/dw-its-sst/automation-of-sastevaluation",
+            "languages": {
+                "Python": 63.67,
+                "Shell": 24.21,
+                "C": 11.57,
+                "CSS": 0.55
+            }
+        },
+        {
+            "id": 3291,
+            "description": null,
+            "name": "analysis_atmospheric_so2",
+            "web_url": "https://gitlab.dlr.de/hedelt/analysis_atmospheric_so2",
+            "languages": {
+                "Jupyter Notebook": 96.46,
+                "Python": 3.05,
+                "Makefile": 0.49
+            }
+        },
+        {
+            "id": 3289,
+            "description": "",
+            "name": "SO2LH",
+            "web_url": "https://gitlab.dlr.de/hedelt/so2lh",
+            "languages": {
+                "Python": 43.16,
+                "IDL": 33.5,
+                "CSS": 8.7,
+                "JavaScript": 5.99,
+                "HTML": 4.73
+            }
+        },
+        {
+            "id": 3273,
+            "description": "Comparison of the ERA-5 and Coastdat-2 data",
+            "name": "weather_data",
+            "web_url": "https://gitlab.dlr.de/rave_or/weather_data_comparison",
+            "languages": {
+                "Python": 95.79,
+                "Jupyter Notebook": 4.21
+            }
+        },
+        {
+            "id": 3261,
+            "description": "Pre-release stuff / experimental code snippets / prototyping versions....",
+            "name": "Macro Pre-Release",
+            "web_url": "https://gitlab.dlr.de/bald_to/macro-pre-release",
+            "languages": {
+                "Jupyter Notebook": 56.88,
+                "Python": 35.74,
+                "TeX": 7.38
+            }
+        },
+        {
+            "id": 3224,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/balt_ch/latex-templates",
+            "languages": {
+                "TeX": 99.75,
+                "Batchfile": 0.17,
+                "Lua": 0.08,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 3066,
+            "description": "Comparison of weather models (work in progress)",
+            "name": "weather_data",
+            "web_url": "https://gitlab.dlr.de/zech_ma/weather_data_comparison",
+            "languages": {
+                "Jupyter Notebook": 97.82,
+                "Python": 2.18
+            }
+        },
+        {
+            "id": 3035,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/mace_jo/latex-templates",
+            "languages": {
+                "TeX": 99.75,
+                "Batchfile": 0.17,
+                "Lua": 0.08,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 2844,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/yao_we/latex-templates",
+            "languages": {
+                "TeX": 99.74,
+                "Batchfile": 0.17,
+                "Lua": 0.08,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 2811,
+            "description": "Work in progress: Comparison of the ERA-5 and Coastdat-2 data",
+            "name": "weather_data",
+            "web_url": "https://gitlab.dlr.de/propower/weather_data_comparison",
+            "languages": {
+                "Python": 95.79,
+                "Jupyter Notebook": 4.21
+            }
+        },
+        {
+            "id": 2636,
+            "description": "Paper about Pixel Response Function (PRF) Transformation of cameras using Tikhonov regularization and pixel cross-correlations.",
+            "name": "paper-prf-transformation",
+            "web_url": "https://gitlab.dlr.de/opairs/paper-prf-transformation",
+            "languages": {
+                "Jupyter Notebook": 94.96,
+                "TeX": 4.87,
+                "Python": 0.17
+            }
+        },
+        {
+            "id": 2607,
+            "description": "This is an introduction to LCA with Brightway2",
+            "name": "Introduction to BW2",
+            "web_url": "https://gitlab.dlr.de/brightway-for-prospecive-lca/introduction-to-bw2",
+            "languages": {
+                "Jupyter Notebook": 99.67,
+                "Python": 0.33
+            }
+        },
+        {
+            "id": 2566,
+            "description": "Common BibTeX bibliography for OpAiRS papers",
+            "name": "bibliography",
+            "web_url": "https://gitlab.dlr.de/opairs/bibliography",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 2476,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/dlr-sp/latex-templates",
+            "languages": {
+                "TeX": 99.92,
+                "Lua": 0.08,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 2473,
+            "description": "",
+            "name": "2019_ARBookChapter",
+            "web_url": "https://gitlab.dlr.de/2020_arbookchapter/2019_arbookchapter",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 2436,
+            "description": "Fork of the Nasas WorldWind Community Edition",
+            "name": "WorldWind Community Edition",
+            "web_url": "https://gitlab.dlr.de/mi/marlin/code-worldwind-ce",
+            "languages": {
+                "Java": 98.83,
+                "HTML": 1.12,
+                "PHP": 0.03,
+                "Shell": 0.01,
+                "Batchfile": 0.0
+            }
+        },
+        {
+            "id": 2419,
+            "description": "",
+            "name": "GDV-Frontend",
+            "web_url": "https://gitlab.dlr.de/tfnds/gdv-frontend",
+            "languages": {
+                "JavaScript": 84.88,
+                "CSS": 10.5,
+                "HTML": 4.62
+            }
+        },
+        {
+            "id": 2390,
+            "description": null,
+            "name": "analysis_atmospheric_so2",
+            "web_url": "https://gitlab.dlr.de/mans_is/analysis_atmospheric_so2",
+            "languages": {
+                "Jupyter Notebook": 99.56,
+                "Python": 0.38,
+                "Makefile": 0.06
+            }
+        },
+        {
+            "id": 2385,
+            "description": "Proxy or receiving and sending MAVLink messages from ROV to Topside Computer",
+            "name": "MAVProxy_Linktool",
+            "web_url": "https://gitlab.dlr.de/mi/marlin/mavproxy_linktool",
+            "languages": {
+                "Python": 88.97,
+                "JavaScript": 9.49,
+                "HTML": 0.78,
+                "Inno Setup": 0.5,
+                "Batchfile": 0.25
+            }
+        },
+        {
+            "id": 2316,
+            "description": "The repository contains the example code used in this workshop.",
+            "name": "Astronaut Analysis Archived",
+            "web_url": "https://gitlab.dlr.de/dlr-se-workshops/sustainable-sw-dev-for-researchers/astronaut-analysis",
+            "languages": {
+                "Jupyter Notebook": 95.73,
+                "Python": 4.27
+            }
+        },
+        {
+            "id": 2259,
+            "description": "The repository contains information and scripts concerning migrating from [DLR-Mantis](https://mantis.dlr.de/mantis) to the GitLab issue tracker.",
+            "name": "mantis2gitlab",
+            "web_url": "https://gitlab.dlr.de/migrate2gitlab/mantis2gitlab",
+            "languages": {
+                "Jupyter Notebook": 88.83,
+                "Python": 11.17
+            }
+        },
+        {
+            "id": 2249,
+            "description": "",
+            "name": "DH-Studenten",
+            "web_url": "https://gitlab.dlr.de/fw-gitlab/dh-studenten",
+            "languages": {
+                "Jupyter Notebook": 98.65,
+                "PowerShell": 0.82,
+                "TeX": 0.26,
+                "Python": 0.17,
+                "Java": 0.09
+            }
+        },
+        {
+            "id": 2205,
+            "description": "For working on our own papers",
+            "name": "paper_repository",
+            "web_url": "https://gitlab.dlr.de/dw_dma_machine_learning/paper_repository",
+            "languages": {
+                "TeX": 99.91,
+                "Python": 0.09,
+                "Makefile": 0.01
+            }
+        },
+        {
+            "id": 2163,
+            "description": "",
+            "name": "2019_ARBookChapter",
+            "web_url": "https://gitlab.dlr.de/bern_an/2019_arbookchapter",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 2152,
+            "description": "harbour_cam_vehicles_and_people old java code",
+            "name": "harbour_cam_vehicles_and_people",
+            "web_url": "https://gitlab.dlr.de/barn_sa/harbour_cam_vehicles_and_people",
+            "languages": {
+                "Java": 41.62,
+                "Python": 35.17,
+                "HTML": 9.03,
+                "Shell": 4.74,
+                "JavaScript": 4.16
+            }
+        },
+        {
+            "id": 2147,
+            "description": "Example of sending images using flask and retrieving",
+            "name": "FlaskExample",
+            "web_url": "https://gitlab.dlr.de/barn_sa/flaskexample",
+            "languages": {
+                "HTML": 53.23,
+                "Python": 46.77
+            }
+        },
+        {
+            "id": 2146,
+            "description": "Cosmics_project_plan",
+            "name": "COSMICS_project_plan",
+            "web_url": "https://gitlab.dlr.de/barn_sa/cosmics_project_plan",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 2070,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/vist_mi/latex-templates",
+            "languages": {
+                "TeX": 99.75,
+                "Batchfile": 0.17,
+                "Lua": 0.08,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 2030,
+            "description": "",
+            "name": "Codex-Modeling-Prototype",
+            "web_url": "https://gitlab.dlr.de/maku_an/codex-modeling-prototype",
+            "languages": {
+                "Vue": 62.06,
+                "TypeScript": 22.06,
+                "Python": 7.62,
+                "JavaScript": 4.09,
+                "CSS": 3.16
+            }
+        },
+        {
+            "id": 1979,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/buec_ad/latex-templates",
+            "languages": {
+                "TeX": 99.92,
+                "Lua": 0.08,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 1906,
+            "description": "Scripts used for the paper \"Evaluation of Open Source Static Analysis Security Testing (SAST) Tools for C\" by Christoph Gentsch.",
+            "name": "SASTEvaluation",
+            "web_url": "https://gitlab.dlr.de/dw-its-sst/sastevaluation",
+            "languages": {
+                "Python": 74.56,
+                "C": 13.7,
+                "Shell": 11.09,
+                "CSS": 0.65
+            }
+        },
+        {
+            "id": 1868,
+            "description": "Institute report on Digital Thread",
+            "name": "Digital Thread Report",
+            "web_url": "https://gitlab.dlr.de/alde_ma/digital-thread-report",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 1867,
+            "description": "Example of processing chain for diverse data",
+            "name": "dg2_DLR",
+            "web_url": "https://gitlab.dlr.de/kaet_da/dg2_dlr",
+            "languages": {
+                "Python": 59.78,
+                "Jupyter Notebook": 40.22
+            }
+        },
+        {
+            "id": 1863,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/schl_ui/latex-templates",
+            "languages": {
+                "TeX": 99.92,
+                "Lua": 0.08,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 1804,
+            "description": "Physics-based Reasoning",
+            "name": "progress",
+            "web_url": "https://gitlab.dlr.de/futuro/wp1/progress",
+            "languages": {
+                "Python": 50.16,
+                "Jupyter Notebook": 31.32,
+                "JavaScript": 13.87,
+                "Shell": 4.65
+            }
+        },
+        {
+            "id": 1682,
+            "description": "Work-in-progress paper for the BigVis2020.",
+            "name": "BigVis2020",
+            "web_url": "https://gitlab.dlr.de/dw-via/bigvis2020",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 1672,
+            "description": null,
+            "name": "Notebooks",
+            "web_url": "https://gitlab.dlr.de/delo_ra/Notebooks",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 1605,
+            "description": "Template for SECESA submissions",
+            "name": "SECESA Template",
+            "web_url": "https://gitlab.dlr.de/dw-dpp/publications/secesa-template",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 1604,
+            "description": "Toward A Digital Platform For Spacecraft Manufacturing",
+            "name": "SECESA 2018 Overview",
+            "web_url": "https://gitlab.dlr.de/dw-dpp/publications/secesa-2018-overview",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 1603,
+            "description": "Digital Import of Supplier Information in Model-Based Systems Engineering Tools",
+            "name": "Product Data in MBSE Tools - Prototype",
+            "web_url": "https://gitlab.dlr.de/dw-dpp/publications/prototype-database",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 1602,
+            "description": "",
+            "name": "ISWC2020",
+            "web_url": "https://gitlab.dlr.de/dw-dpp/publications/iswc2020",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 1601,
+            "description": "Overview of Software Development Topics for the Digitalization of Industry",
+            "name": "Internal Industry Digitalization Overview",
+            "web_url": "https://gitlab.dlr.de/dw-dpp/publications/internal-2018-industry-digitalization-overview",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 1600,
+            "description": "",
+            "name": "DPMA Visit 2018",
+            "web_url": "https://gitlab.dlr.de/dw-dpp/publications/dpma-visit-2018",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 1536,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/sont_ch/latex-templates",
+            "languages": {
+                "TeX": 99.92,
+                "Lua": 0.08,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 1478,
+            "description": "Das Datenschutzkonzept des Marlin-Projekts vom DLR MI-SIT in Bremerhaven.",
+            "name": "Marlin Datenschutzkonzept",
+            "web_url": "https://gitlab.dlr.de/mi/marlin/text-datenschutzkonzept",
+            "languages": {
+                "TeX": 99.51,
+                "Shell": 0.25,
+                "Batchfile": 0.24
+            }
+        },
+        {
+            "id": 1350,
+            "description": "A talk about the REST infrastructure in the MARLIN-project.",
+            "name": "Marlin REST Talk",
+            "web_url": "https://gitlab.dlr.de/mi/marlin/talk-marlin-rest",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 1302,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/raed_ma/latex-templates",
+            "languages": {
+                "TeX": 99.7,
+                "Batchfile": 0.17,
+                "Lua": 0.08,
+                "Dockerfile": 0.05,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 1229,
+            "description": "Repository mit lauff\u00e4higen Modellen f\u00fcr und aus den Projketen NGT und NGT-FuN",
+            "name": "commonvirtualtrain",
+            "web_url": "https://gitlab.dlr.de/ngt-cvt/commonvirtualtrain",
+            "languages": {
+                "Modelica": 81.71,
+                "HTML": 16.69,
+                "MATLAB": 1.6
+            }
+        },
+        {
+            "id": 1206,
+            "description": "",
+            "name": "SYNTHESIZER",
+            "web_url": "https://gitlab.dlr.de/vf-synthesizer/synthesizer",
+            "languages": {
+                "Java": 62.91,
+                "HTML": 34.82,
+                "TSQL": 1.42,
+                "PLpgSQL": 0.82,
+                "CSS": 0.03
+            }
+        },
+        {
+            "id": 1175,
+            "description": "LaTeX sources of the Road2Simulation Guidelines created in the project Road2Simulation.",
+            "name": "r2s-guidelines",
+            "web_url": "https://gitlab.dlr.de/ts-spatial-data-processing/others/r2s-guidelines",
+            "languages": {
+                "TeX": 99.43,
+                "Batchfile": 0.57
+            }
+        },
+        {
+            "id": 1151,
+            "description": "Conference Paper for AEC 2020 about recent CPACS developments",
+            "name": "AEC 2020 cpacs paper",
+            "web_url": "https://gitlab.dlr.de/alde_ma/aec-2020-cpacs-paper",
+            "languages": {
+                "TeX": 99.78,
+                "PostScript": 0.22
+            }
+        },
+        {
+            "id": 1060,
+            "description": "Implementation of the Service Discovery Protocol for Networks of heterogeneous Sensors presented in Malte Christian Struck's Master Thesis (see https://elib.dlr.de/124779/).",
+            "name": "raspi-demo",
+            "web_url": "https://gitlab.dlr.de/mi/misc/raspi-demo",
+            "languages": {
+                "C++": 72.81,
+                "TeX": 9.73,
+                "C": 8.1,
+                "HTML": 3.94,
+                "Lua": 2.74
+            }
+        },
+        {
+            "id": 1044,
+            "description": "",
+            "name": "chenxi-masterthesis",
+            "web_url": "https://gitlab.dlr.de/kn_git_swex_masterthesis1/chenxi-masterthesis",
+            "languages": {
+                "Python": 53.41,
+                "TeX": 46.47,
+                "Shell": 0.07,
+                "Makefile": 0.05
+            }
+        },
+        {
+            "id": 1019,
+            "description": "",
+            "name": "enera",
+            "web_url": "https://gitlab.dlr.de/schy_br/enera",
+            "languages": {
+                "Jupyter Notebook": 75.7,
+                "Python": 24.3
+            }
+        },
+        {
+            "id": 973,
+            "description": "A didactic experiment. We aim to compare three state-of-the-art object detectors (YoloV3, Faster RCNN and SSD) in three different platforms (Keras, Pytorch, low-level language).",
+            "name": "seacat-detection",
+            "web_url": "https://gitlab.dlr.de/mi/misc/seacat-detection",
+            "languages": {
+                "Jupyter Notebook": 44.95,
+                "C++": 23.44,
+                "Python": 20.87,
+                "C": 6.31,
+                "Cuda": 2.43
+            }
+        },
+        {
+            "id": 939,
+            "description": "",
+            "name": "RoboticsTheory",
+            "web_url": "https://gitlab.dlr.de/shu_an/roboticstheory",
+            "languages": {
+                "TeX": 73.61,
+                "HTML": 26.29,
+                "Shell": 0.09
+            }
+        },
+        {
+            "id": 918,
+            "description": "",
+            "name": "Windfield Regression",
+            "web_url": "https://gitlab.dlr.de/kn_git_swex/windfield-regression",
+            "languages": {
+                "Python": 76.66,
+                "TeX": 23.34
+            }
+        },
+        {
+            "id": 884,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/stro_se/latex-templates",
+            "languages": {
+                "TeX": 99.92,
+                "Lua": 0.08,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 874,
+            "description": "",
+            "name": "2019_ARBookChapter",
+            "web_url": "https://gitlab.dlr.de/cesa_ge/2019_arbookchapter",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 869,
+            "description": "Tools f\u00fcr die Be- und Verarbeitung von Prov-Containern.",
+            "name": "provtool",
+            "web_url": "https://gitlab.dlr.de/dlr-sp/provtool",
+            "languages": {
+                "Python": 58.47,
+                "C": 27.27,
+                "JavaScript": 7.06,
+                "Common Workflow Language": 2.27,
+                "HTML": 2.26
+            }
+        },
+        {
+            "id": 801,
+            "description": "A parser for AIS-messages written in Java using Antlr.",
+            "name": "AIS Parser",
+            "web_url": "https://gitlab.dlr.de/mi/marlin/code-aisAntlr",
+            "languages": {
+                "Python": 82.39,
+                "JavaScript": 9.03,
+                "TeX": 3.89,
+                "HTML": 2.66,
+                "Java": 1.39
+            }
+        },
+        {
+            "id": 788,
+            "description": "A new communication protocol for the DINGO system, to provide not only waypoint data but also specific preferences to these waypoints which can be defined in a configuration file.",
+            "name": "Trajectory Commands",
+            "web_url": "https://gitlab.dlr.de/nahr_an/trajectory-commands",
+            "languages": {
+                "C++": 71.23,
+                "HTML": 17.3,
+                "TeX": 6.61,
+                "JavaScript": 1.67,
+                "CSS": 1.19
+            }
+        },
+        {
+            "id": 686,
+            "description": "Architecture Design & Optimization Reasoning Environment",
+            "name": "ADORE",
+            "web_url": "https://gitlab.dlr.de/buss_js/adore",
+            "languages": {
+                "Python": 64.3,
+                "TypeScript": 21.62,
+                "Vue": 13.44,
+                "JavaScript": 0.33,
+                "CSS": 0.2
+            }
+        },
+        {
+            "id": 684,
+            "description": "User interface for Simple Surrogate Optimization (SSO).",
+            "name": "sso-ui",
+            "web_url": "https://gitlab.dlr.de/buss_js/sso-ui",
+            "languages": {
+                "Vue": 54.48,
+                "Python": 37.41,
+                "JavaScript": 6.8,
+                "HTML": 1.18,
+                "CSS": 0.13
+            }
+        },
+        {
+            "id": 683,
+            "description": "",
+            "name": "sso-hace",
+            "web_url": "https://gitlab.dlr.de/buss_js/sso-hace",
+            "languages": {
+                "Python": 57.38,
+                "HTML": 24.75,
+                "JavaScript": 14.0,
+                "CSS": 3.86,
+                "Batchfile": 0.01
+            }
+        },
+        {
+            "id": 682,
+            "description": "Demo of a Python app with a web-based JavaScript user interface.",
+            "name": "js-gui-demo",
+            "web_url": "https://gitlab.dlr.de/buss_js/js-gui-demo",
+            "languages": {
+                "Python": 46.19,
+                "Vue": 29.62,
+                "JavaScript": 17.27,
+                "HTML": 5.67,
+                "CSS": 1.24
+            }
+        },
+        {
+            "id": 681,
+            "description": "Easy generation of surrogate models from (CPACS) DOE results, and performing analysis on it: optimization, adaptive sampling, plotting, exporting",
+            "name": "SSO",
+            "web_url": "https://gitlab.dlr.de/buss_js/sso",
+            "languages": {
+                "Python": 58.05,
+                "HTML": 24.28,
+                "JavaScript": 13.73,
+                "CSS": 3.81,
+                "Batchfile": 0.13
+            }
+        },
+        {
+            "id": 675,
+            "description": "",
+            "name": "Graphs in Python",
+            "web_url": "https://gitlab.dlr.de/maku_an/graphs-in-python",
+            "languages": {
+                "Jupyter Notebook": 100.0
+            }
+        },
+        {
+            "id": 669,
+            "description": "LyX Template using the AIAA custom document class.",
+            "name": "AIAA LyX Template",
+            "web_url": "https://gitlab.dlr.de/maku_an/aiaa-lyx-template",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 666,
+            "description": "This repository contains the paper for the AIAA AVIATION 2020 conference. It is written in LyX.",
+            "name": "AIAA AVIATION 2020 MDAx",
+            "web_url": "https://gitlab.dlr.de/maku_an/aiaa-aviation-2020-mdax",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 627,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/seth_da/latex-templates",
+            "languages": {
+                "TeX": 99.75,
+                "Batchfile": 0.17,
+                "Lua": 0.08,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 589,
+            "description": "",
+            "name": "WAW ML Print Media",
+            "web_url": "https://gitlab.dlr.de/stop_ja/waw-ml-print-media",
+            "languages": {
+                "TeX": 100.0
+            }
+        },
+        {
+            "id": 581,
+            "description": "",
+            "name": "caseFoam",
+            "web_url": "https://gitlab.dlr.de/sche_h0/casefoam",
+            "languages": {
+                "Python": 85.71,
+                "Jupyter Notebook": 7.97,
+                "C++": 6.32
+            }
+        },
+        {
+            "id": 561,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/kloe_ad/latex-templates",
+            "languages": {
+                "TeX": 99.75,
+                "Batchfile": 0.17,
+                "Lua": 0.08,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 460,
+            "description": "These are the inofficial LaTeX templates for DLR documents.",
+            "name": "LaTeX templates",
+            "web_url": "https://gitlab.dlr.de/innersource/latex-templates",
+            "languages": {
+                "TeX": 99.7,
+                "Batchfile": 0.17,
+                "Lua": 0.08,
+                "Dockerfile": 0.05,
+                "PostScript": 0.0
+            }
+        },
+        {
+            "id": 441,
+            "description": "Source code and settings for GSOC integration",
+            "name": "GSOC",
+            "web_url": "https://gitlab.dlr.de/openvocs/gsoc",
+            "languages": {
+                "C": 84.21,
+                "JavaScript": 4.43,
+                "Makefile": 4.36,
+                "CSS": 3.57,
+                "Python": 2.02
+            }
+        },
+        {
+            "id": 369,
+            "description": "Paper about Deforestation Mapping using Recurrence Quantification Analysis\r\n",
+            "name": "rqa_deforestation",
+            "web_url": "https://gitlab.dlr.de/crem_fe/rqa_deforestation",
+            "languages": {
+                "TeX": 95.79,
+                "Julia": 4.21
+            }
+        },
+        {
+            "id": 271,
+            "description": "postbox command line interface",
+            "name": "postbox",
+            "web_url": "https://gitlab.dlr.de/seth_da/postbox",
+            "languages": {
+                "Perl": 97.52,
+                "HTML": 2.48
+            }
+        }
+    ]
+}
