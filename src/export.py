@@ -4,7 +4,7 @@
 import json
 import click
 
-from helpers import Corpus
+from utils.helpers import Corpus
 
 
 class Exporter:
@@ -20,11 +20,12 @@ class Exporter:
             self.corpus = corpus
 
     def export(self, out):
+        """This method exports the corpus either to json or prints it to the console."""
         with open(out, "w") as output:
             click.echo("Exporting...")
             if self.format.lower() == "json":
                 if self.verbose:
-                    click.echo("Output format is JSON.")
+                    click.echo("Output written to {}".format(out))
                 json.dump(self.corpus.data, output, indent=4)
             elif self.format.lower() == "console":
                 if self.verbose:
