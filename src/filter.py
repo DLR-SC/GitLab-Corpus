@@ -43,6 +43,21 @@ def eval_all_percentages(project_languages, project, languages):
             pass
 
 
+def eval_condition(attribute, operator, condition):
+    """This function evaluates if the condition is true using the specified operator."""
+    if operator == "==":
+        click.echo(type(attribute) + "\t" + type(condition))
+        return attribute == condition
+    elif operator == "!=":
+        return attribute != condition
+    elif operator == "contains" and isinstance(attribute, str) and isinstance(condition, str):
+        return condition in attribute
+    elif isinstance(attribute, str) and isinstance(condition, str):
+        if condition.startswith('#') and condition.endswith('#'):
+            re.escape(condition)
+            return re.match(condition[1:-1], attribute)
+
+
 class Filter:
     """This class implements the filter options for the corpus"""
 
@@ -110,7 +125,8 @@ class Filter:
                 for project in bar:
                     if self.filter_project(project):
                         self.filtered_corpus.data["Projects"].append({key: value for key, value in project.items()
-                                                                      if key in self.attributes})
+                                                                      if key in self.attributes
+                                                                      or len(self.attributes) == 0})
         else:
             self.filtered_corpus.data = self.input_corpus.data
 
@@ -118,14 +134,18 @@ class Filter:
         """This method applies the specified filters to a project."""
         return_val = True
         for filter_option in self.filters:
-            if re.match('.*_languages', filter_option):
+            if re.match('.*_languages', filter_option):     # filter project languages
                 if return_val:
                     if self.filters[filter_option] is None:
                         pass
                     else:
                         return_val = self.check_languages(filter_option, project)
-            elif return_val:
-                return_val = project[filter_option] == self.filters[filter_option]
+            elif return_val:    # filter other attributes
+                try:
+                    operator, condition = self.filters[filter_option].split("//")
+                    return_val = eval_condition(project[filter_option], operator, condition)
+                except ValueError:
+                    pass
         return return_val
 
     def check_languages(self, filter_option, project):
