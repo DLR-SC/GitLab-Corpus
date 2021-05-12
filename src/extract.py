@@ -2,15 +2,7 @@
 # SPDX-License-Identifier: MIT
 import click
 import gitlab
-
-
-def get_category(manager_string):
-    """This helper method extracts the category"""
-    start_index = -1
-    for i in range(0, 4):
-        start_index = manager_string.find(".", start_index + 1)
-    end_index = manager_string.find("Manager")
-    return manager_string[start_index + 1:end_index] + "s"
+from gitlab.v4.objects import ProjectManager
 
 
 class Extractor:
@@ -27,8 +19,7 @@ class Extractor:
         for manager in self.managers:
             click.echo("Retrieving projects...")
             objects = manager.list(all=all_elements)
-            category = get_category(str(manager))
-            if category == 'Projects':
+            if isinstance(manager, ProjectManager):
                 click.echo("Extracting...")
                 with click.progressbar(objects) as bar:
                     if self.verbose:
@@ -57,4 +48,4 @@ class Extractor:
                                 else:
                                     pass
 
-                            self.corpus.data[category].append(project_dict)
+                            self.corpus.data["Projects"].append(project_dict)
