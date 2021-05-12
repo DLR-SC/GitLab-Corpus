@@ -36,9 +36,9 @@ def cli(config, config_path, source, verbose):
               is_flag=True)
 @click.option('--filter-file', '-f',
               help='File in yaml format which defines the filters to be used on the corpus',
-              default='resources/filters.yaml')
+              default='resources/filters.yaml', show_default=True)
 @click.option('--out', '-o', default='out/corpus.json',
-              help='Specifies the output file')
+              help='Specifies the output file', show_default=True)
 @corpus
 @command_config
 def build(config, corpus_data, all_elements, filter_file, out):
@@ -60,7 +60,7 @@ def build(config, corpus_data, all_elements, filter_file, out):
                    'cause problems for the server',
               is_flag=True)
 @click.option('--out', '-o', default='out/corpus.json',
-              help='Specifies the output file')
+              help='Specifies the output file', show_default=True)
 @corpus
 @command_config
 def extract(config, corpus_data, all_elements, out):
@@ -75,11 +75,11 @@ def extract(config, corpus_data, all_elements, out):
 @cli.command()
 @click.option('--filter-file', '-f',
               help='File in yaml format which defines the filters to be used on the corpus',
-              default='resources/filters.yaml')
+              default='resources/filters.yaml', show_default=True)
 @click.option('--input-file', '-i', default='out/corpus.json',
-              help='Specifies the file to load the corpus from')
+              help='Specifies the file to load the corpus from', show_default=True)
 @click.option('--out', '-o', default='out/corpus.json',
-              help='Specifies the output file')
+              help='Specifies the output file', show_default=True)
 @corpus
 @command_config
 def filter(config, corpus_data, filter_file, input_file, out):
@@ -95,17 +95,19 @@ def filter(config, corpus_data, filter_file, input_file, out):
 
 @cli.command()
 @click.option('--input-file', '-i', default='out/corpus.json',
-              help='Specifies the file to load the corpus from')
+              help='Specifies the file to load the corpus from', show_default=True)
 @click.option('--out', '-o', default='out/corpus.json',
-              help='Specifies the output file')
+              help='Specifies the output file', show_default=True)
+@click.option('--output-format', '-f', default='json',
+              help='Specifies the output format', show_default=True)
 @corpus
 @command_config
-def export(config, corpus_data, input_file, out):
+def export(config, corpus_data, input_file, out, output_format):
     """Export a previously extracted (and maybe filtered) corpus to another format."""
-    exporter = Exporter(config.verbose, corpus=corpus_data, format_str="json", from_file=True, file=input_file)
+    exporter = Exporter(config.verbose, corpus=corpus_data, format_str=output_format, from_file=True, file=input_file)
     exporter.export(out=out)
 
 
 if __name__ == '__main__':
-    cli(['--config-path=../resources/gitlab.cfg', 'build', '--filter-file=../resources/filters.yaml',
+    cli(['--config-path=../resources/gitlab.cfg', 'filter', '--filter-file=../resources/filters.yaml',
          '--out=../out/corpus.json'])
