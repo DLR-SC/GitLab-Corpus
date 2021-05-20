@@ -27,7 +27,7 @@ def eval_percentage(project_language_percentage, evaluation):
             return project_language_percentage != float(value)
         else:
             return False
-    except AttributeError:
+    except AttributeError:  # never occurs anymore?
         return True
 
 
@@ -36,11 +36,12 @@ def eval_all_percentages(project_languages, project, languages):
     for item in project_languages:
         try:
             if eval_percentage(project["languages"][item], languages[item]):
-                return True
+                pass
             else:
                 return False
         except KeyError:
             pass
+    return True
 
 
 def eval_condition(attribute, operator, condition):
@@ -60,7 +61,7 @@ def eval_condition(attribute, operator, condition):
     elif isinstance(attribute, str) and isinstance(condition, str):
         if condition.startswith('#') and condition.endswith('#'):
             re.escape(condition)
-            return re.match(condition[1:-1], attribute)
+            return re.match(condition[1:-1], attribute) is not None
 
 
 class Filter:
