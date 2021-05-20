@@ -12,7 +12,7 @@ from utils.helpers import Corpus
 def eval_percentage(project_language_percentage, evaluation):
     """This function checks if the evaluation specified in the filter is true for the selected language."""
     try:
-        operator, value = evaluation.split(" ")
+        operator, value = evaluation.split("//")
         if operator == "<":
             return project_language_percentage < float(value)
         elif operator == "<=":
@@ -27,7 +27,7 @@ def eval_percentage(project_language_percentage, evaluation):
             return project_language_percentage != float(value)
         else:
             return False
-    except AttributeError:
+    except AttributeError:  # never occurs anymore?
         return True
 
 
@@ -36,11 +36,12 @@ def eval_all_percentages(project_languages, project, languages):
     for item in project_languages:
         try:
             if eval_percentage(project["languages"][item], languages[item]):
-                return True
+                pass
             else:
                 return False
         except KeyError:
             pass
+    return True
 
 
 def eval_condition(attribute, operator, condition):
@@ -55,12 +56,20 @@ def eval_condition(attribute, operator, condition):
         return attribute == condition
     elif operator == "!=":
         return attribute != condition
+    elif operator == "<=" and (isinstance(attribute, int) or isinstance(attribute, float)):
+        return attribute <= condition
+    elif operator == "<" and (isinstance(attribute, int) or isinstance(attribute, float)):
+        return attribute < condition
+    elif operator == ">=" and (isinstance(attribute, int) or isinstance(attribute, float)):
+        return attribute >= condition
+    elif operator == ">" and (isinstance(attribute, int) or isinstance(attribute, float)):
+        return attribute > condition
     elif operator == "contains" and isinstance(attribute, str) and isinstance(condition, str):
         return condition in attribute
     elif isinstance(attribute, str) and isinstance(condition, str):
         if condition.startswith('#') and condition.endswith('#'):
             re.escape(condition)
-            return re.match(condition[1:-1], attribute)
+            return re.match(condition[1:-1], attribute) is not None
 
 
 class Filter:
@@ -123,15 +132,21 @@ class Filter:
     def filter(self):
         """This method filters the extracted corpus by using the previously loaded filter options. If no filter
         options were set, all attributes will be kept in the resulting corpus."""
+        click.echo("Filtering...")
+        projects_dict = self.input_corpus.data["Projects"]
         if len(self.filters) > 0:
-            projects_dict = self.input_corpus.data["Projects"]
-            click.echo("Filtering...")
             with click.progressbar(projects_dict) as bar:
                 for project in bar:
                     if self.filter_project(project):
                         self.filtered_corpus.data["Projects"].append({key: value for key, value in project.items()
                                                                       if key in self.attributes
                                                                       or len(self.attributes) == 0})
+        elif len(self.attributes) > 0:
+            with click.progressbar(projects_dict) as bar:
+                for project in bar:
+                    self.filtered_corpus.data["Projects"].append({key: value for key, value in project.items()
+                                                                  if key in self.attributes
+                                                                  or len(self.attributes) == 0})
         else:
             self.filtered_corpus.data = self.input_corpus.data
 
@@ -139,13 +154,13 @@ class Filter:
         """This method applies the specified filters to a project."""
         return_val = True
         for filter_option in self.filters:
-            if re.match('.*_languages', filter_option):     # filter project languages
+            if re.match('.*_languages', filter_option):  # filter project languages
                 if return_val:
                     if self.filters[filter_option] is None:
                         pass
                     else:
                         return_val = self.check_languages(filter_option, project)
-            elif return_val:    # filter other attributes
+            elif return_val:  # filter other attributes
                 try:
                     operator, condition = self.filters[filter_option].split("//")
                     return_val = eval_condition(project[filter_option], operator, condition)
@@ -176,4 +191,3 @@ class Filter:
                 return eval_all_percentages(project_languages, project, self.atmost_languages)
         else:
             return False  # no languages to be filtered
-
