@@ -17,3 +17,5 @@ test:
     - pip install -r requirements.txt
     - pip install --editable .
     - pytest --cov=filter --cov=extract --cov-branch --cov-report=html tests
+  tags:
+    - shell
