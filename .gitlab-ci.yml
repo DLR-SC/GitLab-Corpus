@@ -9,7 +9,6 @@ before_script:
   - pip install virtualenv
   - virtualenv venv
   - source venv/bin/activate
-  - cd corpus
 
 test:
   stage: test
