@@ -7,8 +7,9 @@ cache:
 
 before_script:
   - pip install virtualenv
-  - virtualenv venv
+  - python3 -m virtualenv venv
   - source venv/bin/activate
+  - export PYTHONPATH=
 
 test:
   stage: test
