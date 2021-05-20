@@ -1,0 +1,22 @@
+image: python:latest
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+    - venv/
+
+before_script:
+  - pip install virtualenv
+  - virtualenv venv
+  - source venv/bin/activate
+  - cd corpus
+
+test:
+  stage: test
+  script:
+    - pip install -r requirements.txt
+    - pip install --editable .
+    - pytest --cov=filter --cov=extract --cov-branch --cov-report=html tests
