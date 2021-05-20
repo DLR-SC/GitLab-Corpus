@@ -56,6 +56,14 @@ def eval_condition(attribute, operator, condition):
         return attribute == condition
     elif operator == "!=":
         return attribute != condition
+    elif operator == "<=" and (isinstance(attribute, int) or isinstance(attribute, float)):
+        return attribute <= condition
+    elif operator == "<" and (isinstance(attribute, int) or isinstance(attribute, float)):
+        return attribute < condition
+    elif operator == ">=" and (isinstance(attribute, int) or isinstance(attribute, float)):
+        return attribute >= condition
+    elif operator == ">" and (isinstance(attribute, int) or isinstance(attribute, float)):
+        return attribute > condition
     elif operator == "contains" and isinstance(attribute, str) and isinstance(condition, str):
         return condition in attribute
     elif isinstance(attribute, str) and isinstance(condition, str):
