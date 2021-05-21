@@ -11,6 +11,11 @@ before_script:
   - source venv/bin/activate
   - export PYTHONPATH=
 
+flake8:
+  stage: static analysis
+  script:
+    - flake8 --filename *.py
+
 test:
   stage: test
   script:
