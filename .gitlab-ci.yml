@@ -5,6 +5,10 @@ cache:
     - .cache/pip
     - venv/
 
+stages:
+  - static analysis
+  - test
+
 before_script:
   - pip install virtualenv
   - virtualenv venv
