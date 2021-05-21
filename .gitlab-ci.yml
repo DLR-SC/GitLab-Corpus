@@ -13,7 +13,7 @@ before_script:
   - pip install virtualenv
   - virtualenv venv
   - source venv/bin/activate
-  - export PYTHONPATH=
+  - pip install -r requirements.txt
 
 flake8:
   stage: static analysis
@@ -25,7 +25,6 @@ flake8:
 test:
   stage: test
   script:
-    - pip install -r requirements.txt
     - pip install --editable .
     - pytest --cov=filter --cov=extract --cov-branch --cov-report=html tests
   tags:
