@@ -109,4 +109,5 @@ def export(config, corpus_data, input_file, out, output_format):
 
 
 if __name__ == '__main__':
-    cli(['--config-path=../resources/gitlab.cfg', 'build', '--all-elements', '--out=../out/corpus.json'])
+    cli(['--config-path=../resources/gitlab.cfg', 'build', '--out=../out/corpus.json',
+         '--filter-file=../resources/filters.yaml'])
