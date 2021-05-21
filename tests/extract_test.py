@@ -58,7 +58,6 @@ def setup_gitlab_mock():
 
 
 @pytest.mark.slow
-# @mock.patch('gitlab.v4.objects.projects.ProjectManager.list', pm_list())
 def test_extract():
     extractor = Extractor(False, setup_gitlab_mock(), Corpus())
     extractor.extract(False)
