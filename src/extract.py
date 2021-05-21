@@ -36,7 +36,7 @@ class Extractor:
 
                             try:
                                 project_dict['files'] = project.repository_tree(ref=project_dict['default_branch'])
-                            except (gitlab.exceptions.GitlabGetError, gitlab.exceptions.GitlabHttpError, KeyError) as e:
+                            except (gitlab.exceptions.GitlabGetError, gitlab.exceptions.GitlabHttpError, KeyError):
                                 project_dict['files'] = "None"
 
                             try:
