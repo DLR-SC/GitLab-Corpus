@@ -8,8 +8,20 @@ from utils.helpers import Corpus
 
 
 class Exporter:
+    """This class provides a method to export a corpus in another format.
+
+    Methods:
+        __init__(self, verbose, corpus, format_str, from_file=False, file="-")
+        export(self, out)
+    """
 
     def __init__(self, verbose, corpus, format_str, from_file=False, file="-"):
+        """Exporter class constructor to initialize the object.
+        :param verbose: Prints more output, if set to ``True``
+        :param corpus: Input corpus, which will be exported
+        :param from_file: Specifies, if the input corpus should be read from a file [default: ``False``]
+        :param file: Path to input corpus
+        """
         self.verbose = verbose
         self.format = format_str
         self.corpus = Corpus()
@@ -20,7 +32,9 @@ class Exporter:
             self.corpus = corpus
 
     def export(self, out):
-        """This method exports the corpus either to json or prints it to the console."""
+        """This method exports the corpus to another format.
+        :param out: Path to output file
+        """
         with open(out, "w") as output:
             click.echo("Exporting...")
             if self.format.lower() == "json":
