@@ -153,10 +153,10 @@ class Filter:
         :param filter_option: List containing all filter options regarding the language category as specified in the
         :ref:`filter-file`
         :param category: Category of the language filter. Should be one of:
-            * any_languages
-            * atleast_languages
-            * atmost_languages
-            * explicit_languages
+        * any_languages
+        * atleast_languages
+        * atmost_languages
+        * explicit_languages
         """
         values = list(filter_option.values())[0]
         if values is not None:

@@ -8,6 +8,7 @@ cache:
 stages:
   - static analysis
   - test
+  - deploy
 
 before_script:
   - pip install virtualenv
@@ -29,3 +30,14 @@ test:
     - pytest --cov=filter --cov=extract --cov-branch --cov-report=html tests
   tags:
     - docker
+
+pages:
+  stage: deploy
+  script:
+    - pip install sphinx sphinx-rtd-theme
+    - cd docs
+    - make html
+    - mv build/html ../../public/
+  artifacts:
+    paths:
+      - public
