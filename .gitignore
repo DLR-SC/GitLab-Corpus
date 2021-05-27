@@ -85,15 +85,9 @@ instance/
 # Scrapy stuff:
 .scrapy
 
-# Sphinx documentation
-docs/
-_build
-_static
-_templates
-docs/Makefile
-docs/make.bat
-index.rst
-conf.py
+# Sphinx documentation build
+docs/build
+docs/_build
 
 # PyBuilder
 .pybuilder/
