@@ -38,6 +38,8 @@ pages:
     - cd docs
     - make html
     - mv build/html ../../public/
+  tags:
+    - shell
   artifacts:
     paths:
       - public
