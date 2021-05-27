@@ -37,7 +37,7 @@ pages:
     - pip install sphinx sphinx-rtd-theme
     - cd docs
     - make html
-    - mv build/html ../../public/
+    - mv build/html ../public/
   tags:
     - shell
   artifacts:
