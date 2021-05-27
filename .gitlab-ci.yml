@@ -11,10 +11,10 @@ stages:
   - deploy
 
 before_script:
-  - pip install virtualenv
-  - virtualenv venv
+  - python3.8 -m pip install virtualenv
+  - python3.8 -m virtualenv venv
   - source venv/bin/activate
-  - pip install -r requirements.txt
+  - python3.8 -m pip install -r requirements.txt
 
 flake8:
   stage: static analysis
