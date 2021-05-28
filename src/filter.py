@@ -134,6 +134,7 @@ class Filter:
                     for filter_option in filters["filters"]:
                         category = next(iter(filter_option.keys()))
                         if re.match('.*_languages', category):  # add languages
+                            self.filters[category] = ""     # remember language as filter option
                             self.load_languages(filter_option, category)
                         else:
                             for key in filter_option:
