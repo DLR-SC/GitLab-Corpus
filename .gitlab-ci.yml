@@ -8,12 +8,13 @@ cache:
 stages:
   - static analysis
   - test
+  - deploy
 
 before_script:
-  - pip install virtualenv
-  - virtualenv venv
+  - python3.8 -m pip install virtualenv
+  - python3.8 -m virtualenv venv
   - source venv/bin/activate
-  - pip install -r requirements.txt
+  - python3.8 -m pip install -r requirements.txt
 
 flake8:
   stage: static analysis
@@ -29,3 +30,16 @@ test:
     - pytest --cov=filter --cov=extract --cov-branch --cov-report=html tests
   tags:
     - docker
+
+pages:
+  stage: deploy
+  script:
+    - pip install sphinx sphinx-rtd-theme
+    - cd docs
+    - make html
+    - mv build/html ../public/
+  tags:
+    - shell
+  artifacts:
+    paths:
+      - public
