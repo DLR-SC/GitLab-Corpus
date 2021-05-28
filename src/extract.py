@@ -6,16 +6,28 @@ from gitlab.v4.objects import ProjectManager
 
 
 class Extractor:
-    """This class represents the extraction module."""
+    """This class provides a method to extract projects of GitLab instance.
+
+    Methods:
+        __init__(self, verbose, gitlab_manager, corpus)
+        extract(self, all_elements)
+    """
 
     def __init__(self, verbose, gitlab_manager, corpus):
+        """Extractor class constructor to initialize the object.
+        :param verbose: Prints more output, if set to ``True``
+        :param gitlab_manager: Manager object for python-gitlab
+        :param corpus: Initialized corpus object, which will be used to save the projects data
+        """
         self.gl = gitlab_manager
         self.verbose = verbose
         self.managers = [self.gl.projects]
         self.corpus = corpus
 
     def extract(self, all_elements):
-
+        """This method extracts the projects of the defined GitLab instance and stores them in the corpus attribute.
+        :param all_elements: Ignores the pagination of the GitLab-API and extracts all projects, if set to ``True``.
+        """
         for manager in self.managers:
             click.echo("Retrieving projects...")
             objects = manager.list(all=all_elements)
