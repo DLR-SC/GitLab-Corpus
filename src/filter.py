@@ -230,7 +230,7 @@ class Filter:
                     return False
         elif filter_option == "atleast_languages":  # project contains at least the languages specified in the filter
             filter_languages = list(self.atleast_languages.keys())
-            if all(elem in project_languages for elem in filter_languages):
+            if all(elem in project_languages for elem in filter_languages) and len(project_languages) > 0:
                 return eval_all_percentages(project_languages, project, self.atleast_languages)
             else:
                 return False
@@ -243,7 +243,7 @@ class Filter:
                 return False
         elif filter_option == "atmost_languages":  # project contains at most the languages specified in the filter
             filter_languages = list(self.atmost_languages.keys())
-            if all(elem in filter_languages for elem in project_languages):
+            if all(elem in filter_languages for elem in project_languages) and len(project_languages) > 0:
                 return eval_all_percentages(project_languages, project, self.atmost_languages)
             else:
                 return False
