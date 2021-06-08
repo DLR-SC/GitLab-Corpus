@@ -27,7 +27,7 @@ test:
   stage: test
   script:
     - pip install --editable .
-    - pytest --cov=filter --cov=extract --cov-branch --cov-report=html tests
+    - pytest --cov=filter --cov=extract --cov-branch tests
   tags:
     - docker
 
