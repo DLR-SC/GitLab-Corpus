@@ -8,6 +8,50 @@ from gitlab.v4.objects.projects import ProjectManager
 from utils.helpers import Corpus
 
 
+class Commits:
+
+    def __init__(self):
+        self.attributes = {
+                    'id': '123abc',
+                    'short_id': '1a',
+                    'title': 'Initial commit',
+                    'author_name': 'Test User',
+                    'author_email': 'test@us.er',
+                    'authored_date': '2021-09-20T12:00:00+01:00',
+                    'committer_name': 'Tester',
+                    'committer_email': 'tester@example.com',
+                    'committed_date': '2021-09-20T12:00:00+01:00',
+                    'created_at': '2021-09-20T12:00:00+01:00',
+                    'message': 'test commit',
+                    'parent_ids': [
+                        '456def'
+                    ],
+                    'web_url': 'test.com'
+                }
+
+    def list(self, all):
+        return [self]
+
+
+class Members:
+
+    def __init__(self):
+        self.attributes = [
+                {
+                    "id": 1,
+                    "username": "test_user",
+                    "name": "Test User",
+                    "state": "active",
+                    "last_activity_on": "2021-06-09",
+                    "membership_type": "group_member",
+                    "removable": True
+                }
+            ]
+
+    def list(self, all):
+        return [self]
+
+
 class Additionalstatistics:
 
     def get(self):
@@ -33,6 +77,8 @@ class Project:
                            'open_issues_count': 0}
         self.issuesstatistics = Issuestatistics()
         self.additionalstatistics = Additionalstatistics()
+        self.members = Members()
+        self.commits = Commits()
         self.lgs = {"Python": 80.0, "HTML": 20.0}
         self.repo_tree = [{"id": "hash123", "name": "test.py", "type": "blob"}]
 
@@ -92,7 +138,71 @@ def test_extract():
                     "name": "test.py",
                     "type": "blob"
                 }
-            ]
+            ],
+            'members': [
+                {
+                    "id": 1,
+                    "username": "test_user",
+                    "name": "Test User",
+                    "state": "active",
+                    "last_activity_on": "2021-06-09",
+                    "membership_type": "group_member",
+                    "removable": True
+                }
+            ],
+            'commits': [
+                {
+                    'id': '123abc',
+                    'short_id': '1a',
+                    'title': 'Initial commit',
+                    'author_name': 'Test User',
+                    'author_email': 'test@us.er',
+                    'authored_date': '2021-09-20T12:00:00+01:00',
+                    'committer_name': 'Tester',
+                    'committer_email': 'tester@example.com',
+                    'committed_date': '2021-09-20T12:00:00+01:00',
+                    'created_at': '2021-09-20T12:00:00+01:00',
+                    'message': 'test commit',
+                    'parent_ids': [
+                        '456def'
+                    ],
+                    'web_url': 'test.com'
+                }
+            ],
+            'first_commit': {
+                    'id': '123abc',
+                    'short_id': '1a',
+                    'title': 'Initial commit',
+                    'author_name': 'Test User',
+                    'author_email': 'test@us.er',
+                    'authored_date': '2021-09-20T12:00:00+01:00',
+                    'committer_name': 'Tester',
+                    'committer_email': 'tester@example.com',
+                    'committed_date': '2021-09-20T12:00:00+01:00',
+                    'created_at': '2021-09-20T12:00:00+01:00',
+                    'message': 'test commit',
+                    'parent_ids': [
+                        '456def'
+                    ],
+                    'web_url': 'test.com'
+            },
+            'last_commit': {
+                    'id': '123abc',
+                    'short_id': '1a',
+                    'title': 'Initial commit',
+                    'author_name': 'Test User',
+                    'author_email': 'test@us.er',
+                    'authored_date': '2021-09-20T12:00:00+01:00',
+                    'committer_name': 'Tester',
+                    'committer_email': 'tester@example.com',
+                    'committed_date': '2021-09-20T12:00:00+01:00',
+                    'created_at': '2021-09-20T12:00:00+01:00',
+                    'message': 'test commit',
+                    'parent_ids': [
+                        '456def'
+                    ],
+                    'web_url': 'test.com'
+            }
         }
     ]}
 
