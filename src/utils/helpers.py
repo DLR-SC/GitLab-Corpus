@@ -23,3 +23,10 @@ class Config:
         """Config class constructor to initialize the object."""
         self.gl = None
         self.verbose = False
+
+
+def extract_license(project):
+    """This helper function extracts the license of a given project.
+    :param project: the project, whose license shall be extracted
+    """
+
