@@ -50,14 +50,17 @@ class Extractor:
                             if len(members) > 0:
                                 project_dict['members'] = members[0].attributes
 
-                            commits = project.commits.list(all=True)
-                            commit_list = []
-                            for commit in commits:
-                                commit_list.append(commit.attributes)
-                            if len(commit_list) > 0:
-                                project_dict['commits'] = commit_list
-                                project_dict['first_commit'] = commit_list.__getitem__(len(commit_list) - 1)
-                                project_dict['last_commit'] = commit_list.__getitem__(0)
+                            try:
+                                commits = project.commits.list(all=True)
+                                commit_list = []
+                                for commit in commits:
+                                    commit_list.append(commit.attributes)
+                                if len(commit_list) > 0:
+                                    project_dict['commits'] = commit_list
+                                    project_dict['first_commit'] = commit_list.__getitem__(len(commit_list) - 1)
+                                    project_dict['last_commit'] = commit_list.__getitem__(0)
+                            except gitlab.exceptions.GitlabListError:
+                                pass    # some projects do not have any commits, which leads to this error
 
                             try:
                                 project_dict['files'] = project.repository_tree(ref=project_dict['default_branch'])
