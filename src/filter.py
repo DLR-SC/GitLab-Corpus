@@ -16,7 +16,8 @@ def eval_percentage(project_language_percentage, evaluation):
     :returns ``True`` if the evaluation is true and ``False`` otherwise
     """
     try:
-        operator, value = evaluation.split("//")
+        operator = evaluation[0]['operator']
+        value = evaluation[1]['value']
         if operator == "<":
             return project_language_percentage < float(value)
         elif operator == "<=":
@@ -208,7 +209,8 @@ class Filter:
                         return_val = self.check_languages(filter_option, project)
             elif return_val:  # filter other attributes
                 try:
-                    operator, condition = self.filters[filter_option].split("//")
+                    operator = self.filters[filter_option][0]['operator']
+                    condition = self.filters[filter_option][1]['value']
                     return_val = eval_condition(project[filter_option], operator, condition)
                 except ValueError:
                     pass

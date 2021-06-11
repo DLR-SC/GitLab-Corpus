@@ -6,42 +6,48 @@ from filter import eval_percentage, eval_all_percentages, eval_condition
 
 
 @pytest.mark.parametrize("project_language_percentage, evaluation, result", [
-    (50, "<//100", True), (50, "<//51", True), (50, "<//50", False), (50, "<//10", False)
+    (50, [{'operator': '<'}, {'value': 100.0}], True), (50, [{'operator': '<'}, {'value': 51.0}], True),
+    (50, [{'operator': '<'}, {'value': 50.0}], False), (50, [{'operator': '<'}, {'value': 10.0}], False)
 ])
 def test_eval_percentage_lt(project_language_percentage, evaluation, result):
     assert eval_percentage(project_language_percentage, evaluation) == result
 
 
 @pytest.mark.parametrize("project_language_percentage, evaluation, result", [
-    (60, "<=//100", True), (60, "<=//60", True), (60, "<=//59", False), (60, "<=//10", False)
+    (60, [{'operator': '<='}, {'value': 100.0}], True), (60, [{'operator': '<='}, {'value': 60.0}], True),
+    (60, [{'operator': '<='}, {'value': 59.0}], False), (60, [{'operator': '<='}, {'value': 10.0}], False)
 ])
 def test_eval_percentage_lteq(project_language_percentage, evaluation, result):
     assert eval_percentage(project_language_percentage, evaluation) == result
 
 
 @pytest.mark.parametrize("project_language_percentage, evaluation, result", [
-    (60, ">//10", True), (60, ">//59", True), (60, ">//60", False), (60, ">//100", False)
+    (60, [{'operator': '>'}, {'value': 10.0}], True), (60, [{'operator': '>'}, {'value': 59.0}], True),
+    (60, [{'operator': '>'}, {'value': 60.0}], False), (60, [{'operator': '>'}, {'value': 100.0}], False)
 ])
 def test_eval_percentage_gt(project_language_percentage, evaluation, result):
     assert eval_percentage(project_language_percentage, evaluation) == result
 
 
 @pytest.mark.parametrize("project_language_percentage, evaluation, result", [
-    (60, ">=//10", True), (60, ">=//60", True), (60, ">=//61", False), (60, ">=//100", False)
+    (60, [{'operator': '>='}, {'value': 10.0}], True), (60, [{'operator': '>='}, {'value': 60.0}], True),
+    (60, [{'operator': '>='}, {'value': 61.0}], False), (60, [{'operator': '>='}, {'value': 100.0}], False)
 ])
 def test_eval_percentage_gteq(project_language_percentage, evaluation, result):
     assert eval_percentage(project_language_percentage, evaluation) == result
 
 
 @pytest.mark.parametrize("project_language_percentage, evaluation, result", [
-    (60, "==//10", False), (60, "==//59", False), (60, "==//60", True), (60, "==//61", False)
+    (60, [{'operator': '=='}, {'value': 10.0}], False), (60, [{'operator': '=='}, {'value': 59.0}], False),
+    (60, [{'operator': '=='}, {'value': 60.0}], True), (60, [{'operator': '=='}, {'value': 61.0}], False)
 ])
 def test_eval_percentage_eq(project_language_percentage, evaluation, result):
     assert eval_percentage(project_language_percentage, evaluation) == result
 
 
 @pytest.mark.parametrize("project_language_percentage, evaluation, result", [
-    (60, "!=//10", True), (60, "!=//59", True), (60, "!=//60", False), (60, "!=//61", True)
+    (60, [{'operator': '!='}, {'value': 10.0}], True), (60, [{'operator': '!='}, {'value': 59.0}], True),
+    (60, [{'operator': '!='}, {'value': 60.0}], False), (60, [{'operator': '!='}, {'value': 61.0}], True)
 ])
 def test_eval_percentage_neq(project_language_percentage, evaluation, result):
     assert eval_percentage(project_language_percentage, evaluation) == result
@@ -49,16 +55,25 @@ def test_eval_percentage_neq(project_language_percentage, evaluation, result):
 
 def test_eval_percentage_nooperator():
     project_language_percentage = 10
-    evaluation = ".//100"
+    evaluation = {'operator': '.'}, {'value': 80.0}
     assert eval_percentage(project_language_percentage, evaluation) is False
 
 
 def test_eval_all_percentages_true():
     project_languages = ['Python', 'C', 'C++']
     languages = {
-        'Python': '<=//80.0',
-        'C': '>//15.0',
-        'C++': '==//10.0',
+        'Python': [
+            {'operator': '<='},
+            {'value': 80.0}
+        ],
+        'C': [
+            {'operator': '>'},
+            {'value': 15.0}
+        ],
+        'C++': [
+            {'operator': '=='},
+            {'value': 10.0}
+        ]
     }
     project = {
         'id': 123,
@@ -75,9 +90,18 @@ def test_eval_all_percentages_true():
 def test_eval_all_percentages_false():
     project_languages = ['Python', 'C', 'C++']
     languages = {
-        'Python': '<=//80.0',
-        'C': '==//15.0',
-        'C++': '==//10.0',
+        'Python': [
+            {'operator': '<='},
+            {'value': 80.0}
+        ],
+        'C': [
+            {'operator': '=='},
+            {'value': 15.0}
+        ],
+        'C++': [
+            {'operator': '=='},
+            {'value': 10.0}
+        ],
     }
     project = {
         'id': 123,
@@ -94,9 +118,18 @@ def test_eval_all_percentages_false():
 def test_eval_all_percentages_true_with_keyerror():
     project_languages = ["Python", "C", "C++", "C#"]
     languages = {
-        "Python": "<=//80.0",
-        "C": ">//15.0",
-        "C++": "<=//10.0",
+        "Python": [
+            {'operator': '<='},
+            {'value': 80.0}
+        ],
+        "C": [
+            {'operator': '>'},
+            {'value': 15.0}
+        ],
+        "C++": [
+            {'operator': '<='},
+            {'value': 10.0}
+        ],
     }
     project = {
         "id": 123,
