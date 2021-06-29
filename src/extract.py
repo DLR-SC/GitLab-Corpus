@@ -62,6 +62,13 @@ class Extractor:
                             except gitlab.exceptions.GitlabListError:
                                 pass    # some projects do not have any commits, which leads to this error
 
+                            issues = project.issues.list(all=True)
+                            issue_list = []
+                            for issue in issues:
+                                issue_list.append(issue.attributes)
+                            if len(issue_list) > 0:
+                                project_dict['issues'] = issue_list
+
                             try:
                                 project_dict['files'] = project.repository_tree(ref=project_dict['default_branch'])
                             except (gitlab.exceptions.GitlabGetError, gitlab.exceptions.GitlabHttpError, KeyError):

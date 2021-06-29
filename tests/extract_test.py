@@ -8,6 +8,28 @@ from gitlab.v4.objects.projects import ProjectManager
 from utils.helpers import Corpus
 
 
+class Issues:
+    def __init__(self):
+        self.attributes = {
+            'state': 'opened',
+            'description': 'Test issue',
+            'author': {
+                'state': 'active',
+                'id': '123abc',
+                'name': 'Test User'
+            },
+            'project_id': 1,
+            'type': 'ISSUE',
+            'updated_at': '2021-01-04T15:31:51.081Z',
+            'id': 70,
+            'has_tasks': True,
+            'task_status': '10 of 15 tasks completed',
+        }
+
+    def list(self, all):
+        return [self]
+
+
 class Commits:
 
     def __init__(self):
@@ -61,7 +83,7 @@ class Additionalstatistics:
 class Issuestatistics:
 
     def __init__(self):
-        self.attributes = {"statistics": {"counts": {"all": 0, "closed": 0, "opened": 0}}}
+        self.attributes = {"statistics": {"counts": {"all": 1, "closed": 0, "opened": 1}}}
 
     def get(self, scope):
         return self
@@ -79,6 +101,7 @@ class Project:
         self.additionalstatistics = Additionalstatistics()
         self.members = Members()
         self.commits = Commits()
+        self.issues = Issues()
         self.lgs = {"Python": 80.0, "HTML": 20.0}
         self.repo_tree = [{"id": "hash123", "name": "test.py", "type": "blob"}]
 
@@ -123,9 +146,9 @@ def test_extract():
             'open_issues_count': 0,
             'issue_statistics': {
                 "counts": {
-                    "all": 0,
+                    "all": 1,
                     "closed": 0,
-                    "opened": 0
+                    "opened": 1
                 }
             },
             'languages': {
@@ -202,7 +225,24 @@ def test_extract():
                         '456def'
                     ],
                     'web_url': 'test.com'
-            }
+            },
+            'issues': [
+                {
+                    'state': 'opened',
+                    'description': 'Test issue',
+                    'author': {
+                        'state': 'active',
+                        'id': '123abc',
+                        'name': 'Test User'
+                    },
+                    'project_id': 1,
+                    'type': 'ISSUE',
+                    'updated_at': '2021-01-04T15:31:51.081Z',
+                    'id': 70,
+                    'has_tasks': True,
+                    'task_status': '10 of 15 tasks completed',
+                }
+            ]
         }
     ]}
 
