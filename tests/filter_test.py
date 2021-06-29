@@ -129,20 +129,20 @@ def test_init_filter_from_file():
 def test_load_filters():
     mocked_filters = """
     filters:
-        - atmost_languages:
-            - Python:
-                - operator: "<="
-                - value: 100.0
-            - C:
-                - operator: "<="
-                - value: 100.0
-        - id:
-            - operator: "=="
-            - value: 30.0
-        - name: "example filter project"
-        - issues_enabled:
-            - operator: "=="
-            - value: True
+        atmost_languages:
+            Python:
+                operator: "<="
+                value: 100.0
+            C:
+                operator: "<="
+                value: 100.0
+        id:
+            operator: "=="
+            value: 30.0
+        name: "example filter project"
+        issues_enabled:
+            operator: "=="
+            value: True
     
     attributes:
         - id
@@ -153,12 +153,12 @@ def test_load_filters():
     with mock.patch("builtins.open", mocked_filter_file, create=True):
         filter.load_filters(filter_file="mocked_filters.yaml")
 
-    assert filter.filters == {"atmost_languages": "", "id": [{"operator": "=="}, {"value": 30.0}],
+    assert filter.filters == {"atmost_languages": "", "id": {"operator": "==", "value": 30.0},
                               "name": "example filter project",
-                              "issues_enabled": [{"operator": "=="}, {"value": True}]}
+                              "issues_enabled": {"operator": "==", "value": True}}
     assert filter.attributes == ["id", "name"]
-    assert filter.atmost_languages == {"Python": [{"operator": "<="}, {"value": 100.0}],
-                                       "C": [{"operator": "<="}, {"value": 100.0}]}
+    assert filter.atmost_languages == {"Python": {"operator": "<=", "value": 100.0},
+                                       "C": {"operator": "<=", "value": 100.0}}
 
 
 def test_load_filters_no_file_found(capfd):
@@ -170,22 +170,22 @@ def test_load_filters_no_file_found(capfd):
 def test_load_languages():
     mocked_filters = """
     filters:
-        - atleast_languages:
-            - C:
-                - operator: "<="
-                - value: 100.0
-        - atmost_languages:
-            - Python:
-                - operator: "<="
-                - value: 100.0
-        - any_languages:
-            - Java:
-                - operator: "<="
-                - value: 100.0
-        - explicit_languages:
-            - C#:
-                - operator: "<="
-                - value: 100.0
+        atleast_languages:
+            C:
+                operator: "<="
+                value: 100.0
+        atmost_languages:
+            Python:
+                operator: "<="
+                value: 100.0
+        any_languages:
+            Java:
+                operator: "<="
+                value: 100.0
+        explicit_languages:
+            C#:
+                operator: "<="
+                value: 100.0
     
     attributes:
     """
@@ -194,22 +194,22 @@ def test_load_languages():
     with mock.patch("builtins.open", mocked_filter_file, create=True):
         filter.load_filters(filter_file="mocked_filters.yaml")
 
-    assert filter.atleast_languages == {"C": [{"operator": "<="}, {"value": 100.0}]}
-    assert filter.atmost_languages == {"Python": [{"operator": "<="}, {"value": 100.0}]}
-    assert filter.any_languages == {"Java": [{"operator": "<="}, {"value": 100.0}]}
-    assert filter.explicit_languages == {"C#": [{"operator": "<="}, {"value": 100.0}]}
+    assert filter.atleast_languages == {"C": {"operator": "<=", "value": 100.0}}
+    assert filter.atmost_languages == {"Python": {"operator": "<=", "value": 100.0}}
+    assert filter.any_languages == {"Java": {"operator": "<=", "value": 100.0}}
+    assert filter.explicit_languages == {"C#": {"operator": "<=", "value": 100.0}}
 
 
 def test_check_languages_atleast_true():
     mocked_filters = """
     filters:
-        - atleast_languages:
-            - C:
-                - operator: "<="
-                - value: 100.0
-            - Python:
-                - operator: "<="
-                - value: 100.0
+        atleast_languages:
+            C:
+                operator: "<="
+                value: 100.0
+            Python:
+                operator: "<="
+                value: 100.0
     
     attributes:
     """
@@ -223,16 +223,16 @@ def test_check_languages_atleast_true():
 def test_check_languages_atleast_false():
     mocked_filters = """
     filters:
-        - atleast_languages:
-            - C:
-                - operator: "<="
-                - value: 100.0
-            - Python:
-                - operator: "<="
-                - value: 100.0
-            - ActionScript:
-                - operator: "<="
-                - value: 100.0
+        atleast_languages:
+            C:
+                operator: "<="
+                value: 100.0
+            Python:
+                operator: "<="
+                value: 100.0
+            ActionScript:
+                operator: "<="
+                value: 100.0
 
     attributes:
     """
@@ -246,19 +246,19 @@ def test_check_languages_atleast_false():
 def test_check_languages_atmost_true():
     mocked_filters = """
         filters:
-            - atmost_languages:
-                - C:
-                    - operator: "<="
-                    - value: 100.0
-                - Python:
-                    - operator: "<="
-                    - value: 100.0
-                - TeX:
-                    - operator: "<="
-                    - value: 100.0
-                - Assembly:
-                    - operator: "<="
-                    - value: 100.0
+            atmost_languages:
+                C:
+                    operator: "<="
+                    value: 100.0
+                Python:
+                    operator: "<="
+                    value: 100.0
+                TeX:
+                    operator: "<="
+                    value: 100.0
+                Assembly:
+                    operator: "<="
+                    value: 100.0
 
         attributes:
         """
@@ -272,13 +272,13 @@ def test_check_languages_atmost_true():
 def test_check_languages_atmost_false():
     mocked_filters = """
         filters:
-            - atmost_languages:
-                - C:
-                    - operator: "<="
-                    - value: 100.0
-                - Python:
-                    - operator: "<="
-                    - value: 100.0
+            atmost_languages:
+                C:
+                    operator: "<="
+                    value: 100.0
+                Python:
+                    operator: "<="
+                    value: 100.0
 
         attributes:
         """
@@ -292,13 +292,13 @@ def test_check_languages_atmost_false():
 def test_check_languages_any_true():
     mocked_filters = """
         filters:
-            - any_languages:
-                - C:
-                    - operator: "<="
-                    - value: 100.0
-                - Python:
-                    - operator: "<="
-                    - value: 100.0
+            any_languages:
+                C:
+                    operator: "<="
+                    value: 100.0
+                Python:
+                    operator: "<="
+                    value: 100.0
 
         attributes:
         """
@@ -312,10 +312,10 @@ def test_check_languages_any_true():
 def test_check_languages_any_false():
     mocked_filters = """
         filters:
-            - any_languages:
-                - CMake:
-                    - operator: "<="
-                    - value: 100.0
+            any_languages:
+                CMake:
+                    operator: "<="
+                    value: 100.0
 
         attributes:
         """
@@ -329,19 +329,19 @@ def test_check_languages_any_false():
 def test_check_languages_explicit_true():
     mocked_filters = """
         filters:
-            - explicit_languages:
-                - C:
-                    - operator: "<="
-                    - value: 100.0
-                - Python:
-                    - operator: "<="
-                    - value: 100.0
-                - TeX:
-                    - operator: "<="
-                    - value: 100.0
-                - Assembly:
-                    - operator: "<="
-                    - value: 100.0
+            explicit_languages:
+                C:
+                    operator: "<="
+                    value: 100.0
+                Python:
+                    operator: "<="
+                    value: 100.0
+                TeX:
+                    operator: "<="
+                    value: 100.0
+                Assembly:
+                    operator: "<="
+                    value: 100.0
 
         attributes:
         """
@@ -355,13 +355,13 @@ def test_check_languages_explicit_true():
 def test_check_languages_explicit_false():
     mocked_filters = """
         filters:
-            - explicit_languages:
-                - C:
-                    - operator: "<="
-                    - value: 100.0
-                - Python:
-                    - operator: "<="
-                    - value: 100.0
+            explicit_languages:
+                C:
+                    operator: "<="
+                    value: 100.0
+                Python:
+                    operator: "<="
+                    value: 100.0
 
         attributes:
         """
@@ -375,13 +375,13 @@ def test_check_languages_explicit_false():
 def test_filter_project_true_1():
     mocked_filters = """
             filters:
-                - any_languages:
-                    - C:
-                        - operator: "<="
-                        - value: 100.0
-                    - Python:
-                        - operator: "<="
-                        - value: 100.0
+                any_languages:
+                    C:
+                        operator: "<="
+                        value: 100.0
+                    Python:
+                        operator: "<="
+                        value: 100.0
 
             attributes:
             """
@@ -395,9 +395,9 @@ def test_filter_project_true_1():
 def test_filter_project_true_2():
     mocked_filters = """
             filters:
-                - id:
-                    - operator: "=="
-                    - value: 123
+                id:
+                    operator: "=="
+                    value: 123
             attributes:
             """
     mocked_filter_file = mock.mock_open(read_data=mocked_filters)
@@ -410,10 +410,10 @@ def test_filter_project_true_2():
 def test_filter_project_false():
     mocked_filters = """
             filters:
-                - any_languages:
-                    - Ada:
-                        - operator: "<="
-                        - value: 100.0
+                any_languages:
+                    Ada:
+                        operator: "<="
+                        value: 100.0
             attributes:
             """
     mocked_filter_file = mock.mock_open(read_data=mocked_filters)
@@ -426,9 +426,9 @@ def test_filter_project_false():
 def test_filter_with_filters():
     mocked_filters = """
             filters:
-                - id:
-                    - operator: "<"
-                    - value: 100.0
+                id:
+                    operator: "<"
+                    value: 100.0
             attributes:
     """
     mocked_filter_file = mock.mock_open(read_data=mocked_filters)
@@ -461,9 +461,9 @@ def test_filter_with_attributes():
 def test_filter_with_both():
     mocked_filters = """
             filters:
-                - id:
-                    - operator: "<"
-                    - value: 100.0
+                id:
+                    operator: "<"
+                    value: 100.0
             attributes:
                 - id
         """
