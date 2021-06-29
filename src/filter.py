@@ -16,8 +16,8 @@ def eval_percentage(project_language_percentage, evaluation):
     :returns ``True`` if the evaluation is true and ``False`` otherwise
     """
     try:
-        operator = evaluation[0]['operator']
-        value = evaluation[1]['value']
+        operator = evaluation['operator']
+        value = evaluation['value']
         if operator == "<":
             return project_language_percentage < float(value)
         elif operator == "<=":
@@ -133,13 +133,12 @@ class Filter:
                 filters = yaml.full_load(f)
                 if filters["filters"] is not None:  # add all filters to filter list
                     for filter_option in filters["filters"]:
-                        category = next(iter(filter_option.keys()))
+                        category = filter_option
                         if re.match('.*_languages', category):  # add languages
                             self.filters[category] = ""     # remember language as filter option
-                            self.load_languages(filter_option, category)
+                            self.load_languages(filters["filters"][category], category)
                         else:
-                            for key in filter_option:
-                                self.filters[key] = filter_option[key]  # add all other filters
+                            self.filters[category] = filters["filters"][category]  # add all other filters
 
                 if filters["attributes"] is not None:  # add all attributes to be shown in corpus
                     for attribute in filters["attributes"]:
@@ -150,9 +149,9 @@ class Filter:
             else:
                 pass
 
-    def load_languages(self, filter_option, category):
+    def load_languages(self, language_list, category):
         """This method loads the languages to be filtered and stores them in a list.
-        :param filter_option: List containing all filter options regarding the language category as specified in the
+        :param language_list: List containing all filter options regarding the language category as specified in the
         :ref:`filter-file`
         :param category: Category of the language filter. Should be one of:
         * any_languages
@@ -160,17 +159,16 @@ class Filter:
         * atmost_languages
         * explicit_languages
         """
-        values = list(filter_option.values())[0]
-        if values is not None:
-            for element in values:
+        if language_list is not None:
+            for element in language_list:
                 if category == "any_languages":
-                    self.any_languages[next(iter(element.keys()))] = next(iter(element.values()))
+                    self.any_languages[element] = language_list[element]
                 elif category == "atleast_languages":
-                    self.atleast_languages[next(iter(element.keys()))] = next(iter(element.values()))
+                    self.atleast_languages[element] = language_list[element]
                 elif category == "atmost_languages":
-                    self.atmost_languages[next(iter(element.keys()))] = next(iter(element.values()))
+                    self.atmost_languages[element] = language_list[element]
                 else:
-                    self.explicit_languages[next(iter(element.keys()))] = next(iter(element.values()))
+                    self.explicit_languages[element] = language_list[element]
 
     def filter(self):
         """This method filters the extracted corpus by using the previously loaded filter options. If no filter
@@ -209,8 +207,8 @@ class Filter:
                         return_val = self.check_languages(filter_option, project)
             elif return_val:  # filter other attributes
                 try:
-                    operator = self.filters[filter_option][0]['operator']
-                    condition = self.filters[filter_option][1]['value']
+                    operator = self.filters[filter_option]['operator']
+                    condition = self.filters[filter_option]['value']
                     return_val = eval_condition(project[filter_option], operator, condition)
                 except ValueError:
                     pass
