@@ -227,7 +227,7 @@ def test_extract():
                     'task_status': '10 of 15 tasks completed',
                 }
             ]
-    assert project['contributors'] == ['test_user', 'other_user']
+    assert all(elem in project['contributors'] for elem in ['test_user', 'other_user'])
     assert project['files'] == [{"id": "hash123", "name": "test.py", "type": "blob"}]
 
 
