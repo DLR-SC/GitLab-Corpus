@@ -41,22 +41,22 @@ class Commits:
 
     def __init__(self):
         self.attributes = {
-                    'id': '123abc',
-                    'short_id': '1a',
-                    'title': 'Initial commit',
-                    'author_name': 'Test User',
-                    'author_email': 'test@us.er',
-                    'authored_date': '2021-09-20T12:00:00+01:00',
-                    'committer_name': 'Tester',
-                    'committer_email': 'tester@example.com',
-                    'committed_date': '2021-09-20T12:00:00+01:00',
-                    'created_at': '2021-09-20T12:00:00+01:00',
-                    'message': 'test commit',
-                    'parent_ids': [
-                        '456def'
-                    ],
-                    'web_url': 'test.com'
-                }
+            'id': '123abc',
+            'short_id': '1a',
+            'title': 'Initial commit',
+            'author_name': 'Test User',
+            'author_email': 'test@us.er',
+            'authored_date': '2021-09-20T12:00:00+01:00',
+            'committer_name': 'Tester',
+            'committer_email': 'tester@example.com',
+            'committed_date': '2021-09-20T12:00:00+01:00',
+            'created_at': '2021-09-20T12:00:00+01:00',
+            'message': 'test commit',
+            'parent_ids': [
+                '456def'
+            ],
+            'web_url': 'test.com'
+        }
 
     def list(self, all):
         return [self]
@@ -66,14 +66,14 @@ class Members:
 
     def __init__(self):
         self.attributes = {
-                    "id": 1,
-                    "username": "test_user",
-                    "name": "Test User",
-                    "state": "active",
-                    "last_activity_on": "2021-06-09",
-                    "membership_type": "group_member",
-                    "removable": True
-                }
+            "id": 1,
+            "username": "test_user",
+            "name": "Test User",
+            "state": "active",
+            "last_activity_on": "2021-06-09",
+            "membership_type": "group_member",
+            "removable": True
+        }
 
     def list(self, all):
         return [self]
@@ -136,31 +136,21 @@ def test_extract():
     extractor = Extractor(False, setup_gitlab_mock(), Corpus())
     extractor.extract(False)
 
-    assert extractor.corpus.data == {"Projects": [
-        {
-            'id': 1,
-            'description': 'test description',
-            'name': 'Test Project',
-            'created_at': '2021-05-10T15:00:00.000Z',
-            'default_branch': 'master',
-            'last_activity_at': '2021-05-10T16:00:00.000Z',
-            'archived': False,
-            'visibility': 'internal',
-            'issues_enabled': True,
-            'creator_id': 10,
-            'open_issues_count': 0,
-            'issue_statistics': {
-                "counts": {
-                    "all": 1,
-                    "closed": 0,
-                    "opened": 1
-                }
-            },
-            'languages': {
-                "Python": 80.0,
-                "HTML": 20.0
-            },
-            'commits': [
+    project = extractor.corpus.data['Projects'][0]
+    assert project['id'] == 1
+    assert project['description'] == 'test description'
+    assert project['name'] == 'Test Project'
+    assert project['created_at'] == '2021-05-10T15:00:00.000Z'
+    assert project['default_branch'] == 'master'
+    assert project['last_activity_at'] == '2021-05-10T16:00:00.000Z'
+    assert not project['archived']
+    assert project['visibility'] == 'internal'
+    assert project['issues_enabled']
+    assert project['creator_id'] == 10
+    assert project['open_issues_count'] == 0
+    assert project['issue_statistics'] == {"counts": {"all": 1, "closed": 0, "opened": 1}}
+    assert project['languages'] == {"Python": 80.0, "HTML": 20.0}
+    assert project['commits'] == [
                 {
                     'id': '123abc',
                     'short_id': '1a',
@@ -178,8 +168,8 @@ def test_extract():
                     ],
                     'web_url': 'test.com'
                 }
-            ],
-            'first_commit': {
+            ]
+    assert project['first_commit'] == {
                 'id': '123abc',
                 'short_id': '1a',
                 'title': 'Initial commit',
@@ -195,8 +185,8 @@ def test_extract():
                     '456def'
                 ],
                 'web_url': 'test.com'
-            },
-            'last_commit': {
+            }
+    assert project['last_commit'] == {
                 'id': '123abc',
                 'short_id': '1a',
                 'title': 'Initial commit',
@@ -212,8 +202,8 @@ def test_extract():
                     '456def'
                 ],
                 'web_url': 'test.com'
-            },
-            'issues': [
+            }
+    assert project['issues'] == [
                 {
                     'state': 'opened',
                     'description': 'Test issue',
@@ -236,20 +226,9 @@ def test_extract():
                     'has_tasks': True,
                     'task_status': '10 of 15 tasks completed',
                 }
-            ],
-            'contributors': [
-                'test_user',
-                'other_user'
-            ],
-            'files': [
-                {
-                    "id": "hash123",
-                    "name": "test.py",
-                    "type": "blob"
-                }
-            ],
-        }
-    ]}
+            ]
+    assert project['contributors'] == ['test_user', 'other_user']
+    assert project['files'] == [{"id": "hash123", "name": "test.py", "type": "blob"}]
 
 
 if __name__ == '__main__':
