@@ -16,8 +16,15 @@ class Issues:
             'author': {
                 'state': 'active',
                 'id': '123abc',
-                'name': 'Test User'
+                'name': 'Test User',
+                'username': 'test_user'
             },
+            'assignees': [{
+                'state': 'active',
+                'id': '123abd',
+                'name': 'Other User',
+                'username': 'other_user'
+            }],
             'project_id': 1,
             'type': 'ISSUE',
             'updated_at': '2021-01-04T15:31:51.081Z',
@@ -58,8 +65,7 @@ class Commits:
 class Members:
 
     def __init__(self):
-        self.attributes = [
-                {
+        self.attributes = {
                     "id": 1,
                     "username": "test_user",
                     "name": "Test User",
@@ -68,7 +74,6 @@ class Members:
                     "membership_type": "group_member",
                     "removable": True
                 }
-            ]
 
     def list(self, all):
         return [self]
@@ -99,7 +104,7 @@ class Project:
                            'open_issues_count': 0}
         self.issuesstatistics = Issuestatistics()
         self.additionalstatistics = Additionalstatistics()
-        self.members = Members()
+        self.members_all = Members()
         self.commits = Commits()
         self.issues = Issues()
         self.lgs = {"Python": 80.0, "HTML": 20.0}
@@ -155,24 +160,6 @@ def test_extract():
                 "Python": 80.0,
                 "HTML": 20.0
             },
-            'files': [
-                {
-                    "id": "hash123",
-                    "name": "test.py",
-                    "type": "blob"
-                }
-            ],
-            'members': [
-                {
-                    "id": 1,
-                    "username": "test_user",
-                    "name": "Test User",
-                    "state": "active",
-                    "last_activity_on": "2021-06-09",
-                    "membership_type": "group_member",
-                    "removable": True
-                }
-            ],
             'commits': [
                 {
                     'id': '123abc',
@@ -193,38 +180,38 @@ def test_extract():
                 }
             ],
             'first_commit': {
-                    'id': '123abc',
-                    'short_id': '1a',
-                    'title': 'Initial commit',
-                    'author_name': 'Test User',
-                    'author_email': 'test@us.er',
-                    'authored_date': '2021-09-20T12:00:00+01:00',
-                    'committer_name': 'Tester',
-                    'committer_email': 'tester@example.com',
-                    'committed_date': '2021-09-20T12:00:00+01:00',
-                    'created_at': '2021-09-20T12:00:00+01:00',
-                    'message': 'test commit',
-                    'parent_ids': [
-                        '456def'
-                    ],
-                    'web_url': 'test.com'
+                'id': '123abc',
+                'short_id': '1a',
+                'title': 'Initial commit',
+                'author_name': 'Test User',
+                'author_email': 'test@us.er',
+                'authored_date': '2021-09-20T12:00:00+01:00',
+                'committer_name': 'Tester',
+                'committer_email': 'tester@example.com',
+                'committed_date': '2021-09-20T12:00:00+01:00',
+                'created_at': '2021-09-20T12:00:00+01:00',
+                'message': 'test commit',
+                'parent_ids': [
+                    '456def'
+                ],
+                'web_url': 'test.com'
             },
             'last_commit': {
-                    'id': '123abc',
-                    'short_id': '1a',
-                    'title': 'Initial commit',
-                    'author_name': 'Test User',
-                    'author_email': 'test@us.er',
-                    'authored_date': '2021-09-20T12:00:00+01:00',
-                    'committer_name': 'Tester',
-                    'committer_email': 'tester@example.com',
-                    'committed_date': '2021-09-20T12:00:00+01:00',
-                    'created_at': '2021-09-20T12:00:00+01:00',
-                    'message': 'test commit',
-                    'parent_ids': [
-                        '456def'
-                    ],
-                    'web_url': 'test.com'
+                'id': '123abc',
+                'short_id': '1a',
+                'title': 'Initial commit',
+                'author_name': 'Test User',
+                'author_email': 'test@us.er',
+                'authored_date': '2021-09-20T12:00:00+01:00',
+                'committer_name': 'Tester',
+                'committer_email': 'tester@example.com',
+                'committed_date': '2021-09-20T12:00:00+01:00',
+                'created_at': '2021-09-20T12:00:00+01:00',
+                'message': 'test commit',
+                'parent_ids': [
+                    '456def'
+                ],
+                'web_url': 'test.com'
             },
             'issues': [
                 {
@@ -233,8 +220,15 @@ def test_extract():
                     'author': {
                         'state': 'active',
                         'id': '123abc',
-                        'name': 'Test User'
+                        'name': 'Test User',
+                        'username': 'test_user'
                     },
+                    'assignees': [{
+                        'state': 'active',
+                        'id': '123abd',
+                        'name': 'Other User',
+                        'username': 'other_user'
+                    }],
                     'project_id': 1,
                     'type': 'ISSUE',
                     'updated_at': '2021-01-04T15:31:51.081Z',
@@ -242,7 +236,18 @@ def test_extract():
                     'has_tasks': True,
                     'task_status': '10 of 15 tasks completed',
                 }
-            ]
+            ],
+            'contributors': [
+                'test_user',
+                'other_user'
+            ],
+            'files': [
+                {
+                    "id": "hash123",
+                    "name": "test.py",
+                    "type": "blob"
+                }
+            ],
         }
     ]}
 
