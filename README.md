@@ -14,12 +14,17 @@ Relevant information could be:
 * CI usage  
 
 and more.  
-The output corpus will most-likely be in the JSON-format, as it is widely used. Especially, because of it's 
+The output corpus is in the JSON-format, as it is widely used and because of its 
 compatibility with [neo4j](https://neo4j.com/)
 
 ## Install
-The tool requires Python >= 3.8 and uses the libraries [python-gitlab](https://python-gitlab.readthedocs.io/en/stable/) 
-and [click](https://click.palletsprojects.com/en/7.x/).
+The tool requires Python >= 3.8.
+
+## Dependencies to use this tool
+See [setup.cfg](https://gitlab.dlr.de/sc/ivs-open/corpus/-/blob/master/setup.cfg) under the section `install_requires`.
+
+## Dependencies to develop this tool
+See [requirements.txt](https://gitlab.dlr.de/sc/ivs-open/corpus/-/blob/master/requirements.txt).
 
 You can clone this repository and then install the tool as follows:  
 ```bash
@@ -34,4 +39,4 @@ GitLab instance you want to run this tool on. For further information read the c
 [python-gitlab docs](https://python-gitlab.readthedocs.io/en/stable/cli.html#content).  
 The tool can be run using the command `corpus`.
 
-Running the command using the `--help` parameter, will print the help page.
+Running the command using the `--help` parameter or without any parameter, will print the help page.
