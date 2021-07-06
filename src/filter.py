@@ -114,7 +114,7 @@ class Filter:
         self.any_languages = {}
         self.atleast_languages = {}
         self.atmost_languages = {}
-        self.explicit_languages = {}
+        self.exact_languages = {}
         self.attributes = []
         self.input_corpus = Corpus()
         if from_file:
@@ -157,7 +157,7 @@ class Filter:
         * any_languages
         * atleast_languages
         * atmost_languages
-        * explicit_languages
+        * exact_languages
         """
         if language_list is not None:
             for element in language_list:
@@ -168,7 +168,7 @@ class Filter:
                 elif category == "atmost_languages":
                     self.atmost_languages[element] = language_list[element]
                 else:
-                    self.explicit_languages[element] = language_list[element]
+                    self.exact_languages[element] = language_list[element]
 
     def filter(self):
         """This method filters the extracted corpus by using the previously loaded filter options. If no filter
@@ -234,11 +234,11 @@ class Filter:
                 return eval_all_percentages(project_languages, project, self.atleast_languages)
             else:
                 return False
-        elif filter_option == "explicit_languages":  # project contains exactly the languages specified in the filter
-            filter_languages = list(self.explicit_languages.keys())
+        elif filter_option == "exact_languages":  # project contains exactly the languages specified in the filter
+            filter_languages = list(self.exact_languages.keys())
             if all(elem in filter_languages for elem in project_languages) \
                     and len(filter_languages) == len(project_languages):
-                return eval_all_percentages(project_languages, project, self.explicit_languages)
+                return eval_all_percentages(project_languages, project, self.exact_languages)
             else:
                 return False
         elif filter_option == "atmost_languages":  # project contains at most the languages specified in the filter
