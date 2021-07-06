@@ -1,12 +1,600 @@
 {
     "Projects": [
         {
-            "id": 12562,
+            "id": 13982,
+            "description": "Unreal Engine 4 Projekt in der Version 4.24. Urbanes Setting am Tostmannplatz in Braunschweig in drei verschiedenen optischen Abstufungen. VR Projekt f\u00fcr die Nutzung auf dem Omnifginitydeck. ",
+            "name": "UE_VALKyRie",
+            "web_url": "https://gitlab.dlr.de/gitlab-tes-val/unreal_project/ue_valkyrie",
+            "languages": {
+                "C#": 52.7,
+                "C++": 43.14,
+                "C": 4.16
+            }
+        },
+        {
+            "id": 13980,
             "description": "",
-            "name": "VNC Rewriter",
-            "web_url": "https://gitlab.dlr.de/tfnds/vnc-rewriter",
+            "name": "MW_QPSK",
+            "web_url": "https://gitlab.dlr.de/shas_sa/mw_qpsk",
+            "languages": {
+                "Tcl": 100.0
+            }
+        },
+        {
+            "id": 13966,
+            "description": "",
+            "name": "DG2",
+            "web_url": "https://gitlab.dlr.de/kaet_da/dg2",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 13953,
+            "description": "This application accesses the Oracle Database and exports the defined data as a video. It allows for customization of the video and its data format.",
+            "name": "Video Exporter application",
+            "web_url": "https://gitlab.dlr.de/iriz_im/video-exporter-application",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 13939,
+            "description": "",
+            "name": "Zeitnachweis",
+            "web_url": "https://gitlab.dlr.de/nell_da/zeitnachweis",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 13934,
+            "description": "State Machine Library",
+            "name": "libStateMachine",
+            "web_url": "https://gitlab.dlr.de/2pasd-expsys/libstatemachine",
+            "languages": {
+                "CMake": 91.15,
+                "C++": 8.85
+            }
+        },
+        {
+            "id": 13924,
+            "description": "",
+            "name": "qtquick3d-assimp",
+            "web_url": "https://gitlab.dlr.de/scivis/miscellaneous/qt5-mirror/qtquick3d-assimp",
+            "languages": {
+                "C++": 66.05,
+                "COBOL": 13.15,
+                "C": 10.88,
+                "Python": 2.72,
+                "CMake": 1.96
+            }
+        },
+        {
+            "id": 13922,
+            "description": "",
+            "name": "qtlocation-mapboxgl",
+            "web_url": "https://gitlab.dlr.de/scivis/miscellaneous/qt5-mirror/qtlocation-mapboxgl",
+            "languages": {
+                "C++": 92.93,
+                "CMake": 2.32,
+                "JavaScript": 1.85,
+                "Objective-C++": 0.97,
+                "HTML": 0.52
+            }
+        },
+        {
+            "id": 13921,
+            "description": "",
+            "name": "qtdeclarative-testsuites",
+            "web_url": "https://gitlab.dlr.de/scivis/miscellaneous/qt5-mirror/qtdeclarative-testsuites",
+            "languages": {
+                "JavaScript": 97.93,
+                "HTML": 1.6,
+                "Python": 0.41,
+                "CSS": 0.07
+            }
+        },
+        {
+            "id": 13920,
+            "description": "",
+            "name": "qtwebengine-chromium",
+            "web_url": "https://gitlab.dlr.de/scivis/miscellaneous/qt5-mirror/qtwebengine-chromium",
+            "languages": {
+                "C++": 78.18,
+                "Python": 7.02,
+                "JavaScript": 5.13,
+                "HTML": 3.63,
+                "C": 2.52
+            }
+        },
+        {
+            "id": 13878,
+            "description": "",
+            "name": "qtrepotools",
+            "web_url": "https://gitlab.dlr.de/scivis/miscellaneous/qt5-mirror/qtrepotools",
+            "languages": {
+                "Perl": 79.7,
+                "Python": 11.73,
+                "Batchfile": 4.13,
+                "Shell": 3.08,
+                "C++": 1.33
+            }
+        },
+        {
+            "id": 13872,
+            "description": "",
+            "name": "qtqa",
+            "web_url": "https://gitlab.dlr.de/scivis/miscellaneous/qt5-mirror/qtqa",
+            "languages": {
+                "Perl": 53.42,
+                "Python": 19.61,
+                "JavaScript": 9.31,
+                "Go": 7.43,
+                "C++": 6.34
+            }
+        },
+        {
+            "id": 13853,
+            "description": "",
+            "name": "qtbase",
+            "web_url": "https://gitlab.dlr.de/scivis/miscellaneous/qt5-mirror/qtbase",
+            "languages": {
+                "C++": 86.54,
+                "HTML": 5.46,
+                "C": 2.28,
+                "Objective-C": 2.19,
+                "Objective-C++": 1.85
+            }
+        },
+        {
+            "id": 13815,
+            "description": "",
+            "name": "Masterthesis Resilienz Lars",
+            "web_url": "https://gitlab.dlr.de/hyrek/masterthesis-resilienz-lars",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 13730,
+            "description": "",
+            "name": "pybullet-sim",
+            "web_url": "https://gitlab.dlr.de/koep_ae/pybullet-sim",
+            "languages": {
+                "C": 92.64,
+                "C++": 3.55,
+                "MATLAB": 1.57,
+                "Perl": 0.6,
+                "Python": 0.48
+            }
+        },
+        {
+            "id": 13702,
+            "description": "",
+            "name": "V2X Stream Decoder",
+            "web_url": "https://gitlab.dlr.de/tfnds/kommunikationstechnik/v2x-stream-decoder",
             "languages": {
                 "Java": 100.0
+            }
+        },
+        {
+            "id": 13699,
+            "description": "Artificial Table Generation",
+            "name": "ArtTabGen",
+            "web_url": "https://gitlab.dlr.de/dw-dpp/contron/arttabgen",
+            "languages": {
+                "Python": 97.24,
+                "CSS": 2.76
+            }
+        },
+        {
+            "id": 13665,
+            "description": "Goeferencing segmentation outputs",
+            "name": "GeoReference Segmentation Results",
+            "web_url": "https://gitlab.dlr.de/azim_se/georeference-segmentation-results",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 13581,
+            "description": "Suite for Automated Testing of Filesystems on Nandflash",
+            "name": "satfon",
+            "web_url": "https://gitlab.dlr.de/avs-asw-open/satfon",
+            "languages": {
+                "C": 47.89,
+                "HTML": 35.12,
+                "C++": 14.48,
+                "Python": 0.99,
+                "CSS": 0.57
+            }
+        },
+        {
+            "id": 13571,
+            "description": "(X)ML (Co)nfiguration (W)riter for template-based generation of code from XML documents.",
+            "name": "xcow",
+            "web_url": "https://gitlab.dlr.de/avs-asw-open/xcow",
+            "languages": {
+                "Python": 89.37,
+                "C++": 10.63
+            }
+        },
+        {
+            "id": 13544,
+            "description": "Collection of SCons based build Tools.",
+            "name": "scons-build-tools",
+            "web_url": "https://gitlab.dlr.de/avs-asw-open/scons-build-tools",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 13527,
+            "description": "C++ Core Guideline Support Library (GSL)",
+            "name": "gsl",
+            "web_url": "https://gitlab.dlr.de/avs-asw-open/external/gsl",
+            "languages": {
+                "C++": 98.58,
+                "CMake": 1.42
+            }
+        },
+        {
+            "id": 13515,
+            "description": "Collection of programs and scripts for object detection and related visualization",
+            "name": "object_detection",
+            "web_url": "https://gitlab.dlr.de/imbe_ja/object_detection",
+            "languages": {
+                "Python": 77.96,
+                "Java": 9.59,
+                "IDL": 7.16,
+                "Prolog": 4.93,
+                "C++": 0.36
+            }
+        },
+        {
+            "id": 13479,
+            "description": "",
+            "name": "ANIKA Oecon WebService",
+            "web_url": "https://gitlab.dlr.de/tfnds/kommunikationstechnik/anika-oecon-webservice",
+            "languages": {
+                "Java": 99.36,
+                "Batchfile": 0.64
+            }
+        },
+        {
+            "id": 13472,
+            "description": "",
+            "name": "ln_bridge_websocket",
+            "web_url": "https://gitlab.dlr.de/eiba_th/ln_bridge_websocket",
+            "languages": {
+                "Python": 85.12,
+                "JavaScript": 11.77,
+                "HTML": 3.0,
+                "Objective-C": 0.11
+            }
+        },
+        {
+            "id": 13444,
+            "description": "",
+            "name": "ANIKA V2X Data Webservice",
+            "web_url": "https://gitlab.dlr.de/tfnds/kommunikationstechnik/anika-v2x-data-webservice",
+            "languages": {
+                "Java": 99.51,
+                "Batchfile": 0.49
+            }
+        },
+        {
+            "id": 13437,
+            "description": "all codes",
+            "name": "Sandeep",
+            "web_url": "https://gitlab.dlr.de/kn-nas-vls/sandeep",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 13432,
+            "description": "A Windows service that allows to exchange files between RCE workflows using Sharepoint Library",
+            "name": "WindowsServiceRCEConnect",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/windowsservicerceconnect",
+            "languages": {
+                "C#": 100.0
+            }
+        },
+        {
+            "id": 13396,
+            "description": "",
+            "name": "Image Enhancement",
+            "web_url": "https://gitlab.dlr.de/azim_se/image-enhancement",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 13391,
+            "description": "Example repo for open source code / research code form the workshop DLR Workshop \"Lets make your script publication ready\"",
+            "name": "Open Source Example",
+            "web_url": "https://gitlab.dlr.de/hall_ce/open-source-example",
+            "languages": {
+                "Python": 87.44,
+                "Shell": 12.56
+            }
+        },
+        {
+            "id": 13369,
+            "description": "",
+            "name": "rotated_vehicle_detection",
+            "web_url": "https://gitlab.dlr.de/azim_se/rotated_vehicle_detection",
+            "languages": {
+                "Jupyter Notebook": 51.23,
+                "C++": 37.98,
+                "Python": 5.92,
+                "Cuda": 2.81,
+                "CMake": 1.11
+            }
+        },
+        {
+            "id": 13367,
+            "description": "",
+            "name": "SSNet_Lane_ICCV19",
+            "web_url": "https://gitlab.dlr.de/azim_se/ssnet_lane_iccv19",
+            "languages": {
+                "Python": 99.79,
+                "Shell": 0.21
+            }
+        },
+        {
+            "id": 13342,
+            "description": "Berechnung der Verteilung von Tropfen in Abh\u00e4ngigkeit des Kontaktwinkels, der Temperaturen und der Tropfengr\u00f6\u00dfe.\r\nLiteratur:\r\nKim, S., and Kim, K. J. (May 3, 2011). \"Dropwise Condensation Modeling Suitable for Superhydrophobic Surfaces.\" ASME. J. Heat ",
+            "name": "Tropfenverteilung",
+            "web_url": "https://gitlab.dlr.de/brue_ch/tropfenverteilung",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 13337,
+            "description": "Visualizing the relations between DLR-Institutes, their potentials, their projects, and Humtech-clusters.",
+            "name": "Humtech-Visualizations",
+            "web_url": "https://gitlab.dlr.de/ukis-frontend/humtech-visualizations",
+            "languages": {
+                "JavaScript": 100.0
+            }
+        },
+        {
+            "id": 13297,
+            "description": "",
+            "name": "datasets",
+            "web_url": "https://gitlab.dlr.de/dw-dpp/contron/datasets",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 13250,
+            "description": "UE 4.24.3: Projekt zur Vorstudie. Evaluierung des Fahrradsimulators",
+            "name": "UE_KoFIF_BikeSim",
+            "web_url": "https://gitlab.dlr.de/gitlab-tes-val/unreal_project/ue_kofif_bikesim",
+            "languages": {
+                "C++": 94.58,
+                "C#": 3.51,
+                "C": 1.91
+            }
+        },
+        {
+            "id": 13222,
+            "description": "MemoryWrapper extends Evaluation Memory functionality on files and directories",
+            "name": "MemoryWrapper",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/memorywrapper",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 13211,
+            "description": "",
+            "name": "World Composition Editor Scripts",
+            "web_url": "https://gitlab.dlr.de/unrealaustausch/world-composition-editor-scripts",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 13145,
+            "description": "",
+            "name": "Git Ci Test",
+            "web_url": "https://gitlab.dlr.de/ts-v2x/git-ci-test",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 13116,
+            "description": "",
+            "name": "tiles-to-tiff",
+            "web_url": "https://gitlab.dlr.de/ts-spatial-data-processing/spatial-feature-manipulation/tiles-to-tiff",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 13115,
+            "description": "Collection of project-unrelated GeoServer styles used on our productive systems.",
+            "name": "misc-geoserver-styles",
+            "web_url": "https://gitlab.dlr.de/ts-spatial-data-processing/others/misc-geoserver-styles",
+            "languages": {
+                "Scheme": 100.0
+            }
+        },
+        {
+            "id": 13111,
+            "description": "Rendering styles for CAD data of the inner ring road in Brunswick.",
+            "name": "bs-inner-ring-road-layer-styles",
+            "web_url": "https://gitlab.dlr.de/ts-spatial-data-processing/others/bs-inner-ring-road-layer-styles",
+            "languages": {
+                "QML": 67.57,
+                "Scheme": 32.43
+            }
+        },
+        {
+            "id": 13099,
+            "description": "This repository contains all files used for the interaction between the robot Spot and the Infrared camera HDHeadx 600 as described in Leonard G\u00fcnzel's Bachelorthesis.",
+            "name": "IR Spot",
+            "web_url": "https://gitlab.dlr.de/mi/tragvis/ir-spot",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 13074,
+            "description": "Collection of libraries to connect to simNet from your application",
+            "name": "libsimnet",
+            "web_url": "https://gitlab.dlr.de/fl-simnet/libsimnet",
+            "languages": {
+                "C++": 69.3,
+                "JavaScript": 29.26,
+                "CMake": 1.44
+            }
+        },
+        {
+            "id": 13069,
+            "description": "",
+            "name": "ModPar",
+            "web_url": "https://gitlab.dlr.de/modpar/model_building_api_prototype",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 12990,
+            "description": "",
+            "name": "WxOracleDBConsumer",
+            "web_url": "https://gitlab.dlr.de/tfnds/data-management/wxOracleDBConsumer",
+            "languages": {
+                "Java": 100.0
+            }
+        },
+        {
+            "id": 12983,
+            "description": "Unreal Engine 4 Projekt in der Version 4.24. Bildet aktuell zwei Testlevel (Park und Supermarkt) ab. Dient dem Trainieren des Laufens in einem Fu\u00dfg\u00e4ngersimulator (Omnifinitydeck, Cyber Shoes, KatVR)",
+            "name": "UE_Pedastrian_Training_Demo",
+            "web_url": "https://gitlab.dlr.de/gitlab-tes-val/unreal_project/ue_pedastrian_training_demo",
+            "languages": {
+                "C++": 89.36,
+                "C#": 10.19,
+                "C": 0.45
+            }
+        },
+        {
+            "id": 12797,
+            "description": "Erstellung der Dokumentation und Bedienungsanleitung f\u00fcr das FEMM Messsystem",
+            "name": "femm_dokumentation",
+            "web_url": "https://gitlab.dlr.de/froh_sv/femm_dokumentation",
+            "languages": {
+                "JavaScript": 44.51,
+                "CSS": 35.54,
+                "HTML": 15.77,
+                "Python": 2.52,
+                "Batchfile": 0.93
+            }
+        },
+        {
+            "id": 12777,
+            "description": "",
+            "name": "AircraftMissionCalculator",
+            "web_url": "https://gitlab.dlr.de/bach_ar/aircraftmissioncalculator",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 12769,
+            "description": "",
+            "name": "Heart Segmentation",
+            "web_url": "https://gitlab.dlr.de/ueindnns/heart-segmentation",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 12730,
+            "description": "",
+            "name": "GitLab CI Test",
+            "web_url": "https://gitlab.dlr.de/2pasd/gitlab-ci-test",
+            "languages": {
+                "Shell": 51.57,
+                "CMake": 39.29,
+                "C++": 9.13
+            }
+        },
+        {
+            "id": 12709,
+            "description": "Original repo of Centermask2 that will be used for shipgeoid benchmarks",
+            "name": "Centermask2",
+            "web_url": "https://gitlab.dlr.de/mi/big-data-platform/centermask2",
+            "languages": {
+                "Python": 99.72,
+                "Shell": 0.28
+            }
+        },
+        {
+            "id": 12699,
+            "description": "Get the IEEE networks as PyPSA networks and modify them for the purposes in SDK 2050",
+            "name": "IEEE examples in PyPSA",
+            "web_url": "https://gitlab.dlr.de/fokusthemenprojekt-sdk-2050/ieee-examples-in-pypsa",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 12675,
+            "description": "",
+            "name": "FCRawDataReader-Rust",
+            "web_url": "https://gitlab.dlr.de/tfnds/fc-raw-exchange/fcrawdatareader-rust",
+            "languages": {
+                "Rust": 100.0
+            }
+        },
+        {
+            "id": 12671,
+            "description": "This is the code to evaluate pixel-wise semantic segmentation algorithms.\r\n\r\nIt outputs:\r\n- IOU\r\n- Dice\r\n- Recall\r\n- Precision\r\n- Accuracy\r\n- Confusion Matrix\r\n- TP, FP, TN\r\n- Frequency Weighted Criteria",
+            "name": "Pixel Wise Semantic Segmentation Evaluation",
+            "web_url": "https://gitlab.dlr.de/azim_se/pixel-wise-semantic-segmentation-evaluation",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 12667,
+            "description": "This is a prototype for the flowsimulator AM+CFD coupling",
+            "name": "Teo Coupling Prototype",
+            "web_url": "https://gitlab.dlr.de/tugn_ma/teo-coupling-prototype",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 12524,
+            "description": "",
+            "name": "pybullet-sim",
+            "web_url": "https://gitlab.dlr.de/eiba_th/pybullet-sim",
+            "languages": {
+                "C": 92.6,
+                "C++": 3.55,
+                "MATLAB": 1.57,
+                "Perl": 0.6,
+                "Python": 0.53
+            }
+        },
+        {
+            "id": 12515,
+            "description": "This project contains the scripts used to generate the Synthetic Population for Germany",
+            "name": "DEMO-SynthPop",
+            "web_url": "https://gitlab.dlr.de/demo/demo-synthpop",
+            "languages": {
+                "Jupyter Notebook": 57.45,
+                "HTML": 42.55
             }
         },
         {
@@ -24,7 +612,7 @@
             "id": 12501,
             "description": "Unreal Engine 4 Projekt in der Version 4.24. Beinhaltet den ADAC Verkehrs\u00fcbungsplatz in Braunschweig.",
             "name": "UE_ADAC_BS_Uebungsplatz",
-            "web_url": "https://gitlab.dlr.de/gitlab-tes-val/ue_adac_bs_uebungsplatz",
+            "web_url": "https://gitlab.dlr.de/gitlab-tes-val/unreal_project/ue_adac_bs_uebungsplatz",
             "languages": {
                 "C++": 94.93,
                 "C#": 4.62,
@@ -37,8 +625,8 @@
             "name": "libControl",
             "web_url": "https://gitlab.dlr.de/2pasd-expsys/libcontrol",
             "languages": {
-                "CMake": 64.81,
-                "C++": 35.19
+                "C++": 71.87,
+                "CMake": 28.13
             }
         },
         {
@@ -85,11 +673,11 @@
             "name": "Yolact",
             "web_url": "https://gitlab.dlr.de/mi/big-data-platform/yolact",
             "languages": {
-                "Python": 90.09,
-                "JavaScript": 7.0,
-                "Shell": 1.1,
-                "CSS": 0.91,
-                "HTML": 0.9
+                "Python": 92.29,
+                "JavaScript": 5.45,
+                "Shell": 0.85,
+                "CSS": 0.71,
+                "HTML": 0.7
             }
         },
         {
@@ -116,9 +704,9 @@
             "name": "UE_VALHaLa",
             "web_url": "https://gitlab.dlr.de/gitlab-tes-val/ue_valhala",
             "languages": {
-                "C++": 96.63,
-                "C#": 3.23,
-                "C": 0.14
+                "C++": 97.51,
+                "C#": 2.29,
+                "C": 0.2
             }
         },
         {
@@ -136,8 +724,8 @@
             "name": "UE_PlugIn_Helpfull_Functions_Cpp",
             "web_url": "https://gitlab.dlr.de/gitlab-tes-val/unreal_plugins/ue_plugin_helpfull_functions_cpp",
             "languages": {
-                "C++": 85.32,
-                "C#": 14.68
+                "C++": 88.91,
+                "C#": 11.09
             }
         },
         {
@@ -175,16 +763,14 @@
             }
         },
         {
-            "id": 12270,
-            "description": "Detectron2 is FAIR's next-generation platform for object detection, segmentation and other visual recognition tasks.",
-            "name": "Detectron2",
-            "web_url": "https://gitlab.dlr.de/mi/big-data-platform/detectron2",
+            "id": 12254,
+            "description": "",
+            "name": "air_pollution",
+            "web_url": "https://gitlab.dlr.de/rafe_ha/air_pollution",
             "languages": {
-                "Python": 92.87,
-                "Cuda": 3.76,
-                "C++": 2.7,
-                "Shell": 0.45,
-                "Dockerfile": 0.12
+                "Python": 97.06,
+                "TeX": 2.88,
+                "MATLAB": 0.06
             }
         },
         {
@@ -222,17 +808,6 @@
             "web_url": "https://gitlab.dlr.de/mi/big-data-platform/shipgeoid-benchmarks",
             "languages": {
                 "Python": 100.0
-            }
-        },
-        {
-            "id": 12151,
-            "description": "OpenMMLab Detection Toolbox and Benchmark",
-            "name": "mmdetection",
-            "web_url": "https://gitlab.dlr.de/mi/big-data-platform/mmdetection",
-            "languages": {
-                "Python": 99.83,
-                "Dockerfile": 0.09,
-                "Shell": 0.08
             }
         },
         {
@@ -281,7 +856,7 @@
             "id": 11982,
             "description": "Implementation of a parser for the OPL modelling standard.",
             "name": "OPL grammar",
-            "web_url": "https://gitlab.dlr.de/bach_ar/opl-grammar",
+            "web_url": "https://gitlab.dlr.de/dlr-sl/opl-grammar",
             "languages": {
                 "Python": 100.0
             }
@@ -333,16 +908,6 @@
             }
         },
         {
-            "id": 11909,
-            "description": "",
-            "name": "IncidenceAngleNormalization",
-            "web_url": "https://gitlab.dlr.de/goet_sh/incidenceanglenormalization",
-            "languages": {
-                "Python": 98.6,
-                "Dockerfile": 1.4
-            }
-        },
-        {
             "id": 11859,
             "description": "",
             "name": "FLHYSAFE Cooling Unit Control",
@@ -381,16 +946,6 @@
             }
         },
         {
-            "id": 11805,
-            "description": "Python driver for SMGair volume flow meter",
-            "name": "smgAir",
-            "web_url": "https://gitlab.dlr.de/as-boa/drivers/smgair",
-            "languages": {
-                "Python": 79.77,
-                "Makefile": 20.23
-            }
-        },
-        {
             "id": 11753,
             "description": "",
             "name": "PowerFactory pypsa Converter",
@@ -417,6 +972,15 @@
                 "JavaScript": 94.54,
                 "CSS": 3.26,
                 "HTML": 2.2
+            }
+        },
+        {
+            "id": 11708,
+            "description": "",
+            "name": "Cycling",
+            "web_url": "https://gitlab.dlr.de/ECE-Batterie-Gruppe/dlr_lib/data_evaluation/cycling",
+            "languages": {
+                "Python": 100.0
             }
         },
         {
@@ -468,7 +1032,7 @@
             "id": 11622,
             "description": "This GUI was written using PyQT and provides the front-end to convert .csv to .h5. ",
             "name": "Standalone converter GUI",
-            "web_url": "https://gitlab.dlr.de/sach_cr/standalone-converter-gui",
+            "web_url": "https://gitlab.dlr.de/data-analyser/standalone-converter-gui",
             "languages": {
                 "Python": 100.0
             }
@@ -487,7 +1051,7 @@
             "id": 11546,
             "description": "Unreal Version: 4.24.3      @City 4.3 Experiment: Multi-User-Szenario auf der Forschungskreuzung BS. Auto (Golf7) mit eHMI&iHMI mit teils manueller, teils autonomer Fahrt in Verbindung mit Fahrradfahrer auf BikeSim (separates UE Projekt)",
             "name": "UE_AtCity43_Car",
-            "web_url": "https://gitlab.dlr.de/gitlab-tes-val/ue_atcity43_car",
+            "web_url": "https://gitlab.dlr.de/gitlab-tes-val/unreal_project/ue_atcity43_car",
             "languages": {
                 "Shell": 100.0
             }
@@ -573,34 +1137,12 @@
             }
         },
         {
-            "id": 11208,
-            "description": "FlowSimulator Component Control\r\n--> class hierarchical python control instance for disciplinary component wrappers to\r\n(a) conncect to FSDLRControl\r\n(b) generate scenarios (optimisation and analysis)\r\n(c) conncect to FASTopt and openMDAO in general",
-            "name": "FSCompControl",
-            "web_url": "https://gitlab.dlr.de/dlr-sp/fscompcontrol",
-            "languages": {
-                "Python": 100.0
-            }
-        },
-        {
             "id": 11175,
             "description": "",
             "name": "codex-Stability",
             "web_url": "https://gitlab.dlr.de/zamb_ja/codex-stability",
             "languages": {
                 "Kotlin": 100.0
-            }
-        },
-        {
-            "id": 11165,
-            "description": "xerces-c mirror",
-            "name": "xerces-c",
-            "web_url": "https://gitlab.dlr.de/koer_ad/xerces-c",
-            "languages": {
-                "C++": 95.36,
-                "C": 1.78,
-                "CMake": 1.34,
-                "M4": 0.81,
-                "Makefile": 0.47
             }
         },
         {
@@ -635,8 +1177,8 @@
             "name": "RealLab-HH",
             "web_url": "https://gitlab.dlr.de/sumo-sim/reallab-hh",
             "languages": {
-                "Python": 89.56,
-                "Batchfile": 10.44
+                "Python": 87.99,
+                "Batchfile": 12.01
             }
         },
         {
@@ -701,11 +1243,11 @@
             "name": "walabot",
             "web_url": "https://gitlab.dlr.de/pi-dept-2/walabot",
             "languages": {
-                "HTML": 37.58,
-                "TeX": 36.69,
-                "Python": 10.53,
-                "JavaScript": 6.73,
-                "CSS": 5.35
+                "HTML": 37.31,
+                "TeX": 36.42,
+                "Python": 11.18,
+                "JavaScript": 6.68,
+                "CSS": 5.31
             }
         },
         {
@@ -727,25 +1269,13 @@
             }
         },
         {
-            "id": 10818,
-            "description": "Tech-studies *3D for ZKI* (DORK for short)",
-            "name": "DORK",
-            "web_url": "https://gitlab.dlr.de/ukis-frontend/DORK",
-            "languages": {
-                "TypeScript": 67.61,
-                "JavaScript": 32.21,
-                "HTML": 0.13,
-                "Dockerfile": 0.05
-            }
-        },
-        {
             "id": 10773,
             "description": "",
             "name": "hali",
             "web_url": "https://gitlab.dlr.de/ts-lsa/hali",
             "languages": {
-                "Java": 98.3,
-                "Python": 1.7
+                "Java": 98.81,
+                "Python": 1.19
             }
         },
         {
@@ -782,17 +1312,6 @@
             }
         },
         {
-            "id": 10741,
-            "description": "",
-            "name": "letmeland",
-            "web_url": "https://gitlab.dlr.de/sart/tools/letmeland",
-            "languages": {
-                "Python": 98.3,
-                "Makefile": 1.57,
-                "Shell": 0.13
-            }
-        },
-        {
             "id": 10696,
             "description": "Codes for developing Kalman filter and machine learning enabled trajectory prediction model ",
             "name": "Hybrid_Learning",
@@ -810,15 +1329,6 @@
                 "C": 94.07,
                 "CMake": 3.73,
                 "Shell": 2.2
-            }
-        },
-        {
-            "id": 10679,
-            "description": "",
-            "name": "gantify",
-            "web_url": "https://gitlab.dlr.de/stof_mr/gantify",
-            "languages": {
-                "Python": 100.0
             }
         },
         {
@@ -891,9 +1401,9 @@
             "name": "ART-FORUM",
             "web_url": "https://gitlab.dlr.de/sumo-sim/art-forum",
             "languages": {
-                "Batchfile": 66.82,
-                "Python": 32.89,
-                "Shell": 0.29
+                "Batchfile": 66.37,
+                "Python": 33.34,
+                "Shell": 0.28
             }
         },
         {
@@ -901,6 +1411,15 @@
             "description": "Provides an API to calculate transformations between Entities in the ontology.\r\nUpdates transformations in the ontology by listening to different robot's telemetry.",
             "name": "Transformations",
             "web_url": "https://gitlab.dlr.de/git-fof/transformations",
+            "languages": {
+                "Python": 100.0
+            }
+        },
+        {
+            "id": 10319,
+            "description": "",
+            "name": "particle sensor readin",
+            "web_url": "https://gitlab.dlr.de/kohl_ad/particle-sensor-readin",
             "languages": {
                 "Python": 100.0
             }
@@ -921,29 +1440,6 @@
             "web_url": "https://gitlab.dlr.de/pete_j0/optical_strain_detection_tensile",
             "languages": {
                 "Python": 100.0
-            }
-        },
-        {
-            "id": 10219,
-            "description": "Frontend Test for Graphs using Flask + Clojurescript",
-            "name": "frontendtest",
-            "web_url": "https://gitlab.dlr.de/sche_h3/frontendtest",
-            "languages": {
-                "Clojure": 64.14,
-                "Python": 25.01,
-                "CSS": 8.81,
-                "HTML": 1.48,
-                "Dockerfile": 0.45
-            }
-        },
-        {
-            "id": 10213,
-            "description": "Simple Dash Graph Demo",
-            "name": "dashgraph",
-            "web_url": "https://gitlab.dlr.de/sche_h3/dashgraph",
-            "languages": {
-                "Python": 72.25,
-                "Dockerfile": 27.75
             }
         },
         {
@@ -985,18 +1481,6 @@
             }
         },
         {
-            "id": 9992,
-            "description": "",
-            "name": "Gitlab CI Examples",
-            "web_url": "https://gitlab.dlr.de/sigg_ma/gitlab-ci",
-            "languages": {
-                "Python": 65.35,
-                "Makefile": 26.51,
-                "Batchfile": 7.29,
-                "C++": 0.85
-            }
-        },
-        {
             "id": 9985,
             "description": "Scripts for RBU/RBI analyses",
             "name": "RBU Analyses",
@@ -1031,16 +1515,6 @@
             "web_url": "https://gitlab.dlr.de/mi/marlin/3dtilesreader",
             "languages": {
                 "Java": 100.0
-            }
-        },
-        {
-            "id": 9855,
-            "description": "Simple HelloWorld service; used as a testrun for the Docker-Workstation workflow",
-            "name": "HelloWorld",
-            "web_url": "https://gitlab.dlr.de/sche_h3/helloworld",
-            "languages": {
-                "Python": 53.31,
-                "Dockerfile": 46.69
             }
         },
         {
@@ -1122,15 +1596,6 @@
             }
         },
         {
-            "id": 9597,
-            "description": "This git project constitues the code basis to analyze, investigate and experiment with advanced GNSS signals.",
-            "name": "Analysis and Design of next generation GNSS Signals",
-            "web_url": "https://gitlab.dlr.de/beck_fc/analysis-and-design-of-next-generation-gnss-signals",
-            "languages": {
-                "MATLAB": 100.0
-            }
-        },
-        {
             "id": 9580,
             "description": "",
             "name": "LH2TankMass",
@@ -1155,6 +1620,18 @@
             "web_url": "https://gitlab.dlr.de/mein_ni/turbokf",
             "languages": {
                 "Python": 100.0
+            }
+        },
+        {
+            "id": 9512,
+            "description": "This python library contains functions to import infrastructure elements in to the Bahnserver Oracle database",
+            "name": "oracle-db-infrastructure-elements-importer",
+            "web_url": "https://gitlab.dlr.de/ts-spatial-data-processing/tools/oracle-db-infrastructure-elements-importer",
+            "languages": {
+                "HTML": 50.72,
+                "JavaScript": 21.67,
+                "CSS": 20.97,
+                "Python": 6.64
             }
         },
         {
@@ -1240,16 +1717,6 @@
             }
         },
         {
-            "id": 9263,
-            "description": "Easy deskewing of Images",
-            "name": "deSkew",
-            "web_url": "https://gitlab.dlr.de/zap-pqs/deskew",
-            "languages": {
-                "C++": 94.28,
-                "C": 5.72
-            }
-        },
-        {
             "id": 9231,
             "description": "Collection of programs and scripts for object detection and related visualization",
             "name": "object_detection",
@@ -1260,16 +1727,6 @@
                 "IDL": 7.16,
                 "Prolog": 4.93,
                 "C++": 0.36
-            }
-        },
-        {
-            "id": 9226,
-            "description": "The repository contains the example code used in this workshop. This project is used to perform some experiments before using them in the actual workshop.",
-            "name": "Sample Calculator Experiments",
-            "web_url": "https://gitlab.dlr.de/fran_m0/sample-calculator",
-            "languages": {
-                "Python": 97.14,
-                "Makefile": 2.86
             }
         },
         {
@@ -1324,26 +1781,13 @@
         },
         {
             "id": 9105,
-            "description": "Reboot of the FrOLiB (Free space Optical Link Budget) project.",
-            "name": "FrOLiB 2",
+            "description": "Reboot of the FrOLiB (Free space Optical Link Budget) project.\r\nRenamed to QCalc",
+            "name": "QCalc",
             "web_url": "https://gitlab.dlr.de/ocs/frolib-2",
             "languages": {
                 "MATLAB": 92.02,
                 "Objective-C": 4.99,
                 "M": 2.98
-            }
-        },
-        {
-            "id": 9080,
-            "description": "this repository collects information about the Bachelor's thesis of Sandesh Sharma, working on bringing emergency landing capability to ARDEA.",
-            "name": "ardea-emergency-landing",
-            "web_url": "https://gitlab.dlr.de/shar_sa/ardea-emergency-landing",
-            "languages": {
-                "TeX": 48.4,
-                "C++": 43.75,
-                "CMake": 7.58,
-                "Makefile": 0.25,
-                "Shell": 0.02
             }
         },
         {
@@ -1355,6 +1799,17 @@
                 "Java": 65.53,
                 "HTML": 34.04,
                 "Shell": 0.43
+            }
+        },
+        {
+            "id": 9041,
+            "description": "",
+            "name": "masterthesis",
+            "web_url": "https://gitlab.dlr.de/stae_mx/masterthesis",
+            "languages": {
+                "TeX": 50.07,
+                "Jupyter Notebook": 49.92,
+                "Python": 0.01
             }
         },
         {
@@ -1413,6 +1868,17 @@
             }
         },
         {
+            "id": 8852,
+            "description": "Code specific to the SVC spectrometer",
+            "name": "SVC",
+            "web_url": "https://gitlab.dlr.de/opairs/svc",
+            "languages": {
+                "Standard ML": 36.75,
+                "Jupyter Notebook": 35.38,
+                "Python": 27.88
+            }
+        },
+        {
             "id": 8847,
             "description": "GDAL library extension with OpenDRIVE read-only capability. Repository mirrored from DLR-TS GitHub repository. Please only make changes in the GitHub repository and don't use this GitLab mirror.",
             "name": "gdal",
@@ -1436,40 +1902,6 @@
                 "CSS": 26.78,
                 "SCSS": 2.87,
                 "Python": 1.0
-            }
-        },
-        {
-            "id": 8749,
-            "description": "The HTML parser script is used to demonstrate various aspects of Python testing.",
-            "name": "HTML Parser",
-            "web_url": "https://gitlab.dlr.de/schlauch/html-parser",
-            "languages": {
-                "Python": 92.23,
-                "Makefile": 7.77
-            }
-        },
-        {
-            "id": 8732,
-            "description": "",
-            "name": "Gitlab CI",
-            "web_url": "https://gitlab.dlr.de/thie_jo/gitlab-ci",
-            "languages": {
-                "Python": 65.35,
-                "Makefile": 26.51,
-                "Batchfile": 7.29,
-                "C++": 0.85
-            }
-        },
-        {
-            "id": 8730,
-            "description": "",
-            "name": "Gitlab CI",
-            "web_url": "https://gitlab.dlr.de/leut_bn/gitlab-ci",
-            "languages": {
-                "Python": 65.35,
-                "Makefile": 26.51,
-                "Batchfile": 7.29,
-                "C++": 0.85
             }
         },
         {
@@ -1509,13 +1941,12 @@
             }
         },
         {
-            "id": 8668,
-            "description": "The HTML parser script is used to demonstrate various aspects of Python testing.",
-            "name": "HTML Parser",
-            "web_url": "https://gitlab.dlr.de/meinel/html-parser",
+            "id": 8686,
+            "description": "Trian3DBuilder Projekt in der Version 7v4 (zuvor 7v1, 7v2). Enth\u00e4lt Geodaten von 3DMapping aus dem Jahr 2020, Elevation Data ( Bereich Testfeld Modul 1) sowie OSM Daten zur Erg\u00e4nzung von Geb\u00e4uden und Fahrbahnen.",
+            "name": "T3DB_Tostmannplatz",
+            "web_url": "https://gitlab.dlr.de/gitlab-tes-val/trian_projects/t3db_tostmannplatz",
             "languages": {
-                "Python": 92.06,
-                "Makefile": 7.94
+                "Shell": 100.0
             }
         },
         {
@@ -1534,18 +1965,6 @@
             "web_url": "https://gitlab.dlr.de/holk_jo/gitlab-ci",
             "languages": {
                 "C++": 100.0
-            }
-        },
-        {
-            "id": 8622,
-            "description": "",
-            "name": "Gitlab CI Examples",
-            "web_url": "https://gitlab.dlr.de/sc-hpc/gitlab-ci",
-            "languages": {
-                "Python": 65.35,
-                "Makefile": 26.51,
-                "Batchfile": 7.29,
-                "C++": 0.85
             }
         },
         {
@@ -1670,19 +2089,6 @@
             "web_url": "https://gitlab.dlr.de/hoff_nl/knights-tour",
             "languages": {
                 "Rust": 100.0
-            }
-        },
-        {
-            "id": 8395,
-            "description": "",
-            "name": "grpc",
-            "web_url": "https://gitlab.dlr.de/setlevel4to5/externals/grpc",
-            "languages": {
-                "C++": 46.28,
-                "C": 13.21,
-                "Python": 12.19,
-                "C#": 8.22,
-                "Makefile": 4.22
             }
         },
         {
@@ -1848,8 +2254,8 @@
         {
             "id": 8200,
             "description": "Weiterentwicklung des SE-Richtlinienanhangs.",
-            "name": "se-richtlinie-anhang",
-            "web_url": "https://gitlab.dlr.de/se-network/se-richtlinie-anhang",
+            "name": "DLR SE Guidelines",
+            "web_url": "https://gitlab.dlr.de/se-network/dlr-se-guidelines",
             "languages": {
                 "Python": 96.24,
                 "Batchfile": 3.76
@@ -1916,39 +2322,6 @@
             }
         },
         {
-            "id": 8129,
-            "description": "The HTML parser script is used to demonstrate various aspects of Python testing.",
-            "name": "HTML Parser Archive",
-            "web_url": "https://gitlab.dlr.de/dlr-se-workshops/python-testing/html-parser",
-            "languages": {
-                "Python": 92.21,
-                "Makefile": 7.79
-            }
-        },
-        {
-            "id": 8117,
-            "description": "",
-            "name": "prototyping",
-            "web_url": "https://gitlab.dlr.de/woozlegoozle/erlang-sle-codec",
-            "languages": {
-                "Erlang": 99.82,
-                "Shell": 0.18
-            }
-        },
-        {
-            "id": 8113,
-            "description": "",
-            "name": "mfc-blackfin",
-            "web_url": "https://gitlab.dlr.de/refex-exchange/mfc-blackfin",
-            "languages": {
-                "C": 64.01,
-                "C++": 34.95,
-                "Python": 0.53,
-                "MATLAB": 0.3,
-                "GDB": 0.09
-            }
-        },
-        {
             "id": 8111,
             "description": "",
             "name": "mfc-rodos",
@@ -1989,8 +2362,8 @@
             "name": "EBSD_with_Asterix",
             "web_url": "https://gitlab.dlr.de/kn-nas-vls/EBSD_with_Asterix",
             "languages": {
-                "Python": 99.53,
-                "Shell": 0.47
+                "Python": 99.51,
+                "Shell": 0.49
             }
         },
         {
@@ -2064,21 +2437,20 @@
             "name": "prj-pt_website",
             "web_url": "https://gitlab.dlr.de/dlr-pt/prj-pt-website",
             "languages": {
-                "CSS": 40.56,
-                "JavaScript": 37.03,
-                "Twig": 13.73,
-                "PHP": 7.72,
-                "SCSS": 0.56
+                "CSS": 38.93,
+                "JavaScript": 35.22,
+                "Twig": 12.78,
+                "PHP": 9.85,
+                "HTML": 2.9
             }
         },
         {
-            "id": 8045,
+            "id": 8011,
             "description": "",
-            "name": "HPDA Workshop Documents",
-            "web_url": "https://gitlab.dlr.de/over_ne/hpda-workshop-documents",
+            "name": "RealLab",
+            "web_url": "https://gitlab.dlr.de/RealLabor_HH/reallab",
             "languages": {
-                "C++": 94.35,
-                "Makefile": 5.65
+                "Python": 100.0
             }
         },
         {
@@ -2108,86 +2480,6 @@
             "languages": {
                 "C++": 95.21,
                 "C#": 4.79
-            }
-        },
-        {
-            "id": 7995,
-            "description": "",
-            "name": "fwm_cs",
-            "web_url": "https://gitlab.dlr.de/zap-pqs/fwm_cs",
-            "languages": {
-                "C#": 100.0
-            }
-        },
-        {
-            "id": 7994,
-            "description": "",
-            "name": "thermography_displayimg_automatik_plugin",
-            "web_url": "https://gitlab.dlr.de/zap-pqs/thermography_displayimg_automatik_plugin",
-            "languages": {
-                "C#": 99.99,
-                "Smalltalk": 0.01
-            }
-        },
-        {
-            "id": 7993,
-            "description": "",
-            "name": "edge3D_OpenTK_cs",
-            "web_url": "https://gitlab.dlr.de/zap-pqs/edge3d_opentk_cs",
-            "languages": {
-                "C#": 99.95,
-                "GLSL": 0.05,
-                "Smalltalk": 0.0
-            }
-        },
-        {
-            "id": 7992,
-            "description": "",
-            "name": "tscan_interface",
-            "web_url": "https://gitlab.dlr.de/zap-pqs/tscan_interface",
-            "languages": {
-                "C++": 80.1,
-                "C#": 18.19,
-                "C": 1.72
-            }
-        },
-        {
-            "id": 7991,
-            "description": "",
-            "name": "OLPmiddleAxisToPortalConverter",
-            "web_url": "https://gitlab.dlr.de/zap-pqs/olpmiddleaxistoportalconverter",
-            "languages": {
-                "Python": 100.0
-            }
-        },
-        {
-            "id": 7989,
-            "description": "",
-            "name": "fwm_processing",
-            "web_url": "https://gitlab.dlr.de/zap-pqs/fwm_processing",
-            "languages": {
-                "Python": 100.0
-            }
-        },
-        {
-            "id": 7988,
-            "description": "",
-            "name": "pcl_viewer",
-            "web_url": "https://gitlab.dlr.de/zap-pqs/pcl_viewer",
-            "languages": {
-                "C++": 94.17,
-                "CMake": 5.83
-            }
-        },
-        {
-            "id": 7987,
-            "description": "",
-            "name": "pcl_edge_detection",
-            "web_url": "https://gitlab.dlr.de/zap-pqs/pcl_edge_detection",
-            "languages": {
-                "C++": 97.63,
-                "Python": 1.53,
-                "CMake": 0.84
             }
         },
         {
@@ -2284,18 +2576,6 @@
             }
         },
         {
-            "id": 7807,
-            "description": "Python framework for the TFNDS approval",
-            "name": "Approval Framework",
-            "web_url": "https://gitlab.dlr.de/tfnds/approval-framework",
-            "languages": {
-                "Python": 97.21,
-                "Shell": 2.28,
-                "Batchfile": 0.28,
-                "Makefile": 0.22
-            }
-        },
-        {
             "id": 7797,
             "description": "",
             "name": "Evolution Strategy",
@@ -2361,11 +2641,11 @@
             "name": "Dingdong",
             "web_url": "https://gitlab.dlr.de/dsl-bs/dingdong",
             "languages": {
-                "PHP": 45.15,
-                "Vue": 41.32,
-                "HTML": 12.09,
-                "JavaScript": 1.22,
-                "Shell": 0.22
+                "PHP": 53.83,
+                "Vue": 42.48,
+                "JavaScript": 1.92,
+                "HTML": 1.44,
+                "Shell": 0.34
             }
         },
         {
@@ -2375,16 +2655,6 @@
             "web_url": "https://gitlab.dlr.de/ldacs-nav/ldacs-nav",
             "languages": {
                 "MATLAB": 100.0
-            }
-        },
-        {
-            "id": 7724,
-            "description": "",
-            "name": "Demonstration - Add a new feature to the Sample Calculator application",
-            "web_url": "https://gitlab.dlr.de/dlr-se-workshops/hiperch-se-in-hpc/sample-calculator-demo-workflow",
-            "languages": {
-                "Python": 94.81,
-                "Makefile": 5.19
             }
         },
         {
@@ -2518,7 +2788,7 @@
             "id": 7539,
             "description": "Unreal Engine 4 Projekt in der Version 4.22. Alter Datensatz vom Braunschweiger Bahnhof.",
             "name": "UE_VirtuelleWelt",
-            "web_url": "https://gitlab.dlr.de/gitlab-tes-val/ue_virtuellewelt",
+            "web_url": "https://gitlab.dlr.de/gitlab-tes-val/unreal_project/ue_virtuellewelt",
             "languages": {
                 "C#": 52.2,
                 "C++": 43.81,
@@ -2628,18 +2898,8 @@
             "name": "AnomalyDetection",
             "web_url": "https://gitlab.dlr.de/hieb_ti/anomalydetection",
             "languages": {
-                "Python": 80.25,
-                "TeX": 19.75
-            }
-        },
-        {
-            "id": 7382,
-            "description": "",
-            "name": "prov2bigchaindb",
-            "web_url": "https://gitlab.dlr.de/sc/ivs-open/prov2bigchaindb",
-            "languages": {
-                "Python": 98.65,
-                "Makefile": 1.35
+                "Python": 74.78,
+                "TeX": 25.22
             }
         },
         {
@@ -2676,19 +2936,6 @@
             "web_url": "https://gitlab.dlr.de/knaotsoftware/student/cpa-aerotech",
             "languages": {
                 "Python": 100.0
-            }
-        },
-        {
-            "id": 7296,
-            "description": "",
-            "name": "cc_router",
-            "web_url": "https://gitlab.dlr.de/kuec_ph/cc_router",
-            "languages": {
-                "Makefile": 45.7,
-                "C++": 22.16,
-                "CMake": 15.06,
-                "Python": 8.57,
-                "C": 3.0
             }
         },
         {
@@ -2738,16 +2985,6 @@
             }
         },
         {
-            "id": 7181,
-            "description": "This repo contains the tools needed to automatically run the VPH workflow.",
-            "name": "VPH-Testrun",
-            "web_url": "https://gitlab.dlr.de/dlr-sp/vph-testrun",
-            "languages": {
-                "Shell": 92.94,
-                "Dockerfile": 7.06
-            }
-        },
-        {
             "id": 7164,
             "description": "This project serves as a way to translate flight data to fdr files for use in xplane 11. Also it is a mean for me to get started in python programming. ",
             "name": "CODEdata2FDR",
@@ -2788,11 +3025,11 @@
             "name": "raframe",
             "web_url": "https://gitlab.dlr.de/dw-arrayviz/server_tests",
             "languages": {
-                "C++": 81.71,
-                "Python": 9.92,
-                "CMake": 4.95,
-                "Shell": 2.52,
-                "JavaScript": 0.72
+                "C++": 90.44,
+                "Python": 5.09,
+                "CMake": 2.72,
+                "Shell": 1.3,
+                "JavaScript": 0.37
             }
         },
         {
@@ -2817,7 +3054,7 @@
             "id": 7070,
             "description": "CoMove Experiment 1 (2 Fahrer) f\u00fcr UE 4.24. Urbanes Multi-User-Szenario mit Autobahnanbindung zur Untersuchung von kooperativem Fahrverhalten.",
             "name": "UE_CoMove",
-            "web_url": "https://gitlab.dlr.de/gitlab-tes-val/ue_comove",
+            "web_url": "https://gitlab.dlr.de/gitlab-tes-val/unreal_project/ue_comove",
             "languages": {
                 "C++": 97.93,
                 "C#": 1.98,
@@ -2847,17 +3084,6 @@
             }
         },
         {
-            "id": 7031,
-            "description": "Hardware abstraction layer that provides a SpaceWire receive and transmit function independent of connected hardware",
-            "name": "spw_hal",
-            "web_url": "https://gitlab.dlr.de/schw_gb/spw_hal",
-            "languages": {
-                "C++": 53.34,
-                "C": 45.43,
-                "Makefile": 1.24
-            }
-        },
-        {
             "id": 7026,
             "description": "Aircraft structure sizing with Pandora, DELiS and VarLoads",
             "name": "PanDeVar",
@@ -2873,8 +3099,8 @@
             "name": "scheduler",
             "web_url": "https://gitlab.dlr.de/git-fof/scheduler",
             "languages": {
-                "Python": 98.45,
-                "Shell": 1.55
+                "Python": 98.46,
+                "Shell": 1.54
             }
         },
         {
@@ -2949,6 +3175,18 @@
             }
         },
         {
+            "id": 6880,
+            "description": "This is the static main webpage of the software catalog.",
+            "name": "Software Catalog - Catalog Website",
+            "web_url": "https://gitlab.dlr.de/sc/ivs-open/software-catalog-catalog-website",
+            "languages": {
+                "CSS": 54.69,
+                "HTML": 44.07,
+                "Ruby": 1.01,
+                "Shell": 0.23
+            }
+        },
+        {
             "id": 6878,
             "description": "Internal read-only mirror. Please perform all changes directly on GitHub.",
             "name": "RepoGuard Mirror",
@@ -2977,15 +3215,6 @@
                 "Fortran": 11.84,
                 "Perl": 6.0,
                 "Raku": 3.36
-            }
-        },
-        {
-            "id": 6873,
-            "description": "Kamerabasierte Lageerkennung von Stringerkanten zur Prozessdokumentation und sp\u00e4teren Regelung mittels IDS ueye XS Kameras und OpenCV. Python, Cross-Platform Windows + Linux (Raspberrry Pi)",
-            "name": "CUSW-Detection",
-            "web_url": "https://gitlab.dlr.de/zlp-augsburg/cusw-detection",
-            "languages": {
-                "Python": 100.0
             }
         },
         {
@@ -3073,19 +3302,6 @@
             }
         },
         {
-            "id": 6765,
-            "description": "Fast & higly paralellized array operations in C/C++ and CUDA",
-            "name": "SpeedMatrix",
-            "web_url": "https://gitlab.dlr.de/speedmatrix/speedmatrix",
-            "languages": {
-                "C++": 69.91,
-                "C": 14.42,
-                "Python": 9.47,
-                "Cuda": 6.09,
-                "Makefile": 0.11
-            }
-        },
-        {
             "id": 6754,
             "description": "",
             "name": "static-html",
@@ -3113,18 +3329,6 @@
             "web_url": "https://gitlab.dlr.de/tfnds/utils",
             "languages": {
                 "Shell": 100.0
-            }
-        },
-        {
-            "id": 6725,
-            "description": "//fork from https://gitlab.sl4to5.de/deliverables/model/actor/vehdyn_model_detail1",
-            "name": "VehDyn_Model_Detail1",
-            "web_url": "https://gitlab.dlr.de/setlevel4to5/simulationmodels/actor/vehdyn_model_detail1",
-            "languages": {
-                "C": 81.98,
-                "Makefile": 13.8,
-                "C++": 3.7,
-                "Batchfile": 0.52
             }
         },
         {
@@ -3210,7 +3414,7 @@
             "id": 6667,
             "description": "Enth\u00e4lt eine \u00dcbersicht von aufbereiteten Assets, die einfach in weitere Unreal-Projekte \u00fcbertragen werden k\u00f6nnen. ",
             "name": "Unreal Showreel",
-            "web_url": "https://gitlab.dlr.de/gitlab-tes-val/unreal_showreel",
+            "web_url": "https://gitlab.dlr.de/gitlab-tes-val/unreal_project/unreal_showreel",
             "languages": {
                 "C++": 95.21,
                 "C#": 4.38,
@@ -3223,21 +3427,8 @@
             "name": "AISRoutEm",
             "web_url": "https://gitlab.dlr.de/kn-nas-vls/aisroutem",
             "languages": {
-                "Python": 98.46,
-                "Shell": 1.54
-            }
-        },
-        {
-            "id": 6630,
-            "description": "",
-            "name": "Model Builder",
-            "web_url": "https://gitlab.dlr.de/elli_ol/model-builder",
-            "languages": {
-                "Python": 94.38,
-                "Makefile": 4.41,
-                "PowerShell": 0.84,
-                "MATLAB": 0.37,
-                "C": 0.0
+                "Python": 94.74,
+                "Shell": 5.26
             }
         },
         {
@@ -3317,35 +3508,12 @@
             }
         },
         {
-            "id": 6544,
-            "description": "tested with SDP 2210",
-            "name": "pyMansonSdp",
-            "web_url": "https://gitlab.dlr.de/as-boa/drivers/pymansonsdp",
-            "languages": {
-                "Python": 74.73,
-                "Makefile": 25.27
-            }
-        },
-        {
             "id": 6543,
             "description": "Python drivers for dew point meters",
             "name": "pyDewPointMirrors",
             "web_url": "https://gitlab.dlr.de/as-boa/drivers/pydewpointmirrors",
             "languages": {
                 "Python": 100.0
-            }
-        },
-        {
-            "id": 6541,
-            "description": "",
-            "name": "Measurement Control System",
-            "web_url": "https://gitlab.dlr.de/as-boa/measurement-control-system",
-            "languages": {
-                "JavaScript": 67.6,
-                "Python": 26.8,
-                "CSS": 4.58,
-                "Shell": 0.95,
-                "Dockerfile": 0.07
             }
         },
         {
@@ -3380,19 +3548,6 @@
             }
         },
         {
-            "id": 6446,
-            "description": "Library in which all topics used are listed.",
-            "name": "libTopic",
-            "web_url": "https://gitlab.dlr.de/2pasd-expsys/libtopic",
-            "languages": {
-                "CMake": 40.11,
-                "C++": 34.94,
-                "Python": 20.28,
-                "Dockerfile": 2.73,
-                "SWIG": 1.95
-            }
-        },
-        {
             "id": 6442,
             "description": "SPARK 2014 repository for the Z3 SMT solver. ",
             "name": "z3",
@@ -3419,19 +3574,6 @@
             }
         },
         {
-            "id": 6439,
-            "description": "SPARK 2014 repository for the Alt-Ergo SMT solver. ",
-            "name": "alt-ergo",
-            "web_url": "https://gitlab.dlr.de/koer_ad/alt-ergo",
-            "languages": {
-                "OCaml": 97.56,
-                "Shell": 1.31,
-                "Makefile": 0.59,
-                "Standard ML": 0.3,
-                "Roff": 0.21
-            }
-        },
-        {
             "id": 6413,
             "description": "Connector to pass data between USB serial flight simulator hardware and X-Plane using the ExtPlane plugin (https://github.com/vranki/ExtPlane)",
             "name": "Flight Simulator Hardware Connector",
@@ -3455,7 +3597,7 @@
             "id": 6387,
             "description": "Low Speed Performance Tool",
             "name": "LSperfo",
-            "web_url": "https://gitlab.dlr.de/froe_bn/lsperfo",
+            "web_url": "https://gitlab.dlr.de/dlr-sl/lsperfo",
             "languages": {
                 "Python": 100.0
             }
@@ -3622,19 +3764,6 @@
             }
         },
         {
-            "id": 6001,
-            "description": "",
-            "name": "AFCIC",
-            "web_url": "https://gitlab.dlr.de/hett_ja/afcic",
-            "languages": {
-                "C++": 66.62,
-                "Objective-C": 18.66,
-                "SuperCollider": 12.94,
-                "Batchfile": 0.69,
-                "Makefile": 0.67
-            }
-        },
-        {
             "id": 5996,
             "description": "",
             "name": "ESTATEdummy",
@@ -3659,19 +3788,8 @@
             "name": "FSAnsysInterface",
             "web_url": "https://gitlab.dlr.de/FSAnsysInterface/FSAnsysInterface",
             "languages": {
-                "Python": 99.15,
-                "Shell": 0.85
-            }
-        },
-        {
-            "id": 5984,
-            "description": "",
-            "name": "heat",
-            "web_url": "https://gitlab.dlr.de/helmholtz-analytics/heat",
-            "languages": {
-                "Python": 98.13,
-                "Jupyter Notebook": 1.84,
-                "Dockerfile": 0.02
+                "Python": 99.28,
+                "Shell": 0.72
             }
         },
         {
@@ -3701,16 +3819,6 @@
             "languages": {
                 "Python": 97.05,
                 "TeX": 2.95
-            }
-        },
-        {
-            "id": 5865,
-            "description": "Prototype to test and understand the Vertex HTTP MAC Remote Protocol",
-            "name": "VertexTest",
-            "web_url": "https://gitlab.dlr.de/jrichter/vertextest",
-            "languages": {
-                "C++": 94.27,
-                "QMake": 5.73
             }
         },
         {
@@ -3753,17 +3861,6 @@
                 "Jupyter Notebook": 25.39,
                 "CMake": 3.91,
                 "Java": 3.28
-            }
-        },
-        {
-            "id": 5804,
-            "description": "",
-            "name": "Cara Architecture paper",
-            "web_url": "https://gitlab.dlr.de/dlr-sp/cara-architecture-paper",
-            "languages": {
-                "Python": 62.56,
-                "TeX": 35.74,
-                "Makefile": 1.7
             }
         },
         {
@@ -3835,19 +3932,6 @@
             }
         },
         {
-            "id": 5577,
-            "description": "copied from https://github.com/Kampfzwerg42/Framework-for-analysis-and-automatic-code-generation-of-Clock-Syncronization-Algorithmus.git",
-            "name": "Clock_Synchronization",
-            "web_url": "https://gitlab.dlr.de/scosa/clock_synchronization",
-            "languages": {
-                "C++": 73.03,
-                "Python": 10.46,
-                "C": 8.67,
-                "Groovy": 6.98,
-                "QMake": 0.86
-            }
-        },
-        {
             "id": 5558,
             "description": "Partial rewrite of a port to Python 3 of the python interface of ODB",
             "name": "ODB Interface MINIMAL REWRITE",
@@ -3863,8 +3947,8 @@
             "name": "plog",
             "web_url": "https://gitlab.dlr.de/scosa/plog",
             "languages": {
-                "C++": 81.54,
-                "C": 16.54,
+                "C++": 81.58,
+                "C": 16.51,
                 "CMake": 1.91
             }
         },
@@ -3892,21 +3976,11 @@
         },
         {
             "id": 5496,
-            "description": "Import W3C PROV graphs to Neo4j.",
+            "description": "Import W3C PROV graphs to Neo4j. \r\nMOVED TO GITHUB: https://github.com/DLR-SC/prov2neo\r\nTHIS IS A MIRROR. ",
             "name": "prov2neo",
             "web_url": "https://gitlab.dlr.de/provenance/prov2neo",
             "languages": {
                 "Python": 100.0
-            }
-        },
-        {
-            "id": 5480,
-            "description": "This repository houses all software and configuraitons for the Step Up CPS AP6.1 1.2 demo",
-            "name": "Step UP CPS AP6.1 Demo 2",
-            "web_url": "https://gitlab.dlr.de/koer_ad/step-up-cps-ap6.1-demo-2",
-            "languages": {
-                "Shell": 84.24,
-                "Dockerfile": 15.76
             }
         },
         {
@@ -3941,22 +4015,25 @@
             }
         },
         {
+            "id": 5364,
+            "description": "The future of chain will be created here, or something like this.",
+            "name": "kn-san-communication-chain",
+            "web_url": "https://gitlab.dlr.de/kn-san-fec/kn-san-communication-chain",
+            "languages": {
+                "C++": 98.9,
+                "CMake": 0.53,
+                "MATLAB": 0.3,
+                "Python": 0.13,
+                "C": 0.07
+            }
+        },
+        {
             "id": 5363,
             "description": "A parameter-based filter to identify OpenDRIVE track segments matching logical scenario configurations in project PEGASUS.",
             "name": "xodr-parametric-filter",
             "web_url": "https://gitlab.dlr.de/ts-spatial-data-processing/transport-feature-manipulation/xodr-parametric-filter",
             "languages": {
                 "Java": 100.0
-            }
-        },
-        {
-            "id": 5358,
-            "description": "This repository marks the sample calculator version which has been open sourced as part of the workshop materials.",
-            "name": "Sample Calculator Archive",
-            "web_url": "https://gitlab.dlr.de/dlr-se-workshops/software-development-for-teams/sample-calculator-open",
-            "languages": {
-                "Python": 97.1,
-                "Makefile": 2.9
             }
         },
         {
@@ -3984,17 +4061,6 @@
             "web_url": "https://gitlab.dlr.de/stel_ma/test",
             "languages": {
                 "Python": 100.0
-            }
-        },
-        {
-            "id": 5230,
-            "description": "This is the first REMix-OptiMo model for the BEniVer-project based on MuSeKo. \r\nScope: Europe\r\nMyopic up to 2050\r\nFully sector-coupled with detail in the heat sector and high detail on synFuels and electric cars.",
-            "name": "BEniVer",
-            "web_url": "https://gitlab.dlr.de/wulf_ni/beniver",
-            "languages": {
-                "Python": 71.73,
-                "Batchfile": 14.61,
-                "Qt Script": 13.66
             }
         },
         {
@@ -4061,26 +4127,13 @@
             }
         },
         {
-            "id": 4996,
-            "description": "",
-            "name": "Mobile Measurement System",
-            "web_url": "https://gitlab.dlr.de/as-boa/mobile-measurement-system",
-            "languages": {
-                "Python": 67.98,
-                "HTML": 25.99,
-                "Shell": 4.74,
-                "Makefile": 1.07,
-                "Dockerfile": 0.22
-            }
-        },
-        {
             "id": 4983,
             "description": "The guidelines' rendering styles of Road2Simulation geometries.\r\n\r\n*Please push only here.* Changes are automatically mirrored to https://github.com/DLR-TS/r2s-layer-styles. ",
             "name": "r2s-layer-styles",
             "web_url": "https://gitlab.dlr.de/ts-spatial-data-processing/others/r2s-layer-styles",
             "languages": {
-                "QML": 91.2,
-                "Scheme": 8.8
+                "QML": 89.33,
+                "Scheme": 10.67
             }
         },
         {
@@ -4428,29 +4481,6 @@
             }
         },
         {
-            "id": 4267,
-            "description": "",
-            "name": "LSP",
-            "web_url": "https://gitlab.dlr.de/globdiversity/lsp",
-            "languages": {
-                "Python": 92.46,
-                "Shell": 6.13,
-                "Dockerfile": 1.41
-            }
-        },
-        {
-            "id": 4265,
-            "description": "",
-            "name": "FRAG",
-            "web_url": "https://gitlab.dlr.de/globdiversity/frag",
-            "languages": {
-                "C++": 44.59,
-                "Python": 36.67,
-                "Makefile": 17.14,
-                "CMake": 1.6
-            }
-        },
-        {
             "id": 4264,
             "description": "",
             "name": "CCC",
@@ -4482,46 +4512,12 @@
             }
         },
         {
-            "id": 4251,
-            "description": "C++ library for common string operations\r\nalso includes parsing & generation of python source representations for numbers, strings, lists and str->obj dicts",
-            "name": "libstring_util",
-            "web_url": "https://gitlab.dlr.de/links-and-nodes/libstring_util",
-            "languages": {
-                "C++": 89.31,
-                "Python": 3.08,
-                "Makefile": 2.75,
-                "C": 2.61,
-                "M4": 2.02
-            }
-        },
-        {
             "id": 4242,
             "description": "",
             "name": "Compare methods",
             "web_url": "https://gitlab.dlr.de/ueindnns/uncertainty-estimation-in-neural-networks",
             "languages": {
                 "Python": 100.0
-            }
-        },
-        {
-            "id": 4218,
-            "description": "",
-            "name": "riesgos_dockerized",
-            "web_url": "https://gitlab.dlr.de/lang_m13/riesgos_dockerized",
-            "languages": {
-                "Shell": 50.32,
-                "Dockerfile": 49.68
-            }
-        },
-        {
-            "id": 4186,
-            "description": "ioProc is a light-weight Python workflow manager ensuring robust, scalable and reproducible data pipelines and is developed at the German Aerospace Center (DLR).",
-            "name": "ioProc",
-            "web_url": "https://gitlab.dlr.de/ioproc/ioproc",
-            "languages": {
-                "Python": 97.57,
-                "Batchfile": 1.5,
-                "Makefile": 0.93
             }
         },
         {
@@ -4601,100 +4597,12 @@
             }
         },
         {
-            "id": 3903,
-            "description": "This library contains classes to implement a simple satellite terminal over DVB-S2 with ACM.",
-            "name": "satx-libterm",
-            "web_url": "https://gitlab.dlr.de/satx/satx-libterm",
-            "languages": {
-                "Python": 76.78,
-                "Roff": 20.46,
-                "C++": 2.65,
-                "Batchfile": 0.06,
-                "Shell": 0.05
-            }
-        },
-        {
-            "id": 3902,
-            "description": "This project contains a library that implements XOR bi-directional network coding and a simple satellite terminal and gateway that use this method over DVB-S2 with ACM.",
-            "name": "satx-networkcoding",
-            "web_url": "https://gitlab.dlr.de/satx/satx-networkcoding",
-            "languages": {
-                "Python": 76.89,
-                "Roff": 20.51,
-                "C++": 2.48,
-                "Batchfile": 0.06,
-                "Shell": 0.05
-            }
-        },
-        {
-            "id": 3901,
-            "description": "This library handles the interface to NewTec modems and could also handle the interface to other modems.",
-            "name": "satx-libmodem",
-            "web_url": "https://gitlab.dlr.de/satx/satx-libmodem",
-            "languages": {
-                "Python": 77.55,
-                "Roff": 20.67,
-                "C++": 1.65,
-                "Batchfile": 0.06,
-                "Shell": 0.05
-            }
-        },
-        {
-            "id": 3900,
-            "description": "A small library to unify the handling of arbitrary packet sending and removing between FreeBSD and Linux.",
-            "name": "satx-libether",
-            "web_url": "https://gitlab.dlr.de/satx/satx-libether",
-            "languages": {
-                "Python": 77.47,
-                "Roff": 20.64,
-                "C++": 1.79,
-                "Batchfile": 0.06,
-                "Shell": 0.05
-            }
-        },
-        {
-            "id": 3899,
-            "description": "C++ library to parse an XML file with configuration parameters and present it as an easily searchable tree to the user.",
-            "name": "satx-libconfig",
-            "web_url": "https://gitlab.dlr.de/satx/satx-libconfig",
-            "languages": {
-                "Python": 66.04,
-                "Roff": 17.59,
-                "C++": 16.27,
-                "Batchfile": 0.05,
-                "Shell": 0.04
-            }
-        },
-        {
-            "id": 3898,
-            "description": "This library parses and creates L3 (ARP and IPv4/v6) packets. It contains also an ARP cache and a packet filter with a small filter DSL.",
-            "name": "satx-libl3",
-            "web_url": "https://gitlab.dlr.de/satx/satx-libl3",
-            "languages": {
-                "Python": 66.18,
-                "Roff": 17.56,
-                "C++": 16.01,
-                "Yacc": 0.14,
-                "Shell": 0.06
-            }
-        },
-        {
             "id": 3869,
             "description": "This is a modular TSM solver for Burger eq. It should serve for experimenting with implicit solution approaches.",
             "name": "BurgersModular",
             "web_url": "https://gitlab.dlr.de/gros_er/burgersmodular",
             "languages": {
                 "Python": 100.0
-            }
-        },
-        {
-            "id": 3844,
-            "description": "",
-            "name": "biascorrection",
-            "web_url": "https://gitlab.dlr.de/weil_fa/biascorrection",
-            "languages": {
-                "Python": 99.44,
-                "Shell": 0.56
             }
         },
         {
@@ -4718,41 +4626,16 @@
             }
         },
         {
-            "id": 3830,
-            "description": "fork of https://github.com/tysonite/asn1-compiler",
-            "name": "asn1-compiler",
-            "web_url": "https://gitlab.dlr.de/woozlegoozle/asn1-compiler",
-            "languages": {
-                "C++": 75.36,
-                "Java": 17.17,
-                "CMake": 6.58,
-                "ANTLR": 0.88,
-                "Batchfile": 0.01
-            }
-        },
-        {
-            "id": 3826,
-            "description": "This project contains the design files for the QuNET control loop.",
-            "name": "QuNET Ia control loop",
-            "web_url": "https://gitlab.dlr.de/rued_re/qunet-ia-control-loop",
-            "languages": {
-                "C": 73.89,
-                "Makefile": 19.53,
-                "C++": 6.4,
-                "MATLAB": 0.19
-            }
-        },
-        {
             "id": 3766,
             "description": "Compartmental models are a technique used to simplify the mathematical modelling of infectious disease. The population is divided into compartments, with the assumption that every individual in the same compartment has the same characteristics.",
             "name": "Epidemiology",
             "web_url": "https://gitlab.dlr.de/hpc-against-corona/epidemiology",
             "languages": {
-                "C++": 50.71,
-                "Python": 25.36,
-                "JavaScript": 17.56,
-                "CMake": 3.05,
-                "Jupyter Notebook": 2.4
+                "C++": 50.79,
+                "Python": 26.66,
+                "JavaScript": 16.53,
+                "CMake": 2.89,
+                "Jupyter Notebook": 2.26
             }
         },
         {
@@ -4763,30 +4646,6 @@
             "languages": {
                 "C++": 97.37,
                 "CMake": 2.63
-            }
-        },
-        {
-            "id": 3757,
-            "description": "Forks from https://github.com/Chocobo1/Hash",
-            "name": "hash",
-            "web_url": "https://gitlab.dlr.de/woozlegoozle/hash",
-            "languages": {
-                "C++": 99.37,
-                "Meson": 0.32,
-                "Batchfile": 0.17,
-                "Makefile": 0.14
-            }
-        },
-        {
-            "id": 3756,
-            "description": "Fork of https://github.com/aantron/better-enums",
-            "name": "better-enums",
-            "web_url": "https://gitlab.dlr.de/woozlegoozle/better-enums",
-            "languages": {
-                "C++": 88.03,
-                "CMake": 4.35,
-                "Python": 4.1,
-                "Makefile": 3.52
             }
         },
         {
@@ -4803,19 +4662,6 @@
             }
         },
         {
-            "id": 3735,
-            "description": "",
-            "name": "satx-liblayer",
-            "web_url": "https://gitlab.dlr.de/satx/satx-liblayer",
-            "languages": {
-                "Python": 60.39,
-                "C++": 23.82,
-                "Roff": 15.4,
-                "MATLAB": 0.24,
-                "Shell": 0.07
-            }
-        },
-        {
             "id": 3734,
             "description": "A test suite for static analyzers, fuzzers and model checkers for the C programming language.",
             "name": "CTestSuite",
@@ -4823,26 +4669,6 @@
             "languages": {
                 "C": 95.92,
                 "Shell": 4.08
-            }
-        },
-        {
-            "id": 3707,
-            "description": "temp Drone  Guidance Module",
-            "name": "DroneGuidanceModule",
-            "web_url": "https://gitlab.dlr.de/mors_fa/droneguidancemodule",
-            "languages": {
-                "C++": 95.9,
-                "Makefile": 4.1
-            }
-        },
-        {
-            "id": 3706,
-            "description": "tmp dumbdronesim",
-            "name": "dumbdronesim",
-            "web_url": "https://gitlab.dlr.de/mors_fa/dumbdronesim",
-            "languages": {
-                "C++": 97.61,
-                "Makefile": 2.39
             }
         },
         {
@@ -4862,19 +4688,6 @@
             "web_url": "https://gitlab.dlr.de/nzm/ecg_gsr",
             "languages": {
                 "Python": 100.0
-            }
-        },
-        {
-            "id": 3622,
-            "description": "openvocs source code repository ",
-            "name": "code",
-            "web_url": "https://gitlab.dlr.de/openvocs/code",
-            "languages": {
-                "C": 89.72,
-                "JavaScript": 4.17,
-                "Python": 2.25,
-                "CSS": 1.76,
-                "Makefile": 0.89
             }
         },
         {
@@ -4916,28 +4729,15 @@
             }
         },
         {
-            "id": 3489,
-            "description": "Darknet modified to print bounding box info to a csv file",
-            "name": "Darknet_boundingbox_readout",
-            "web_url": "https://gitlab.dlr.de/barn_sa/darknet_boundingbox_readout",
-            "languages": {
-                "C": 88.9,
-                "Cuda": 7.68,
-                "Python": 2.22,
-                "C++": 0.67,
-                "Makefile": 0.32
-            }
-        },
-        {
             "id": 3481,
-            "description": "",
+            "description": "https://ukis-frontend.pages.gitlab.dlr.de/project-coastalx/#/bookmarks",
             "name": "project-coastalx",
             "web_url": "https://gitlab.dlr.de/ukis-frontend/project-coastalx",
             "languages": {
-                "TypeScript": 90.07,
-                "HTML": 3.9,
-                "SCSS": 3.14,
-                "Python": 2.25,
+                "TypeScript": 91.54,
+                "HTML": 3.21,
+                "SCSS": 2.96,
+                "Python": 1.66,
                 "JavaScript": 0.63
             }
         },
@@ -4957,17 +4757,6 @@
             "web_url": "https://gitlab.dlr.de/as-exv-stb/cine",
             "languages": {
                 "Python": 100.0
-            }
-        },
-        {
-            "id": 3393,
-            "description": "Assemble a DEM raster from tiles.",
-            "name": "dem_mosaic",
-            "web_url": "https://gitlab.dlr.de/kret_ka/dem_mosaic",
-            "languages": {
-                "C++": 98.53,
-                "Makefile": 1.2,
-                "Shell": 0.27
             }
         },
         {
@@ -4994,19 +4783,6 @@
             }
         },
         {
-            "id": 3293,
-            "description": "",
-            "name": "LIDORT LRRS SO2",
-            "web_url": "https://gitlab.dlr.de/hedelt/lidort-lrrs-so2",
-            "languages": {
-                "Fortran": 63.92,
-                "XS": 35.95,
-                "Shell": 0.08,
-                "Makefile": 0.04,
-                "Ring": 0.01
-            }
-        },
-        {
             "id": 3289,
             "description": "",
             "name": "SO2LH",
@@ -5030,6 +4806,16 @@
             }
         },
         {
+            "id": 3261,
+            "description": "Pre-release stuff / experimental code snippets / prototyping versions....",
+            "name": "Macro Pre-Release",
+            "web_url": "https://gitlab.dlr.de/bald_to/macro-pre-release",
+            "languages": {
+                "Python": 80.73,
+                "Jupyter Notebook": 19.27
+            }
+        },
+        {
             "id": 3260,
             "description": "Analysis of data from automated vehicles communicating via external and internal HMI with other road users and passengers.",
             "name": "interACT analysis",
@@ -5045,19 +4831,6 @@
             "web_url": "https://gitlab.dlr.de/wulf_ni/advpy",
             "languages": {
                 "Python": 100.0
-            }
-        },
-        {
-            "id": 3232,
-            "description": "",
-            "name": "DMIAnylzer",
-            "web_url": "https://gitlab.dlr.de/heue_hl/dmianylzer",
-            "languages": {
-                "C++": 93.05,
-                "QMake": 3.62,
-                "Python": 2.38,
-                "C": 0.49,
-                "Groovy": 0.39
             }
         },
         {
@@ -5164,35 +4937,12 @@
             }
         },
         {
-            "id": 2811,
-            "description": "Work in progress: Comparison of the ERA-5 and Coastdat-2 data",
-            "name": "weather_data",
-            "web_url": "https://gitlab.dlr.de/propower/weather_data_comparison",
-            "languages": {
-                "Python": 95.79,
-                "Jupyter Notebook": 4.21
-            }
-        },
-        {
             "id": 2810,
             "description": "",
             "name": "feedAtlite",
             "web_url": "https://gitlab.dlr.de/propower/feedatlite",
             "languages": {
                 "Python": 100.0
-            }
-        },
-        {
-            "id": 2756,
-            "description": "",
-            "name": "sarcomp",
-            "web_url": "https://gitlab.dlr.de/hr-sarcomp/sc",
-            "languages": {
-                "C": 99.35,
-                "Python": 0.61,
-                "C++": 0.02,
-                "Shell": 0.01,
-                "Makefile": 0.01
             }
         },
         {
@@ -5213,17 +4963,6 @@
                 "Python": 86.56,
                 "Batchfile": 13.39,
                 "Shell": 0.06
-            }
-        },
-        {
-            "id": 2695,
-            "description": "",
-            "name": "SysIntRest",
-            "web_url": "https://gitlab.dlr.de/mi/marlin/sysintrest",
-            "languages": {
-                "Python": 91.02,
-                "Batchfile": 5.16,
-                "Makefile": 3.81
             }
         },
         {
@@ -5353,18 +5092,6 @@
             }
         },
         {
-            "id": 2450,
-            "description": "Directory which will contain all of the analysis code for COSMICS",
-            "name": "COSMICS_analysis_code",
-            "web_url": "https://gitlab.dlr.de/barn_sa/cosmics_analysis_code",
-            "languages": {
-                "C": 89.81,
-                "C++": 5.42,
-                "Makefile": 3.38,
-                "Shell": 1.38
-            }
-        },
-        {
             "id": 2436,
             "description": "Fork of the Nasas WorldWind Community Edition",
             "name": "WorldWind Community Edition",
@@ -5459,16 +5186,6 @@
             }
         },
         {
-            "id": 2317,
-            "description": "The repository contains the example code used in this workshop. This project is used to perform some experiments before using them in the actual workshop.",
-            "name": "Sample Calculator Experiments",
-            "web_url": "https://gitlab.dlr.de/dlr-se-workshops/software-development-for-teams/sample-calculator",
-            "languages": {
-                "Python": 97.14,
-                "Makefile": 2.86
-            }
-        },
-        {
             "id": 2281,
             "description": "**C**ontr**O**l **LO**ading **S**y**S**tem **A**na**L**yzer",
             "name": "COLOSSAL",
@@ -5495,16 +5212,6 @@
             "web_url": "https://gitlab.dlr.de/swan_ki/cpacs-xpath-finder",
             "languages": {
                 "Python": 100.0
-            }
-        },
-        {
-            "id": 2181,
-            "description": "",
-            "name": "SpaceWire Simulator",
-            "web_url": "https://gitlab.dlr.de/hajh_za/spacewire-simulator",
-            "languages": {
-                "C++": 92.46,
-                "Makefile": 7.54
             }
         },
         {
@@ -5550,6 +5257,16 @@
             }
         },
         {
+            "id": 2147,
+            "description": "Example of sending images using flask and retrieving",
+            "name": "FlaskExample",
+            "web_url": "https://gitlab.dlr.de/barn_sa/flaskexample",
+            "languages": {
+                "HTML": 53.23,
+                "Python": 46.77
+            }
+        },
+        {
             "id": 2126,
             "description": "Tool by Dominik Schneider for clustering RCE workflow graphs into semantically coherent sub-workflows",
             "name": "Clustering of RCE Workflow Graphs",
@@ -5563,7 +5280,7 @@
             "id": 2114,
             "description": "Project which transfers the detection system data format received from a kafka server into a basic CAM message.",
             "name": "V2X-Kafka-CAM-Creator",
-            "web_url": "https://gitlab.dlr.de/tfnds/v2x-kafka-cam-creator",
+            "web_url": "https://gitlab.dlr.de/tfnds/kommunikationstechnik/v2x-kafka-cam-creator",
             "languages": {
                 "Java": 100.0
             }
@@ -5633,10 +5350,10 @@
             "name": "SASTEvaluation",
             "web_url": "https://gitlab.dlr.de/dw-its-sst/sastevaluation",
             "languages": {
-                "Python": 74.56,
-                "C": 13.7,
-                "Shell": 11.09,
-                "CSS": 0.65
+                "Python": 73.29,
+                "Shell": 16.9,
+                "C": 9.37,
+                "CSS": 0.44
             }
         },
         {
@@ -5725,16 +5442,6 @@
             "web_url": "https://gitlab.dlr.de/buss_js/mdax-openmdao-tests",
             "languages": {
                 "Python": 100.0
-            }
-        },
-        {
-            "id": 1722,
-            "description": "**S**ystem d**E**faul**T** **TABLE**",
-            "name": "SETTABLE",
-            "web_url": "https://gitlab.dlr.de/2pasd-expsys/settable",
-            "languages": {
-                "Python": 99.68,
-                "Dockerfile": 0.32
             }
         },
         {
@@ -5912,9 +5619,9 @@
             "name": "commonvirtualtrain",
             "web_url": "https://gitlab.dlr.de/ngt-cvt/commonvirtualtrain",
             "languages": {
-                "Modelica": 81.71,
-                "HTML": 16.69,
-                "MATLAB": 1.6
+                "Modelica": 82.08,
+                "HTML": 16.35,
+                "MATLAB": 1.57
             }
         },
         {
@@ -5972,25 +5679,13 @@
             }
         },
         {
-            "id": 1044,
-            "description": "",
-            "name": "chenxi-masterthesis",
-            "web_url": "https://gitlab.dlr.de/kn_git_swex_masterthesis1/chenxi-masterthesis",
-            "languages": {
-                "Python": 53.41,
-                "TeX": 46.47,
-                "Shell": 0.07,
-                "Makefile": 0.05
-            }
-        },
-        {
             "id": 1034,
             "description": "",
             "name": "hal",
             "web_url": "https://gitlab.dlr.de/aren_st/hal",
             "languages": {
-                "Python": 99.3,
-                "Batchfile": 0.7
+                "Python": 99.33,
+                "Batchfile": 0.67
             }
         },
         {
@@ -6049,9 +5744,9 @@
             "name": "code-collection",
             "web_url": "https://gitlab.dlr.de/mi/misc/code-collection",
             "languages": {
-                "Python": 60.7,
-                "C++": 36.49,
-                "Java": 2.81
+                "Python": 57.97,
+                "C++": 34.85,
+                "Java": 7.18
             }
         },
         {
@@ -6142,11 +5837,11 @@
             "name": "ADORE",
             "web_url": "https://gitlab.dlr.de/buss_js/adore",
             "languages": {
-                "Python": 64.37,
-                "TypeScript": 21.59,
-                "Vue": 13.41,
-                "JavaScript": 0.33,
-                "CSS": 0.2
+                "Python": 53.29,
+                "TypeScript": 17.63,
+                "HTML": 17.45,
+                "Vue": 11.17,
+                "JavaScript": 0.27
             }
         },
         {
@@ -6156,6 +5851,19 @@
             "web_url": "https://gitlab.dlr.de/buss_js/adore-optimization",
             "languages": {
                 "Python": 100.0
+            }
+        },
+        {
+            "id": 684,
+            "description": "User interface for Simple Surrogate Optimization (SSO).",
+            "name": "sso-ui",
+            "web_url": "https://gitlab.dlr.de/buss_js/sso-ui",
+            "languages": {
+                "Vue": 54.48,
+                "Python": 37.41,
+                "JavaScript": 6.8,
+                "HTML": 1.18,
+                "CSS": 0.13
             }
         },
         {
@@ -6214,8 +5922,8 @@
             "name": "RCE User Interaction",
             "web_url": "https://gitlab.dlr.de/dlr-sl/rce-user-interaction",
             "languages": {
-                "Python": 93.09,
-                "Batchfile": 6.91
+                "Python": 93.07,
+                "Batchfile": 6.93
             }
         },
         {
@@ -6234,29 +5942,6 @@
             "web_url": "https://gitlab.dlr.de/dlr-se-workshops/software-development-for-teams/workshop-materials",
             "languages": {
                 "Python": 100.0
-            }
-        },
-        {
-            "id": 450,
-            "description": "",
-            "name": "Ontology Training",
-            "web_url": "https://gitlab.dlr.de/dw-dpp/ontology-training",
-            "languages": {
-                "Python": 96.83,
-                "Dockerfile": 3.17
-            }
-        },
-        {
-            "id": 441,
-            "description": "Source code and settings for GSOC integration",
-            "name": "GSOC",
-            "web_url": "https://gitlab.dlr.de/openvocs/gsoc",
-            "languages": {
-                "C": 84.21,
-                "JavaScript": 4.43,
-                "Makefile": 4.36,
-                "CSS": 3.57,
-                "Python": 2.02
             }
         },
         {
@@ -6301,18 +5986,6 @@
             }
         },
         {
-            "id": 364,
-            "description": "Examples how to use Erlang",
-            "name": "erl-examples",
-            "web_url": "https://gitlab.dlr.de/woozlegoozle/erl-examples",
-            "languages": {
-                "Erlang": 99.95,
-                "Gnuplot": 0.03,
-                "Shell": 0.01,
-                "Dockerfile": 0.01
-            }
-        },
-        {
             "id": 363,
             "description": "Examples to use tysonite/asn1-compiler",
             "name": "asn1-examples",
@@ -6350,17 +6023,6 @@
             }
         },
         {
-            "id": 353,
-            "description": "**E**xperimental **S**imula**T**or **A**dap**TE**r",
-            "name": "ESTATE",
-            "web_url": "https://gitlab.dlr.de/2pasd-expsys/estate",
-            "languages": {
-                "C++": 94.99,
-                "CMake": 4.86,
-                "Dockerfile": 0.15
-            }
-        },
-        {
             "id": 336,
             "description": "Multidisciplinary design optimization driver for the Cybermatrix approach.",
             "name": "MDO Driver",
@@ -6385,24 +6047,11 @@
             "name": "EAGLE SCADA System",
             "web_url": "https://gitlab.dlr.de/esi-hh/eagle-scada-system",
             "languages": {
-                "Rust": 59.85,
-                "Common Lisp": 20.06,
-                "C": 10.81,
-                "Shell": 6.01,
-                "Python": 2.9
-            }
-        },
-        {
-            "id": 318,
-            "description": "Space Link Extension",
-            "name": "SLE",
-            "web_url": "https://gitlab.dlr.de/woozlegoozle/sle-3001",
-            "languages": {
-                "C++": 96.16,
-                "Dockerfile": 2.09,
-                "C": 1.37,
-                "CMake": 0.34,
-                "Shell": 0.04
+                "Rust": 54.38,
+                "C": 18.66,
+                "Common Lisp": 18.23,
+                "Shell": 5.46,
+                "Python": 2.64
             }
         },
         {
@@ -6411,8 +6060,8 @@
             "name": "PyGSA",
             "web_url": "https://gitlab.dlr.de/wern_mc/PyGSA",
             "languages": {
-                "Python": 98.15,
-                "Shell": 1.85
+                "Python": 98.17,
+                "Shell": 1.83
             }
         },
         {
@@ -6423,30 +6072,6 @@
             "languages": {
                 "Perl": 97.52,
                 "HTML": 2.48
-            }
-        },
-        {
-            "id": 257,
-            "description": "Material (Folien und Beispiele) aus dem Kurs \"C++ Training\" von Klaus Igelberger",
-            "name": "CppTraining",
-            "web_url": "https://gitlab.dlr.de/kraf_ch/cpptraining",
-            "languages": {
-                "C++": 90.27,
-                "Makefile": 5.01,
-                "CMake": 4.72
-            }
-        },
-        {
-            "id": 145,
-            "description": "",
-            "name": "keep-x-docker",
-            "web_url": "https://gitlab.dlr.de/neid_ei/keep-x-docker",
-            "languages": {
-                "PLpgSQL": 47.75,
-                "Shell": 27.3,
-                "PLSQL": 12.78,
-                "Batchfile": 10.47,
-                "Makefile": 1.69
             }
         },
         {

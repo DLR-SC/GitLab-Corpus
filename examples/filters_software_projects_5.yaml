@@ -1,0 +1,1339 @@
+filters:
+    name:
+          operator: "regex"
+          value: "#^(?!Example\\sProject\\s-\\sIteration\\s\\d.*$).*#"
+    atmost_languages:
+          1C Enterprise:
+               operator: "<="
+               value: 100.0
+          4D:
+               operator: "<="
+               value: 100.0
+          ABAP:
+               operator: "<="
+               value: 100.0
+          ABAP CDS:
+               operator: "<="
+               value: 100.0
+          AGS Script:
+               operator: "<="
+               value: 100.0
+          AIDL:
+               operator: "<="
+               value: 100.0
+          AL:
+               operator: "<="
+               value: 100.0
+          AMPL:
+               operator: "<="
+               value: 100.0
+          APL:
+               operator: "<="
+               value: 100.0
+          ASL:
+               operator: "<="
+               value: 100.0
+          ASP.NET:
+               operator: "<="
+               value: 100.0
+          ATS:
+               operator: "<="
+               value: 100.0
+          ActionScript:
+               operator: "<="
+               value: 100.0
+          Ada:
+               operator: "<="
+               value: 100.0
+          Agda:
+               operator: "<="
+               value: 100.0
+          Alloy:
+               operator: "<="
+               value: 100.0
+          Alpine Abuild:
+               operator: "<="
+               value: 100.0
+          AngelScript:
+               operator: "<="
+               value: 100.0
+          Apex:
+               operator: "<="
+               value: 100.0
+          Apollo Guidance Computer:
+               operator: "<="
+               value: 100.0
+          AppleScript:
+               operator: "<="
+               value: 100.0
+          Arc:
+               operator: "<="
+               value: 100.0
+          AspectJ:
+               operator: "<="
+               value: 100.0
+          Assembly:
+               operator: "<="
+               value: 100.0
+          Asymptote:
+               operator: "<="
+               value: 100.0
+          Augeas:
+               operator: "<="
+               value: 100.0
+          AutoHotkey:
+               operator: "<="
+               value: 100.0
+          AutoIt:
+               operator: "<="
+               value: 100.0
+          BASIC:
+               operator: "<="
+               value: 100.0
+          Ballerina:
+               operator: "<="
+               value: 100.0
+          Batchfile:
+               operator: "<="
+               value: 100.0
+          Beef:
+               operator: "<="
+               value: 100.0
+          Befunge:
+               operator: "<="
+               value: 100.0
+          Bicep:
+               operator: "<="
+               value: 100.0
+          Bison:
+               operator: "<="
+               value: 100.0
+          BitBake:
+               operator: "<="
+               value: 100.0
+          BlitzBasic:
+               operator: "<="
+               value: 100.0
+          BlitzMax:
+               operator: "<="
+               value: 100.0
+          Bluespec:
+               operator: "<="
+               value: 100.0
+          Boo:
+               operator: "<="
+               value: 100.0
+          Boogie:
+               operator: "<="
+               value: 100.0
+          Brainfuck:
+               operator: "<="
+               value: 100.0
+          Brightscript:
+               operator: "<="
+               value: 100.0
+          C:
+               operator: "<="
+               value: 100.0
+          C#:
+               operator: "<="
+               value: 100.0
+          C++:
+               operator: "<="
+               value: 100.0
+          C2hs Haskell:
+               operator: "<="
+               value: 100.0
+          CLIPS:
+               operator: "<="
+               value: 100.0
+          CMake:
+               operator: "<="
+               value: 100.0
+          COBOL:
+               operator: "<="
+               value: 100.0
+          CUE:
+               operator: "<="
+               value: 100.0
+          CWeb:
+               operator: "<="
+               value: 100.0
+          Cap'n Proto:
+               operator: "<="
+               value: 100.0
+          CartoCSS:
+               operator: "<="
+               value: 100.0
+          Ceylon:
+               operator: "<="
+               value: 100.0
+          Chapel:
+               operator: "<="
+               value: 100.0
+          Charity:
+               operator: "<="
+               value: 100.0
+          ChucK:
+               operator: "<="
+               value: 100.0
+          Cirru:
+               operator: "<="
+               value: 100.0
+          Clarion:
+               operator: "<="
+               value: 100.0
+          Classic ASP:
+               operator: "<="
+               value: 100.0
+          Clean:
+               operator: "<="
+               value: 100.0
+          Click:
+               operator: "<="
+               value: 100.0
+          Clojure:
+               operator: "<="
+               value: 100.0
+          CodeQL:
+               operator: "<="
+               value: 100.0
+          CoffeeScript:
+               operator: "<="
+               value: 100.0
+          ColdFusion:
+               operator: "<="
+               value: 100.0
+          ColdFusion CFC:
+               operator: "<="
+               value: 100.0
+          Common Lisp:
+               operator: "<="
+               value: 100.0
+          Component Pascal:
+               operator: "<="
+               value: 100.0
+          Cool:
+               operator: "<="
+               value: 100.0
+          Crystal:
+               operator: "<="
+               value: 100.0
+          Csound:
+               operator: "<="
+               value: 100.0
+          Csound Document:
+               operator: "<="
+               value: 100.0
+          Csound Score:
+               operator: "<="
+               value: 100.0
+          Cuda:
+               operator: "<="
+               value: 100.0
+          Cycript:
+               operator: "<="
+               value: 100.0
+          Cython:
+               operator: "<="
+               value: 100.0
+          D:
+               operator: "<="
+               value: 100.0
+          DIGITAL Command Language:
+               operator: "<="
+               value: 100.0
+          DM:
+               operator: "<="
+               value: 100.0
+          DTrace:
+               operator: "<="
+               value: 100.0
+          Dafny:
+               operator: "<="
+               value: 100.0
+          Dart:
+               operator: "<="
+               value: 100.0
+          DataWeave:
+               operator: "<="
+               value: 100.0
+          Dhall:
+               operator: "<="
+               value: 100.0
+          Dogescript:
+               operator: "<="
+               value: 100.0
+          Dylan:
+               operator: "<="
+               value: 100.0
+          E:
+               operator: "<="
+               value: 100.0
+          ECL:
+               operator: "<="
+               value: 100.0
+          ECLiPSe:
+               operator: "<="
+               value: 100.0
+          EQ:
+               operator: "<="
+               value: 100.0
+          Eiffel:
+               operator: "<="
+               value: 100.0
+          Elixir:
+               operator: "<="
+               value: 100.0
+          Elm:
+               operator: "<="
+               value: 100.0
+          Emacs Lisp:
+               operator: "<="
+               value: 100.0
+          EmberScript:
+               operator: "<="
+               value: 100.0
+          Erlang:
+               operator: "<="
+               value: 100.0
+          F#:
+               operator: "<="
+               value: 100.0
+          F*:
+               operator: "<="
+               value: 100.0
+          Factor:
+               operator: "<="
+               value: 100.0
+          Fancy:
+               operator: "<="
+               value: 100.0
+          Fantom:
+               operator: "<="
+               value: 100.0
+          Faust:
+               operator: "<="
+               value: 100.0
+          Filebench WML:
+               operator: "<="
+               value: 100.0
+          Filterscript:
+               operator: "<="
+               value: 100.0
+          Forth:
+               operator: "<="
+               value: 100.0
+          Fortran:
+               operator: "<="
+               value: 100.0
+          Fortran Free Form:
+               operator: "<="
+               value: 100.0
+          FreeBasic:
+               operator: "<="
+               value: 100.0
+          FreeMarker:
+               operator: "<="
+               value: 100.0
+          Frege:
+               operator: "<="
+               value: 100.0
+          Futhark:
+               operator: "<="
+               value: 100.0
+          G-code:
+               operator: "<="
+               value: 100.0
+          GAML:
+               operator: "<="
+               value: 100.0
+          GAMS:
+               operator: "<="
+               value: 100.0
+          GAP:
+               operator: "<="
+               value: 100.0
+          GCC Machine Description:
+               operator: "<="
+               value: 100.0
+          GDScript:
+               operator: "<="
+               value: 100.0
+          GLSL:
+               operator: "<="
+               value: 100.0
+          Game Maker Language:
+               operator: "<="
+               value: 100.0
+          Genie:
+               operator: "<="
+               value: 100.0
+          Genshi:
+               operator: "<="
+               value: 100.0
+          Gentoo Ebuild:
+               operator: "<="
+               value: 100.0
+          Gentoo Eclass:
+               operator: "<="
+               value: 100.0
+          Gherkin:
+               operator: "<="
+               value: 100.0
+          Glyph:
+               operator: "<="
+               value: 100.0
+          Go:
+               operator: "<="
+               value: 100.0
+          Golo:
+               operator: "<="
+               value: 100.0
+          Gosu:
+               operator: "<="
+               value: 100.0
+          Grace:
+               operator: "<="
+               value: 100.0
+          Grammatical Framework:
+               operator: "<="
+               value: 100.0
+          Groovy:
+               operator: "<="
+               value: 100.0
+          Groovy Server Pages:
+               operator: "<="
+               value: 100.0
+          HCL:
+               operator: "<="
+               value: 100.0
+          HLSL:
+               operator: "<="
+               value: 100.0
+          Hack:
+               operator: "<="
+               value: 100.0
+          Harbour:
+               operator: "<="
+               value: 100.0
+          Haskell:
+               operator: "<="
+               value: 100.0
+          Haxe:
+               operator: "<="
+               value: 100.0
+          HiveQL:
+               operator: "<="
+               value: 100.0
+          HolyC:
+               operator: "<="
+               value: 100.0
+          Hy:
+               operator: "<="
+               value: 100.0
+          HyPhy:
+               operator: "<="
+               value: 100.0
+          IDL:
+               operator: "<="
+               value: 100.0
+          IGOR Pro:
+               operator: "<="
+               value: 100.0
+          Idris:
+               operator: "<="
+               value: 100.0
+          ImageJ Macro:
+               operator: "<="
+               value: 100.0
+          Inform 7:
+               operator: "<="
+               value: 100.0
+          Inno Setup:
+               operator: "<="
+               value: 100.0
+          Io:
+               operator: "<="
+               value: 100.0
+          Ioke:
+               operator: "<="
+               value: 100.0
+          Isabelle:
+               operator: "<="
+               value: 100.0
+          Isabelle ROOT:
+               operator: "<="
+               value: 100.0
+          J:
+               operator: "<="
+               value: 100.0
+          JFlex:
+               operator: "<="
+               value: 100.0
+          JSONiq:
+               operator: "<="
+               value: 100.0
+          Jasmin:
+               operator: "<="
+               value: 100.0
+          Java:
+               operator: "<="
+               value: 100.0
+          Java Server Pages:
+               operator: "<="
+               value: 100.0
+          JavaScript:
+               operator: "<="
+               value: 100.0
+          JavaScript+ERB:
+               operator: "<="
+               value: 100.0
+          Jison:
+               operator: "<="
+               value: 100.0
+          Jison Lex:
+               operator: "<="
+               value: 100.0
+          Jolie:
+               operator: "<="
+               value: 100.0
+          Jsonnet:
+               operator: "<="
+               value: 100.0
+          Julia:
+               operator: "<="
+               value: 100.0
+          KRL:
+               operator: "<="
+               value: 100.0
+          Kaitai Struct:
+               operator: "<="
+               value: 100.0
+          Kotlin:
+               operator: "<="
+               value: 100.0
+          LFE:
+               operator: "<="
+               value: 100.0
+          LLVM:
+               operator: "<="
+               value: 100.0
+          LSL:
+               operator: "<="
+               value: 100.0
+          LabVIEW:
+               operator: "<="
+               value: 100.0
+          Lasso:
+               operator: "<="
+               value: 100.0
+          Lean:
+               operator: "<="
+               value: 100.0
+          Lex:
+               operator: "<="
+               value: 100.0
+          LilyPond:
+               operator: "<="
+               value: 100.0
+          Limbo:
+               operator: "<="
+               value: 100.0
+          Literate Agda:
+               operator: "<="
+               value: 100.0
+          Literate CoffeeScript:
+               operator: "<="
+               value: 100.0
+          Literate Haskell:
+               operator: "<="
+               value: 100.0
+          LiveScript:
+               operator: "<="
+               value: 100.0
+          Logos:
+               operator: "<="
+               value: 100.0
+          Logtalk:
+               operator: "<="
+               value: 100.0
+          LookML:
+               operator: "<="
+               value: 100.0
+          LoomScript:
+               operator: "<="
+               value: 100.0
+          Lua:
+               operator: "<="
+               value: 100.0
+          M:
+               operator: "<="
+               value: 100.0
+          M4Sugar:
+               operator: "<="
+               value: 100.0
+          MATLAB:
+               operator: "<="
+               value: 100.0
+          MAXScript:
+               operator: "<="
+               value: 100.0
+          MLIR:
+               operator: "<="
+               value: 100.0
+          MQL4:
+               operator: "<="
+               value: 100.0
+          MQL5:
+               operator: "<="
+               value: 100.0
+          MUF:
+               operator: "<="
+               value: 100.0
+          Macaulay2:
+               operator: "<="
+               value: 100.0
+          Mako:
+               operator: "<="
+               value: 100.0
+          Mathematica:
+               operator: "<="
+               value: 100.0
+          Max:
+               operator: "<="
+               value: 100.0
+          Mercury:
+               operator: "<="
+               value: 100.0
+          Metal:
+               operator: "<="
+               value: 100.0
+          MiniD:
+               operator: "<="
+               value: 100.0
+          Mirah:
+               operator: "<="
+               value: 100.0
+          Modelica:
+               operator: "<="
+               value: 100.0
+          Modula-2:
+               operator: "<="
+               value: 100.0
+          Modula-3:
+               operator: "<="
+               value: 100.0
+          Module Management System:
+               operator: "<="
+               value: 100.0
+          Monkey:
+               operator: "<="
+               value: 100.0
+          Moocode:
+               operator: "<="
+               value: 100.0
+          MoonScript:
+               operator: "<="
+               value: 100.0
+          Motorola 68K Assembly:
+               operator: "<="
+               value: 100.0
+          Myghty:
+               operator: "<="
+               value: 100.0
+          NASL:
+               operator: "<="
+               value: 100.0
+          NCL:
+               operator: "<="
+               value: 100.0
+          NSIS:
+               operator: "<="
+               value: 100.0
+          NWScript:
+               operator: "<="
+               value: 100.0
+          Nearley:
+               operator: "<="
+               value: 100.0
+          Nemerle:
+               operator: "<="
+               value: 100.0
+          NetLinx:
+               operator: "<="
+               value: 100.0
+          NetLinx+ERB:
+               operator: "<="
+               value: 100.0
+          NetLogo:
+               operator: "<="
+               value: 100.0
+          NewLisp:
+               operator: "<="
+               value: 100.0
+          Nextflow:
+               operator: "<="
+               value: 100.0
+          Nim:
+               operator: "<="
+               value: 100.0
+          Nit:
+               operator: "<="
+               value: 100.0
+          Nu:
+               operator: "<="
+               value: 100.0
+          NumPy:
+               operator: "<="
+               value: 100.0
+          OCaml:
+               operator: "<="
+               value: 100.0
+          ObjectScript:
+               operator: "<="
+               value: 100.0
+          Objective-C:
+               operator: "<="
+               value: 100.0
+          Objective-C++:
+               operator: "<="
+               value: 100.0
+          Objective-J:
+               operator: "<="
+               value: 100.0
+          Odin:
+               operator: "<="
+               value: 100.0
+          Omgrofl:
+               operator: "<="
+               value: 100.0
+          Opa:
+               operator: "<="
+               value: 100.0
+          Opal:
+               operator: "<="
+               value: 100.0
+          Open Policy Agent:
+               operator: "<="
+               value: 100.0
+          OpenCL:
+               operator: "<="
+               value: 100.0
+          OpenEdge ABL:
+               operator: "<="
+               value: 100.0
+          OpenQASM:
+               operator: "<="
+               value: 100.0
+          OpenRC runscript:
+               operator: "<="
+               value: 100.0
+          OpenSCAD:
+               operator: "<="
+               value: 100.0
+          Ox:
+               operator: "<="
+               value: 100.0
+          Oxygene:
+               operator: "<="
+               value: 100.0
+          Oz:
+               operator: "<="
+               value: 100.0
+          P4:
+               operator: "<="
+               value: 100.0
+          PHP:
+               operator: "<="
+               value: 100.0
+          PLSQL:
+               operator: "<="
+               value: 100.0
+          PLpgSQL:
+               operator: "<="
+               value: 100.0
+          POV-Ray SDL:
+               operator: "<="
+               value: 100.0
+          Pan:
+               operator: "<="
+               value: 100.0
+          Papyrus:
+               operator: "<="
+               value: 100.0
+          Parrot:
+               operator: "<="
+               value: 100.0
+          Parrot Assembly:
+               operator: "<="
+               value: 100.0
+          Parrot Internal Representation:
+               operator: "<="
+               value: 100.0
+          Pascal:
+               operator: "<="
+               value: 100.0
+          Pawn:
+               operator: "<="
+               value: 100.0
+          Pep8:
+               operator: "<="
+               value: 100.0
+          Perl:
+               operator: "<="
+               value: 100.0
+          PicoLisp:
+               operator: "<="
+               value: 100.0
+          PigLatin:
+               operator: "<="
+               value: 100.0
+          Pike:
+               operator: "<="
+               value: 100.0
+          PogoScript:
+               operator: "<="
+               value: 100.0
+          Pony:
+               operator: "<="
+               value: 100.0
+          PowerBuilder:
+               operator: "<="
+               value: 100.0
+          PowerShell:
+               operator: "<="
+               value: 100.0
+          Processing:
+               operator: "<="
+               value: 100.0
+          Prolog:
+               operator: "<="
+               value: 100.0
+          Propeller Spin:
+               operator: "<="
+               value: 100.0
+          Puppet:
+               operator: "<="
+               value: 100.0
+          PureBasic:
+               operator: "<="
+               value: 100.0
+          PureScript:
+               operator: "<="
+               value: 100.0
+          Python:
+               operator: "<="
+               value: 100.0
+          Python console:
+               operator: "<="
+               value: 100.0
+          Q#:
+               operator: "<="
+               value: 100.0
+          QML:
+               operator: "<="
+               value: 100.0
+          Qt Script:
+               operator: "<="
+               value: 100.0
+          Quake:
+               operator: "<="
+               value: 100.0
+          R:
+               operator: "<="
+               value: 100.0
+          REALbasic:
+               operator: "<="
+               value: 100.0
+          REXX:
+               operator: "<="
+               value: 100.0
+          RPC:
+               operator: "<="
+               value: 100.0
+          Racket:
+               operator: "<="
+               value: 100.0
+          Ragel:
+               operator: "<="
+               value: 100.0
+          Raku:
+               operator: "<="
+               value: 100.0
+          Rascal:
+               operator: "<="
+               value: 100.0
+          ReScript:
+               operator: "<="
+               value: 100.0
+          Reason:
+               operator: "<="
+               value: 100.0
+          Rebol:
+               operator: "<="
+               value: 100.0
+          Red:
+               operator: "<="
+               value: 100.0
+          Redcode:
+               operator: "<="
+               value: 100.0
+          Ren'Py:
+               operator: "<="
+               value: 100.0
+          RenderScript:
+               operator: "<="
+               value: 100.0
+          Ring:
+               operator: "<="
+               value: 100.0
+          RobotFramework:
+               operator: "<="
+               value: 100.0
+          Rouge:
+               operator: "<="
+               value: 100.0
+          Ruby:
+               operator: "<="
+               value: 100.0
+          Rust:
+               operator: "<="
+               value: 100.0
+          SAS:
+               operator: "<="
+               value: 100.0
+          SMT:
+               operator: "<="
+               value: 100.0
+          SQF:
+               operator: "<="
+               value: 100.0
+          SQLPL:
+               operator: "<="
+               value: 100.0
+          SWIG:
+               operator: "<="
+               value: 100.0
+          Sage:
+               operator: "<="
+               value: 100.0
+          SaltStack:
+               operator: "<="
+               value: 100.0
+          Scala:
+               operator: "<="
+               value: 100.0
+          Scheme:
+               operator: "<="
+               value: 100.0
+          Scilab:
+               operator: "<="
+               value: 100.0
+          Self:
+               operator: "<="
+               value: 100.0
+          ShaderLab:
+               operator: "<="
+               value: 100.0
+          Shell:
+               operator: "<="
+               value: 100.0
+          ShellSession:
+               operator: "<="
+               value: 100.0
+          Shen:
+               operator: "<="
+               value: 100.0
+          Sieve:
+               operator: "<="
+               value: 100.0
+          Singularity:
+               operator: "<="
+               value: 100.0
+          Slash:
+               operator: "<="
+               value: 100.0
+          Slice:
+               operator: "<="
+               value: 100.0
+          SmPL:
+               operator: "<="
+               value: 100.0
+          Smali:
+               operator: "<="
+               value: 100.0
+          Smalltalk:
+               operator: "<="
+               value: 100.0
+          Smarty:
+               operator: "<="
+               value: 100.0
+          Solidity:
+               operator: "<="
+               value: 100.0
+          SourcePawn:
+               operator: "<="
+               value: 100.0
+          Squirrel:
+               operator: "<="
+               value: 100.0
+          Stan:
+               operator: "<="
+               value: 100.0
+          Standard ML:
+               operator: "<="
+               value: 100.0
+          Starlark:
+               operator: "<="
+               value: 100.0
+          Stata:
+               operator: "<="
+               value: 100.0
+          SuperCollider:
+               operator: "<="
+               value: 100.0
+          Swift:
+               operator: "<="
+               value: 100.0
+          SystemVerilog:
+               operator: "<="
+               value: 100.0
+          TI Program:
+               operator: "<="
+               value: 100.0
+          TLA:
+               operator: "<="
+               value: 100.0
+          TSQL:
+               operator: "<="
+               value: 100.0
+          TSX:
+               operator: "<="
+               value: 100.0
+          TXL:
+               operator: "<="
+               value: 100.0
+          Tcl:
+               operator: "<="
+               value: 100.0
+          Tcsh:
+               operator: "<="
+               value: 100.0
+          Terra:
+               operator: "<="
+               value: 100.0
+          Thrift:
+               operator: "<="
+               value: 100.0
+          Turing:
+               operator: "<="
+               value: 100.0
+          TypeScript:
+               operator: "<="
+               value: 100.0
+          Unified Parallel C:
+               operator: "<="
+               value: 100.0
+          Unix Assembly:
+               operator: "<="
+               value: 100.0
+          Uno:
+               operator: "<="
+               value: 100.0
+          UnrealScript:
+               operator: "<="
+               value: 100.0
+          UrWeb:
+               operator: "<="
+               value: 100.0
+          V:
+               operator: "<="
+               value: 100.0
+          VBA:
+               operator: "<="
+               value: 100.0
+          VBScript:
+               operator: "<="
+               value: 100.0
+          VCL:
+               operator: "<="
+               value: 100.0
+          VHDL:
+               operator: "<="
+               value: 100.0
+          Vala:
+               operator: "<="
+               value: 100.0
+          Verilog:
+               operator: "<="
+               value: 100.0
+          Vim script:
+               operator: "<="
+               value: 100.0
+          Visual Basic .NET:
+               operator: "<="
+               value: 100.0
+          Volt:
+               operator: "<="
+               value: 100.0
+          WebAssembly:
+               operator: "<="
+               value: 100.0
+          WebIDL:
+               operator: "<="
+               value: 100.0
+          Wollok:
+               operator: "<="
+               value: 100.0
+          X10:
+               operator: "<="
+               value: 100.0
+          XC:
+               operator: "<="
+               value: 100.0
+          XProc:
+               operator: "<="
+               value: 100.0
+          XQuery:
+               operator: "<="
+               value: 100.0
+          XS:
+               operator: "<="
+               value: 100.0
+          Xojo:
+               operator: "<="
+               value: 100.0
+          Xonsh:
+               operator: "<="
+               value: 100.0
+          Xtend:
+               operator: "<="
+               value: 100.0
+          YARA:
+               operator: "<="
+               value: 100.0
+          ZAP:
+               operator: "<="
+               value: 100.0
+          ZIL:
+               operator: "<="
+               value: 100.0
+          Zeek:
+               operator: "<="
+               value: 100.0
+          ZenScript:
+               operator: "<="
+               value: 100.0
+          Zephir:
+               operator: "<="
+               value: 100.0
+          Zig:
+               operator: "<="
+               value: 100.0
+          Zimpl:
+               operator: "<="
+               value: 100.0
+          eC:
+               operator: "<="
+               value: 100.0
+          fish:
+               operator: "<="
+               value: 100.0
+          jq:
+               operator: "<="
+               value: 100.0
+          mIRC Script:
+               operator: "<="
+               value: 100.0
+          mcfunction:
+               operator: "<="
+               value: 100.0
+          mupad:
+               operator: "<="
+               value: 100.0
+          nesC:
+               operator: "<="
+               value: 100.0
+          ooc:
+               operator: "<="
+               value: 100.0
+          q:
+               operator: "<="
+               value: 100.0
+          sed:
+               operator: "<="
+               value: 100.0
+          wdl:
+               operator: "<="
+               value: 100.0
+          wisp:
+               operator: "<="
+               value: 100.0
+          xBase:
+               operator: "<="
+               value: 100.0
+          API Blueprint:
+               operator: "<="
+               value: 50.0
+          BibTeX:
+               operator: "<="
+               value: 50.0
+          Blade:
+               operator: "<="
+               value: 50.0
+          CSS:
+               operator: "<="
+               value: 50.0
+          Closure Templates:
+               operator: "<="
+               value: 50.0
+          Dockerfile:
+               operator: "<="
+               value: 50.0
+          EJS:
+               operator: "<="
+               value: 50.0
+          HTML:
+               operator: "<="
+               value: 50.0
+          HTML+ECR:
+               operator: "<="
+               value: 50.0
+          HTML+EEX:
+               operator: "<="
+               value: 50.0
+          HTML+ERB:
+               operator: "<="
+               value: 50.0
+          HTML+PHP:
+               operator: "<="
+               value: 50.0
+          HTML+Razor:
+               operator: "<="
+               value: 50.0
+          Haml:
+               operator: "<="
+               value: 50.0
+          Handlebars:
+               operator: "<="
+               value: 50.0
+          Jinja:
+               operator: "<="
+               value: 50.0
+          Jupyter Notebook:
+               operator: "<="
+               value: 50.0
+          Kit:
+               operator: "<="
+               value: 50.0
+          Latte:
+               operator: "<="
+               value: 50.0
+          Less:
+               operator: "<="
+               value: 50.0
+          Liquid:
+               operator: "<="
+               value: 50.0
+          MTML:
+               operator: "<="
+               value: 50.0
+          Marko:
+               operator: "<="
+               value: 50.0
+          Mask:
+               operator: "<="
+               value: 50.0
+          Mustache:
+               operator: "<="
+               value: 50.0
+          Nunjucks:
+               operator: "<="
+               value: 50.0
+          Pic:
+               operator: "<="
+               value: 50.0
+          PostCSS:
+               operator: "<="
+               value: 50.0
+          PostScript:
+               operator: "<="
+               value: 50.0
+          Pug:
+               operator: "<="
+               value: 50.0
+          RAML:
+               operator: "<="
+               value: 50.0
+          RUNOFF:
+               operator: "<="
+               value: 50.0
+          Rich Text Format:
+               operator: "<="
+               value: 50.0
+          Riot:
+               operator: "<="
+               value: 50.0
+          Roff:
+               operator: "<="
+               value: 50.0
+          Roff Manpage:
+               operator: "<="
+               value: 50.0
+          SCSS:
+               operator: "<="
+               value: 50.0
+          SRecode Template:
+               operator: "<="
+               value: 50.0
+          Sass:
+               operator: "<="
+               value: 50.0
+          Scaml:
+               operator: "<="
+               value: 50.0
+          Slim:
+               operator: "<="
+               value: 50.0
+          StringTemplate:
+               operator: "<="
+               value: 50.0
+          Stylus:
+               operator: "<="
+               value: 50.0
+          SugarSS:
+               operator: "<="
+               value: 50.0
+          Svelte:
+               operator: "<="
+               value: 50.0
+          TeX:
+               operator: "<="
+               value: 50.0
+          Tea:
+               operator: "<="
+               value: 50.0
+          Twig:
+               operator: "<="
+               value: 50.0
+          Vim Snippet:
+               operator: "<="
+               value: 50.0
+          Vue:
+               operator: "<="
+               value: 50.0
+          XSLT:
+               operator: "<="
+               value: 50.0
+          YASnippet:
+               operator: "<="
+               value: 50.0
+
+
+attributes:
+    - id
+    - name
+    - description
+    - web_url
+    - languages
