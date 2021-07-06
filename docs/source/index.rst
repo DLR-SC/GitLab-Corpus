@@ -12,6 +12,7 @@ Welcome to corpus's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   getting-started
    modules
    filter-specification
 
