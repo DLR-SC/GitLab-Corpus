@@ -28,9 +28,9 @@ See [requirements.txt](https://gitlab.dlr.de/sc/ivs-open/corpus/-/blob/master/re
 
 You can clone this repository and then install the tool as follows:  
 ```bash
-git clone ...
-cd gitlab-corpus
-pip install .
+git clone https://gitlab.dlr.de/sc/ivs-open/corpus.git
+cd corpus
+pip install --editable .
 ```  
 
 ## Usage
