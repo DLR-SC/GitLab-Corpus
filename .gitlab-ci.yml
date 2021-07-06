@@ -34,7 +34,7 @@ test:
 pages:
   stage: deploy
   script:
-    - pip install sphinx sphinx-rtd-theme
+    - pip install sphinx sphinx-rtd-theme sphinx-click
     - cd docs
     - make html
     - mv build/html ../public/

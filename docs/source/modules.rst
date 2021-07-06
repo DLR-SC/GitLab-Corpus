@@ -2,11 +2,6 @@
 Modules
 ==============
 
-.. automodule:: corpus
-      :members:
-.. automodule:: extract
-      :members:
-.. automodule:: filter
-      :members:
-.. automodule:: export
-      :members:
+.. click:: corpus:cli
+    :prog: cli
+    :show-nested:
