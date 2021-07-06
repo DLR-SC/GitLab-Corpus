@@ -3,5 +3,5 @@ Modules
 ==============
 
 .. click:: corpus:cli
-    :prog: cli
+    :prog: corpus
     :show-nested:
