@@ -182,7 +182,7 @@ def test_load_languages():
             Java:
                 operator: "<="
                 value: 100.0
-        explicit_languages:
+        exact_languages:
             C#:
                 operator: "<="
                 value: 100.0
@@ -197,7 +197,7 @@ def test_load_languages():
     assert filter.atleast_languages == {"C": {"operator": "<=", "value": 100.0}}
     assert filter.atmost_languages == {"Python": {"operator": "<=", "value": 100.0}}
     assert filter.any_languages == {"Java": {"operator": "<=", "value": 100.0}}
-    assert filter.explicit_languages == {"C#": {"operator": "<=", "value": 100.0}}
+    assert filter.exact_languages == {"C#": {"operator": "<=", "value": 100.0}}
 
 
 def test_check_languages_atleast_true():
@@ -326,10 +326,10 @@ def test_check_languages_any_false():
     assert filter.check_languages("any_languages", test_project) is False
 
 
-def test_check_languages_explicit_true():
+def test_check_languages_exact_true():
     mocked_filters = """
         filters:
-            explicit_languages:
+            exact_languages:
                 C:
                     operator: "<="
                     value: 100.0
@@ -349,13 +349,13 @@ def test_check_languages_explicit_true():
     filter = Filter(False, language_test_corpus, False, "")
     with mock.patch("builtins.open", mocked_filter_file, create=True):
         filter.load_filters(filter_file="mocked_filters.yaml")
-    assert filter.check_languages("explicit_languages", test_project) is True
+    assert filter.check_languages("exact_languages", test_project) is True
 
 
-def test_check_languages_explicit_false():
+def test_check_languages_exact_false():
     mocked_filters = """
         filters:
-            explicit_languages:
+            exact_languages:
                 C:
                     operator: "<="
                     value: 100.0
@@ -369,7 +369,7 @@ def test_check_languages_explicit_false():
     filter = Filter(False, language_test_corpus, False, "")
     with mock.patch("builtins.open", mocked_filter_file, create=True):
         filter.load_filters(filter_file="mocked_filters.yaml")
-    assert filter.check_languages("explicit_languages", test_project) is False
+    assert filter.check_languages("exact_languages", test_project) is False
 
 
 def test_filter_project_true_1():
