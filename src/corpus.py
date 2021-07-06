@@ -24,13 +24,7 @@ command_config = click.make_pass_decorator(Config, ensure=True)
               help='Prints more output during execution')
 @command_config
 def cli(config, config_path, source, verbose):
-    """Entry point to the corpus cli.
-    :param config: Saves global configuration options, such as the manager for the gitlab connection and verbose mode
-    :param config_path: Path to GitLab configuration file (see `python-gitlab docs
-    <https://python-gitlab.readthedocs.io/en/stable/cli-usage.html#files>`_.
-    :param source: GitLab source as defined in the configuration file
-    :param verbose: Prints more output when set to ``True``
-    """
+    """Entry point to the corpus cli."""
     config.gl = gitlab.Gitlab.from_config(source, config_path)
     config.verbose = verbose
 
@@ -48,13 +42,7 @@ def cli(config, config_path, source, verbose):
 @corpus
 @command_config
 def build(config, corpus_data, all_elements, filter_file, out):
-    """Run the pipeline extract -> filter -> export in one command.
-    :param config: Global configuration options, such as the manager for the gitlab connection and verbose mode
-    :param corpus_data: An empty corpus object provided as click pass decorator. See .. rst:role:: py:class Corpus
-    :param all_elements: Will crawl all projects of the given GitLab instance, if set to ``True``
-    :param filter_file: Path to filter file. See :ref:`filter-file` [default: ``resources/filters.yaml``]
-    :param out: Path to output file [default: ``out/corpus.json``]
-    """
+    """Run the pipeline extract -> filter -> export in one command."""
     extractor = Extractor(config.verbose, config.gl, corpus=corpus_data)
     corpus_filter = Filter(config.verbose, corpus=corpus_data)
 
@@ -76,12 +64,7 @@ def build(config, corpus_data, all_elements, filter_file, out):
 @corpus
 @command_config
 def extract(config, corpus_data, all_elements, out):
-    """Extract projects from the specified GitLab instance and write the output to a file.
-    :param config: Global configuration options, such as the manager for the gitlab connection and verbose mode
-    :param corpus_data: An empty corpus object provided as click pass decorator. See .. rst:role:: py:class Corpus
-    :param all_elements: Will crawl all projects of the given GitLab instance, if set to ``True``
-    :param out: Path to output file [default: ``out/corpus.json``]
-    """
+    """Extract projects from the specified GitLab instance and write the output to a file."""
     extractor = Extractor(config.verbose, config.gl, corpus=corpus_data)
     exporter = Exporter(config.verbose, corpus=corpus_data, format_str="json")
 
@@ -100,13 +83,7 @@ def extract(config, corpus_data, all_elements, out):
 @corpus
 @command_config
 def filter(config, corpus_data, filter_file, input_file, out):
-    """Apply filters on a previously extracted corpus.
-    :param config: Global configuration options, such as the manager for the gitlab connection and verbose mode
-    :param corpus_data: An empty corpus object provided as click pass decorator. See .. rst:role:: py:class Corpus
-    :param filter_file: Path to filter file. See :ref:`filter-file` [default: ``resources/filters.yaml``]
-    :param input_file: Path to corpus file, which will be filtered [default: ``out/corpus.json``]
-    :param out: Path to output file [default: ``out/corpus.json``]
-    """
+    """Apply filters on a previously extracted corpus."""
     corpus_filter = Filter(config.verbose, corpus=corpus_data, from_file=True, file=input_file)
 
     corpus_filter.load_filters(filter_file=filter_file)
@@ -126,13 +103,7 @@ def filter(config, corpus_data, filter_file, input_file, out):
 @corpus
 @command_config
 def export(config, corpus_data, input_file, out, output_format):
-    """Export a previously extracted (and maybe filtered) corpus to another format.
-    :param config: Global configuration options, such as the manager for the gitlab connection and verbose mode
-    :param corpus_data: An empty corpus object provided as click pass decorator. See .. rst:role:: py:class Corpus
-    :param input_file: Path to corpus file, which will be exported [default: ``out/corpus.json``]
-    :param out: Path to output file [default: ``out/corpus.json``]
-    :param output_format: Desired output format
-    """
+    """Export a previously extracted (and maybe filtered) corpus to another format."""
     exporter = Exporter(config.verbose, corpus=corpus_data, format_str=output_format, from_file=True, file=input_file)
     exporter.export(out=out)
 
