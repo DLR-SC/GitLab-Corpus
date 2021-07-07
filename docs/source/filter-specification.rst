@@ -5,6 +5,9 @@ How to write a filter file
 .. contents:: Table of contents
     :depth: 2
 
+If you are looking for templates for filters, you can find them here:
+`filter templates <https://gitlab.dlr.de/sc/ivs-open/corpus/-/tree/master/filter-templates>`_
+
 =============================
 Sections of the filter file
 =============================
