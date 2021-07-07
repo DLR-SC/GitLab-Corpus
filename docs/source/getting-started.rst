@@ -45,3 +45,6 @@ witnessed execution times of over 40 minutes). So I really recommend, that you d
 only once. In the following you can then use ``corpus filter --out=path/to/file.json``. This will prevent, that your
 previously extracted corpus will be overwritten, as you probably do not want to crawl all projects again everytime you
 try a new filter.
+
+You can find interesting templates for filters here:
+`filter templates <https://gitlab.dlr.de/sc/ivs-open/corpus/-/tree/master/filter-templates>`_
