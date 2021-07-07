@@ -8,6 +8,24 @@ from gitlab.v4.objects.projects import ProjectManager
 from utils.helpers import Corpus
 
 
+class Pipelines:
+
+    def __init__(self):
+        self.attributes = {
+                "id": 12,
+                "project_id": 123,
+                "status": "success",
+                "ref": "test-pipeline",
+                "sha": "asd78h8",
+                "web_url": "https://gitlab.dlr.de/test/testproject/pipelines/12",
+                "created_at": "2021-08-11T14:20:34.085Z",
+                "updated_at": "2021-08-11T14:31:30.169Z"
+            }
+
+    def list(self):
+        return [self]
+
+
 class Mergerequests:
     def __init__(self):
         self.attributes = {
@@ -174,6 +192,7 @@ class Project:
         self.lgs = {"Python": 80.0, "HTML": 20.0}
         self.repo_tree = [{"id": "hash123", "name": "test.py", "type": "blob"}]
         self.mergerequests = Mergerequests()
+        self.pipelines = Pipelines()
 
     def languages(self):
         return self.lgs
@@ -353,6 +372,13 @@ def test_extract():
                     "blocking_discussions_resolved": True
                 }
             ]
+    assert project['pipelines'] == {
+        "total": 1,
+        "successful": 1,
+        "failed": 0,
+        "canceled": 0,
+        "pending": 0
+    }
 
 
 if __name__ == '__main__':

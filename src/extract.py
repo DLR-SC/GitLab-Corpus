@@ -42,15 +42,20 @@ class Extractor:
                         external_contributors = set()
                         contributor_names = set()
 
+                        # only extract public or internal projects
                         if project_dict['visibility'] != "private":
 
+                            # extract issue statistics
                             project_dict['issue_statistics'] = \
                                 project.issuesstatistics.get(scope="all").attributes["statistics"]
 
+                            # extract project languages
                             project_dict['languages'] = project.languages()
 
+                            # extract members of the project
                             members = project.members_all.list(all=True)
 
+                            # extract commits and extract committer names of the project
                             try:
                                 commits = project.commits.list(all=True)
                                 commit_list = []
@@ -66,6 +71,7 @@ class Extractor:
                             except gitlab.exceptions.GitlabListError:
                                 pass  # some projects do not have any commits, which leads to this error
 
+                            # match committer names to members to get the corresponding username
                             for member in members:
                                 try:
                                     surname, forename = member.attributes['name'].split(', ')
@@ -81,6 +87,7 @@ class Extractor:
                                     contributor_names.remove(name)
                             external_contributors.update(contributor_names)
 
+                            # extract all issues of a project and add further contributors to list
                             issues = project.issues.list(all=True)
                             issue_list = []
                             for issue in issues:
@@ -92,12 +99,15 @@ class Extractor:
                             if len(issue_list) > 0:
                                 project_dict['issues'] = issue_list
 
+                            # add contributors to project data
                             if len(contributors) > 0:
                                 project_dict['contributors'] = list(contributors)
 
+                            # add all contributors that are not in the member list as external
                             if len(external_contributors) > 0:
                                 project_dict['external_contributors'] = list(external_contributors)
 
+                            # extract all merge requests
                             mergerequests = project.mergerequests.list(state='all')
                             mr_list = []
                             for mr in mergerequests:
@@ -106,11 +116,34 @@ class Extractor:
                             if len(mr_list) > 0:
                                 project_dict['mergerequests'] = mr_list
 
+                            # extract pipeline statistics
+                            try:
+                                pipelines = project.pipelines.list()
+                                pipelines_dict = {"total": 0, "successful": 0, "failed": 0, "canceled": 0, "pending": 0}
+                                for pipeline in pipelines:
+                                    status = pipeline.attributes['status']
+                                    if status == "success":
+                                        pipelines_dict['successful'] += 1
+                                    elif status == 'failed':
+                                        pipelines_dict['failed'] += 1
+                                    elif status == 'canceled':
+                                        pipelines_dict['canceled'] += 1
+                                    elif status == 'pending':
+                                        pipelines_dict['pending'] += 1
+                                pipelines_dict['total'] = pipelines_dict['successful'] + pipelines_dict['failed'] \
+                                                          + pipelines_dict['canceled'] + pipelines_dict['pending']
+                                project_dict['pipelines'] = pipelines_dict
+                            except gitlab.exceptions.GitlabListError:
+                                pass
+
+                            # extract the main directory of the project
                             try:
                                 project_dict['files'] = project.repository_tree(ref=project_dict['default_branch'])
                             except (gitlab.exceptions.GitlabGetError, gitlab.exceptions.GitlabHttpError, KeyError):
                                 project_dict['files'] = "None"
 
+                            # try to extract project statistics (only works for projects where the user has write
+                            # access)
                             try:
                                 project_dict['project_statistics'] = project.additionalstatistics.get().attributes
                             except gitlab.exceptions.GitlabGetError:
@@ -120,4 +153,5 @@ class Extractor:
                                 else:
                                     pass
 
+                            # add all extracted data to the corpus
                             self.corpus.data["Projects"].append(project_dict)
