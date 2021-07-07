@@ -8,6 +8,70 @@ from gitlab.v4.objects.projects import ProjectManager
 from utils.helpers import Corpus
 
 
+class Mergerequests:
+    def __init__(self):
+        self.attributes = {
+                    "id": 1,
+                    "iid": 1,
+                    "project_id": 3,
+                    "title": "testmr",
+                    "description": "test merge request",
+                    "state": "merged",
+                    "merged_by": {
+                        "id": "123abc",
+                        "name": "Test User",
+                        "username": "test_user",
+                        "state": "active",
+                    },
+                    "merged_at": "2021-07-07T11:16:17.520Z",
+                    "created_at": "2021-06-29T08:46:00Z",
+                    "updated_at": "2021-06-29T08:46:00Z",
+                    "target_branch": "master",
+                    "source_branch": "master",
+                    "author": {
+                        "id": "123abc",
+                        "name": "Test User",
+                        "username": "test_user",
+                        "state": "active",
+                    },
+                    "assignee": {
+                        "id": "123abc",
+                        "name": "Test User",
+                        "username": "test_user",
+                        "state": "active",
+                    },
+                    "assignees": [{
+                        "id": "123abc",
+                        "name": "Test User",
+                        "username": "test_user",
+                        "state": "active",
+                    }],
+                    "reviewers": [{
+                        "id": "123abc",
+                        "name": "Test User",
+                        "username": "test_user",
+                        "state": "active",
+                    }],
+                    "source_project_id": 2,
+                    "target_project_id": 3,
+                    "draft": False,
+                    "work_in_progress": False,
+                    "merge_when_pipeline_succeeds": True,
+                    "merge_status": "can_be_merged",
+                    "sha": "678235980712",
+                    "squash": False,
+                    "task_completion_status": {
+                        "count": 0,
+                        "completed_count": 0
+                    },
+                    "has_conflicts": False,
+                    "blocking_discussions_resolved": True
+                }
+
+    def list(self, state):
+        return [self]
+
+
 class Issues:
     def __init__(self):
         self.attributes = {
@@ -109,6 +173,7 @@ class Project:
         self.issues = Issues()
         self.lgs = {"Python": 80.0, "HTML": 20.0}
         self.repo_tree = [{"id": "hash123", "name": "test.py", "type": "blob"}]
+        self.mergerequests = Mergerequests()
 
     def languages(self):
         return self.lgs
@@ -151,84 +216,143 @@ def test_extract():
     assert project['issue_statistics'] == {"counts": {"all": 1, "closed": 0, "opened": 1}}
     assert project['languages'] == {"Python": 80.0, "HTML": 20.0}
     assert project['commits'] == [
-                {
-                    'id': '123abc',
-                    'short_id': '1a',
-                    'title': 'Initial commit',
-                    'author_name': 'Test User',
-                    'author_email': 'test@us.er',
-                    'authored_date': '2021-09-20T12:00:00+01:00',
-                    'committer_name': 'Tester',
-                    'committer_email': 'tester@example.com',
-                    'committed_date': '2021-09-20T12:00:00+01:00',
-                    'created_at': '2021-09-20T12:00:00+01:00',
-                    'message': 'test commit',
-                    'parent_ids': [
-                        '456def'
-                    ],
-                    'web_url': 'test.com'
-                }
-            ]
+        {
+            'id': '123abc',
+            'short_id': '1a',
+            'title': 'Initial commit',
+            'author_name': 'Test User',
+            'author_email': 'test@us.er',
+            'authored_date': '2021-09-20T12:00:00+01:00',
+            'committer_name': 'Tester',
+            'committer_email': 'tester@example.com',
+            'committed_date': '2021-09-20T12:00:00+01:00',
+            'created_at': '2021-09-20T12:00:00+01:00',
+            'message': 'test commit',
+            'parent_ids': [
+                '456def'
+            ],
+            'web_url': 'test.com'
+        }
+    ]
     assert project['first_commit'] == {
-                'id': '123abc',
-                'short_id': '1a',
-                'title': 'Initial commit',
-                'author_name': 'Test User',
-                'author_email': 'test@us.er',
-                'authored_date': '2021-09-20T12:00:00+01:00',
-                'committer_name': 'Tester',
-                'committer_email': 'tester@example.com',
-                'committed_date': '2021-09-20T12:00:00+01:00',
-                'created_at': '2021-09-20T12:00:00+01:00',
-                'message': 'test commit',
-                'parent_ids': [
-                    '456def'
-                ],
-                'web_url': 'test.com'
-            }
+        'id': '123abc',
+        'short_id': '1a',
+        'title': 'Initial commit',
+        'author_name': 'Test User',
+        'author_email': 'test@us.er',
+        'authored_date': '2021-09-20T12:00:00+01:00',
+        'committer_name': 'Tester',
+        'committer_email': 'tester@example.com',
+        'committed_date': '2021-09-20T12:00:00+01:00',
+        'created_at': '2021-09-20T12:00:00+01:00',
+        'message': 'test commit',
+        'parent_ids': [
+            '456def'
+        ],
+        'web_url': 'test.com'
+    }
     assert project['last_commit'] == {
-                'id': '123abc',
-                'short_id': '1a',
-                'title': 'Initial commit',
-                'author_name': 'Test User',
-                'author_email': 'test@us.er',
-                'authored_date': '2021-09-20T12:00:00+01:00',
-                'committer_name': 'Tester',
-                'committer_email': 'tester@example.com',
-                'committed_date': '2021-09-20T12:00:00+01:00',
-                'created_at': '2021-09-20T12:00:00+01:00',
-                'message': 'test commit',
-                'parent_ids': [
-                    '456def'
-                ],
-                'web_url': 'test.com'
-            }
+        'id': '123abc',
+        'short_id': '1a',
+        'title': 'Initial commit',
+        'author_name': 'Test User',
+        'author_email': 'test@us.er',
+        'authored_date': '2021-09-20T12:00:00+01:00',
+        'committer_name': 'Tester',
+        'committer_email': 'tester@example.com',
+        'committed_date': '2021-09-20T12:00:00+01:00',
+        'created_at': '2021-09-20T12:00:00+01:00',
+        'message': 'test commit',
+        'parent_ids': [
+            '456def'
+        ],
+        'web_url': 'test.com'
+    }
     assert project['issues'] == [
-                {
-                    'state': 'opened',
-                    'description': 'Test issue',
-                    'author': {
-                        'state': 'active',
-                        'id': '123abc',
-                        'name': 'Test User',
-                        'username': 'test_user'
-                    },
-                    'assignees': [{
-                        'state': 'active',
-                        'id': '123abd',
-                        'name': 'Other User',
-                        'username': 'other_user'
-                    }],
-                    'project_id': 1,
-                    'type': 'ISSUE',
-                    'updated_at': '2021-01-04T15:31:51.081Z',
-                    'id': 70,
-                    'has_tasks': True,
-                    'task_status': '10 of 15 tasks completed',
-                }
-            ]
+        {
+            'state': 'opened',
+            'description': 'Test issue',
+            'author': {
+                'state': 'active',
+                'id': '123abc',
+                'name': 'Test User',
+                'username': 'test_user'
+            },
+            'assignees': [{
+                'state': 'active',
+                'id': '123abd',
+                'name': 'Other User',
+                'username': 'other_user'
+            }],
+            'project_id': 1,
+            'type': 'ISSUE',
+            'updated_at': '2021-01-04T15:31:51.081Z',
+            'id': 70,
+            'has_tasks': True,
+            'task_status': '10 of 15 tasks completed',
+        }
+    ]
     assert all(elem in project['contributors'] for elem in ['test_user', 'other_user'])
     assert project['files'] == [{"id": "hash123", "name": "test.py", "type": "blob"}]
+    assert project['mergerequests'] == [
+                {
+                    "id": 1,
+                    "iid": 1,
+                    "project_id": 3,
+                    "title": "testmr",
+                    "description": "test merge request",
+                    "state": "merged",
+                    "merged_by": {
+                        "id": "123abc",
+                        "name": "Test User",
+                        "username": "test_user",
+                        "state": "active",
+                    },
+                    "merged_at": "2021-07-07T11:16:17.520Z",
+                    "created_at": "2021-06-29T08:46:00Z",
+                    "updated_at": "2021-06-29T08:46:00Z",
+                    "target_branch": "master",
+                    "source_branch": "master",
+                    "author": {
+                        "id": "123abc",
+                        "name": "Test User",
+                        "username": "test_user",
+                        "state": "active",
+                    },
+                    "assignee": {
+                        "id": "123abc",
+                        "name": "Test User",
+                        "username": "test_user",
+                        "state": "active",
+                    },
+                    "assignees": [{
+                        "id": "123abc",
+                        "name": "Test User",
+                        "username": "test_user",
+                        "state": "active",
+                    }],
+                    "reviewers": [{
+                        "id": "123abc",
+                        "name": "Test User",
+                        "username": "test_user",
+                        "state": "active",
+                    }],
+                    "source_project_id": 2,
+                    "target_project_id": 3,
+                    "draft": False,
+                    "work_in_progress": False,
+                    "merge_when_pipeline_succeeds": True,
+                    "merge_status": "can_be_merged",
+                    "sha": "678235980712",
+                    "squash": False,
+                    "task_completion_status": {
+                        "count": 0,
+                        "completed_count": 0
+                    },
+                    "has_conflicts": False,
+                    "blocking_discussions_resolved": True
+                }
+            ]
 
 
 if __name__ == '__main__':

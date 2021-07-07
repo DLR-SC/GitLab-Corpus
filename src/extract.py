@@ -98,6 +98,14 @@ class Extractor:
                             if len(external_contributors) > 0:
                                 project_dict['external_contributors'] = list(external_contributors)
 
+                            mergerequests = project.mergerequests.list(state='all')
+                            mr_list = []
+                            for mr in mergerequests:
+                                mr_dict = mr.attributes
+                                mr_list.append(mr_dict)
+                            if len(mr_list) > 0:
+                                project_dict['mergerequests'] = mr_list
+
                             try:
                                 project_dict['files'] = project.repository_tree(ref=project_dict['default_branch'])
                             except (gitlab.exceptions.GitlabGetError, gitlab.exceptions.GitlabHttpError, KeyError):
