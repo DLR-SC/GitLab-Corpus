@@ -28,6 +28,9 @@ default. Otherwise, you will have to specify the location of the file manually.
 
 If you need help with the content of that configuration file, read the docs here:
 `python-gitlab docs <https://python-gitlab.readthedocs.io/en/stable/cli-usage.html#content>`_
+It is a `known bug <https://gitlab.dlr.de/sc/ivs-open/corpus/-/issues/16>`_, that sometimes the execution stops with
+the ReadTimeout error. Until now, there is no better solution, than setting the ``timeout`` value in the configuration
+file to 15 or more.
 
 Also, if you want to use the pipeline ``corpus build`` or the command ``corpus filter`` you should specify a
 filter file, also in the ``resources`` directory (recommended).
