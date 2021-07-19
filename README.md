@@ -36,7 +36,7 @@ pip install --editable .
 ## Usage
 **NOTE** In order to use this tool you first need to write a `config-file` in which you provide information about the 
 GitLab instance you want to run this tool on. For further information read the corresponding 
-[python-gitlab docs](https://python-gitlab.readthedocs.io/en/stable/cli.html#content).  
+[python-gitlab docs](https://python-gitlab.readthedocs.io/en/stable/cli-usage.html#content).  
 The tool can be run using the command `corpus`.
 
 Running the command using the `--help` parameter or without any parameter, will print the help page.
