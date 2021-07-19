@@ -1,12 +1,13 @@
 # SPDX-FileCopyrightText: 2021 German Aerospace Center (DLR)
 # SPDX-License-Identifier: MIT
+from os.path import exists
 
 import click
 import gitlab
 from extract import Extractor
 from export import Exporter
 from filter import Filter
-from utils.helpers import Corpus, Config
+from utils.helpers import Corpus, Config, load_neo4j_config
 
 # instance of a corpus that can be passed as click annotation
 corpus = click.make_pass_decorator(Corpus, ensure=True)
@@ -16,17 +17,20 @@ command_config = click.make_pass_decorator(Config, ensure=True)
 
 
 @click.group()
-@click.option('--config-path', '-cp', default='resources/gitlab.cfg',
+@click.option('--gl-config', '-cp', default='resources/gitlab.cfg',
               help='Path to the GitLab config file', show_default=True)
+@click.option('--neo4j-config', '-cp', default='resources/neo4j.cfg',
+              help='Path to the Neo4J config file', show_default=True)
 @click.option('--source', '-s',
               help='Name of the GitLab instance, you want to analyze, if not the default value of your configuration')
 @click.option('--verbose', '-v', default=False,
               help='Prints more output during execution')
 @command_config
-def cli(config, config_path, source, verbose):
+def cli(config, gl_config, neo4j_config, source, verbose):
     """Entry point to the corpus cli."""
-    config.gl = gitlab.Gitlab.from_config(source, config_path)
+    config.gl = gitlab.Gitlab.from_config(source, gl_config)
     config.verbose = verbose
+    config.neo4j_config = load_neo4j_config(neo4j_config)
 
 
 @cli.command()
@@ -44,13 +48,13 @@ def cli(config, config_path, source, verbose):
 def build(config, corpus_data, all_elements, filter_file, out):
     """Run the pipeline extract -> filter -> export in one command."""
     extractor = Extractor(config.verbose, config.gl, corpus=corpus_data)
-    corpus_filter = Filter(config.verbose, corpus=corpus_data)
+    corpus_filter = Filter(config.verbose, corpus=corpus_data, from_file=False)
 
     extractor.extract(all_elements=all_elements)
     corpus_filter.load_filters(filter_file=filter_file)
     corpus_filter.filter()
 
-    exporter = Exporter(config.verbose, corpus=corpus_filter.filtered_corpus, format_str="json")
+    exporter = Exporter(config, corpus=corpus_filter.filtered_corpus, format_str="json", from_file=False)
     exporter.export(out=out)
 
 
@@ -66,7 +70,7 @@ def build(config, corpus_data, all_elements, filter_file, out):
 def extract(config, corpus_data, all_elements, out):
     """Extract projects from the specified GitLab instance and write the output to a file."""
     extractor = Extractor(config.verbose, config.gl, corpus=corpus_data)
-    exporter = Exporter(config.verbose, corpus=corpus_data, format_str="json")
+    exporter = Exporter(config, corpus=corpus_data, format_str="json")
 
     extractor.extract(all_elements=all_elements)
     exporter.export(out=out)
@@ -89,7 +93,7 @@ def filter(config, corpus_data, filter_file, input_file, out):
     corpus_filter.load_filters(filter_file=filter_file)
     corpus_filter.filter()
 
-    exporter = Exporter(config.verbose, corpus=corpus_filter.filtered_corpus, format_str="json")
+    exporter = Exporter(config, corpus=corpus_filter.filtered_corpus, format_str="json")
     exporter.export(out=out)
 
 
@@ -104,10 +108,12 @@ def filter(config, corpus_data, filter_file, input_file, out):
 @command_config
 def export(config, corpus_data, input_file, out, output_format):
     """Export a previously extracted (and maybe filtered) corpus to another format."""
-    exporter = Exporter(config.verbose, corpus=corpus_data, format_str=output_format, from_file=True, file=input_file)
+    exporter = Exporter(config, corpus=corpus_data, format_str=output_format, from_file=True, file=input_file)
     exporter.export(out=out)
 
 
 if __name__ == '__main__':
-    cli(['--config-path=../resources/gitlab.cfg', 'build', '--out=../out/corpus.json',
-         '--filter-file=../resources/filters.yaml'])
+    cli(['--gl-config=../resources/gitlab.cfg', '--neo4j-config=../resources/neo4j.cfg', 'export',
+         '--input-file=../out/corpus.json', '--output-format=neo4j', '--out=../out/corpus.json'])
+    # cli(['--gl-config=../resources/gitlab.cfg', 'build', '--out=../out/corpus.json',
+    #      '--filter-file=../resources/filters.yaml'])
