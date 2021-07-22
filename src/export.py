@@ -2,10 +2,12 @@
 # SPDX-License-Identifier: MIT
 
 import json
+from json.decoder import JSONDecodeError
+
 import click
+from utils.export_models import Project as project_model
 from py2neo import Graph
 from py2neo.data import Node, Relationship
-
 from utils.helpers import Corpus
 
 
@@ -31,7 +33,10 @@ class Exporter:
         self.neo4j_config = config.neo4j_config
         if from_file:
             with open(file, 'r') as f:
-                self.corpus.data = json.load(f)
+                try:
+                    self.corpus.data = json.load(f)
+                except JSONDecodeError:
+                    click.echo("The input file does not contain valid JSON-data.")
         else:
             self.corpus = corpus
 
@@ -62,4 +67,6 @@ class Exporter:
                 self.export_to_neo4j()
 
     def export_to_neo4j(self):
-        self.graph.create(Node("Project", id="123", description="Test description"))
+        for project in self.corpus.data["Projects"]:
+            project_node = project_model.create(self.graph, project)
+            # self.graph.push(project_node)

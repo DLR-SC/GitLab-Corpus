@@ -108,13 +108,16 @@ class Extractor:
                                 project_dict['external_contributors'] = list(external_contributors)
 
                             # extract all merge requests
-                            mergerequests = project.mergerequests.list(state='all')
-                            mr_list = []
-                            for mr in mergerequests:
-                                mr_dict = mr.attributes
-                                mr_list.append(mr_dict)
-                            if len(mr_list) > 0:
-                                project_dict['mergerequests'] = mr_list
+                            try:
+                                mergerequests = project.mergerequests.list(state='all')
+                                mr_list = []
+                                for mr in mergerequests:
+                                    mr_dict = mr.attributes
+                                    mr_list.append(mr_dict)
+                                if len(mr_list) > 0:
+                                    project_dict['mergerequests'] = mr_list
+                            except gitlab.exceptions.GitlabListError:
+                                pass    # occurs when no mergerequests exist
 
                             # extract pipeline statistics
                             try:
