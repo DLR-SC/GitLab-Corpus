@@ -194,6 +194,9 @@ class Project:
         self.mergerequests = Mergerequests()
         self.pipelines = Pipelines()
 
+    def repository_contributors(self):
+        return self.members_all
+
     def languages(self):
         return self.lgs
 
@@ -311,7 +314,7 @@ def test_extract():
             'task_status': '10 of 15 tasks completed',
         }
     ]
-    assert all(elem in project['contributors'] for elem in ['test_user', 'other_user'])
+    assert project['contributors'].attributes['username'] == 'test_user'
     assert project['files'] == [{"id": "hash123", "name": "test.py", "type": "blob"}]
     assert project['mergerequests'] == [
                 {
