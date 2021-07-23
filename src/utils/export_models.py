@@ -1,5 +1,5 @@
 from py2neo import Graph
-from py2neo.ogm import GraphObject, RelatedObjects, Property, RelatedFrom
+from py2neo.ogm import GraphObject, RelatedObjects, Property, RelatedFrom, RelatedTo
 
 
 class NeoGraphObjectException(Exception):
@@ -38,7 +38,7 @@ class NeoGraphObject(GraphObject):
             raise NeoGraphObjectException(f"Primary '{obj.__primarykey__}' not in attributes")
         for attr, attr_value in attributes.items():
             if hasattr(obj, attr) and not isinstance(getattr(obj, attr), RelatedObjects):
-                if not isinstance(attr_value, dict):
+                if not isinstance(attr_value, dict) and not isinstance(attr_value, list):
                     setattr(obj, attr, attr_value)
                 else:
                     setattr(obj, attr, str(attr_value))
@@ -65,7 +65,7 @@ class NeoGraphObject(GraphObject):
     @classmethod
     def get_or_create(cls, graph: Graph, pk=None, attributes: dict = None):
         """
-        Serves as helper method to retrieve lables from the graph or create a new one if no label existed
+        Serves as helper method to retrieve labels from the graph or create a new one if no label existed
         :param graph: Graph instance
         :type graph: Graph
         :param pk: The labels primary key
@@ -121,16 +121,15 @@ class Project(NeoGraphObject):
     forks_count = Property("forks_count")
     star_count = Property("star_count")
     last_activity_at = Property("last_activity_at")
-    namespace = Property("namespace")
     _links = Property("_links")
     packages_enabled = Property("packages_enabled")
     empty_repo = Property("empty_repo")
     archived = Property("archived")
     visibility = Property("visibility")
-    # owner = Property("owner")
+    owner = Property("owner")
     resolve_outdated_diff_discussions = Property("resolve_outdated_diff_discussions")
     container_registry_enabled = Property("container_registry_enabled")
-    # container_expiration_policy = Property("container_expiration_policy")
+    container_expiration_policy = Property("container_expiration_policy")
     issues_enabled = Property("issues_enabled")
     merge_requests_enabled = Property("merge_requests_enabled")
     wiki_enabled = Property("wiki_enabled")
@@ -162,7 +161,7 @@ class Project(NeoGraphObject):
     auto_cancel_pending_pipelines = Property("auto_cancel_pending_pipelines")
     build_coverage_regex = Property("build_coverage_regex")
     ci_config_path = Property("ci_config_path")
-    # shared_with_groups = Property("shared_with_groups")
+    shared_with_groups = Property("shared_with_groups")
     only_allow_merge_if_pipeline_succeeds = Property("only_allow_merge_if_pipeline_succeeds")
     allow_merge_on_skipped_pipeline = Property("allow_merge_on_skipped_pipeline")
     restrict_user_defined_variables = Property("restrict_user_defined_variables")
@@ -183,13 +182,15 @@ class Project(NeoGraphObject):
     issues_template = Property("issues_template")
     merge_requests_template = Property("merge_requests_template")
     permissions = Property("permissions")
-    # issue_statistics = Property("issue_statistics")
-    # languages = Property("languages")
-    # first_commit = Property("first_commit")
-    # last_commit = Property("last_commit")
-    # contributors = Property("contributors")
-    # external_contributors = Property("external_contributors")
+    issue_statistics = Property("issue_statistics")
+    languages = Property("languages")
+    first_commit = Property("first_commit")
+    last_commit = Property("last_commit")
+    contributors = Property("contributors")
+    external_contributors = Property("external_contributors")
 
+    has_language = RelatedFrom("Language", "HAS_LANGUAGE")
+    has_namespace = RelatedFrom("Namespace", "HAS_NAMESPACE")
     has_file = RelatedFrom("File", "BELONGS_TO")
     has_commit = RelatedFrom("Commit", "BELONGS_TO")
     has_milestone = RelatedFrom("Milestone", "BELONGS_TO")
@@ -215,26 +216,38 @@ class Namespace(NeoGraphObject):
     parent_id = Property("parent_id")
     avatar_url = Property("avatar_url")
     web_url = Property("web_url")
+
+    belongs_to = RelatedTo(Project)
     
-    
-class Links(NeoGraphObject):
-    __primarylabel__ = "Links"
-    __primarykey__ = "self"
-    
+
+class Contributor(NeoGraphObject):
+    __primarylabel__ = "Contributor"
+    __primarykey__ = "id"
+
     __unique_constraints__ = [
-        "self",
-        "issues",
-        "merge_requests",
-        "repo_branches",
-        "labels",
-        "events",
-        "members",
+        "id",
+        "username"
     ]
 
-    self = Property("self")
-    issues = Property("issues")
-    merge_requests = Property("merge_requests")
-    repo_branches = Property("repo_branches")
-    labels = Property("labels")
-    events = Property("events")
-    members = Property("members")
+    id = Property("id")
+    username = Property("username")
+    name = Property("name")
+    state = Property("state")
+    avatar_url = Property("avatar_url")
+    web_url = Property("web_url")
+
+    belongs_to = RelatedTo(Project)
+    owns = RelatedTo(Project)
+
+
+class Language(NeoGraphObject):
+    __primarylabel__ = "Language"
+    __primarykey__ = "name"
+
+    __unique_constraints__ = [
+        "name"
+    ]
+
+    name = Property("name")
+
+    is_contained_in = RelatedTo(Project)
