@@ -114,6 +114,6 @@ def export(config, corpus_data, input_file, out, output_format):
 
 if __name__ == '__main__':
     cli(['--gl-config=../resources/gitlab.cfg', '--neo4j-config=../resources/neo4j.cfg', 'export',
-         '--input-file=../out/corpus.json', '--output-format=neo4j', '--out=../out/corpus.json'])
+         '--input-file=../out/complete_corpus.json', '--output-format=neo4j', '--out=../out/corpus.json'])
     # cli(['--gl-config=../resources/gitlab.cfg', 'build', '--out=../out/corpus.json',
     #      '--filter-file=../resources/filters.yaml'])

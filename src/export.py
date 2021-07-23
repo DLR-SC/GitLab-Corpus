@@ -5,10 +5,11 @@ import json
 from json.decoder import JSONDecodeError
 
 import click
-from utils.export_models import Project as project_model
+from utils.export_models import Project as Project_model
+from utils.export_models import Namespace as Namespace_model
+from utils.export_models import Language as Language_model
 from py2neo import Graph
-from py2neo.data import Node, Relationship
-from utils.helpers import Corpus
+from utils.helpers import Corpus, transform_language_dict
 
 
 class Exporter:
@@ -68,5 +69,13 @@ class Exporter:
 
     def export_to_neo4j(self):
         for project in self.corpus.data["Projects"]:
-            project_node = project_model.create(self.graph, project)
-            # self.graph.push(project_node)
+            project_node = Project_model.create(self.graph, project)
+            namespace_node = Namespace_model.create(self.graph, project["namespace"])
+            namespace_node.belongs_to.update(project_node)
+            languages = transform_language_dict(project["languages"])
+            for language in list(languages):
+                language_node = Language_model.get_or_create(self.graph, language["name"], language)
+                language_node.is_contained_in.update(project_node)
+                self.graph.push(language_node)
+            self.graph.push(namespace_node)
+
