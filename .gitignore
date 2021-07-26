@@ -5,8 +5,7 @@
 resources/*.cfg
 
 # Output files
-out/out.json
-out/corpus.json
+out/*.json
 
 # filter
 resources/*.yml
