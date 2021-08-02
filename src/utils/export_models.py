@@ -189,6 +189,9 @@ class Project(NeoGraphObject):
     contributors = Property("contributors")
     external_contributors = Property("external_contributors")
 
+    owned_by = RelatedFrom("User", "OWNED_BY")
+    has_contributor = RelatedFrom("User", "CONTRIBUTED_BY")
+    has_user = RelatedFrom("User", "HAS_USER")
     has_language = RelatedFrom("Language", "HAS_LANGUAGE")
     has_namespace = RelatedFrom("Namespace", "HAS_NAMESPACE")
     has_file = RelatedFrom("File", "BELONGS_TO")
@@ -220,8 +223,8 @@ class Namespace(NeoGraphObject):
     belongs_to = RelatedTo(Project)
     
 
-class Contributor(NeoGraphObject):
-    __primarylabel__ = "Contributor"
+class User(NeoGraphObject):
+    __primarylabel__ = "User"
     __primarykey__ = "id"
 
     __unique_constraints__ = [
@@ -238,6 +241,10 @@ class Contributor(NeoGraphObject):
 
     belongs_to = RelatedTo(Project)
     owns = RelatedTo(Project)
+    contributes_to = RelatedTo(Project)
+    is_author = RelatedFrom("Issue", "AUTHORED_BY")
+    assigned_to = RelatedFrom("Issue", "ASSIGNED_TO")
+    committer = RelatedFrom("Commit", "COMMITTED_BY")
 
 
 class Language(NeoGraphObject):
@@ -251,3 +258,116 @@ class Language(NeoGraphObject):
     name = Property("name")
 
     is_contained_in = RelatedTo(Project)
+
+
+class Milestone(NeoGraphObject):
+    __primarylabel__ = "Milestone"
+    __primarykey__ = "id"
+
+    __unique_constraints__ = [
+        "id",
+        "iid"
+    ]
+
+    id = Property("id")
+    iid = Property("iid")
+    project_id = Property("project_id")
+    title = Property("title")
+    description = Property("description")
+    state = Property("state")
+    created_at = Property("created_at")
+    updated_at = Property("updated_at")
+    due_date = Property("due_date")
+    start_date = Property("start_date")
+    expired = Property("expired")
+    web_url = Property("web_url")
+
+    belongs_to = RelatedFrom("Issue", "BELONGS_TO")
+
+
+class Issue(NeoGraphObject):
+    __primarylabel__ = "Issue"
+    __primarykey__ = "id"
+
+    __unique_constraints__ = [
+        "id",
+        "iid"
+    ]
+
+    id = Property("id")
+    iid = Property("iid")
+    project_id = Property("project_id")
+    title = Property("title")
+    description = Property("description")
+    state = Property("state")
+    created_at = Property("created_at")
+    updated_at = Property("updated_at")
+    closed_at = Property("closed_at")
+    closed_by = Property("closed_by")
+    labels = Property("labels")
+    user_notes_count = Property("user_notes_count")
+    merge_requests_count = Property("merge_requests_count")
+    upvotes = Property("upvotes")
+    downvotes = Property("downvotes")
+    due_date = Property("due_date")
+    confidential = Property("confidential")
+    discussion_locked = Property("discussion_locked")
+    web_url = Property("web_url")
+    time_stats = Property("time_stats")
+    task_completion_status = Property("task_completion_status")
+    weight = Property("weight")
+    blocking_issues_count = Property("blocking_issues_count")
+    has_tasks = Property("has_tasks")
+    _links = Property("_links")
+    references = Property("references")
+    moved_to_id = Property("moved_to_id")
+    service_desk_reply_to = Property("service_desk_reply_to")
+
+    belongs_to_milestone = RelatedTo(Milestone)
+    authored_by = RelatedTo(User)
+    assigned_to = RelatedTo(User)
+
+
+class File(NeoGraphObject):
+    __primarylabel__ = "File"
+    __primarykey__ = "id"
+
+    __unique_constraints__ = [
+        "id"
+    ]
+
+    id = Property("id")
+    name = Property("name")
+    file_type = Property("type")
+    path = Property("path")
+    mode = Property("mode")
+
+    belongs_to = RelatedTo(Project)
+
+
+class Commit(NeoGraphObject):
+    __primarylabel__ = "Commit"
+    __primarykey__ = "id"
+    
+    __unique_constraints__ = [
+        "id",
+        "short_id"
+    ]
+
+    id = Property("id")
+    short_id = Property("short_id")
+    created_at = Property("created_at")
+    parent_ids = Property("parent_ids")
+    title = Property("title")
+    message = Property("message")
+    author_name = Property("author_name")
+    author_email = Property("author_email")
+    authored_date = Property("authored_date")
+    committer_name = Property("committer_name")
+    committer_email = Property("committer_email")
+    committed_date = Property("committed_date")
+    web_url = Property("web_url")
+    project_id = Property("project_id")
+
+    belongs_to = RelatedTo(Project)
+    commited_by = RelatedTo(User)
