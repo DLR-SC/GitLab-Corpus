@@ -144,7 +144,7 @@ class Commits:
         return [self]
 
 
-class Members:
+class Users:
 
     def __init__(self):
         self.attributes = {
@@ -157,7 +157,7 @@ class Members:
             "removable": True
         }
 
-    def list(self, all):
+    def list(self):
         return [self]
 
 
@@ -186,7 +186,7 @@ class Project:
                            'open_issues_count': 0}
         self.issuesstatistics = Issuestatistics()
         self.additionalstatistics = Additionalstatistics()
-        self.members_all = Members()
+        self.users = Users()
         self.commits = Commits()
         self.issues = Issues()
         self.lgs = {"Python": 80.0, "HTML": 20.0}
@@ -195,7 +195,7 @@ class Project:
         self.pipelines = Pipelines()
 
     def repository_contributors(self):
-        return self.members_all
+        return self.users
 
     def languages(self):
         return self.lgs
@@ -237,6 +237,15 @@ def test_extract():
     assert project['open_issues_count'] == 0
     assert project['issue_statistics'] == {"counts": {"all": 1, "closed": 0, "opened": 1}}
     assert project['languages'] == {"Python": 80.0, "HTML": 20.0}
+    assert project['users'] == [{
+            "id": 1,
+            "username": "test_user",
+            "name": "Test User",
+            "state": "active",
+            "last_activity_on": "2021-06-09",
+            "membership_type": "group_member",
+            "removable": True
+        }]
     assert project['commits'] == [
         {
             'id': '123abc',
