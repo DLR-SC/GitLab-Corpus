@@ -50,7 +50,17 @@ class Extractor:
                             project_dict['languages'] = project.languages()
 
                             # extract members of the project
-                            members = project.members_all.list(all=True)
+                            try:
+                                users = project.users.list()
+                                user_list = []
+                                for user in users:
+                                    user_dict = user.attributes
+                                    user_list.append(user_dict)
+
+                                if len(user_list) > 0:
+                                    project_dict['users'] = user_list
+                            except gitlab.exceptions.GitlabListError:
+                                pass
 
                             # extract commits
                             try:
