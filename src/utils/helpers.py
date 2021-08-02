@@ -4,14 +4,6 @@
 import configparser
 
 
-def transform_language_dict(language_dict):
-    language = dict()
-    for name, value in language_dict.items():
-        language["name"] = name
-        language["value"] = value
-        yield language
-
-
 class Corpus:
     """This helper class represents a corpus.
 
