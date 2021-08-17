@@ -1,5 +1,7 @@
+import json
 from export import Exporter
 from utils.helpers import Corpus
+from unittest import mock
 
 corpus = Corpus()
 corpus.data = {"Projects": [
@@ -199,5 +201,39 @@ corpus.data = {"Projects": [
 ]}
 
 
-def test_function():
+class Config:
+
+    def __init__(self):
+        self.verbose = False
+        self.neo4j_config = {"NEO4J": {"protocol": "bolt", "hostname": "localhost", "port": 7687, "user": "neo4j",
+                                       "password": "corpus"}}
+
+
+class Graph:
+
+    def __init__(self, neo4j_url, user, password):
+        self.neo4j_url = neo4j_url
+        self.user = user
+        self.password = password
+
+
+def test_export_json():
+    exporter = Exporter(Config(), corpus, "json")
+    exporter.export("out/test.json")
+    with open("out/test.json", "r") as f:
+        data = f.read()
+
+    exported_data = json.loads(data)
+    assert exported_data == corpus.data
+
+
+def test_export_console():
     pass
+
+
+def test_export_neo4j():
+    pass
+
+
+if __name__ == '__main__':
+    test_export_json()
