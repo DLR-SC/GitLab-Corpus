@@ -1,13 +1,17 @@
 # SPDX-FileCopyrightText: 2021 German Aerospace Center (DLR)
 # SPDX-License-Identifier: MIT
-from os.path import exists
 
+import sys
 import click
 import gitlab
+import logging
 from extract import Extractor
 from export import Exporter
 from filter import Filter
 from utils.helpers import Corpus, Config, load_neo4j_config
+
+logging.basicConfig(filename="corpus.log", filemode="w")
+logging.getLogger().addHandler((logging.StreamHandler(sys.stdout)))
 
 # instance of a corpus that can be passed as click annotation
 corpus = click.make_pass_decorator(Corpus, ensure=True)
@@ -115,7 +119,8 @@ def export(config, corpus_data, input_file, out, output_format):
 
 
 if __name__ == '__main__':
-    cli(['--gl-config=../resources/gitlab.cfg', '--neo4j-config=../resources/neo4j.cfg', 'build',
+    cli(['--gl-config=../resources/gitlab.cfg', '--neo4j-config=../resources/neo4j.cfg', 'export',
+         '--input-file=../out/test_corpus.json ',
          '--output-format=neo4j', '--out=../out/corpus.json'])
-    # cli(['--gl-config=../resources/gitlab.cfg', 'build', '--out=../out/corpus.json',
-    #      '--filter-file=../resources/filters.yaml'])
+    # cli(['--gl-config=../resources/gitlab.cfg', '--neo4j-config=../resources/neo4j.cfg', 'build',
+    #      '--out=../out/corpus.json', '-filter-file=../resources/filters.yaml', '--output-format=neo4j'])
