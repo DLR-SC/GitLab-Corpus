@@ -124,6 +124,18 @@ class Extractor:
                             except gitlab.exceptions.GitlabListError:
                                 pass
 
+                            # extract milestones
+                            try:
+                                milestones = project.milestones.list()
+                                ms_list = []
+                                for ms in milestones:
+                                    ms_dict = ms.attributes
+                                    ms_list.append(ms_dict)
+                                if len(ms_list) > 0:
+                                    project_dict['milestones'] = ms_list
+                            except gitlab.exceptions.GitlabListError:
+                                pass
+
                             # extract the main directory of the project
                             try:
                                 project_dict['files'] = project.repository_tree(ref=project_dict['default_branch'])
