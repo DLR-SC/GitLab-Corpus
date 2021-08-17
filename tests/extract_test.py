@@ -8,19 +8,40 @@ from gitlab.v4.objects.projects import ProjectManager
 from utils.helpers import Corpus
 
 
+class Milestones:
+
+    def __init__(self):
+        self.attributes = {
+            "id": 1,
+            "iid": 2,
+            "project_id": 123,
+            "title": "1.0",
+            "description": "Version",
+            "due_date": "2021-08-04",
+            "start_date": "2021-07-10",
+            "state": "active",
+            "updated_at": "2021-07-12T19:31:15Z",
+            "created_at": "2021-07-10T08:13:12Z",
+            "expired": False
+        }
+
+    def list(self):
+        return [self]
+
+
 class Pipelines:
 
     def __init__(self):
         self.attributes = {
-                "id": 12,
-                "project_id": 123,
-                "status": "success",
-                "ref": "test-pipeline",
-                "sha": "asd78h8",
-                "web_url": "https://gitlab.dlr.de/test/testproject/pipelines/12",
-                "created_at": "2021-08-11T14:20:34.085Z",
-                "updated_at": "2021-08-11T14:31:30.169Z"
-            }
+            "id": 12,
+            "project_id": 123,
+            "status": "success",
+            "ref": "test-pipeline",
+            "sha": "asd78h8",
+            "web_url": "https://gitlab.dlr.de/test/testproject/pipelines/12",
+            "created_at": "2021-08-11T14:20:34.085Z",
+            "updated_at": "2021-08-11T14:31:30.169Z"
+        }
 
     def list(self):
         return [self]
@@ -29,62 +50,62 @@ class Pipelines:
 class Mergerequests:
     def __init__(self):
         self.attributes = {
-                    "id": 1,
-                    "iid": 1,
-                    "project_id": 3,
-                    "title": "testmr",
-                    "description": "test merge request",
-                    "state": "merged",
-                    "merged_by": {
-                        "id": "123abc",
-                        "name": "Test User",
-                        "username": "test_user",
-                        "state": "active",
-                    },
-                    "merged_at": "2021-07-07T11:16:17.520Z",
-                    "created_at": "2021-06-29T08:46:00Z",
-                    "updated_at": "2021-06-29T08:46:00Z",
-                    "target_branch": "master",
-                    "source_branch": "master",
-                    "author": {
-                        "id": "123abc",
-                        "name": "Test User",
-                        "username": "test_user",
-                        "state": "active",
-                    },
-                    "assignee": {
-                        "id": "123abc",
-                        "name": "Test User",
-                        "username": "test_user",
-                        "state": "active",
-                    },
-                    "assignees": [{
-                        "id": "123abc",
-                        "name": "Test User",
-                        "username": "test_user",
-                        "state": "active",
-                    }],
-                    "reviewers": [{
-                        "id": "123abc",
-                        "name": "Test User",
-                        "username": "test_user",
-                        "state": "active",
-                    }],
-                    "source_project_id": 2,
-                    "target_project_id": 3,
-                    "draft": False,
-                    "work_in_progress": False,
-                    "merge_when_pipeline_succeeds": True,
-                    "merge_status": "can_be_merged",
-                    "sha": "678235980712",
-                    "squash": False,
-                    "task_completion_status": {
-                        "count": 0,
-                        "completed_count": 0
-                    },
-                    "has_conflicts": False,
-                    "blocking_discussions_resolved": True
-                }
+            "id": 1,
+            "iid": 1,
+            "project_id": 3,
+            "title": "testmr",
+            "description": "test merge request",
+            "state": "merged",
+            "merged_by": {
+                "id": "123abc",
+                "name": "Test User",
+                "username": "test_user",
+                "state": "active",
+            },
+            "merged_at": "2021-07-07T11:16:17.520Z",
+            "created_at": "2021-06-29T08:46:00Z",
+            "updated_at": "2021-06-29T08:46:00Z",
+            "target_branch": "master",
+            "source_branch": "master",
+            "author": {
+                "id": "123abc",
+                "name": "Test User",
+                "username": "test_user",
+                "state": "active",
+            },
+            "assignee": {
+                "id": "123abc",
+                "name": "Test User",
+                "username": "test_user",
+                "state": "active",
+            },
+            "assignees": [{
+                "id": "123abc",
+                "name": "Test User",
+                "username": "test_user",
+                "state": "active",
+            }],
+            "reviewers": [{
+                "id": "123abc",
+                "name": "Test User",
+                "username": "test_user",
+                "state": "active",
+            }],
+            "source_project_id": 2,
+            "target_project_id": 3,
+            "draft": False,
+            "work_in_progress": False,
+            "merge_when_pipeline_succeeds": True,
+            "merge_status": "can_be_merged",
+            "sha": "678235980712",
+            "squash": False,
+            "task_completion_status": {
+                "count": 0,
+                "completed_count": 0
+            },
+            "has_conflicts": False,
+            "blocking_discussions_resolved": True
+        }
 
     def list(self, state):
         return [self]
@@ -238,14 +259,14 @@ def test_extract():
     assert project['issue_statistics'] == {"counts": {"all": 1, "closed": 0, "opened": 1}}
     assert project['languages'] == {"Python": 80.0, "HTML": 20.0}
     assert project['users'] == [{
-            "id": 1,
-            "username": "test_user",
-            "name": "Test User",
-            "state": "active",
-            "last_activity_on": "2021-06-09",
-            "membership_type": "group_member",
-            "removable": True
-        }]
+        "id": 1,
+        "username": "test_user",
+        "name": "Test User",
+        "state": "active",
+        "last_activity_on": "2021-06-09",
+        "membership_type": "group_member",
+        "removable": True
+    }]
     assert project['commits'] == [
         {
             'id': '123abc',
@@ -326,64 +347,64 @@ def test_extract():
     assert project['contributors'].attributes['username'] == 'test_user'
     assert project['files'] == [{"id": "hash123", "name": "test.py", "type": "blob"}]
     assert project['mergerequests'] == [
-                {
-                    "id": 1,
-                    "iid": 1,
-                    "project_id": 3,
-                    "title": "testmr",
-                    "description": "test merge request",
-                    "state": "merged",
-                    "merged_by": {
-                        "id": "123abc",
-                        "name": "Test User",
-                        "username": "test_user",
-                        "state": "active",
-                    },
-                    "merged_at": "2021-07-07T11:16:17.520Z",
-                    "created_at": "2021-06-29T08:46:00Z",
-                    "updated_at": "2021-06-29T08:46:00Z",
-                    "target_branch": "master",
-                    "source_branch": "master",
-                    "author": {
-                        "id": "123abc",
-                        "name": "Test User",
-                        "username": "test_user",
-                        "state": "active",
-                    },
-                    "assignee": {
-                        "id": "123abc",
-                        "name": "Test User",
-                        "username": "test_user",
-                        "state": "active",
-                    },
-                    "assignees": [{
-                        "id": "123abc",
-                        "name": "Test User",
-                        "username": "test_user",
-                        "state": "active",
-                    }],
-                    "reviewers": [{
-                        "id": "123abc",
-                        "name": "Test User",
-                        "username": "test_user",
-                        "state": "active",
-                    }],
-                    "source_project_id": 2,
-                    "target_project_id": 3,
-                    "draft": False,
-                    "work_in_progress": False,
-                    "merge_when_pipeline_succeeds": True,
-                    "merge_status": "can_be_merged",
-                    "sha": "678235980712",
-                    "squash": False,
-                    "task_completion_status": {
-                        "count": 0,
-                        "completed_count": 0
-                    },
-                    "has_conflicts": False,
-                    "blocking_discussions_resolved": True
-                }
-            ]
+        {
+            "id": 1,
+            "iid": 1,
+            "project_id": 3,
+            "title": "testmr",
+            "description": "test merge request",
+            "state": "merged",
+            "merged_by": {
+                "id": "123abc",
+                "name": "Test User",
+                "username": "test_user",
+                "state": "active",
+            },
+            "merged_at": "2021-07-07T11:16:17.520Z",
+            "created_at": "2021-06-29T08:46:00Z",
+            "updated_at": "2021-06-29T08:46:00Z",
+            "target_branch": "master",
+            "source_branch": "master",
+            "author": {
+                "id": "123abc",
+                "name": "Test User",
+                "username": "test_user",
+                "state": "active",
+            },
+            "assignee": {
+                "id": "123abc",
+                "name": "Test User",
+                "username": "test_user",
+                "state": "active",
+            },
+            "assignees": [{
+                "id": "123abc",
+                "name": "Test User",
+                "username": "test_user",
+                "state": "active",
+            }],
+            "reviewers": [{
+                "id": "123abc",
+                "name": "Test User",
+                "username": "test_user",
+                "state": "active",
+            }],
+            "source_project_id": 2,
+            "target_project_id": 3,
+            "draft": False,
+            "work_in_progress": False,
+            "merge_when_pipeline_succeeds": True,
+            "merge_status": "can_be_merged",
+            "sha": "678235980712",
+            "squash": False,
+            "task_completion_status": {
+                "count": 0,
+                "completed_count": 0
+            },
+            "has_conflicts": False,
+            "blocking_discussions_resolved": True
+        }
+    ]
     assert project['pipelines'] == {
         "total": 1,
         "successful": 1,
@@ -391,6 +412,21 @@ def test_extract():
         "canceled": 0,
         "pending": 0
     }
+    assert project['milestones'] == [
+        {
+            "id": 1,
+            "iid": 2,
+            "project_id": 123,
+            "title": "1.0",
+            "description": "Version",
+            "due_date": "2021-08-04",
+            "start_date": "2021-07-10",
+            "state": "active",
+            "updated_at": "2021-07-12T19:31:15Z",
+            "created_at": "2021-07-10T08:13:12Z",
+            "expired": False
+        }
+    ]
 
 
 if __name__ == '__main__':
