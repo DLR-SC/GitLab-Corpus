@@ -1,4 +1,4 @@
-from py2neo import Graph
+from py2neo import Graph, Relationship
 from py2neo.ogm import GraphObject, RelatedObjects, Property, RelatedFrom, RelatedTo
 
 
@@ -97,6 +97,7 @@ class NeoGraphObject(GraphObject):
 
 
 class Project(NeoGraphObject):
+    """Export model representing a project."""
     __primarylabel__ = "Project"
     __primarykey__ = "id"
 
@@ -198,7 +199,6 @@ class Project(NeoGraphObject):
     has_commit = RelatedFrom("Commit", "BELONGS_TO")
     has_milestone = RelatedFrom("Milestone", "BELONGS_TO")
     has_issue = RelatedFrom("Issue", "BELONGS_TO")
-    has_member = RelatedFrom("User", "BELONGS_TO")
     has_merge = RelatedFrom("MergeRequest", "BELONGS_TO")
     has_note = RelatedFrom("Note", "BELONGS_TO")
 
@@ -282,7 +282,8 @@ class Milestone(NeoGraphObject):
     expired = Property("expired")
     web_url = Property("web_url")
 
-    belongs_to = RelatedFrom("Issue", "BELONGS_TO")
+    belongs_to_issue = RelatedFrom("Issue", "BELONGS_TO_ISSUE")
+    belongs_to_project = RelatedTo("Project", "BELONGS_TO_PROJECT")
 
 
 class Issue(NeoGraphObject):
@@ -305,6 +306,11 @@ class Issue(NeoGraphObject):
     closed_at = Property("closed_at")
     closed_by = Property("closed_by")
     labels = Property("labels")
+    milestone = Property("milestone")
+    assignees = Property("assignees")
+    author = Property("author")
+    type = Property("type")
+    assignee = Property("assignee")
     user_notes_count = Property("user_notes_count")
     merge_requests_count = Property("merge_requests_count")
     upvotes = Property("upvotes")
@@ -312,6 +318,7 @@ class Issue(NeoGraphObject):
     due_date = Property("due_date")
     confidential = Property("confidential")
     discussion_locked = Property("discussion_locked")
+    issue_type = Property("issue_type")
     web_url = Property("web_url")
     time_stats = Property("time_stats")
     task_completion_status = Property("task_completion_status")
@@ -370,4 +377,4 @@ class Commit(NeoGraphObject):
     project_id = Property("project_id")
 
     belongs_to = RelatedTo(Project)
-    commited_by = RelatedTo(User)
+    committed_by = RelatedTo(User)
