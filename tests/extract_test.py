@@ -210,6 +210,7 @@ class Project:
         self.users = Users()
         self.commits = Commits()
         self.issues = Issues()
+        self.milestones = Milestones()
         self.lgs = {"Python": 80.0, "HTML": 20.0}
         self.repo_tree = [{"id": "hash123", "name": "test.py", "type": "blob"}]
         self.mergerequests = Mergerequests()
