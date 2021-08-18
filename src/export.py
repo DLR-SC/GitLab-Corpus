@@ -14,6 +14,7 @@ from utils.export_models import File as FileModel
 from utils.export_models import Commit as CommitModel
 from utils.export_models import Milestone as MilestoneModel
 from utils.export_models import Issue as IssueModel
+from utils.export_models import Mergerequest as MergerequestModel
 from py2neo import Graph, NodeMatcher
 from utils.helpers import Corpus
 from utils.export_helpers import transform_language_dict, find_user_by_name
@@ -106,6 +107,29 @@ class Exporter:
                 for user_node in self.export_category(UserModel, "users", project, True, "id"):
                     user_node.belongs_to.update(project_node)
                     self.graph.push(user_node)
+
+                for mergerequest_node in self.export_category(MergerequestModel, "mergerequests", project):
+                    if mergerequest_node.author is not None:
+                        author = eval(mergerequest_node.author)
+                        author_node = UserModel.get(self.graph, {"id": author["id"]})
+                        if author_node is not None:
+                            mergerequest_node.authored_by.update(author_node)
+                            self.graph.push(author_node)
+                    if mergerequest_node.merged_by is not None:
+                        merger = eval(mergerequest_node.merged_by)
+                        merger_node = UserModel.get(self.graph, {"id": merger["id"]})
+                        if merger_node is not None:
+                            mergerequest_node.merged_by_user.update(merger_node)
+                    if mergerequest_node.closed_by is not None:
+                        closer = eval(mergerequest_node.closed_by)
+                        closer_node = UserModel.get(self.graph, {"id": closer["id"]})
+                        if closer_node is not None:
+                            mergerequest_node.closed_by_user.update(closer_node)
+                    for assignee in eval(mergerequest_node.assignees):
+                        assignee_node = UserModel.get(self.graph, {"id": assignee["id"]})
+                        if assignee_node is not None:
+                            mergerequest_node.assigned_to.update(assignee_node)
+                    self.graph.push(mergerequest_node)
 
                 try:
                     for contributor in project["contributors"]:
