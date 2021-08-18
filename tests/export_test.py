@@ -1,4 +1,6 @@
 import json
+from unittest.mock import patch
+
 from export import Exporter
 from utils.helpers import Corpus
 from unittest import mock
@@ -128,9 +130,18 @@ corpus.data = {"Projects": [
             }
         },
         'languages': {
-            "Python": 80.0,
-            "HTML": 20.0
+            "Python": 100.0
         },
+        'users': [
+            {
+                'id': 123,
+                'name': 'User, Test',
+                'username': 'user_t',
+                'state': 'active',
+                'avatar_url': 'null',
+                'web_url': 'https://gitlab.example.com/user_t'
+            }
+        ],
         'commits': [
             {
                 'id': '123abc',
@@ -190,6 +201,37 @@ corpus.data = {"Projects": [
                 'deletions': 0
             }
         ],
+        'issues': [
+            {
+                'id': 1234,
+                'iid': 16,
+                'project_id': 1,
+                'milestone': {
+                    'id': 12,
+                    'iid': 1,
+                    'project_id': 1
+                },
+                'author': {
+                    'id': 123,
+                    'name': 'User, Test',
+                    'username': 'user_t'
+                },
+                'assignees': [
+                    {
+                        'id': 123,
+                        'name': 'User, Test',
+                        'username': 'user_t'
+                    }
+                ]
+            }
+        ],
+        'milestones': [
+            {
+                'id': 12,
+                'iid': 1,
+                'project_id': 1
+            }
+        ],
         'files': [
             {
                 "id": "hash123",
@@ -215,6 +257,100 @@ class Graph:
         self.neo4j_url = neo4j_url
         self.user = user
         self.password = password
+        self.nodes = []
+
+    def push(self, element):
+        self.nodes.append(element)
+
+
+class RelationMock:
+
+    def __init__(self):
+        self.related_to = []
+
+    def update(self, element):
+        self.related_to.append(element)
+
+
+class LanguageRelationMock:
+
+    def __init__(self):
+        self.related_to = []
+
+    def update(self, element1, element2):
+        self.related_to.append([element1, element2])
+
+
+class ProjectMock:
+
+    def __init__(self):
+        self.id = 1
+
+
+class NamespaceMock:
+
+    def __init__(self):
+        self.id = 123
+        self.belongs_to = RelationMock()
+
+
+class OwnerMock:
+
+    def __init__(self):
+        self.id = 123
+        self.owns = RelationMock()
+
+
+class UserMock:
+
+    def __init__(self):
+        self.id = 123
+        self.name = "User, Test"
+        self.belongs_to = RelationMock()
+        self.contributes_to = RelationMock()
+
+
+class CommitMock:
+
+    def __init__(self):
+        self.id = "123abc"
+        self.committer_name = "User, Test"
+        self.belongs_to = RelationMock()
+        self.committed_by = RelationMock()
+
+
+class FileMock:
+
+    def __init__(self):
+        self.id = "hash123"
+        self.belongs_to = RelationMock()
+
+
+class LanguageMock:
+
+    def __init__(self):
+        self.name = "Python"
+        self.value = 100.0
+        self.is_contained_in = LanguageRelationMock()
+
+
+class MilestoneMock:
+
+    def __init__(self):
+        self.id = 12
+        self.belongs_to_project = RelationMock()
+
+
+class IssueMock:
+
+    def __init__(self):
+        self.id = 1234
+        self.author = "{'id': 123, 'name': 'User, Test', 'username': 'user_t'}"
+        self.assignees = "[{'id': 123, 'name': 'User, Test', 'username': 'user_t'}]"
+        self.milestone = "{'id': 12, 'iid': 1, 'project_id': 1}"
+        self.authored_by = RelationMock()
+        self.assigned_to = RelationMock()
+        self.belongs_to_milestone = RelationMock()
 
 
 def test_export_json():
@@ -227,13 +363,41 @@ def test_export_json():
     assert exported_data == corpus.data
 
 
-def test_export_console():
-    pass
+@patch('export.IssueModel')
+@patch('export.MilestoneModel')
+@patch('export.LanguageModel')
+@patch('export.transform_language_dict')
+@patch('export.FileModel')
+@patch('export.CommitModel')
+@patch('export.find_user_by_name')
+@patch('export.UserModel')
+@patch('export.NamespaceModel')
+@patch('export.ProjectModel')
+def test_export_neo4j(projectmodel_patch, namespacemodel_patch, usermodel_patch, find_user_by_name_patch,
+                      commitmodel_patch, filemodel_patch, transform_language_dict_patch, languagemodel_patch,
+                      milestonemodel_patch, issuemodel_patch):
+    projectmodel_patch.create = mock.Mock(return_value=ProjectMock())
+    namespacemodel_patch.create = mock.Mock(return_value=NamespaceMock())
+    user = UserMock()
+    usermodel_patch.create = mock.Mock(return_value=OwnerMock())
+    usermodel_patch.get_or_create = mock.Mock(return_value=user)
+    find_user_by_name_patch = mock.Mock(return_value=user)
+    commitmodel_patch.get_or_create = mock.Mock(return_value=CommitMock())
+    filemodel_patch.create = mock.Mock(return_value=FileMock())
+    transform_language_dict_patch = mock.Mock(return_value=[{"name": "Python", "value": 100.0}])
+    languagemodel_patch.get_or_create = mock.Mock(return_value=LanguageMock())
+    milestone = MilestoneMock()
+    milestonemodel_patch.create = mock.Mock(return_value=milestone)
+    milestonemodel_patch.get = mock.Mock(return_value=milestone)
+    issuemodel_patch.create = mock.Mock(return_value=IssueMock())
+
+    exporter = Exporter(Config(), corpus, "neo4j")
+    exporter.graph = mock.Mock(spec=Graph)
+    exporter.export_to_neo4j()
 
 
-def test_export_neo4j():
-    pass
-
-
-if __name__ == '__main__':
-    test_export_json()
+def test_export_console(capfd):
+    exporter = Exporter(Config(), corpus, "console")
+    exporter.export()
+    out, err = capfd.readouterr()
+    assert "Error" not in out
