@@ -54,7 +54,7 @@ class Exporter:
         else:
             self.corpus = corpus
 
-    def export(self, out):
+    def export(self, out="-"):
         """This method exports the corpus to another format.
         :param out: Path to output file
         """
