@@ -221,7 +221,7 @@ class Namespace(NeoGraphObject):
     web_url = Property("web_url")
 
     belongs_to = RelatedTo(Project)
-    
+
 
 class User(NeoGraphObject):
     __primarylabel__ = "User"
@@ -242,9 +242,73 @@ class User(NeoGraphObject):
     belongs_to = RelatedTo(Project)
     owns = RelatedTo(Project)
     contributes_to = RelatedTo(Project)
+    is_author_of_mergerequest = RelatedFrom("Mergerequest", "AUTHORED_BY")
+    merged = RelatedFrom("Mergerequest", "MERGED_BY")
+    closed = RelatedFrom("Mergerequest", "CLOSED_BY")
+    assigned_to_mergerequest = RelatedFrom("Mergerequest", "ASSIGNED_TO")
     is_author = RelatedFrom("Issue", "AUTHORED_BY")
     assigned_to = RelatedFrom("Issue", "ASSIGNED_TO")
     committer = RelatedFrom("Commit", "COMMITTED_BY")
+
+
+class Mergerequest(NeoGraphObject):
+    __primarylabel__ = "Mergerequest"
+    __primarykey__ = "id"
+
+    __unique_constraints__ = [
+        "id",
+        "iid"
+    ]
+
+    id = Property("id")
+    iid = Property("iid")
+    project_id = Property("project_id")
+    title = Property("title")
+    description = Property("description")
+    state = Property("state")
+    author = Property("author")
+    created_at = Property("created_at")
+    updated_at = Property("updated_at")
+    merged_by = Property("merged_by")
+    merged_at = Property("merged_at")
+    closed_by = Property("closed_by")
+    closed_at = Property("closed_at")
+    target_branch = Property("target_branch")
+    source_branch = Property("source_branch")
+    user_notes_count = Property("user_notes_count")
+    upvotes = Property("upvotes")
+    downvotes = Property("downvotes")
+    assignees = Property("assignees")
+    assignee = Property("assignee")
+    reviewers = Property("reviewers")
+    source_project_id = Property("source_project_id")
+    target_project_id = Property("target_project_id")
+    labels = Property("labels")
+    draft = Property("draft")
+    work_in_progress = Property("work_in_progress")
+    milestone = Property("milestone")
+    merge_when_pipeline_succeeds = Property("merge_when_pipeline_succeeds")
+    merge_status = Property("merge_status")
+    sha = Property("sha")
+    merge_commit_sha = Property("merge_commit_sha")
+    squash_commit_sha = Property("squash_commit_sha")
+    discussion_locked = Property("discussion_locked")
+    should_remove_source_branch = Property("should_remove_source_branch")
+    force_remove_source_branch = Property("force_remove_source_branch")
+    reference = Property("reference")
+    references = Property("references")
+    web_url = Property("web_url")
+    time_stats = Property("time_stats")
+    squash = Property("squash")
+    task_completion_status = Property("task_completion_status")
+    has_conflicts = Property("has_conflicts")
+    blocking_discussions_resolved = Property("blocking_discussions_resolved")
+    approvals_before_merge = Property("approvals_before_merge")
+
+    authored_by = RelatedTo(User)
+    is_merged_by = RelatedTo(User)
+    is_closed_by = RelatedTo(User)
+    assigned_to = RelatedTo(User)
 
 
 class Language(NeoGraphObject):
@@ -355,7 +419,7 @@ class File(NeoGraphObject):
 class Commit(NeoGraphObject):
     __primarylabel__ = "Commit"
     __primarykey__ = "id"
-    
+
     __unique_constraints__ = [
         "id",
         "short_id"
