@@ -4,6 +4,11 @@ import click
 import gitlab
 from gitlab.v4.objects import ProjectManager
 
+"""
+.. module:: extract
+.. moduleauthor:: Emanuel Caricato <emanuel.caricato@dlr.de>
+"""
+
 
 def get_users(project):
     try:

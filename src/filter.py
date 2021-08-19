@@ -8,6 +8,11 @@ import yaml
 
 from utils.helpers import Corpus
 
+"""
+.. module:: filter
+.. moduleauthor:: Emanuel Caricato <emanuel.caricato@dlr.de>
+"""
+
 
 def eval_percentage(project_language_percentage, evaluation):
     """This function checks if the evaluation specified in the filter is true for the selected language.
@@ -135,7 +140,7 @@ class Filter:
                     for filter_option in filters["filters"]:
                         category = filter_option
                         if re.match('.*_languages', category):  # add languages
-                            self.filters[category] = ""     # remember language as filter option
+                            self.filters[category] = ""  # remember language as filter option
                             self.load_languages(filters["filters"][category], category)
                         else:
                             self.filters[category] = filters["filters"][category]  # add all other filters

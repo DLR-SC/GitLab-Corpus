@@ -2,6 +2,11 @@
 Modules
 ==============
 
-.. click:: corpus:cli
-    :prog: corpus
-    :nested: full
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   corpus
+   extract
+   filter
+   export

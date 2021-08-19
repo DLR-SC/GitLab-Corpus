@@ -20,6 +20,12 @@ from py2neo import Graph, NodeMatcher
 from utils.helpers import Corpus
 from utils.export_helpers import transform_language_dict, find_user_by_name
 
+"""
+.. module:: export
+.. moduleauthor:: Emanuel Caricato <emanuel.caricato@dlr.de>
+"""
+
+
 logging.basicConfig(filename="corpus.log", filemode="w")
 log = logging.getLogger(__name__)
 log.addHandler((logging.StreamHandler(sys.stdout)))
@@ -34,11 +40,13 @@ class Exporter:
     """
 
     def __init__(self, config, corpus, format_str, from_file=False, file="-"):
-        """Exporter class constructor to initialize the object.
+        """
+        Exporter class constructor to initialize the object.
         :param config: Configuration for neo4j and verbose mode
         :param corpus: Input corpus, which will be exported
         :param from_file: Specifies, if the input corpus should be read from a file [default: ``False``]
         :param file: Path to input corpus
+
         """
         self.verbose = config.verbose
         self.format = format_str
