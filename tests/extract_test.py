@@ -197,6 +197,80 @@ class Issuestatistics:
         return self
 
 
+class Releases:
+
+    def __init__(self):
+        self.attributes = {
+            "tag_name": "v0.1",
+            "description": "test release",
+            "name": "test app v0.1",
+            "created_at": "2021-04-05T11:53:12.212Z",
+            "released_at": "2021-04-05T11:53:12.212Z",
+            "author": {
+                "id": 1,
+                "name": "Test User",
+                "username": "test_user",
+                "state": "active",
+            },
+            "commit": {
+                "id": "123abc",
+                "short_id": "1a",
+                "title": "Initial commit",
+                "created_at": "2021-09-20T12:00:00+01:00",
+                "parent_ids": [
+
+                ],
+                "message": "Initial commit",
+                "author_name": "Test User",
+                "author_email": "test@us.er",
+                "authored_date": "2021-09-20T12:00:00+01:00",
+                "committer_name": "Test User",
+                "committer_email": "Test User",
+                "committed_date": "2021-09-20T12:00:00+01:00"
+            },
+            "assets": {
+                "count": 4,
+                "sources": [
+                    {
+                        "format": "zip",
+                        "url": "https://gitlab.example.com/root/test-app/-/archive/v0.1/test-app-v0.1.zip"
+                    },
+                    {
+                        "format": "tar.gz",
+                        "url": "https://gitlab.example.com/root/test-app/-/archive/v0.1/test-app-v0.1.tar.gz"
+                    },
+                    {
+                        "format": "tar.bz2",
+                        "url": "https://gitlab.example.com/root/test-app/-/archive/v0.1/test-app-v0.1.tar.bz2"
+                    },
+                    {
+                        "format": "tar",
+                        "url": "https://gitlab.example.com/root/test-app/-/archive/v0.1/test-app-v0.1.tar"
+                    }
+                ],
+                "links": [
+                    {
+                        "id": 2,
+                        "name": "log",
+                        "url": "https://gitlab.example.com/root/test-app/-/tags/v0.1/binaries/linux-amd64",
+                        "external": True,
+                        "link_type": "other"
+                    }
+                ]
+            },
+            "evidences": [
+                {
+                    "sha": "456def",
+                    "filepath": "https://gitlab.example.com/root/test-app/-/releases/v0.1/evidence.json",
+                    "collected_at": "2021-03-12T13:03:09.110Z"
+                }
+            ]
+        }
+
+    def list(self):
+        return [self.attributes]
+
+
 class Project:
 
     def __init__(self):
@@ -215,6 +289,7 @@ class Project:
         self.repo_tree = [{"id": "hash123", "name": "test.py", "type": "blob"}]
         self.mergerequests = Mergerequests()
         self.pipelines = Pipelines()
+        self.releases = Releases()
 
     def repository_contributors(self):
         return self.users
@@ -426,6 +501,74 @@ def test_extract():
             "updated_at": "2021-07-12T19:31:15Z",
             "created_at": "2021-07-10T08:13:12Z",
             "expired": False
+        }
+    ]
+    assert project['releases'] == [
+        {
+            "tag_name": "v0.1",
+            "description": "test release",
+            "name": "test app v0.1",
+            "created_at": "2021-04-05T11:53:12.212Z",
+            "released_at": "2021-04-05T11:53:12.212Z",
+            "author": {
+                "id": 1,
+                "name": "Test User",
+                "username": "test_user",
+                "state": "active",
+            },
+            "commit": {
+                "id": "123abc",
+                "short_id": "1a",
+                "title": "Initial commit",
+                "created_at": "2021-09-20T12:00:00+01:00",
+                "parent_ids": [
+
+                ],
+                "message": "Initial commit",
+                "author_name": "Test User",
+                "author_email": "test@us.er",
+                "authored_date": "2021-09-20T12:00:00+01:00",
+                "committer_name": "Test User",
+                "committer_email": "Test User",
+                "committed_date": "2021-09-20T12:00:00+01:00"
+            },
+            "assets": {
+                "count": 4,
+                "sources": [
+                    {
+                        "format": "zip",
+                        "url": "https://gitlab.example.com/root/test-app/-/archive/v0.1/test-app-v0.1.zip"
+                    },
+                    {
+                        "format": "tar.gz",
+                        "url": "https://gitlab.example.com/root/test-app/-/archive/v0.1/test-app-v0.1.tar.gz"
+                    },
+                    {
+                        "format": "tar.bz2",
+                        "url": "https://gitlab.example.com/root/test-app/-/archive/v0.1/test-app-v0.1.tar.bz2"
+                    },
+                    {
+                        "format": "tar",
+                        "url": "https://gitlab.example.com/root/test-app/-/archive/v0.1/test-app-v0.1.tar"
+                    }
+                ],
+                "links": [
+                    {
+                        "id": 2,
+                        "name": "log",
+                        "url": "https://gitlab.example.com/root/test-app/-/tags/v0.1/binaries/linux-amd64",
+                        "external": True,
+                        "link_type": "other"
+                    }
+                ]
+            },
+            "evidences": [
+                {
+                    "sha": "456def",
+                    "filepath": "https://gitlab.example.com/root/test-app/-/releases/v0.1/evidence.json",
+                    "collected_at": "2021-03-12T13:03:09.110Z"
+                }
+            ]
         }
     ]
 
