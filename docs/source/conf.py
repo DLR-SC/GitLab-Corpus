@@ -16,10 +16,6 @@ import sphinx_rtd_theme
 
 sys.path.insert(0, os.path.abspath('../../src'))
 
-import corpus
-import extract
-import filter
-import export
 
 # -- Project information -----------------------------------------------------
 
