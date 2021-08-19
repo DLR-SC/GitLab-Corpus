@@ -225,11 +225,138 @@ corpus.data = {"Projects": [
                 ]
             }
         ],
+        'mergerequests': [
+            {
+                "id": 1,
+                "iid": 1,
+                "project_id": 3,
+                "title": "testmr",
+                "description": "test merge request",
+                "state": "merged",
+                "merged_by": {
+                    "id": "123abc",
+                    "name": "Test User",
+                    "username": "test_user",
+                    "state": "active",
+                },
+                "merged_at": "2021-07-07T11:16:17.520Z",
+                "created_at": "2021-06-29T08:46:00Z",
+                "updated_at": "2021-06-29T08:46:00Z",
+                "target_branch": "master",
+                "source_branch": "master",
+                "author": {
+                    "id": "123abc",
+                    "name": "Test User",
+                    "username": "test_user",
+                    "state": "active",
+                },
+                "assignee": {
+                    "id": "123abc",
+                    "name": "Test User",
+                    "username": "test_user",
+                    "state": "active",
+                },
+                "assignees": [{
+                    "id": "123abc",
+                    "name": "Test User",
+                    "username": "test_user",
+                    "state": "active",
+                }],
+                "reviewers": [{
+                    "id": "123abc",
+                    "name": "Test User",
+                    "username": "test_user",
+                    "state": "active",
+                }],
+                "source_project_id": 2,
+                "target_project_id": 3,
+                "draft": False,
+                "work_in_progress": False,
+                "merge_when_pipeline_succeeds": True,
+                "merge_status": "can_be_merged",
+                "sha": "678235980712",
+                "squash": False,
+                "task_completion_status": {
+                    "count": 0,
+                    "completed_count": 0
+                },
+                "has_conflicts": False,
+                "blocking_discussions_resolved": True
+            }
+        ],
         'milestones': [
             {
                 'id': 12,
                 'iid': 1,
                 'project_id': 1
+            }
+        ],
+        'releases': [
+            {
+                "tag_name": "v0.1",
+                "description": "test release",
+                "name": "test app v0.1",
+                "created_at": "2021-04-05T11:53:12.212Z",
+                "released_at": "2021-04-05T11:53:12.212Z",
+                "author": {
+                    "id": 1,
+                    "name": "Test User",
+                    "username": "test_user",
+                    "state": "active",
+                },
+                "commit": {
+                    "id": "123abc",
+                    "short_id": "1a",
+                    "title": "Initial commit",
+                    "created_at": "2021-09-20T12:00:00+01:00",
+                    "parent_ids": [
+
+                    ],
+                    "message": "Initial commit",
+                    "author_name": "Test User",
+                    "author_email": "test@us.er",
+                    "authored_date": "2021-09-20T12:00:00+01:00",
+                    "committer_name": "Test User",
+                    "committer_email": "Test User",
+                    "committed_date": "2021-09-20T12:00:00+01:00"
+                },
+                "assets": {
+                    "count": 4,
+                    "sources": [
+                        {
+                            "format": "zip",
+                            "url": "https://gitlab.example.com/root/test-app/-/archive/v0.1/test-app-v0.1.zip"
+                        },
+                        {
+                            "format": "tar.gz",
+                            "url": "https://gitlab.example.com/root/test-app/-/archive/v0.1/test-app-v0.1.tar.gz"
+                        },
+                        {
+                            "format": "tar.bz2",
+                            "url": "https://gitlab.example.com/root/test-app/-/archive/v0.1/test-app-v0.1.tar.bz2"
+                        },
+                        {
+                            "format": "tar",
+                            "url": "https://gitlab.example.com/root/test-app/-/archive/v0.1/test-app-v0.1.tar"
+                        }
+                    ],
+                    "links": [
+                        {
+                            "id": 2,
+                            "name": "log",
+                            "url": "https://gitlab.example.com/root/test-app/-/tags/v0.1/binaries/linux-amd64",
+                            "external": True,
+                            "link_type": "other"
+                        }
+                    ]
+                },
+                "evidences": [
+                    {
+                        "sha": "456def",
+                        "filepath": "https://gitlab.example.com/root/test-app/-/releases/v0.1/evidence.json",
+                        "collected_at": "2021-03-12T13:03:09.110Z"
+                    }
+                ]
             }
         ],
         'files': [
@@ -253,11 +380,12 @@ class Config:
 
 class Graph:
 
+    nodes = []
+
     def __init__(self, neo4j_url, user, password):
         self.neo4j_url = neo4j_url
         self.user = user
         self.password = password
-        self.nodes = []
 
     def push(self, element):
         self.nodes.append(element)
@@ -353,6 +481,41 @@ class IssueMock:
         self.belongs_to_milestone = RelationMock()
 
 
+class MergerequestMock:
+
+    def __init__(self):
+        self.id = 123
+        self.iid = 54
+        self.title = "Title"
+        self.author = "{'id': 123, 'name': 'User, Test', 'username': 'user_t'}"
+        self.merged_by = "{'id': 123, 'name': 'User, Test', 'username': 'user_t'}"
+        self.closed_by = "{'id': 123, 'name': 'User, Test', 'username': 'user_t'}"
+        self.assignees = "[{'id': 123, 'name': 'User, Test', 'username': 'user_t'}]"
+        self.closed_by_user = RelationMock()
+        self.merged_by_user = RelationMock()
+        self.authored_by = RelationMock()
+        self.assigned_to = RelationMock()
+
+
+class ReleaseMock:
+
+    def __init__(self):
+        self.tag_name = "v1.2"
+        self.name = "Release name"
+        self.author = "{'id': 123, 'name': 'User, Test', 'username': 'user_t'}"
+        self.commit = """{'id': '123abc', 'short_id': '1a', 'title': 'Initial commit', 'author_name': 'Test User',
+        'author_email': 'test@us.er', 'authored_date': '2021-09-20T12:00:00+01:00', 'committer_name': 'Tester',
+        'committer_email': 'tester@example.com', 'committed_date': '2021-09-20T12:00:00+01:00', 
+        'created_at': '2021-09-20T12:00:00+01:00', 'message': 'test commit',
+        'parent_ids': [ '456def' ], 'web_url': 'test.com'}"""
+        self.milestone = """{ "id": 1, "iid": 2, "project_id": 123, "title": "1.0", "description": "Version",
+            "due_date": "2021-08-04", "start_date": "2021-07-10", "state": "active", 
+            "updated_at": "2021-07-12T19:31:15Z", "created_at": "2021-07-10T08:13:12Z", "expired": False }"""
+        self.authored_by = RelationMock()
+        self.committed_through = RelationMock()
+        self.belongs_to = RelationMock()
+
+
 def test_export_json():
     exporter = Exporter(Config(), corpus, "json")
     exporter.export("out/test.json")
@@ -363,6 +526,8 @@ def test_export_json():
     assert exported_data == corpus.data
 
 
+@patch('export.ReleaseModel')
+@patch('export.MergerequestModel')
 @patch('export.IssueModel')
 @patch('export.MilestoneModel')
 @patch('export.LanguageModel')
@@ -375,7 +540,7 @@ def test_export_json():
 @patch('export.ProjectModel')
 def test_export_neo4j(projectmodel_patch, namespacemodel_patch, usermodel_patch, find_user_by_name_patch,
                       commitmodel_patch, filemodel_patch, transform_language_dict_patch, languagemodel_patch,
-                      milestonemodel_patch, issuemodel_patch):
+                      milestonemodel_patch, issuemodel_patch, mergerequestmodel_patch, releasemodel_patch):
     projectmodel_patch.create = mock.Mock(return_value=ProjectMock())
     namespacemodel_patch.create = mock.Mock(return_value=NamespaceMock())
     user = UserMock()
@@ -390,10 +555,21 @@ def test_export_neo4j(projectmodel_patch, namespacemodel_patch, usermodel_patch,
     milestonemodel_patch.create = mock.Mock(return_value=milestone)
     milestonemodel_patch.get = mock.Mock(return_value=milestone)
     issuemodel_patch.create = mock.Mock(return_value=IssueMock())
+    mergerequestmodel_patch.create = mock.Mock(return_value=MergerequestMock())
+    releasemodel_patch.create = mock.Mock(return_value=ReleaseMock())
 
     exporter = Exporter(Config(), corpus, "neo4j")
-    exporter.graph = mock.Mock(spec=Graph)
+    exporter.graph = Graph("bolt://localhost:7687", user="neo4j", password="corpus")
     exporter.export_to_neo4j()
+
+    assert any(isinstance(x, NamespaceMock) for x in Graph.nodes)
+    assert any(isinstance(x, OwnerMock) for x in Graph.nodes)
+    assert any(isinstance(x, UserMock) for x in Graph.nodes)
+    assert any(isinstance(x, MergerequestMock) for x in Graph.nodes)
+    assert any(isinstance(x, CommitMock) for x in Graph.nodes)
+    assert any(isinstance(x, MilestoneMock) for x in Graph.nodes)
+    assert any(isinstance(x, IssueMock) for x in Graph.nodes)
+    assert any(isinstance(x, ReleaseMock) for x in Graph.nodes)
 
 
 def test_export_console(capfd):

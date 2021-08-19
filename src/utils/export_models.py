@@ -249,6 +249,7 @@ class User(NeoGraphObject):
     is_author = RelatedFrom("Issue", "AUTHORED_BY")
     assigned_to = RelatedFrom("Issue", "ASSIGNED_TO")
     committer = RelatedFrom("Commit", "COMMITTED_BY")
+    released = RelatedFrom("Release", "RELEASED_BY")
 
 
 class Mergerequest(NeoGraphObject):
@@ -347,7 +348,8 @@ class Milestone(NeoGraphObject):
     web_url = Property("web_url")
 
     belongs_to_issue = RelatedFrom("Issue", "BELONGS_TO_ISSUE")
-    belongs_to_project = RelatedTo("Project", "BELONGS_TO_PROJECT")
+    belongs_to_project = RelatedFrom("Project", "BELONGS_TO_PROJECT")
+    belongs_to_release = RelatedFrom("Release", "BELONGS_TO_RELEASE")
 
 
 class Issue(NeoGraphObject):
@@ -442,3 +444,27 @@ class Commit(NeoGraphObject):
 
     belongs_to = RelatedTo(Project)
     committed_by = RelatedTo(User)
+    committed_release = RelatedFrom("Release", "COMMITTED_RELEASE")
+
+
+class Release(NeoGraphObject):
+    __primarylabel__ = "Release"
+    __primarykey__ = "tag_name"
+
+    __unique_constraints__ = [
+        "tag_name"
+    ]
+
+    tag_name = Property("tag_name")
+    description = Property("description")
+    name = Property("name")
+    created_at = Property("created_at")
+    released_at = Property("released_at")
+    commit_path = Property("commit_path")
+    tag_path = Property("tag_path")
+    assets = Property("assets")
+    evidences = Property("evidences")
+
+    authored_by = RelatedTo(User)
+    committed_through = RelatedTo(Commit)
+    belongs_to = RelatedTo(Milestone)

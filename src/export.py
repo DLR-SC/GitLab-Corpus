@@ -15,6 +15,7 @@ from utils.export_models import Commit as CommitModel
 from utils.export_models import Milestone as MilestoneModel
 from utils.export_models import Issue as IssueModel
 from utils.export_models import Mergerequest as MergerequestModel
+from utils.export_models import Release as ReleaseModel
 from py2neo import Graph, NodeMatcher
 from utils.helpers import Corpus
 from utils.export_helpers import transform_language_dict, find_user_by_name
@@ -178,6 +179,21 @@ class Exporter:
                         if milestone_node is not None:
                             issue_node.belongs_to_milestone.update(milestone_node)
                     self.graph.push(issue_node)
+
+                for release_node in self.export_category(ReleaseModel, "releases", project):
+                    author = eval(release_node.author)
+                    author_node = UserModel.get(self.graph, {"id": author["id"]})
+                    if author_node is not None:
+                        release_node.authored_by.update(author_node)
+                    commit = eval(release_node.commit)
+                    commit_node = CommitModel.get(self.graph, {"id": commit["id"]})
+                    if commit_node is not None:
+                        release_node.committed_through.update(commit_node)
+                    milestone = eval(release_node.milestone)
+                    milestone_node = MilestoneModel.get(self.graph, {"id": milestone["id"]})
+                    if milestone_node is not None:
+                        release_node.belongs_to.update(milestone_node)
+                    self.graph.push(release_node)
 
     def export_category(self, category_model, category, project, get_or_create=False, pk=""):
         try:
