@@ -87,9 +87,8 @@ def eval_condition(attribute, operator, condition):
     elif operator == "contains" and isinstance(attribute, str) and isinstance(condition, str):
         return condition in attribute
     elif isinstance(attribute, str) and isinstance(condition, str):
-        if condition.startswith('#') and condition.endswith('#'):
-            re.escape(condition)
-            return re.match(condition[1:-1], attribute) is not None
+        re.escape(condition)
+        return re.match(condition, attribute) is not None
 
 
 class Filter:
