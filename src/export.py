@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: MIT
 
 import sys
+import time
 import click
 import json
 import logging
@@ -24,11 +25,12 @@ from utils.export_helpers import transform_language_dict, find_user_by_name
 .. module:: export
 .. moduleauthor:: Emanuel Caricato <emanuel.caricato@dlr.de>
 """
-
-
-logging.basicConfig(filename="corpus.log", filemode="w")
-log = logging.getLogger(__name__)
-log.addHandler((logging.StreamHandler(sys.stdout)))
+try:
+    logging.basicConfig(filename="out/corpus.log", filemode="w")
+    log = logging.getLogger(__name__)
+    log.addHandler((logging.StreamHandler(sys.stdout)))
+except:
+    pass
 
 
 class Exporter:
@@ -60,7 +62,6 @@ class Exporter:
                     self.corpus.data = json.load(f)
                 except JSONDecodeError:
                     log.critical("The input file does not contain valid JSON-data.")
-                    # click.echo("The input file does not contain valid JSON-data.")
         else:
             self.corpus = corpus
 
@@ -74,19 +75,16 @@ class Exporter:
             with open(out, "w") as output:
                 if self.verbose:
                     log.info("Output written to {}".format(out))
-                    # click.echo("Output written to {}".format(out))
                 json.dump(self.corpus.data, output, indent=4)
         elif self.format.lower() == "console":
             if self.verbose:
                 log.info("Output will be printed to console.")
-                # click.echo("Output will be printed to console.")
             for category in self.corpus.data:
                 for element in self.corpus.data[category]:
                     click.echo(str(element) + "\n")
         elif self.format.lower() == "neo4j":
             if self.verbose:
                 log.info("Output will be exported to the Neo4J database.")
-                # click.echo("Output will be exported to the Neo4J database.")
             self.graph = Graph(f"{self.neo4j_config['NEO4J']['protocol']}://"
                                f"{self.neo4j_config['NEO4J']['hostname']}:"
                                f"{self.neo4j_config['NEO4J']['port']}",
@@ -97,111 +95,12 @@ class Exporter:
 
     def export_to_neo4j(self):
         """This method exports the corpus to a neo4j database as specified in the configuration file."""
+        time1 = time.time()
         with click.progressbar(self.corpus.data["Projects"]) as bar:
             for project in bar:
-
-                try:
-                    project_node = ProjectModel.create(self.graph, project)
-                except NeoGraphObjectException:
-                    log.error("A project could not be exported. The ID is missing.")
-
-                for namespace_node in self.export_category(NamespaceModel, "namespace", project):
-                    namespace_node.belongs_to.update(project_node)
-                    self.graph.push(namespace_node)
-
-                for owner_node in self.export_category(UserModel, "owner", project):
-                    owner_node.owns.update(project_node)
-                    self.graph.push(owner_node)
-
-                for user_node in self.export_category(UserModel, "users", project, True, "id"):
-                    user_node.belongs_to.update(project_node)
-                    self.graph.push(user_node)
-
-                for mergerequest_node in self.export_category(MergerequestModel, "mergerequests", project):
-                    if mergerequest_node.author is not None:
-                        author = eval(mergerequest_node.author)
-                        author_node = UserModel.get(self.graph, {"id": author["id"]})
-                        if author_node is not None:
-                            mergerequest_node.authored_by.update(author_node)
-                            self.graph.push(author_node)
-                    if mergerequest_node.merged_by is not None:
-                        merger = eval(mergerequest_node.merged_by)
-                        merger_node = UserModel.get(self.graph, {"id": merger["id"]})
-                        if merger_node is not None:
-                            mergerequest_node.merged_by_user.update(merger_node)
-                    if mergerequest_node.closed_by is not None:
-                        closer = eval(mergerequest_node.closed_by)
-                        closer_node = UserModel.get(self.graph, {"id": closer["id"]})
-                        if closer_node is not None:
-                            mergerequest_node.closed_by_user.update(closer_node)
-                    for assignee in eval(mergerequest_node.assignees):
-                        assignee_node = UserModel.get(self.graph, {"id": assignee["id"]})
-                        if assignee_node is not None:
-                            mergerequest_node.assigned_to.update(assignee_node)
-                    self.graph.push(mergerequest_node)
-
-                try:
-                    for contributor in project["contributors"]:
-                        user_node = find_user_by_name(self.graph, contributor["name"])
-                        if user_node is not None:
-                            user_node.contributes_to.update(project_node)
-                            self.graph.push(user_node)
-                except KeyError:
-                    log.info("No contributor found for project {}.".format(project["id"]))
-
-                for commit_node in self.export_category(CommitModel, "commits", project, True, "id"):
-                    commit_node.belongs_to.update(project_node)
-                    user_node = find_user_by_name(self.graph, commit_node.committer_name)
-                    if user_node is not None:
-                        commit_node.committed_by.update(user_node)
-                    self.graph.push(commit_node)
-
-                for file_node in self.export_category(FileModel, "files", project):
-                    file_node.belongs_to.update(project_node)
-                    self.graph.push(file_node)
-
-                for language in transform_language_dict(project["languages"]):
-                    try:
-                        language_node = LanguageModel.get_or_create(self.graph, language["name"], language)
-                        language_node.is_contained_in.update(project_node, {'value': language['value']})
-                        self.graph.push(language_node)
-                    except NeoGraphObjectException:
-                        log.error("A language for project {} could not be exported. "
-                                  "The ID is missing.".format(project["id"]))
-
-                for milestone_node in self.export_category(MilestoneModel, "milestones", project):
-                    milestone_node.belongs_to_project.update(project_node)
-                    self.graph.push(milestone_node)
-
-                for issue_node in self.export_category(IssueModel, "issues", project):
-                    author_name = eval(issue_node.author)["name"]
-                    if author_name is not None:
-                        user_node = find_user_by_name(self.graph, author_name)
-                        issue_node.authored_by.update(user_node)
-                    for assignee in eval(issue_node.assignees):
-                        user_node = find_user_by_name(self.graph, assignee["name"])
-                        issue_node.assigned_to.update(user_node)
-                    if issue_node.milestone is not None:
-                        milestone = eval(issue_node.milestone)
-                        milestone_node = MilestoneModel.get(self.graph, {"id": milestone["id"]})
-                        if milestone_node is not None:
-                            issue_node.belongs_to_milestone.update(milestone_node)
-                    self.graph.push(issue_node)
-
-                for release_node in self.export_category(ReleaseModel, "releases", project):
-                    author = eval(release_node.author)
-                    author_node = UserModel.get(self.graph, {"id": author["id"]})
-                    if author_node is not None:
-                        release_node.authored_by.update(author_node)
-                    commit = eval(release_node.commit)
-                    commit_node = CommitModel.get(self.graph, {"id": commit["id"]})
-                    if commit_node is not None:
-                        release_node.committed_through.update(commit_node)
-                    milestone = eval(release_node.milestone)
-                    milestone_node = MilestoneModel.get(self.graph, {"id": milestone["id"]})
-                    if milestone_node is not None:
-                        release_node.belongs_to.update(milestone_node)
-                    self.graph.push(release_node)
+                self.export_project(project)
+        time2 = time.time()
+        click.echo("Export took {:.3f} ms".format((time2 - time1) * 1000.0))
 
     def export_category(self, category_model, category, project, get_or_create=False, pk=""):
         try:
@@ -224,3 +123,102 @@ class Exporter:
                               "The ID is missing.".format(category, project["id"]))
         except KeyError:
             log.info("No elements for category '{}' found in project {}.".format(category, project["id"]))
+
+    def export_project(self, project):
+        try:
+            project_node = ProjectModel.create(self.graph, project)
+        except NeoGraphObjectException:
+            log.error("A project could not be exported. The ID is missing.")
+            return
+
+        for namespace_node in self.export_category(NamespaceModel, "namespace", project):
+            namespace_node.belongs_to.update(project_node)
+            self.graph.push(namespace_node)
+
+        for owner_node in self.export_category(UserModel, "owner", project):
+            owner_node.owns.update(project_node)
+            self.graph.push(owner_node)
+
+        for user_node in self.export_category(UserModel, "users", project, True, "id"):
+            user_node.belongs_to.update(project_node)
+            self.graph.push(user_node)
+
+        try:
+            for contributor in project["contributors"]:
+                user_node = find_user_by_name(self.graph, contributor["name"])
+                if user_node is not None:
+                    user_node.contributes_to.update(project_node)
+                    self.graph.push(user_node)
+        except KeyError:
+            log.info("No contributor found for project {}.".format(project["id"]))
+
+        for commit_node in self.export_category(CommitModel, "commits", project, True, "id"):
+            commit_node.belongs_to.update(project_node)
+            user_node = find_user_by_name(self.graph, commit_node.committer_name)
+            if user_node is not None:
+                commit_node.committed_by.update(user_node)
+            self.graph.push(commit_node)
+
+        for file_node in self.export_category(FileModel, "files", project):
+            file_node.belongs_to.update(project_node)
+            self.graph.push(file_node)
+
+        for language in transform_language_dict(project["languages"]):
+            try:
+                language_node = LanguageModel.get_or_create(self.graph, language["name"], language)
+                language_node.is_contained_in.update(project_node, {'value': language['value']})
+                self.graph.push(language_node)
+            except NeoGraphObjectException:
+                log.error("A language for project {} could not be exported. "
+                          "The ID is missing.".format(project["id"]))
+
+        for milestone_node in self.export_category(MilestoneModel, "milestones", project):
+            milestone_node.belongs_to_project.update(project_node)
+            self.graph.push(milestone_node)
+
+        for issue_node in self.export_category(IssueModel, "issues", project):
+            self.update_attribute(issue_node.author, issue_node.authored_by, by_id=False)
+            self.update_attribute(issue_node.assignees, issue_node.assigned_to, by_id=False)
+            self.update_attribute(issue_node.milestone, issue_node.belongs_to_milestone, model=MilestoneModel)
+            self.graph.push(issue_node)
+
+        for mergerequest_node in self.export_category(MergerequestModel, "mergerequests", project):
+            self.update_attribute(mergerequest_node.author, mergerequest_node.authored_by, model=UserModel)
+            self.update_attribute(mergerequest_node.merged_by, mergerequest_node.is_merged_by, model=UserModel)
+            self.update_attribute(mergerequest_node.closed_by, mergerequest_node.is_closed_by, model=UserModel)
+            self.update_attribute(mergerequest_node.assignees, mergerequest_node.assigned_to, model=UserModel)
+            self.update_attribute(mergerequest_node.commits, mergerequest_node.has_commit, model=CommitModel)
+            self.update_attribute(mergerequest_node.close_issues, mergerequest_node.closes, model=IssueModel)
+            self.graph.push(mergerequest_node)
+
+        for release_node in self.export_category(ReleaseModel, "releases", project):
+            self.update_attribute(release_node.author, release_node.authored_by, model=UserModel)
+            self.update_attribute(release_node.commit, release_node.committed_through, model=CommitModel)
+            self.update_attribute(release_node.milestones, release_node.belongs_to, model=MilestoneModel)
+            self.graph.push(release_node)
+
+    def update_attribute(self, src_attribute, node_attribute, model=None, by_id=True):
+        if by_id:
+            if src_attribute:
+                src_dict = eval(src_attribute)
+                if isinstance(src_dict, list):
+                    for element in src_dict:
+                        node = model.get(self.graph, {"id": element["id"]})
+                        if node:
+                            node_attribute.update(node)
+                else:
+                    node = model.get(self.graph, {"id": src_dict["id"]})
+                    if node:
+                        node_attribute.update(node)
+        else:
+            if src_attribute:
+                src_dict = eval(src_attribute)
+                if isinstance(src_dict, list):
+                    for element in src_dict:
+                        node = find_user_by_name(self.graph, element["name"])
+                        if node:
+                            node_attribute.update(node)
+                else:
+                    node = find_user_by_name(self.graph, src_dict["name"])
+                    if node:
+                        node_attribute.update(node)
