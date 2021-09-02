@@ -1,3 +1,5 @@
+.. _how_to_write_a_filter_file:
+
 """"""""""""""""""""""""""
 How to write a filter file
 """"""""""""""""""""""""""
@@ -46,14 +48,12 @@ As we are writing a filter, we start with the keyword ``filters:``. In the next 
 by which we want to filter the projects. Here it is ``id:``. The next two lines are for ``operator`` and
 ``value``. Any non-numeric values need to be surrounded by double quotes (") or single quotes (').
 
-Attributes with a string value can also be filtered by using a regular expression.
-
-The value (regex string) needs to be encapsulated by two #, as shown in the following example::
+Attributes with a string value can also be filtered by using a regular expression, as shown in the following example::
 
     filters:
         name:
             operator: "regex"
-            value: "#.*machine\slearning.*#"
+            value: ".*machine\slearning.*"
 
 Here we search for projects, which have the string 'machine learning' in its name.
 
@@ -241,16 +241,16 @@ C++ and C::
 Examples for exact_languages
 ------------------------------
 
-We now want to filter out those project, that contain exactly HTML, Vue and JavaScript with at least 30%::
+We now want to filter out those projects, that contain exactly HTML, Vue and JavaScript with at least 30%::
 
     filters:
         exact_languages:
             HTML:
                 operator: ">"
-                value: 0.0
+                value: 30.0
             Vue:
                 operator: ">"
-                value: 0.0
+                value: 30.0
             JavaScript:
                 operator: ">="
                 value: 30.0
