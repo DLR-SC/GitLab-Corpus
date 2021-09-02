@@ -1,4 +1,4 @@
-from py2neo import Graph, Relationship
+from py2neo import Graph
 from py2neo.ogm import GraphObject, RelatedObjects, Property, RelatedFrom, RelatedTo
 
 
@@ -252,66 +252,6 @@ class User(NeoGraphObject):
     released = RelatedFrom("Release", "RELEASED_BY")
 
 
-class Mergerequest(NeoGraphObject):
-    __primarylabel__ = "Mergerequest"
-    __primarykey__ = "id"
-
-    __unique_constraints__ = [
-        "id",
-        "iid"
-    ]
-
-    id = Property("id")
-    iid = Property("iid")
-    project_id = Property("project_id")
-    title = Property("title")
-    description = Property("description")
-    state = Property("state")
-    author = Property("author")
-    created_at = Property("created_at")
-    updated_at = Property("updated_at")
-    merged_by = Property("merged_by")
-    merged_at = Property("merged_at")
-    closed_by = Property("closed_by")
-    closed_at = Property("closed_at")
-    target_branch = Property("target_branch")
-    source_branch = Property("source_branch")
-    user_notes_count = Property("user_notes_count")
-    upvotes = Property("upvotes")
-    downvotes = Property("downvotes")
-    assignees = Property("assignees")
-    assignee = Property("assignee")
-    reviewers = Property("reviewers")
-    source_project_id = Property("source_project_id")
-    target_project_id = Property("target_project_id")
-    labels = Property("labels")
-    draft = Property("draft")
-    work_in_progress = Property("work_in_progress")
-    milestone = Property("milestone")
-    merge_when_pipeline_succeeds = Property("merge_when_pipeline_succeeds")
-    merge_status = Property("merge_status")
-    sha = Property("sha")
-    merge_commit_sha = Property("merge_commit_sha")
-    squash_commit_sha = Property("squash_commit_sha")
-    discussion_locked = Property("discussion_locked")
-    should_remove_source_branch = Property("should_remove_source_branch")
-    force_remove_source_branch = Property("force_remove_source_branch")
-    reference = Property("reference")
-    references = Property("references")
-    web_url = Property("web_url")
-    time_stats = Property("time_stats")
-    squash = Property("squash")
-    task_completion_status = Property("task_completion_status")
-    has_conflicts = Property("has_conflicts")
-    blocking_discussions_resolved = Property("blocking_discussions_resolved")
-    approvals_before_merge = Property("approvals_before_merge")
-
-    authored_by = RelatedTo(User)
-    is_merged_by = RelatedTo(User)
-    is_closed_by = RelatedTo(User)
-    assigned_to = RelatedTo(User)
-
-
 class Language(NeoGraphObject):
     __primarylabel__ = "Language"
     __primarykey__ = "name"
@@ -347,8 +287,8 @@ class Milestone(NeoGraphObject):
     expired = Property("expired")
     web_url = Property("web_url")
 
+    belongs_to_project = RelatedTo(Project)
     belongs_to_issue = RelatedFrom("Issue", "BELONGS_TO_ISSUE")
-    belongs_to_project = RelatedFrom("Project", "BELONGS_TO_PROJECT")
     belongs_to_release = RelatedFrom("Release", "BELONGS_TO_RELEASE")
 
 
@@ -396,9 +336,11 @@ class Issue(NeoGraphObject):
     moved_to_id = Property("moved_to_id")
     service_desk_reply_to = Property("service_desk_reply_to")
 
+    belongs_to = RelatedTo(Project)
     belongs_to_milestone = RelatedTo(Milestone)
     authored_by = RelatedTo(User)
     assigned_to = RelatedTo(User)
+    closed_with = RelatedFrom("Mergerequest", "CLOSED_WITH")
 
 
 class File(NeoGraphObject):
@@ -444,7 +386,73 @@ class Commit(NeoGraphObject):
 
     belongs_to = RelatedTo(Project)
     committed_by = RelatedTo(User)
+    belongs_to_mergerequests = RelatedFrom("Mergerequest", "BELONGS_TO_MERGEREQUEST")
     committed_release = RelatedFrom("Release", "COMMITTED_RELEASE")
+
+
+class Mergerequest(NeoGraphObject):
+    __primarylabel__ = "Mergerequest"
+    __primarykey__ = "id"
+
+    __unique_constraints__ = [
+        "id",
+        "iid"
+    ]
+
+    id = Property("id")
+    iid = Property("iid")
+    project_id = Property("project_id")
+    title = Property("title")
+    description = Property("description")
+    state = Property("state")
+    author = Property("author")
+    created_at = Property("created_at")
+    updated_at = Property("updated_at")
+    merged_by = Property("merged_by")
+    merged_at = Property("merged_at")
+    closed_by = Property("closed_by")
+    closed_at = Property("closed_at")
+    commits = Property("commits")
+    close_issues = Property("closes_issues")
+    target_branch = Property("target_branch")
+    source_branch = Property("source_branch")
+    user_notes_count = Property("user_notes_count")
+    upvotes = Property("upvotes")
+    downvotes = Property("downvotes")
+    assignees = Property("assignees")
+    assignee = Property("assignee")
+    reviewers = Property("reviewers")
+    source_project_id = Property("source_project_id")
+    target_project_id = Property("target_project_id")
+    labels = Property("labels")
+    draft = Property("draft")
+    work_in_progress = Property("work_in_progress")
+    milestone = Property("milestone")
+    merge_when_pipeline_succeeds = Property("merge_when_pipeline_succeeds")
+    merge_status = Property("merge_status")
+    sha = Property("sha")
+    merge_commit_sha = Property("merge_commit_sha")
+    squash_commit_sha = Property("squash_commit_sha")
+    discussion_locked = Property("discussion_locked")
+    should_remove_source_branch = Property("should_remove_source_branch")
+    force_remove_source_branch = Property("force_remove_source_branch")
+    reference = Property("reference")
+    references = Property("references")
+    web_url = Property("web_url")
+    time_stats = Property("time_stats")
+    squash = Property("squash")
+    task_completion_status = Property("task_completion_status")
+    has_conflicts = Property("has_conflicts")
+    blocking_discussions_resolved = Property("blocking_discussions_resolved")
+    approvals_before_merge = Property("approvals_before_merge")
+
+    belongs_to = RelatedTo(Project)
+    authored_by = RelatedTo(User)
+    is_merged_by = RelatedTo(User)
+    is_closed_by = RelatedTo(User)
+    assigned_to = RelatedTo(User)
+    closes = RelatedTo(Issue)
+    has_commit = RelatedTo(Commit)
 
 
 class Release(NeoGraphObject):
@@ -455,6 +463,9 @@ class Release(NeoGraphObject):
         "tag_name"
     ]
 
+    author = Property("author")
+    commit = Property("commit")
+    milestones = Property("milestones")
     tag_name = Property("tag_name")
     description = Property("description")
     name = Property("name")
