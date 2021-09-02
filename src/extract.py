@@ -11,13 +11,14 @@ from gitlab.v4.objects import ProjectManager
 
 
 def get_users(project):
+    """
+    This function returns a list of users for a specified project.
+    :param project: The project, that is to be extracted.
+    :return: A list of users. None, if no users are found.
+    :rtype: list or None
+    """
     try:
-        users = project.users.list()
-        user_list = []
-        for user in users:
-            user_dict = user.attributes
-            user_list.append(user_dict)
-
+        user_list = [user.attributes for user in project.users.list()]
         if len(user_list) > 0:
             return user_list
         return None
@@ -26,13 +27,14 @@ def get_users(project):
 
 
 def get_commits(project):
+    """
+    This function returns a list of commits, the last, and the first commit for a specified project.
+    :param project: The project, that is to be extracted.
+    :return: A list of commits, the last, and the first commit. None, if no commits are found.
+    :rtype: tuple of (list, dict, dict) or (None, None, None)
+    """
     try:
-        commits = project.commits.list(all=True)
-        commit_list = []
-        for commit in commits:
-            commit_dict = commit.attributes
-            commit_list.append(commit_dict)
-
+        commit_list = [commit.attributes for commit in project.commits.list(all=True)]
         if len(commit_list) > 0:
             return commit_list, commit_list.__getitem__(len(commit_list) - 1), commit_list.__getitem__(0)
         return None, None, None
@@ -41,6 +43,12 @@ def get_commits(project):
 
 
 def get_contributors(project):
+    """
+    This function returns a list of contributors for a specified project.
+    :param project: The project, that is to be extracted.
+    :return: A list of contributors. None, if no contributors are found.
+    :rtype: list or None
+    """
     try:
         contributors = project.repository_contributors()
         return contributors
@@ -49,22 +57,38 @@ def get_contributors(project):
 
 
 def get_issues(project):
-    issues = project.issues.list(all=True)
-    issue_list = []
-    for issue in issues:
-        issue_dict = issue.attributes
-        issue_list.append(issue_dict)
+    """
+    This function returns a list of issues for a specified project.
+    :param project: The project, that is to be extracted.
+    :return: A list of issues. None, if no issues are found.
+    :rtype: list or None
+    """
+    issue_list = [issue.attributes for issue in project.issues.list(all=True)]
     if len(issue_list) > 0:
         return issue_list
     return None
 
 
 def get_mergerequests(project):
+    """
+    This function returns a list of mergerequests for a specified project.
+    :param project: The project, that is to be extracted.
+    :return: A list of mergerequests. None, if no mergerequests are found.
+    :rtype: list or None
+    """
     try:
         mergerequests = project.mergerequests.list(state='all')
         mr_list = []
         for mr in mergerequests:
             mr_dict = mr.attributes
+            mr_commits = mr.commits()
+            mr_dict["commits"] = []
+            for commit in mr_commits:
+                mr_dict["commits"].append(commit.attributes)
+            mr_dict["close_issues"] = []
+            close_issues = mr.closes_issues()
+            for close_issue in close_issues:
+                mr_dict["close_issues"].append(close_issue.attributes)
             mr_list.append(mr_dict)
         if len(mr_list) > 0:
             return mr_list
@@ -74,6 +98,12 @@ def get_mergerequests(project):
 
 
 def get_pipelinestatistics(project):
+    """
+    This function returns the pipeline statistics for a specified project.
+    :param project: The project, that is to be extracted.
+    :return: A dictionary of the pipeline statistics. None, if no mergerequests are found.
+    :rtype: dict or None
+    """
     try:
         pipelines = project.pipelines.list()
         pipelines_dict = {"total": 0, "successful": 0, "failed": 0, "canceled": 0, "pending": 0}
@@ -95,12 +125,14 @@ def get_pipelinestatistics(project):
 
 
 def get_milestones(project):
+    """
+    This function returns a list of milestones for a specified project.
+    :param project: The project, that is to be extracted.
+    :return: A list of milestones. None, if no milestones are found.
+    :rtype: list or None
+    """
     try:
-        milestones = project.milestones.list()
-        ms_list = []
-        for ms in milestones:
-            ms_dict = ms.attributes
-            ms_list.append(ms_dict)
+        ms_list = [milestone.attributes for milestone in project.milestones.list()]
         if len(ms_list) > 0:
             return ms_list
         return None
@@ -108,14 +140,30 @@ def get_milestones(project):
         return None
 
 
-def get_rootdir(project, default_branch):
+def get_rootdir(project, project_dict):
+    """
+    This function returns a list of files from the root directory for a specified project.
+    :param project: The project, that is to be extracted.
+    :param project_dict: The dictionary of the projects attributes, to get the default branch.
+    :return: A list of files. None, if no files are found.
+    :rtype: list or None
+    """
     try:
-        return project.repository_tree(ref=default_branch)
+        return project.repository_tree(ref=project_dict['default_branch'])
     except (gitlab.exceptions.GitlabGetError, gitlab.exceptions.GitlabHttpError, KeyError):
         return None
 
 
 def get_projectstatistics(project, verbose, name):
+    """
+    This function returns the project statistics for a specified project.
+    :param project: The project, that is to be extracted.
+    :param verbose: Boolean value to print extra output.
+    :param name: Name of the project.
+    :return: A dict of the projects statistics. None, if no statistics are found or if the rights are not sufficient to
+    fetch the project statistics.
+    :rtype: dict or None
+    """
     try:
         return project.additionalstatistics.get().attributes
     except gitlab.exceptions.GitlabGetError:
@@ -124,6 +172,22 @@ def get_projectstatistics(project, verbose, name):
                        "need write access to fix this.".format(name))
         else:
             pass
+        return None
+
+
+def get_releases(project):
+    """
+    This function returns a list of releases for a specified project.
+    :param project: The project, that is to be extracted.
+    :return: A list of releases. None, if no releases are found.
+    :rtype: list or None
+    """
+    try:
+        rs_list = [release.attributes for release in project.releases.list()]
+        if len(rs_list) > 0:
+            return rs_list
+        return None
+    except gitlab.exceptions.GitlabListError:
         return None
 
 
@@ -152,75 +216,78 @@ class Extractor:
         """
         for manager in self.managers:
             click.echo("Retrieving projects...")
-            objects = manager.list(all=all_elements)
+            objects = manager.list(all=all_elements)  # gets all managers available (for projects, groups, users..)
             if isinstance(manager, ProjectManager):
-                click.echo("Extracting...")
-                with click.progressbar(objects) as bar:
-                    if self.verbose:
-                        click.echo("{} projects found.".format(bar.length))
-                    for project in bar:
-                        project_dict = project.attributes
+                self.extract_projects(objects)
 
-                        # only extract public or internal projects
-                        if project_dict['visibility'] != "private":
-                            # extract issue statistics
-                            project_dict['issue_statistics'] = \
-                                project.issuesstatistics.get(scope="all").attributes["statistics"]
+    def extract_projects(self, objects):
+        click.echo("Extracting...")
+        with click.progressbar(objects) as bar:
+            if self.verbose:
+                click.echo("{} projects found.".format(bar.length))
+            for project in bar:
+                project_dict = project.attributes
 
-                            # extract project languages
-                            project_dict['languages'] = project.languages()
+                # only extract public or internal projects
+                if project_dict['visibility'] != "private":
+                    # extract issue statistics
+                    project_dict['issue_statistics'] = \
+                        project.issuesstatistics.get(scope="all").attributes["statistics"]
 
-                            # extract members of the project
-                            users = get_users(project)
-                            if users is not None:
-                                project_dict['users'] = users
+                    # extract project languages
+                    project_dict['languages'] = project.languages()
 
-                            # extract commits
-                            commits, first_commit, last_commit = get_commits(project)
-                            if commits is not None:
-                                project_dict['commits'], project_dict['first_commit'], project_dict['last_commit'] = \
-                                    commits, first_commit, last_commit
+                    # extract members of the project
+                    users = get_users(project)
+                    if users is not None:
+                        project_dict['users'] = users
 
-                            # extract contributors
-                            contributors = get_contributors(project)
-                            if contributors is not None:
-                                project_dict['contributors'] = contributors
+                    # extract commits
+                    commits, first_commit, last_commit = get_commits(project)
+                    if commits is not None:
+                        project_dict['commits'], project_dict['first_commit'], project_dict['last_commit'] = \
+                            commits, first_commit, last_commit
 
-                            # extract all issues
-                            issues = get_issues(project)
-                            if issues is not None:
-                                project_dict['issues'] = issues
+                    # extract contributors
+                    contributors = get_contributors(project)
+                    if contributors is not None:
+                        project_dict['contributors'] = contributors
 
-                            # extract all merge requests
-                            mergerequests = get_mergerequests(project)
-                            if mergerequests is not None:
-                                project_dict['mergerequests'] = mergerequests
+                    # extract all issues
+                    issues = get_issues(project)
+                    if issues is not None:
+                        project_dict['issues'] = issues
 
-                            # extract pipeline statistics
-                            pipelinestatistics = get_pipelinestatistics(project)
-                            if pipelinestatistics is not None:
-                                project_dict['pipelines'] = pipelinestatistics
+                    # extract all merge requests
+                    mergerequests = get_mergerequests(project)
+                    if mergerequests is not None:
+                        project_dict['mergerequests'] = mergerequests
 
-                            # extract milestones
-                            milestones = get_milestones(project)
-                            if milestones is not None:
-                                project_dict['milestones'] = milestones
+                    # extract pipeline statistics
+                    pipelinestatistics = get_pipelinestatistics(project)
+                    if pipelinestatistics is not None:
+                        project_dict['pipelines'] = pipelinestatistics
 
-                            # extract the main directory of the project
-                            rootdir = get_rootdir(project, project_dict['default_branch'])
-                            if rootdir is not None:
-                                project_dict['files'] = rootdir
+                    # extract milestones
+                    milestones = get_milestones(project)
+                    if milestones is not None:
+                        project_dict['milestones'] = milestones
 
-                            # try to extract project statistics (only works for projects where the user has write
-                            # access)
-                            project_statistics = get_projectstatistics(project, self.verbose, project_dict['name'])
-                            if project_statistics is not None:
-                                project_dict['project_statistics'] = project_statistics
+                    # extract the main directory of the project
+                    rootdir = get_rootdir(project, project_dict)
+                    if rootdir is not None:
+                        project_dict['files'] = rootdir
 
-                            # extract releases
-                            releases = project.releases.list()
-                            if len(releases) > 0:
-                                project_dict['releases'] = releases
+                    # try to extract project statistics (only works for projects where the user has write
+                    # access)
+                    project_statistics = get_projectstatistics(project, self.verbose, project_dict['name'])
+                    if project_statistics is not None:
+                        project_dict['project_statistics'] = project_statistics
 
-                            # add all extracted data to the corpus
-                            self.corpus.data["Projects"].append(project_dict)
+                    # extract releases
+                    releases = get_releases(project)
+                    if releases is not None:
+                        project_dict['releases'] = releases
+
+                    # add all extracted data to the corpus
+                    self.corpus.data["Projects"].append(project_dict)
