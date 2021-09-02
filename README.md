@@ -9,7 +9,7 @@ This tool creates a corpus for publicly accessible repositories in the DLR-GitLa
 The corpus will primarily contain information about software projects. 
 Relevant information could be:  
 * number of authors or commits
-* license information
+* mergerequests
 * programming languages used
 * CI usage  
 
