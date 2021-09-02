@@ -7,7 +7,7 @@ All Iteration Example Projects have been filtered out, by using the regular expr
 All programming languages can make up to 100% of a projects languages.  
 All markup languages can make up to 50% of a projects languages.
 
-Difference to corpus #4
+Difference to corpus \#4
 
 Projects that are falsely considered as software projects, with the new threshold: 
 Projects that are correctly considered as software projects, with the new threshold: 
