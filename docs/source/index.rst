@@ -15,6 +15,7 @@ Welcome to corpus's documentation!
    getting-started
    modules
    filter-specification
+   neo4j-configuration
 
 
 Indices and tables
