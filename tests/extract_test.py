@@ -104,11 +104,54 @@ class Mergerequests:
                 "completed_count": 0
             },
             "has_conflicts": False,
-            "blocking_discussions_resolved": True
+            "blocking_discussions_resolved": True,
+            'close_issues': [{
+                'assignees': [{
+                    'id': '123abd',
+                    'name': 'Other User',
+                    'state': 'active',
+                    'username': 'other_user'
+                }],
+                'author': {
+                    'id': '123abc',
+                    'name': 'Test User',
+                    'state': 'active',
+                    'username': 'test_user'
+                },
+                'description': 'Test issue',
+                'has_tasks': True,
+                'id': 70,
+                'project_id': 1,
+                'state': 'opened',
+                'task_status': '10 of 15 tasks completed',
+                'type': 'ISSUE',
+                'updated_at': '2021-01-04T15:31:51.081Z'
+            }],
+            'commits': [{
+                'author_email': 'test@us.er',
+                'author_name': 'Test User',
+                'authored_date': '2021-09-20T12:00:00+01:00',
+                'committed_date': '2021-09-20T12:00:00+01:00',
+                'committer_email': 'tester@example.com',
+                'committer_name': 'Tester',
+                'created_at': '2021-09-20T12:00:00+01:00',
+                'id': '123abc',
+                'message': 'test commit',
+                'parent_ids': ['456def'],
+                'short_id': '1a',
+                'title': 'Initial commit',
+                'web_url': 'test.com'
+            }],
         }
 
     def list(self, state):
         return [self]
+
+    def commits(self):
+        return [Commits()]
+
+    def closes_issues(self):
+        return [Issues()]
 
 
 class Issues:
@@ -268,7 +311,7 @@ class Releases:
         }
 
     def list(self):
-        return [self.attributes]
+        return [self]
 
 
 class Project:
@@ -478,7 +521,44 @@ def test_extract():
                 "completed_count": 0
             },
             "has_conflicts": False,
-            "blocking_discussions_resolved": True
+            "blocking_discussions_resolved": True,
+            'close_issues': [{
+                'assignees': [{
+                    'id': '123abd',
+                    'name': 'Other User',
+                    'state': 'active',
+                    'username': 'other_user'
+                }],
+                'author': {
+                    'id': '123abc',
+                    'name': 'Test User',
+                    'state': 'active',
+                    'username': 'test_user'
+                },
+                'description': 'Test issue',
+                'has_tasks': True,
+                'id': 70,
+                'project_id': 1,
+                'state': 'opened',
+                'task_status': '10 of 15 tasks completed',
+                'type': 'ISSUE',
+                'updated_at': '2021-01-04T15:31:51.081Z'
+            }],
+            'commits': [{
+                'author_email': 'test@us.er',
+                'author_name': 'Test User',
+                'authored_date': '2021-09-20T12:00:00+01:00',
+                'committed_date': '2021-09-20T12:00:00+01:00',
+                'committer_email': 'tester@example.com',
+                'committer_name': 'Tester',
+                'created_at': '2021-09-20T12:00:00+01:00',
+                'id': '123abc',
+                'message': 'test commit',
+                'parent_ids': ['456def'],
+                'short_id': '1a',
+                'title': 'Initial commit',
+                'web_url': 'test.com'
+            }],
         }
     ]
     assert project['pipelines'] == {

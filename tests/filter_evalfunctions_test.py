@@ -150,7 +150,7 @@ def test_eval_condition_str_contains(attribute, operator, condition, result):
 
 
 @pytest.mark.parametrize("attribute, operator, condition, result", [
-    ('String123', '', '#(.*\d)#', True), ('example project 123', '', '#(.*example\s.*)#', True)
+    ('String123', '', '(.*\d)', True), ('example project 123', '', '(.*example\s.*)', True)
 ])
 def test_eval_condition_regex(attribute, operator, condition, result):
     assert eval_condition(attribute, operator, condition) == result

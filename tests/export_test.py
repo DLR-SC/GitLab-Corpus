@@ -491,8 +491,12 @@ class MergerequestMock:
         self.merged_by = "{'id': 123, 'name': 'User, Test', 'username': 'user_t'}"
         self.closed_by = "{'id': 123, 'name': 'User, Test', 'username': 'user_t'}"
         self.assignees = "[{'id': 123, 'name': 'User, Test', 'username': 'user_t'}]"
-        self.closed_by_user = RelationMock()
-        self.merged_by_user = RelationMock()
+        self.commits = "[{'id': '123abc', 'committer_name': 'User, Test'}]"
+        self.close_issues = "[{'id': 1234, 'name': 'User, Test', 'username': 'user_t'}]"
+        self.is_closed_by = RelationMock()
+        self.is_merged_by = RelationMock()
+        self.has_commit = RelationMock()
+        self.closes = RelationMock()
         self.authored_by = RelationMock()
         self.assigned_to = RelationMock()
 
@@ -508,7 +512,7 @@ class ReleaseMock:
         'committer_email': 'tester@example.com', 'committed_date': '2021-09-20T12:00:00+01:00', 
         'created_at': '2021-09-20T12:00:00+01:00', 'message': 'test commit',
         'parent_ids': [ '456def' ], 'web_url': 'test.com'}"""
-        self.milestone = """{ "id": 1, "iid": 2, "project_id": 123, "title": "1.0", "description": "Version",
+        self.milestones = """{ "id": 1, "iid": 2, "project_id": 123, "title": "1.0", "description": "Version",
             "due_date": "2021-08-04", "start_date": "2021-07-10", "state": "active", 
             "updated_at": "2021-07-12T19:31:15Z", "created_at": "2021-07-10T08:13:12Z", "expired": False }"""
         self.authored_by = RelationMock()
