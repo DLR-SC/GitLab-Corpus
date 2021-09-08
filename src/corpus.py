@@ -21,9 +21,9 @@ command_config = click.make_pass_decorator(Config, ensure=True)
 
 
 @click.group()
-@click.option('--gl-config', '-cp', default='resources/gitlab.cfg',
+@click.option('--gl-config', '-g', default='resources/gitlab.cfg',
               help='Path to the GitLab config file', show_default=True)
-@click.option('--neo4j-config', '-cp', default='resources/neo4j.cfg',
+@click.option('--neo4j-config', '-n', default='resources/neo4j.cfg',
               help='Path to the Neo4J config file', show_default=True)
 @click.option('--source', '-s',
               help='Name of the GitLab instance, you want to analyze, if not the default value of your configuration')
@@ -47,7 +47,7 @@ def cli(config, gl_config, neo4j_config, source, verbose):
               default='resources/filters.yaml', show_default=True)
 @click.option('--out', '-o', default='out/corpus.json',
               help='Specifies the output file', show_default=True)
-@click.option('--output-format', '-f', default='json',
+@click.option('--output-format', '-F', default='json',
               help='Specifies the output format', show_default=True)
 @corpus
 @command_config
@@ -108,7 +108,7 @@ def filter(config, corpus_data, filter_file, input_file, out):
               help='Specifies the file to load the corpus from', show_default=True)
 @click.option('--out', '-o', default='out/corpus.json',
               help='Specifies the output file', show_default=True)
-@click.option('--output-format', '-f', default='json',
+@click.option('--output-format', '-F', default='json',
               help='Specifies the output format', show_default=True)
 @corpus
 @command_config
