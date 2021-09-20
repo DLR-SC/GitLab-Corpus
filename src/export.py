@@ -95,12 +95,9 @@ class Exporter:
 
     def export_to_neo4j(self):
         """This method exports the corpus to a neo4j database as specified in the configuration file."""
-        time1 = time.time()
         with click.progressbar(self.corpus.data["Projects"]) as bar:
             for project in bar:
                 self.export_project(project)
-        time2 = time.time()
-        click.echo("Export took {:.3f} ms".format((time2 - time1) * 1000.0))
 
     def export_category(self, category_model, category, project, get_or_create=False, pk=""):
         try:
