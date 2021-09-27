@@ -123,4 +123,4 @@ if __name__ == '__main__':
     #      '--input-file=../out/test_corpus.json ',
     #      '--output-format=neo4j', '--out=../out/corpus.json'])
     cli(['--gl-config=../resources/gitlab.cfg', '--neo4j-config=../resources/neo4j.cfg', 'build',
-         '--out=../out/corpus.json', '-filter-file=../resources/filters.yaml'])
+         '--out=../out/corpus.json', '--filter-file=../resources/filters.yaml'])

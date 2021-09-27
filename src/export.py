@@ -44,6 +44,7 @@ class Exporter:
     def __init__(self, config, corpus, format_str, from_file=False, file="-"):
         """
         Exporter class constructor to initialize the object.
+
         :param config: Configuration for neo4j and verbose mode
         :param corpus: Input corpus, which will be exported
         :param from_file: Specifies, if the input corpus should be read from a file [default: ``False``]
@@ -67,7 +68,9 @@ class Exporter:
 
     def export(self, out="-"):
         """This method exports the corpus to another format.
+
         :param out: Path to output file
+
         """
 
         click.echo("Exporting...")

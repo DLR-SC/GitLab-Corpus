@@ -26,12 +26,14 @@ class NeoGraphObject(GraphObject):
         """
         Create a label from given attributes.\
         At least the the __primarykey__ must available in the attributes dictionary.
+
         :param graph: The graph instance
         :type graph: Graph
         :param attributes: Attributes
         :type attributes: dict
         :return: The created label
         :rtype: NeoGraphObject
+
         """
         obj = cls()
         if cls.__primarykey__ not in attributes:
@@ -49,12 +51,14 @@ class NeoGraphObject(GraphObject):
     def get(cls, graph: Graph, filters: dict):
         """
         Matches a labels from cls and reduces the result by the given filters.
+
         :param graph:
         :type graph:
         :param filters: A dictionary with filters as defined in the py2neo documentation
         :type filters: dict
         :return: The label with type of class
         :rtype: NeoGraphObject
+
         """
         obj = cls.match(graph)
         for attr, attr_value in filters.items():
@@ -66,6 +70,7 @@ class NeoGraphObject(GraphObject):
     def get_or_create(cls, graph: Graph, pk=None, attributes: dict = None):
         """
         Serves as helper method to retrieve labels from the graph or create a new one if no label existed
+
         :param graph: Graph instance
         :type graph: Graph
         :param pk: The labels primary key
@@ -73,6 +78,7 @@ class NeoGraphObject(GraphObject):
         :type attributes: dict
         :return: The newly created label or an existing one.
         :rtype: NeoGraphObject
+
         """
         if pk is None:
             raise NeoGraphObjectException(f"Primary key missing")
@@ -89,8 +95,10 @@ class NeoGraphObject(GraphObject):
     def set_constraints(cls, graph: Graph):
         """
         Sets all unique constraints defined in current class
+
         :param graph: The graph instance
         :type graph: Graph
+
         """
         for key in cls.__unique_constraints__:
             graph.schema.create_uniqueness_constraint(str(cls.__name__), key)
