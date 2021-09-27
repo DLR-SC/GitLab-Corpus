@@ -3,6 +3,8 @@
 
 import json
 import re
+import sys
+
 import click
 import yaml
 
@@ -14,11 +16,19 @@ from utils.helpers import Corpus
 """
 
 
+class InvalidOperatorException(Exception):
+    def __init__(self, message, value):
+        super().__init__(message)
+        click.echo("\n{}: '{}'".format(message, value))
+
+
 def eval_percentage(project_language_percentage, evaluation):
     """This function checks if the evaluation specified in the filter is true for the selected language.
+
     :param project_language_percentage: Percentage of a language in a project
     :param evaluation: Value and operand the percentage of a language will be compared to
-    :returns ``True`` if the evaluation is true and ``False`` otherwise
+    :returns: ``True`` if the evaluation is true and ``False`` otherwise
+
     """
     try:
         operator = evaluation['operator']
@@ -36,17 +46,19 @@ def eval_percentage(project_language_percentage, evaluation):
         elif operator == "!=":
             return project_language_percentage != float(value)
         else:
-            return False
+            raise InvalidOperatorException("Invalid Operator in filter file", operator)
     except AttributeError:  # never occurs anymore?
         return True
 
 
 def eval_all_percentages(project_languages, project, languages):
     """This function checks if all language evaluations are true for the project.
+
     :param project_languages: List of all languages in the project
     :param project: The project to be evaluated
     :param languages: List of languages and filter evaluations
-    :returns ``True`` if all evaluations are true and ``False`` otherwise
+    :returns: ``True`` if all evaluations are true and ``False`` otherwise
+
     """
     for item in project_languages:
         try:
@@ -56,15 +68,19 @@ def eval_all_percentages(project_languages, project, languages):
                 return False
         except KeyError:
             pass
+        except InvalidOperatorException:
+            sys.exit(-1)
     return True
 
 
 def eval_condition(attribute, operator, condition):
     """This function evaluates if the condition is true using the specified operator.
+
     :param attribute: Attribute of the project to be checked in the evaluation
     :param operator: Operator used for the evaluation
     :param condition: Condition the attribute will be compared to
-    :returns ``True`` if the evaluation is true and ``False`` otherwise
+    :returns: ``True`` if the evaluation is true and ``False`` otherwise
+
     """
     # Match types
     if isinstance(attribute, int):
@@ -86,14 +102,16 @@ def eval_condition(attribute, operator, condition):
         return attribute > condition
     elif operator == "contains" and isinstance(attribute, str) and isinstance(condition, str):
         return condition in attribute
-    elif isinstance(attribute, str) and isinstance(condition, str):
+    elif isinstance(attribute, str) and isinstance(condition, str) and operator == "regex":
         re.escape(condition)
         return re.match(condition, attribute) is not None
+    else:
+        raise InvalidOperatorException("Invalid Operator in filter file", operator)
 
 
 class Filter:
     """This class implements the filter options for the corpus, by loading the filter options as specified in the
-    :ref:`filter-file`.
+    :ref:`how_to_write_a_filter_file`.
 
     Methods:
         __init__(self, verbose, corpus, from_file=False, file="-")
@@ -108,10 +126,12 @@ class Filter:
 
     def __init__(self, verbose, corpus, from_file=False, file="-"):
         """Filter class constructor to initialize the object.
+
         :param verbose: Prints more output, if set to ``True``
         :param corpus: Input corpus, which will be filtered
         :param from_file: Specifies, if the input corpus should be read from a file [default: ``False``]
         :param file: Path to input corpus
+
         """
         self.verbose = verbose
         self.filters = {}
@@ -130,7 +150,9 @@ class Filter:
     def load_filters(self, filter_file):
         """This method loads the filters to be used on the extracted corpus. By default it gets passed the file
         `resources/filters.yaml`.
-        :param filter_file: Path to filter file (see also :ref:`filter-file`)
+
+        :param filter_file: Path to filter file (see also :ref:`how_to_write_a_filter_file`)
+
         """
         try:
             with open(filter_file, "r") as f:
@@ -155,13 +177,15 @@ class Filter:
 
     def load_languages(self, language_list, category):
         """This method loads the languages to be filtered and stores them in a list.
+
         :param language_list: List containing all filter options regarding the language category as specified in the
-        :ref:`filter-file`
+            :ref:`how_to_write_a_filter_file`
         :param category: Category of the language filter. Should be one of:
-        * any_languages
-        * atleast_languages
-        * atmost_languages
-        * exact_languages
+            * any_languages
+            * atleast_languages
+            * atmost_languages
+            * exact_languages
+
         """
         if language_list is not None:
             for element in language_list:
@@ -198,16 +222,16 @@ class Filter:
 
     def filter_project(self, project):
         """This method applies the specified filters to a project.
+
         :param project: Project, which will be filtered
-        :returns ``True`` if the project passes the filter criteria and ``False`` otherwise.
+        :returns: ``True`` if the project passes the filter criteria and ``False`` otherwise.
+
         """
         return_val = True
         for filter_option in self.filters:
             if re.match('.*_languages', filter_option):  # filter project languages
                 if return_val:
-                    if self.filters[filter_option] is None:
-                        pass
-                    else:
+                    if self.filters[filter_option] is not None:
                         return_val = self.check_languages(filter_option, project)
             elif return_val:  # filter other attributes
                 try:
@@ -216,13 +240,17 @@ class Filter:
                     return_val = eval_condition(project[filter_option], operator, condition)
                 except ValueError:
                     pass
+                except InvalidOperatorException:
+                    sys.exit(-1)
         return return_val
 
     def check_languages(self, filter_option, project):
         """This method applies the language filters to a project.
+
         :param filter_option: The language filter category
         :param project: The project to be checked
-        :returns ``True``` if the language filters evaluate to true and ``False`` otherwise
+        :returns: ``True``` if the language filters evaluate to true and ``False`` otherwise
+
         """
         project_languages = list(project["languages"].keys())
         if filter_option == "any_languages":  # project contains any language specified in the filter

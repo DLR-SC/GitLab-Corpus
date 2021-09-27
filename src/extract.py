@@ -13,9 +13,11 @@ from gitlab.v4.objects import ProjectManager
 def get_users(project):
     """
     This function returns a list of users for a specified project.
+
     :param project: The project, that is to be extracted.
     :return: A list of users. None, if no users are found.
     :rtype: list or None
+
     """
     try:
         user_list = [user.attributes for user in project.users.list()]
@@ -29,9 +31,11 @@ def get_users(project):
 def get_commits(project):
     """
     This function returns a list of commits, the last, and the first commit for a specified project.
+
     :param project: The project, that is to be extracted.
     :return: A list of commits, the last, and the first commit. None, if no commits are found.
     :rtype: tuple of (list, dict, dict) or (None, None, None)
+
     """
     try:
         commit_list = [commit.attributes for commit in project.commits.list(all=True)]
@@ -45,9 +49,11 @@ def get_commits(project):
 def get_contributors(project):
     """
     This function returns a list of contributors for a specified project.
+
     :param project: The project, that is to be extracted.
     :return: A list of contributors. None, if no contributors are found.
     :rtype: list or None
+
     """
     try:
         contributors = project.repository_contributors()
@@ -59,9 +65,11 @@ def get_contributors(project):
 def get_issues(project):
     """
     This function returns a list of issues for a specified project.
+
     :param project: The project, that is to be extracted.
     :return: A list of issues. None, if no issues are found.
     :rtype: list or None
+
     """
     issue_list = [issue.attributes for issue in project.issues.list(all=True)]
     if len(issue_list) > 0:
@@ -72,9 +80,11 @@ def get_issues(project):
 def get_mergerequests(project):
     """
     This function returns a list of mergerequests for a specified project.
+
     :param project: The project, that is to be extracted.
     :return: A list of mergerequests. None, if no mergerequests are found.
     :rtype: list or None
+
     """
     try:
         mergerequests = project.mergerequests.list(state='all')
@@ -100,9 +110,11 @@ def get_mergerequests(project):
 def get_pipelinestatistics(project):
     """
     This function returns the pipeline statistics for a specified project.
+
     :param project: The project, that is to be extracted.
     :return: A dictionary of the pipeline statistics. None, if no mergerequests are found.
     :rtype: dict or None
+
     """
     try:
         pipelines = project.pipelines.list()
@@ -127,9 +139,11 @@ def get_pipelinestatistics(project):
 def get_milestones(project):
     """
     This function returns a list of milestones for a specified project.
+
     :param project: The project, that is to be extracted.
     :return: A list of milestones. None, if no milestones are found.
     :rtype: list or None
+
     """
     try:
         ms_list = [milestone.attributes for milestone in project.milestones.list()]
@@ -143,10 +157,12 @@ def get_milestones(project):
 def get_rootdir(project, project_dict):
     """
     This function returns a list of files from the root directory for a specified project.
+
     :param project: The project, that is to be extracted.
     :param project_dict: The dictionary of the projects attributes, to get the default branch.
     :return: A list of files. None, if no files are found.
     :rtype: list or None
+
     """
     try:
         return project.repository_tree(ref=project_dict['default_branch'])
@@ -157,12 +173,14 @@ def get_rootdir(project, project_dict):
 def get_projectstatistics(project, verbose, name):
     """
     This function returns the project statistics for a specified project.
+
     :param project: The project, that is to be extracted.
     :param verbose: Boolean value to print extra output.
     :param name: Name of the project.
     :return: A dict of the projects statistics. None, if no statistics are found or if the rights are not sufficient to
-    fetch the project statistics.
+        fetch the project statistics.
     :rtype: dict or None
+
     """
     try:
         return project.additionalstatistics.get().attributes
@@ -178,9 +196,11 @@ def get_projectstatistics(project, verbose, name):
 def get_releases(project):
     """
     This function returns a list of releases for a specified project.
+
     :param project: The project, that is to be extracted.
     :return: A list of releases. None, if no releases are found.
     :rtype: list or None
+
     """
     try:
         rs_list = [release.attributes for release in project.releases.list()]
@@ -201,9 +221,11 @@ class Extractor:
 
     def __init__(self, verbose, gitlab_manager, corpus):
         """Extractor class constructor to initialize the object.
+
         :param verbose: Prints more output, if set to ``True``
         :param gitlab_manager: Manager object for python-gitlab
         :param corpus: Initialized corpus object, which will be used to save the projects data
+
         """
         self.gl = gitlab_manager
         self.verbose = verbose
@@ -212,7 +234,9 @@ class Extractor:
 
     def extract(self, all_elements):
         """This method extracts the projects of the defined GitLab instance and stores them in the corpus attribute.
+
         :param all_elements: Ignores the pagination of the GitLab-API and extracts all projects, if set to ``True``.
+
         """
         for manager in self.managers:
             click.echo("Retrieving projects...")
