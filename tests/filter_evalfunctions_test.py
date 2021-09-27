@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MIT
 
 import pytest
-from filter import eval_percentage, eval_all_percentages, eval_condition
+from filter import eval_percentage, eval_all_percentages, eval_condition, InvalidOperatorException
 
 
 @pytest.mark.parametrize("project_language_percentage, evaluation, result", [
@@ -56,7 +56,8 @@ def test_eval_percentage_neq(project_language_percentage, evaluation, result):
 def test_eval_percentage_nooperator():
     project_language_percentage = 10
     evaluation = {'operator': '.', 'value': 80.0}
-    assert eval_percentage(project_language_percentage, evaluation) is False
+    with pytest.raises(InvalidOperatorException):
+        eval_percentage(project_language_percentage, evaluation)
 
 
 def test_eval_all_percentages_true():
@@ -150,11 +151,7 @@ def test_eval_condition_str_contains(attribute, operator, condition, result):
 
 
 @pytest.mark.parametrize("attribute, operator, condition, result", [
-    ('String123', '', '(.*\d)', True), ('example project 123', '', '(.*example\s.*)', True)
+    ('String123', 'regex', '(.*\d)', True), ('example project 123', 'regex', '(.*example\s.*)', True)
 ])
 def test_eval_condition_regex(attribute, operator, condition, result):
     assert eval_condition(attribute, operator, condition) == result
-
-
-if __name__ == '__main__':
-    test_eval_percentage_lt(50, {'operator': '<', 'value': 100.0}, True)
