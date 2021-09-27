@@ -55,5 +55,5 @@ Running the command using the `--help` parameter or without any parameter, will 
 
 
 ## Documentation
-[Click here to download the documentation.](
-https://gitlab.dlr.de/sc/ivs-open/corpus/-/jobs/artifacts/master/download?job=pages)
+[Click here to read the documentation.](
+https://sc.pages.gitlab.dlr.de/ivs-open/corpus/)
