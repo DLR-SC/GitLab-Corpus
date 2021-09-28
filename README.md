@@ -21,14 +21,14 @@ compatibility with [neo4j](https://neo4j.com/)
 The tool requires Python >= 3.8.
 
 ## Dependencies to use this tool
-See [setup.cfg](https://gitlab.dlr.de/sc/ivs-open/corpus/-/blob/master/setup.cfg) under the section `install_requires`.
+See setup.cfg under the section `install_requires`.
 
 ## Dependencies to develop this tool
-See [requirements.txt](https://gitlab.dlr.de/sc/ivs-open/corpus/-/blob/master/requirements.txt).
+See requirements.txt.
 
 You can clone this repository and then install the tool as follows:  
 ```bash
-git clone https://gitlab.dlr.de/sc/ivs-open/corpus.git
+git clone <url>
 cd corpus
 pip install --editable .
 ```  
