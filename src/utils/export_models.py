@@ -1,3 +1,6 @@
+# Modified version of: Stoffers, Martin. (2019, October 13). Gitlab2Graph (Version 1.0.0). Zenodo. 
+# http://doi.org/10.5281/zenodo.3469386
+
 from py2neo import Graph
 from py2neo.ogm import GraphObject, RelatedObjects, Property, RelatedFrom, RelatedTo
 
