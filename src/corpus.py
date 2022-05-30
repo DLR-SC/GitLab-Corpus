@@ -32,7 +32,7 @@ command_config = click.make_pass_decorator(Config, ensure=True)
 @command_config
 def cli(config, gl_config, neo4j_config, source, verbose):
     """Entry point to the corpus cli."""
-    config.gl = gitlab.Gitlab.from_config(source, gl_config)
+    config.gl = gitlab.Gitlab.from_config(source, [gl_config])
     config.verbose = verbose
     config.neo4j_config = load_neo4j_config(neo4j_config)
 
