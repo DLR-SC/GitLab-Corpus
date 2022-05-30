@@ -232,19 +232,20 @@ class Extractor:
         self.managers = [self.gl.projects]
         self.corpus = corpus
 
-    def extract(self, all_elements):
+    def extract(self, all_elements, include_private=False):
         """This method extracts the projects of the defined GitLab instance and stores them in the corpus attribute.
 
         :param all_elements: Ignores the pagination of the GitLab-API and extracts all projects, if set to ``True``.
+        :param include_private: Includes private GitLab projects as well, if set to ``True``.
 
         """
         for manager in self.managers:
             click.echo("Retrieving projects...")
             objects = manager.list(all=all_elements)  # gets all managers available (for projects, groups, users..)
             if isinstance(manager, ProjectManager):
-                self.extract_projects(objects)
+                self.extract_projects(objects, include_private)
 
-    def extract_projects(self, objects):
+    def extract_projects(self, objects, include_private):
         click.echo("Extracting...")
         with click.progressbar(objects) as bar:
             if self.verbose:
@@ -253,7 +254,7 @@ class Extractor:
                 project_dict = project.attributes
 
                 # only extract public or internal projects
-                if project_dict['visibility'] != "private":
+                if project_dict['visibility'] != "private" or include_private:
                     # extract issue statistics
                     project_dict['issue_statistics'] = \
                         project.issuesstatistics.get(scope="all").attributes["statistics"]
