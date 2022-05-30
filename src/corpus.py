@@ -49,14 +49,16 @@ def cli(config, gl_config, neo4j_config, source, verbose):
               help='Specifies the output file', show_default=True)
 @click.option('--output-format', '-F', default='json',
               help='Specifies the output format', show_default=True)
+@click.option('--include-private', '-p', is_flag=True,
+              help='If set, GitLab projects with visibility private will be included as well')
 @corpus
 @command_config
-def build(config, corpus_data, all_elements, filter_file, out, output_format):
+def build(config, corpus_data, all_elements, filter_file, out, output_format, include_private):
     """Run the pipeline extract -> filter -> export in one command."""
     extractor = Extractor(config.verbose, config.gl, corpus=corpus_data)
     corpus_filter = Filter(config.verbose, corpus=corpus_data, from_file=False)
 
-    extractor.extract(all_elements=all_elements)
+    extractor.extract(all_elements=all_elements, include_private=include_private)
     corpus_filter.load_filters(filter_file=filter_file)
     corpus_filter.filter()
 
@@ -71,14 +73,16 @@ def build(config, corpus_data, all_elements, filter_file, out, output_format):
               is_flag=True)
 @click.option('--out', '-o', default='out/corpus.json',
               help='Specifies the output file', show_default=True)
+@click.option('--include-private', '-p', is_flag=True,
+              help='If set, GitLab projects with visibility private will be included as well')
 @corpus
 @command_config
-def extract(config, corpus_data, all_elements, out):
+def extract(config, corpus_data, all_elements, out, include_private):
     """Extract projects from the specified GitLab instance and write the output to a file."""
     extractor = Extractor(config.verbose, config.gl, corpus=corpus_data)
     exporter = Exporter(config, corpus=corpus_data, format_str="json")
 
-    extractor.extract(all_elements=all_elements)
+    extractor.extract(all_elements=all_elements, include_private=include_private)
     exporter.export(out=out)
 
 
