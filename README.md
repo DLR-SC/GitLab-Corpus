@@ -20,7 +20,9 @@ The output corpus is in the JSON-format, as it is widely used and because of its
 
 ## Install
 
-We assume that you installed Python >= 3.8 and a recent Git client. Then, please follow these steps to install the required dependencies and make available the `corpus` command line tool:
+We assume that you installed Python >= 3.8 and a recent Git client.
+
+Please follow these steps to install the required dependencies and to make available the `corpus` command line tool:
 
 ```bash
 git clone <URL of this Git repository>
