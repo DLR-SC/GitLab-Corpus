@@ -25,7 +25,7 @@ We assume that you installed Python >= 3.8 and a recent Git client.
 Please follow these steps to install the required dependencies and to make available the `corpus` command line tool:
 
 ```bash
-git clone <URL of this Git repository>
+git clone <URL of this Git repository> corpus
 cd corpus
 pip install --editable .
 ```  
