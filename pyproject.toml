@@ -2,7 +2,10 @@
 name = "gitlab-corpus"
 version = "0.1.1"
 description = "Creates a corpus of projects in a GitLab instance."
-authors = ["Stephan Druskat <stephan.druskat@dlr.de>"]
+authors = [
+    "Emanuel Caricato <emanuel.caricato@dlr.de>",
+    "Stephan Druskat <stephan.druskat@dlr.de>"
+]
 license = "MIT"
 readme = "README.md"
 packages = [{include = "corpus"}]
