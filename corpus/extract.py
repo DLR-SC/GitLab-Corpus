@@ -257,7 +257,7 @@ class Extractor:
                 if project_dict['visibility'] != "private" or include_private:
                     # extract issue statistics
                     project_dict['issue_statistics'] = \
-                        project.issuesstatistics.get(scope="all").attributes["statistics"]
+                        project.issues_statistics.get(scope="all").attributes["statistics"]
 
                     # extract project languages
                     project_dict['languages'] = project.languages()
