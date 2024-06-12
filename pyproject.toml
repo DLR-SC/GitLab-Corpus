@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "gitlab-corpus"
+version = "0.1.1"
+description = "Creates a corpus of projects in a GitLab instance."
+authors = ["Stephan Druskat <stephan.druskat@dlr.de>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
