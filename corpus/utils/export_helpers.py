@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2021 German Aerospace Center (DLR)
 # SPDX-License-Identifier: MIT
 
-from utils.export_models import User as UserModel
+from corpus.utils.export_models import User as UserModel
 
 
 def transform_language_dict(language_dict):
