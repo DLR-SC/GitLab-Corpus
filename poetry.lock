@@ -194,6 +194,21 @@ files = [
 ]
 
 [[package]]
+name = "inquirer2"
+version = "1.0.0"
+description = "A Python module for collection of common interactive command line user interfaces, based on Inquirer.js"
+optional = false
+python-versions = ">=3.6.1"
+files = [
+    {file = "inquirer2-1.0.0-py3-none-any.whl", hash = "sha256:12c23e0ff5030b0a4a71182142163d83478cd79d2521f04a31716646a8094631"},
+    {file = "inquirer2-1.0.0.tar.gz", hash = "sha256:6a2402058218247e6c3effc556432675de11cc3fe4e03faa0c34ac2902345314"},
+]
+
+[package.dependencies]
+prompt-toolkit = ">=3.0,<3.1.0"
+Pygments = ">=2.2.0"
+
+[[package]]
 name = "interchange"
 version = "2021.0.4"
 description = "Data types and interchange formats"
@@ -224,6 +239,54 @@ MarkupSafe = ">=2.0"
 
 [package.extras]
 i18n = ["Babel (>=2.7)"]
+
+[[package]]
+name = "keepachangelog"
+version = "2.0.0.dev2"
+description = "Manipulate keep a changelog files."
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "keepachangelog-2.0.0.dev2-py3-none-any.whl", hash = "sha256:fab31d5746cfefcf30d9ab7ed97be9f1d4dcad4cba0b8e6545b7663de5dad500"},
+    {file = "keepachangelog-2.0.0.dev2.tar.gz", hash = "sha256:72f12f5f0f1b34b969d6a478739c12c53023d090e0b748ae39f0df1c8b4481c2"},
+]
+
+[package.extras]
+testing = ["flask-restx (==0.5.*)", "pytest-cov (==2.*)", "requests (==2.*)", "starlette (==0.16.*)"]
+
+[[package]]
+name = "keepachangelog-manager"
+version = "3.3.1"
+description = "Python package allowing you to manage your `CHANGELOG.md` files"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "keepachangelog-manager-3.3.1.tar.gz", hash = "sha256:28afb72340cd98a67389386c6638d1fb418b8a66001663efb48e32992f0f1bac"},
+    {file = "keepachangelog_manager-3.3.1-py3-none-any.whl", hash = "sha256:c46989546fa1c3fc8ec1201f1c8f76b7c2bbc03ea8bb1281f533caf65a51aae3"},
+]
+
+[package.dependencies]
+Click = ">=8,<9"
+inquirer2 = "1.0.0"
+keepachangelog = "2.0.0.dev2"
+llvm-diagnostics = ">=3.0.0,<4"
+pyyaml = ">=6,<7"
+semantic-version = ">=2.9.0,<3"
+urllib3 = ">=1.25.11,<2"
+
+[[package]]
+name = "llvm-diagnostics"
+version = "3.0.1"
+description = "Python module for creating diagnostics using the LLVM diagnostics specification"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "llvm-diagnostics-3.0.1.tar.gz", hash = "sha256:67470811bbab34bf75d6ef298d6a6f35b1133c710e8fc15c793eb6755d07215f"},
+    {file = "llvm_diagnostics-3.0.1-py3-none-any.whl", hash = "sha256:51aac4c0a29dc4bcd21c15bd7e2c050f2e5d59ef95ae0e8a1e0174b7964a386c"},
+]
+
+[package.dependencies]
+typing-extensions = ">=4.2.0,<5"
 
 [[package]]
 name = "markupsafe"
@@ -329,6 +392,20 @@ files = [
 
 [package.dependencies]
 six = "*"
+
+[[package]]
+name = "prompt-toolkit"
+version = "3.0.47"
+description = "Library for building powerful interactive command lines in Python"
+optional = false
+python-versions = ">=3.7.0"
+files = [
+    {file = "prompt_toolkit-3.0.47-py3-none-any.whl", hash = "sha256:0d7bfa67001d5e39d02c224b663abc33687405033a8c422d0d675a5a13361d10"},
+    {file = "prompt_toolkit-3.0.47.tar.gz", hash = "sha256:1e1b29cb58080b1e69f207c893a1a7bf16d127a5c30c9d17a25a5d77792e5360"},
+]
+
+[package.dependencies]
+wcwidth = "*"
 
 [[package]]
 name = "py2neo"
@@ -488,6 +565,21 @@ files = [
 
 [package.dependencies]
 requests = ">=2.0.1,<3.0.0"
+
+[[package]]
+name = "semantic-version"
+version = "2.10.0"
+description = "A library implementing the 'SemVer' scheme."
+optional = false
+python-versions = ">=2.7"
+files = [
+    {file = "semantic_version-2.10.0-py2.py3-none-any.whl", hash = "sha256:de78a3b8e0feda74cabc54aab2da702113e33ac9d9eb9d2389bcf1f58b7d9177"},
+    {file = "semantic_version-2.10.0.tar.gz", hash = "sha256:bdabb6d336998cbb378d4b9db3a4b56a1e3235701dc05ea2690d9a997ed5041c"},
+]
+
+[package.extras]
+dev = ["Django (>=1.11)", "check-manifest", "colorama (<=0.4.1)", "coverage", "flake8", "nose2", "readme-renderer (<25.0)", "tox", "wheel", "zest.releaser[recommended]"]
+doc = ["Sphinx", "sphinx-rtd-theme"]
 
 [[package]]
 name = "six"
@@ -668,23 +760,44 @@ files = [
 ]
 
 [[package]]
-name = "urllib3"
-version = "2.2.1"
-description = "HTTP library with thread-safe connection pooling, file post, and more."
+name = "typing-extensions"
+version = "4.12.2"
+description = "Backported and Experimental Type Hints for Python 3.8+"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "urllib3-2.2.1-py3-none-any.whl", hash = "sha256:450b20ec296a467077128bff42b73080516e71b56ff59a60a02bef2232c4fa9d"},
-    {file = "urllib3-2.2.1.tar.gz", hash = "sha256:d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"},
+    {file = "typing_extensions-4.12.2-py3-none-any.whl", hash = "sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d"},
+    {file = "typing_extensions-4.12.2.tar.gz", hash = "sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"},
+]
+
+[[package]]
+name = "urllib3"
+version = "1.26.18"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+files = [
+    {file = "urllib3-1.26.18-py2.py3-none-any.whl", hash = "sha256:34b97092d7e0a3a8cf7cd10e386f401b3737364026c45e622aa02903dffe0f07"},
+    {file = "urllib3-1.26.18.tar.gz", hash = "sha256:f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"},
 ]
 
 [package.extras]
-brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)"]
-h2 = ["h2 (>=4,<5)"]
-socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
-zstd = ["zstandard (>=0.18.0)"]
+brotli = ["brotli (==1.0.9)", "brotli (>=1.0.9)", "brotlicffi (>=0.8.0)", "brotlipy (>=0.6.0)"]
+secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "ipaddress", "pyOpenSSL (>=0.14)", "urllib3-secure-extra"]
+socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
+
+[[package]]
+name = "wcwidth"
+version = "0.2.13"
+description = "Measures the displayed width of unicode strings in a terminal"
+optional = false
+python-versions = "*"
+files = [
+    {file = "wcwidth-0.2.13-py2.py3-none-any.whl", hash = "sha256:3da69048e4540d84af32131829ff948f1e022c1c6bdb8d6102117aac784f6859"},
+    {file = "wcwidth-0.2.13.tar.gz", hash = "sha256:72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"},
+]
 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "8f65da1c9ecf916549700c9752d23e7a507923119951b9b42e9d4e43c3014d84"
+content-hash = "d0c497aabd31b24d4b642ff26ccfbbd6f5c30760af2e84aedd1596ddd7cd48df"
