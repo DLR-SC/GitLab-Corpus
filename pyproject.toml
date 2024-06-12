@@ -5,10 +5,20 @@ description = "Creates a corpus of projects in a GitLab instance."
 authors = ["Stephan Druskat <stephan.druskat@dlr.de>"]
 license = "MIT"
 readme = "README.md"
+packages = [{include = "corpus"}]
+repository = "https://github.com/sdruskat/GitLab-Corpus"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
+click = "^8.1.7"
+python-gitlab = "^4.6.0"
+sphinx = "^7.3.7"
+pyyaml = "^6.0.1"
+sphinx-click = "^6.0.0"
+py2neo = "^2021.2.4"
 
+[tool.poetry.scripts]
+corpus = 'corpus.cli:cli'
 
 [build-system]
 requires = ["poetry-core"]
