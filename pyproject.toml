@@ -12,11 +12,9 @@ maintainers = [
 
 readme = "README.md"
 requires-python = ">=3.13"
-
 keywords = ["gitlab", "corpus", "mining software repositories"]
 # license =  "TODO"
 license-files = ["LICENSES/*.txt"]
-
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: Console",
@@ -25,6 +23,7 @@ classifiers = [
 
 dependencies = [
     "click>=8.2.1",
+    "py2neo>=2021.2.4",
     "python-gitlab>=6.2.0",
     "pyyaml>=6.0.2",
 ]
@@ -37,8 +36,6 @@ repository = "https://github.com/DLR-SC/GitLab-Corpus"
 
 [project.scripts]
 corpus = "corpus:cli"
-
-
 
 [dependency-groups]
 dev = [
