@@ -48,14 +48,14 @@ wheels = [
 
 [[package]]
 name = "click"
-version = "8.2.1"
+version = "8.0.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "colorama", marker = "sys_platform == 'win32'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz", hash = "sha256:27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202", size = 286342, upload-time = "2025-05-20T23:19:49.832Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/21/83/308a74ca1104fe1e3197d31693a7a2db67c2d4e668f20f43a2fca491f9f7/click-8.0.1.tar.gz", hash = "sha256:8c04c11192119b1ef78ea049e0a6f0463e4c48ef00a30160c704337586f3ad7a", size = 327655, upload-time = "2021-05-19T21:00:35.524Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/85/32/10bb5764d90a8eee674e9dc6f4db6a0ab47c8c4d0d83c27f7c39ac415a4d/click-8.2.1-py3-none-any.whl", hash = "sha256:61a3265b914e850b85317d0b3109c7f8cd35a670f963866005d6ef1d5175a12b", size = 102215, upload-time = "2025-05-20T23:19:47.796Z" },
+    { url = "https://files.pythonhosted.org/packages/76/0a/b6c5f311e32aeb3b406e03c079ade51e905ea630fc19d1262a46249c1c86/click-8.0.1-py3-none-any.whl", hash = "sha256:fba402a4a47334742d782209a7c79bc448911afe1149d07bdabdf480b3e2f4b6", size = 97404, upload-time = "2021-05-19T21:00:32.276Z" },
 ]
 
 [[package]]
@@ -87,10 +87,10 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "click", specifier = ">=8.2.1" },
-    { name = "py2neo", specifier = ">=2021.2.4" },
-    { name = "python-gitlab", specifier = ">=6.2.0" },
-    { name = "pyyaml", specifier = ">=6.0.2" },
+    { name = "click", specifier = "==8.0.1" },
+    { name = "py2neo", specifier = "==2021.2.4" },
+    { name = "python-gitlab", specifier = "==2.9.0" },
+    { name = "pyyaml", specifier = "==6.0.2" },
 ]
 
 [package.metadata.requires-dev]
@@ -360,15 +360,15 @@ wheels = [
 
 [[package]]
 name = "python-gitlab"
-version = "6.2.0"
+version = "2.9.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "requests" },
     { name = "requests-toolbelt" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/30/32/8b1f293d106ec69033eb29dc998ff8a86fdbce5eebc1f6af8835b2faef61/python_gitlab-6.2.0.tar.gz", hash = "sha256:b88c79cea65dd2425922c829730ea95827ed7132d869b8532b90a8c7199cc1a6", size = 397611, upload-time = "2025-07-28T01:25:56.294Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c7/d3/560a3805fb48e7616da925ecd0159794c8940ad69c655e33c900e1e55549/python-gitlab-2.9.0.tar.gz", hash = "sha256:2c51b14cdd9a68028315a2b0e88525d3760967388f99faa57de8902b45465be6", size = 182251, upload-time = "2021-06-28T00:14:19.024Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/41/4b/aa99112a09c2898e17b88245a1d2e5bfcc71016f3cbdc24b6d870de38cf9/python_gitlab-6.2.0-py3-none-any.whl", hash = "sha256:8adf2bbf1ac8a5224ee04a456d318da0d15128606711e8c8e1a2ff050968432b", size = 144242, upload-time = "2025-07-28T01:25:54.408Z" },
+    { url = "https://files.pythonhosted.org/packages/0d/df/b37d71f3cc48e3ec82c1a55bfadbbca5d33e86cf7aee8259d9d9f5429b18/python_gitlab-2.9.0-py3-none-any.whl", hash = "sha256:956dfaf5d5f16c005fd064a7efd3059683dc348e9d46a1a555ddfac2e831e537", size = 108953, upload-time = "2021-06-28T00:14:17.868Z" },
 ]
 
 [[package]]
