@@ -1,0 +1,50 @@
+[project]
+name = "corpus"
+description = "Creates a corpus of publicly accessible repositories in a GitLab instance."
+version = "0.1.1"
+authors = [
+    { name = "Emanuel Caricato", email = "emanuel.caricato@dlr.de" },
+    { name = "Stephan Druskat", email = "stephan.druskat@dlr.de" }
+]
+maintainers = [
+    { name = "Stephan Druskat", email = "stephan.druskat@dlr.de" }
+]
+
+readme = "README.md"
+requires-python = ">=3.13"
+
+keywords = ["gitlab", "corpus", "mining software repositories"]
+# license =  "TODO"
+license-files = ["LICENSES/*.txt"]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research"
+]
+
+dependencies = [
+    "click>=8.2.1",
+    "python-gitlab>=6.2.0",
+    "pyyaml>=6.0.2",
+]
+
+[project.urls]
+homepage = "https://github.com/DLR-SC/GitLab-Corpus"
+repository = "https://github.com/DLR-SC/GitLab-Corpus"
+# documentation = "https://dlr-sc.github.io/GitLab-Corpus/"
+"Issue Tracker" = "https://github.com/DLR-SC/GitLab-Corpus/issues"
+
+[project.scripts]
+corpus = "corpus:cli"
+
+
+
+[dependency-groups]
+dev = [
+    "ruff>=0.12.5",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
