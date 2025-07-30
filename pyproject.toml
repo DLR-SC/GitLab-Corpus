@@ -44,6 +44,11 @@ dev = [
     "ruff>=0.12.5",
 ]
 
+docs = [
+    "mkdocs-material>=9.6.16",
+    "mkdocstrings[python]>=0.30.0",
+]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
