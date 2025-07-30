@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MIT
 
 import pytest
-from filter import eval_percentage, eval_all_percentages, eval_condition, InvalidOperatorException
+from corpus.filter import eval_percentage, eval_all_percentages, eval_condition, InvalidOperatorException
 
 
 @pytest.mark.parametrize("project_language_percentage, evaluation, result", [

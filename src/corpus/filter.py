@@ -8,7 +8,7 @@ import sys
 import click
 import yaml
 
-from utils.helpers import Corpus
+from corpus.utils.helpers import Corpus
 
 """
 .. module:: filter

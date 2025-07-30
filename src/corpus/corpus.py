@@ -5,10 +5,10 @@ import sys
 import click
 import gitlab
 import logging
-from extract import Extractor
-from export import Exporter
-from filter import Filter
-from utils.helpers import Corpus, Config, load_neo4j_config
+from corpus.extract import Extractor
+from corpus.export import Exporter
+from corpus.filter import Filter
+from corpus.utils.helpers import Corpus, Config, load_neo4j_config
 
 logging.basicConfig(filename="corpus.log", filemode="w")
 logging.getLogger().addHandler((logging.StreamHandler(sys.stdout)))

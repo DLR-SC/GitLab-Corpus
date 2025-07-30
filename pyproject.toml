@@ -1,0 +1,49 @@
+[project]
+name = "corpus"
+description = "Creates a corpus of publicly accessible repositories in a GitLab instance."
+version = "0.1.1"
+authors = [
+    { name = "Emanuel Caricato", email = "emanuel.caricato@dlr.de" },
+    { name = "Stephan Druskat", email = "stephan.druskat@dlr.de" }
+]
+maintainers = [
+    { name = "Stephan Druskat", email = "stephan.druskat@dlr.de" }
+]
+
+readme = "README.md"
+requires-python = ">=3.12"
+keywords = ["gitlab", "corpus", "mining software repositories"]
+# license =  "TODO"
+license-files = ["LICENSES/*.txt"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research"
+]
+
+dependencies = [
+    "click==8.0.1",
+    "py2neo==2021.2.4",
+    "python-gitlab==2.9.0",
+    "PyYAML==6.0.2",
+]
+
+[project.urls]
+homepage = "https://github.com/DLR-SC/GitLab-Corpus"
+repository = "https://github.com/DLR-SC/GitLab-Corpus"
+# documentation = "https://dlr-sc.github.io/GitLab-Corpus/"
+"Issue Tracker" = "https://github.com/DLR-SC/GitLab-Corpus/issues"
+
+[project.scripts]
+corpus = "corpus:cli"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
+    "ruff>=0.12.5",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

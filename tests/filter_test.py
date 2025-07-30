@@ -1,8 +1,8 @@
 # SPDX-FileCopyrightText: 2021 German Aerospace Center (DLR)
 # SPDX-License-Identifier: MIT
 from unittest import mock
-from filter import Filter
-from utils.helpers import Corpus
+from corpus.filter import Filter
+from corpus.utils.helpers import Corpus
 
 corpus = Corpus()
 corpus.data = {"Projects": [

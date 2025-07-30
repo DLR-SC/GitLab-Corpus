@@ -7,19 +7,19 @@ import click
 import json
 import logging
 from json.decoder import JSONDecodeError
-from utils.export_models import Project as ProjectModel, NeoGraphObjectException
-from utils.export_models import Namespace as NamespaceModel
-from utils.export_models import Language as LanguageModel
-from utils.export_models import User as UserModel
-from utils.export_models import File as FileModel
-from utils.export_models import Commit as CommitModel
-from utils.export_models import Milestone as MilestoneModel
-from utils.export_models import Issue as IssueModel
-from utils.export_models import Mergerequest as MergerequestModel
-from utils.export_models import Release as ReleaseModel
+from corpus.utils.export_models import Project as ProjectModel, NeoGraphObjectException
+from corpus.utils.export_models import Namespace as NamespaceModel
+from corpus.utils.export_models import Language as LanguageModel
+from corpus.utils.export_models import User as UserModel
+from corpus.utils.export_models import File as FileModel
+from corpus.utils.export_models import Commit as CommitModel
+from corpus.utils.export_models import Milestone as MilestoneModel
+from corpus.utils.export_models import Issue as IssueModel
+from corpus.utils.export_models import Mergerequest as MergerequestModel
+from corpus.utils.export_models import Release as ReleaseModel
 from py2neo import Graph, NodeMatcher
-from utils.helpers import Corpus
-from utils.export_helpers import transform_language_dict, find_user_by_name
+from corpus.utils.helpers import Corpus
+from corpus.utils.export_helpers import transform_language_dict, find_user_by_name
 
 """
 .. module:: export
