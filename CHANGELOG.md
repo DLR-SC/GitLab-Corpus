@@ -6,4 +6,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
-- Renovate project structure
+- Set up project as package, use `pyproject` as manifest - PR: #15
