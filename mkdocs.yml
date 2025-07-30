@@ -7,9 +7,16 @@ copyright: "2021 <a href='https://dlr.de/en/'>German Aerospace Center (DLR)</a> 
 theme:
   name: material
   icon:
+    logo: material/database-import
     repo: fontawesome/brands/git-alt
+  palette:
+    scheme: dlr
   features:
     - search.highlight
+  custom_dir: docs/overrides
+
+extra_css:
+  - stylesheets/extra.css
 
 nav:
   - index.md
@@ -29,9 +36,4 @@ plugins:
 markdown_extensions:
     - markdown_include.include:
         base_path: docs
-
-extra:
-  social:
-    - icon: fontawesome/brands/space-awesome
-      link: https://dlr.de/en/sc/
-      name: DLR Institute of Software Technology
+    - attr_list
