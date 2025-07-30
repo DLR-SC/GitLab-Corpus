@@ -23,7 +23,7 @@ classifiers = [
 
 dependencies = [
     "click==8.0.1",
-    "py2neo==2021.1.5",
+    "py2neo==2021.2.4",
     "python-gitlab==2.9.0",
     "pyyaml==5.4.1",
 ]
