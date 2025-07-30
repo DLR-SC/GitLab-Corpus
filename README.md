@@ -38,6 +38,8 @@ uv run corpus
 Otherwise, you need to install the dependencies and package first:
 
 ```bash
+git clone <URL of this Git repository> corpus
+cd corpus
 python -m venv .venv  # Create a virtual environment
 source .venv/bin/activate  # Activate the environment
 pip install .  # Install dependencies declared in pyproject.toml
