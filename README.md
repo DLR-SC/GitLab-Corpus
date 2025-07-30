@@ -65,7 +65,8 @@ timeout = 15
 [gitlab-1]
 # The instance's base URL
 url = https://gitlab.example.com
-# A user private token to authenticate with the GitLab API
+# A user private token to authenticate with the GitLab API,
+# needs at least `read_api` privileges!
 private_token = 123abc
 # The version of the GitLab API to use (the python-gitlab package supports '4' only) 
 api_version = 4
