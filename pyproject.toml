@@ -39,9 +39,21 @@ corpus = "corpus:cli"
 
 [dependency-groups]
 dev = [
+    {include-group = "test"},
+    {include-group = "lint"},
+    {include-group = "docs"}
+]
+test = [
     "pytest>=8.4.1",
     "pytest-cov>=6.2.1",
+]
+lint = [
     "ruff>=0.12.5",
+]
+docs = [
+    "markdown-include>=0.8.1",
+    "mkdocs-material>=9.6.16",
+    "mkdocstrings[python]>=0.30.0",
 ]
 
 [build-system]

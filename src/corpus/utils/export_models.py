@@ -6,10 +6,12 @@ from py2neo.ogm import GraphObject, RelatedObjects, Property, RelatedFrom, Relat
 
 
 class NeoGraphObjectException(Exception):
+    """ """
     pass
 
 
 class NeoGraphObject(GraphObject):
+    """ """
     __unique_constraints__ = []
 
     def __init__(self):
@@ -18,23 +20,27 @@ class NeoGraphObject(GraphObject):
 
     @classmethod
     def find(cls, matcher, **kwargs):
-        """
-        Matches the first label by a given keyword arguments
+        """Matches the first label by a given keyword arguments
+
+        :param matcher: 
+        :param **kwargs: 
+
         """
         obj = matcher.match(**kwargs).first()
         return obj
 
     @classmethod
     def create(cls, graph: Graph, attributes: dict = None):
-        """
-        Create a label from given attributes.\
+        """Create a label from given attributes.\
         At least the the __primarykey__ must available in the attributes dictionary.
 
         :param graph: The graph instance
         :type graph: Graph
         :param attributes: Attributes
         :type attributes: dict
-        :return: The created label
+        :param graph: Graph: 
+        :param attributes: dict:  (Default value = None)
+        :returns: The created label
         :rtype: NeoGraphObject
 
         """
@@ -52,14 +58,14 @@ class NeoGraphObject(GraphObject):
 
     @classmethod
     def get(cls, graph: Graph, filters: dict):
-        """
-        Matches a labels from cls and reduces the result by the given filters.
+        """Matches a labels from cls and reduces the result by the given filters.
 
-        :param graph:
-        :type graph:
+        :param graph: type graph:
         :param filters: A dictionary with filters as defined in the py2neo documentation
         :type filters: dict
-        :return: The label with type of class
+        :param graph: Graph: 
+        :param filters: dict: 
+        :returns: The label with type of class
         :rtype: NeoGraphObject
 
         """
@@ -71,15 +77,16 @@ class NeoGraphObject(GraphObject):
 
     @classmethod
     def get_or_create(cls, graph: Graph, pk=None, attributes: dict = None):
-        """
-        Serves as helper method to retrieve labels from the graph or create a new one if no label existed
+        """Serves as helper method to retrieve labels from the graph or create a new one if no label existed
 
         :param graph: Graph instance
         :type graph: Graph
-        :param pk: The labels primary key
+        :param pk: The labels primary key (Default value = None)
         :param attributes: Additional attributes used when a new label is created
         :type attributes: dict
-        :return: The newly created label or an existing one.
+        :param graph: Graph: 
+        :param attributes: dict:  (Default value = None)
+        :returns: The newly created label or an existing one.
         :rtype: NeoGraphObject
 
         """
@@ -96,11 +103,11 @@ class NeoGraphObject(GraphObject):
 
     @classmethod
     def set_constraints(cls, graph: Graph):
-        """
-        Sets all unique constraints defined in current class
+        """Sets all unique constraints defined in current class
 
         :param graph: The graph instance
         :type graph: Graph
+        :param graph: Graph: 
 
         """
         for key in cls.__unique_constraints__:
@@ -215,6 +222,7 @@ class Project(NeoGraphObject):
 
 
 class Namespace(NeoGraphObject):
+    """ """
     __primarylabel__ = "Namespace"
     __primarykey__ = "id"
 
@@ -235,6 +243,7 @@ class Namespace(NeoGraphObject):
 
 
 class User(NeoGraphObject):
+    """ """
     __primarylabel__ = "User"
     __primarykey__ = "id"
 
@@ -264,6 +273,7 @@ class User(NeoGraphObject):
 
 
 class Language(NeoGraphObject):
+    """ """
     __primarylabel__ = "Language"
     __primarykey__ = "name"
 
@@ -277,6 +287,7 @@ class Language(NeoGraphObject):
 
 
 class Milestone(NeoGraphObject):
+    """ """
     __primarylabel__ = "Milestone"
     __primarykey__ = "id"
 
@@ -304,6 +315,7 @@ class Milestone(NeoGraphObject):
 
 
 class Issue(NeoGraphObject):
+    """ """
     __primarylabel__ = "Issue"
     __primarykey__ = "id"
 
@@ -355,6 +367,7 @@ class Issue(NeoGraphObject):
 
 
 class File(NeoGraphObject):
+    """ """
     __primarylabel__ = "File"
     __primarykey__ = "id"
 
@@ -372,6 +385,7 @@ class File(NeoGraphObject):
 
 
 class Commit(NeoGraphObject):
+    """ """
     __primarylabel__ = "Commit"
     __primarykey__ = "id"
 
@@ -402,6 +416,7 @@ class Commit(NeoGraphObject):
 
 
 class Mergerequest(NeoGraphObject):
+    """ """
     __primarylabel__ = "Mergerequest"
     __primarykey__ = "id"
 
@@ -467,6 +482,7 @@ class Mergerequest(NeoGraphObject):
 
 
 class Release(NeoGraphObject):
+    """ """
     __primarylabel__ = "Release"
     __primarykey__ = "tag_name"
 

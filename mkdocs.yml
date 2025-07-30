@@ -1,0 +1,37 @@
+site_name: GitLab-Corpus - Documentation
+site_url: https://dlr-sc.github.io/gitlab-corpus
+site_author: "Emanuel Caricato, Stephan Druskat <stephan.druskat@dlr.de>"
+repo_name: dlr-sc/gitlab-corpus
+repo_url: https://github.com/dlr-sc/gitlab-corpus
+copyright: "2021 <a href='https://dlr.de/en/'>German Aerospace Center (DLR)</a> & Emanuel Caricato"
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/git-alt
+  features:
+    - search.highlight
+
+nav:
+  - index.md
+  - getting-started.md
+  - filter-specification.md
+  - neo4j-configuration.md
+  - reference.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: sphinx
+
+markdown_extensions:
+    - markdown_include.include:
+        base_path: docs
+
+extra:
+  social:
+    - icon: fontawesome/brands/space-awesome
+      link: https://dlr.de/en/sc/
+      name: DLR Institute of Software Technology

@@ -6,9 +6,11 @@ import configparser
 
 class Corpus:
     """This helper class represents a corpus.
-
+    
     Methods:
         __init__(self)
+
+
     """
 
     def __init__(self):
@@ -18,11 +20,21 @@ class Corpus:
 
 
 def validate_neo4j_config(config):
+    """
+
+    :param config: 
+
+    """
     if 'NEO4J' in config:
         return all(key in config['NEO4J'] for key in ['hostname', 'protocol', 'port', 'user', 'password'])
 
 
 def load_neo4j_config(config_path):
+    """
+
+    :param config_path: 
+
+    """
     try:
         config = configparser.ConfigParser()
         config.read(config_path)
@@ -36,9 +48,11 @@ def load_neo4j_config(config_path):
 
 class Config:
     """This helper class stores configuration options centralized, because they are used in different locations.
-
+    
     Methods:
         __init__(self)
+
+
     """
 
     def __init__(self):

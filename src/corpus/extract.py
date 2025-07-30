@@ -11,11 +11,10 @@ from gitlab.v4.objects import ProjectManager
 
 
 def get_users(project):
-    """
-    This function returns a list of users for a specified project.
+    """This function returns a list of users for a specified project.
 
     :param project: The project, that is to be extracted.
-    :return: A list of users. None, if no users are found.
+    :returns: A list of users. None, if no users are found.
     :rtype: list or None
 
     """
@@ -29,11 +28,10 @@ def get_users(project):
 
 
 def get_commits(project):
-    """
-    This function returns a list of commits, the last, and the first commit for a specified project.
+    """This function returns a list of commits, the last, and the first commit for a specified project.
 
     :param project: The project, that is to be extracted.
-    :return: A list of commits, the last, and the first commit. None, if no commits are found.
+    :returns: A list of commits, the last, and the first commit. None, if no commits are found.
     :rtype: tuple of (list, dict, dict) or (None, None, None)
 
     """
@@ -47,11 +45,10 @@ def get_commits(project):
 
 
 def get_contributors(project):
-    """
-    This function returns a list of contributors for a specified project.
+    """This function returns a list of contributors for a specified project.
 
     :param project: The project, that is to be extracted.
-    :return: A list of contributors. None, if no contributors are found.
+    :returns: A list of contributors. None, if no contributors are found.
     :rtype: list or None
 
     """
@@ -63,11 +60,10 @@ def get_contributors(project):
 
 
 def get_issues(project):
-    """
-    This function returns a list of issues for a specified project.
+    """This function returns a list of issues for a specified project.
 
     :param project: The project, that is to be extracted.
-    :return: A list of issues. None, if no issues are found.
+    :returns: A list of issues. None, if no issues are found.
     :rtype: list or None
 
     """
@@ -78,11 +74,10 @@ def get_issues(project):
 
 
 def get_mergerequests(project):
-    """
-    This function returns a list of mergerequests for a specified project.
+    """This function returns a list of mergerequests for a specified project.
 
     :param project: The project, that is to be extracted.
-    :return: A list of mergerequests. None, if no mergerequests are found.
+    :returns: A list of mergerequests. None, if no mergerequests are found.
     :rtype: list or None
 
     """
@@ -108,11 +103,10 @@ def get_mergerequests(project):
 
 
 def get_pipelinestatistics(project):
-    """
-    This function returns the pipeline statistics for a specified project.
+    """This function returns the pipeline statistics for a specified project.
 
     :param project: The project, that is to be extracted.
-    :return: A dictionary of the pipeline statistics. None, if no mergerequests are found.
+    :returns: A dictionary of the pipeline statistics. None, if no mergerequests are found.
     :rtype: dict or None
 
     """
@@ -137,11 +131,10 @@ def get_pipelinestatistics(project):
 
 
 def get_milestones(project):
-    """
-    This function returns a list of milestones for a specified project.
+    """This function returns a list of milestones for a specified project.
 
     :param project: The project, that is to be extracted.
-    :return: A list of milestones. None, if no milestones are found.
+    :returns: A list of milestones. None, if no milestones are found.
     :rtype: list or None
 
     """
@@ -155,12 +148,11 @@ def get_milestones(project):
 
 
 def get_rootdir(project, project_dict):
-    """
-    This function returns a list of files from the root directory for a specified project.
+    """This function returns a list of files from the root directory for a specified project.
 
     :param project: The project, that is to be extracted.
     :param project_dict: The dictionary of the projects attributes, to get the default branch.
-    :return: A list of files. None, if no files are found.
+    :returns: A list of files. None, if no files are found.
     :rtype: list or None
 
     """
@@ -171,13 +163,12 @@ def get_rootdir(project, project_dict):
 
 
 def get_projectstatistics(project, verbose, name):
-    """
-    This function returns the project statistics for a specified project.
+    """This function returns the project statistics for a specified project.
 
     :param project: The project, that is to be extracted.
     :param verbose: Boolean value to print extra output.
     :param name: Name of the project.
-    :return: A dict of the projects statistics. None, if no statistics are found or if the rights are not sufficient to
+    :returns: A dict of the projects statistics. None, if no statistics are found or if the rights are not sufficient to
         fetch the project statistics.
     :rtype: dict or None
 
@@ -194,11 +185,10 @@ def get_projectstatistics(project, verbose, name):
 
 
 def get_releases(project):
-    """
-    This function returns a list of releases for a specified project.
+    """This function returns a list of releases for a specified project.
 
     :param project: The project, that is to be extracted.
-    :return: A list of releases. None, if no releases are found.
+    :returns: A list of releases. None, if no releases are found.
     :rtype: list or None
 
     """
@@ -213,10 +203,12 @@ def get_releases(project):
 
 class Extractor:
     """This class provides a method to extract projects of GitLab instance.
-
+    
     Methods:
         __init__(self, verbose, gitlab_manager, corpus)
         extract(self, all_elements)
+
+
     """
 
     def __init__(self, verbose, gitlab_manager, corpus):
@@ -236,7 +228,7 @@ class Extractor:
         """This method extracts the projects of the defined GitLab instance and stores them in the corpus attribute.
 
         :param all_elements: Ignores the pagination of the GitLab-API and extracts all projects, if set to ``True``.
-        :param include_private: Includes private GitLab projects as well, if set to ``True``.
+        :param include_private: Includes private GitLab projects as well, if set to ``True``. (Default value = False)
 
         """
         for manager in self.managers:
@@ -246,6 +238,12 @@ class Extractor:
                 self.extract_projects(objects, include_private)
 
     def extract_projects(self, objects, include_private):
+        """
+
+        :param objects: 
+        :param include_private: 
+
+        """
         click.echo("Extracting...")
         with click.progressbar(objects) as bar:
             if self.verbose:
