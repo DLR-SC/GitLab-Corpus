@@ -1,7 +1,0 @@
-=============
-Extract
-=============
-
-
-.. automodule:: extract
-    :members:

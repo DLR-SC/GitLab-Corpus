@@ -1,7 +1,0 @@
-=============
-Filter
-=============
-
-
-.. automodule:: filter
-    :members:
