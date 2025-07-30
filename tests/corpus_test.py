@@ -1,1 +1,1 @@
-import corpus
+import corpus.corpus

@@ -2,10 +2,10 @@
 # SPDX-License-Identifier: MIT
 import gitlab
 import pytest
-from extract import Extractor
+from corpus.extract import Extractor
 from unittest import mock
 from gitlab.v4.objects.projects import ProjectManager
-from utils.helpers import Corpus
+from corpus.utils.helpers import Corpus
 
 
 class Milestones:

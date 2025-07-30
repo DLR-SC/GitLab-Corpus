@@ -1,8 +1,8 @@
 import json
 from unittest.mock import patch
 
-from export import Exporter
-from utils.helpers import Corpus
+from corpus.export import Exporter
+from corpus.utils.helpers import Corpus
 from unittest import mock
 
 corpus = Corpus()
@@ -530,18 +530,18 @@ def test_export_json():
     assert exported_data == corpus.data
 
 
-@patch('export.ReleaseModel')
-@patch('export.MergerequestModel')
-@patch('export.IssueModel')
-@patch('export.MilestoneModel')
-@patch('export.LanguageModel')
-@patch('export.transform_language_dict')
-@patch('export.FileModel')
-@patch('export.CommitModel')
-@patch('export.find_user_by_name')
-@patch('export.UserModel')
-@patch('export.NamespaceModel')
-@patch('export.ProjectModel')
+@patch('corpus.export.ReleaseModel')
+@patch('corpus.export.MergerequestModel')
+@patch('corpus.export.IssueModel')
+@patch('corpus.export.MilestoneModel')
+@patch('corpus.export.LanguageModel')
+@patch('corpus.export.transform_language_dict')
+@patch('corpus.export.FileModel')
+@patch('corpus.export.CommitModel')
+@patch('corpus.export.find_user_by_name')
+@patch('corpus.export.UserModel')
+@patch('corpus.export.NamespaceModel')
+@patch('corpus.export.ProjectModel')
 def test_export_neo4j(projectmodel_patch, namespacemodel_patch, usermodel_patch, find_user_by_name_patch,
                       commitmodel_patch, filemodel_patch, transform_language_dict_patch, languagemodel_patch,
                       milestonemodel_patch, issuemodel_patch, mergerequestmodel_patch, releasemodel_patch):
