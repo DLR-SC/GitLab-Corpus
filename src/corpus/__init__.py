@@ -1,1 +1,1 @@
-from .corpus import cli
+from corpus.corpus import cli
