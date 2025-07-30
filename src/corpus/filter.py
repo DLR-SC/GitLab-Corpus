@@ -17,6 +17,7 @@ from corpus.utils.helpers import Corpus
 
 
 class InvalidOperatorException(Exception):
+    """ """
     def __init__(self, message, value):
         super().__init__(message)
         click.echo("\n{}: '{}'".format(message, value))
@@ -27,7 +28,7 @@ def eval_percentage(project_language_percentage, evaluation):
 
     :param project_language_percentage: Percentage of a language in a project
     :param evaluation: Value and operand the percentage of a language will be compared to
-    :returns: ``True`` if the evaluation is true and ``False`` otherwise
+    :returns: True`` if the evaluation is true and ``False`` otherwise
 
     """
     try:
@@ -57,7 +58,7 @@ def eval_all_percentages(project_languages, project, languages):
     :param project_languages: List of all languages in the project
     :param project: The project to be evaluated
     :param languages: List of languages and filter evaluations
-    :returns: ``True`` if all evaluations are true and ``False`` otherwise
+    :returns: True`` if all evaluations are true and ``False`` otherwise
 
     """
     for item in project_languages:
@@ -79,7 +80,7 @@ def eval_condition(attribute, operator, condition):
     :param attribute: Attribute of the project to be checked in the evaluation
     :param operator: Operator used for the evaluation
     :param condition: Condition the attribute will be compared to
-    :returns: ``True`` if the evaluation is true and ``False`` otherwise
+    :returns: True`` if the evaluation is true and ``False`` otherwise
 
     """
     # Match types
@@ -112,7 +113,7 @@ def eval_condition(attribute, operator, condition):
 class Filter:
     """This class implements the filter options for the corpus, by loading the filter options as specified in the
     :ref:`how_to_write_a_filter_file`.
-
+    
     Methods:
         __init__(self, verbose, corpus, from_file=False, file="-")
         load_filters(self, filter_file)
@@ -120,6 +121,8 @@ class Filter:
         filter(self)
         filter_project(self, project)
         check_languages(self, filter_option, project)
+
+
     """
 
     filtered_corpus = Corpus()
@@ -201,7 +204,10 @@ class Filter:
     def filter(self):
         """This method filters the extracted corpus by using the previously loaded filter options. If no filter
         options were set, all projects will be kept in the resulting corpus. If no attributes are specified, all
-        attributes will be kept in the resulting corpus."""
+        attributes will be kept in the resulting corpus.
+
+
+        """
         click.echo("Filtering...")
         projects_dict = self.input_corpus.data["Projects"]
         if len(self.filters) > 0:
@@ -224,7 +230,7 @@ class Filter:
         """This method applies the specified filters to a project.
 
         :param project: Project, which will be filtered
-        :returns: ``True`` if the project passes the filter criteria and ``False`` otherwise.
+        :returns: True`` if the project passes the filter criteria and ``False`` otherwise.
 
         """
         return_val = True
@@ -249,7 +255,7 @@ class Filter:
 
         :param filter_option: The language filter category
         :param project: The project to be checked
-        :returns: ``True``` if the language filters evaluate to true and ``False`` otherwise
+        :returns: True``` if the language filters evaluate to true and ``False`` otherwise
 
         """
         project_languages = list(project["languages"].keys())

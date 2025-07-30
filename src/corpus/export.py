@@ -35,10 +35,12 @@ except:
 
 class Exporter:
     """This class provides a method to export a corpus in another format.
-
+    
     Methods:
         __init__(self, verbose, corpus, format_str, from_file=False, file="-")
         export(self, out)
+
+
     """
 
     def __init__(self, config, corpus, format_str, from_file=False, file="-"):
@@ -69,7 +71,7 @@ class Exporter:
     def export(self, out="-"):
         """This method exports the corpus to another format.
 
-        :param out: Path to output file
+        :param out: Path to output file (Default value = "-")
 
         """
 
@@ -103,6 +105,15 @@ class Exporter:
                 self.export_project(project)
 
     def export_category(self, category_model, category, project, get_or_create=False, pk=""):
+        """
+
+        :param category_model: 
+        :param category: 
+        :param project: 
+        :param get_or_create:  (Default value = False)
+        :param pk:  (Default value = "")
+
+        """
         try:
             if isinstance(project[category], list):
                 for element in project[category]:
@@ -125,6 +136,11 @@ class Exporter:
             log.info("No elements for category '{}' found in project {}.".format(category, project["id"]))
 
     def export_project(self, project):
+        """
+
+        :param project: 
+
+        """
         try:
             project_node = ProjectModel.create(self.graph, project)
         except NeoGraphObjectException:
@@ -198,6 +214,14 @@ class Exporter:
             self.graph.push(release_node)
 
     def update_attribute(self, src_attribute, node_attribute, model=None, by_id=True):
+        """
+
+        :param src_attribute: 
+        :param node_attribute: 
+        :param model:  (Default value = None)
+        :param by_id:  (Default value = True)
+
+        """
         if by_id:
             if src_attribute:
                 src_dict = eval(src_attribute)

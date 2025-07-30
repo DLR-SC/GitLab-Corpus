@@ -31,7 +31,15 @@ command_config = click.make_pass_decorator(Config, ensure=True)
               help='Prints more output during execution')
 @command_config
 def cli(config, gl_config, neo4j_config, source, verbose):
-    """Entry point to the corpus cli."""
+    """Entry point to the corpus cli.
+
+    :param config: 
+    :param gl_config: 
+    :param neo4j_config: 
+    :param source: 
+    :param verbose: 
+
+    """
     config.gl = gitlab.Gitlab.from_config(source, [gl_config])
     config.verbose = verbose
     config.neo4j_config = load_neo4j_config(neo4j_config)
@@ -54,7 +62,17 @@ def cli(config, gl_config, neo4j_config, source, verbose):
 @corpus
 @command_config
 def build(config, corpus_data, all_elements, filter_file, out, output_format, include_private):
-    """Run the pipeline extract -> filter -> export in one command."""
+    """Run the pipeline extract -> filter -> export in one command.
+
+    :param config: 
+    :param corpus_data: 
+    :param all_elements: 
+    :param filter_file: 
+    :param out: 
+    :param output_format: 
+    :param include_private: 
+
+    """
     extractor = Extractor(config.verbose, config.gl, corpus=corpus_data)
     corpus_filter = Filter(config.verbose, corpus=corpus_data, from_file=False)
 
@@ -78,7 +96,15 @@ def build(config, corpus_data, all_elements, filter_file, out, output_format, in
 @corpus
 @command_config
 def extract(config, corpus_data, all_elements, out, include_private):
-    """Extract projects from the specified GitLab instance and write the output to a file."""
+    """Extract projects from the specified GitLab instance and write the output to a file.
+
+    :param config: 
+    :param corpus_data: 
+    :param all_elements: 
+    :param out: 
+    :param include_private: 
+
+    """
     extractor = Extractor(config.verbose, config.gl, corpus=corpus_data)
     exporter = Exporter(config, corpus=corpus_data, format_str="json")
 
@@ -97,7 +123,15 @@ def extract(config, corpus_data, all_elements, out, include_private):
 @corpus
 @command_config
 def filter(config, corpus_data, filter_file, input_file, out):
-    """Apply filters on a previously extracted corpus."""
+    """Apply filters on a previously extracted corpus.
+
+    :param config: 
+    :param corpus_data: 
+    :param filter_file: 
+    :param input_file: 
+    :param out: 
+
+    """
     corpus_filter = Filter(config.verbose, corpus=corpus_data, from_file=True, file=input_file)
 
     corpus_filter.load_filters(filter_file=filter_file)
@@ -117,7 +151,15 @@ def filter(config, corpus_data, filter_file, input_file, out):
 @corpus
 @command_config
 def export(config, corpus_data, input_file, out, output_format):
-    """Export a previously extracted (and maybe filtered) corpus to another format."""
+    """Export a previously extracted (and maybe filtered) corpus to another format.
+
+    :param config: 
+    :param corpus_data: 
+    :param input_file: 
+    :param out: 
+    :param output_format: 
+
+    """
     exporter = Exporter(config, corpus=corpus_data, format_str=output_format, from_file=True, file=input_file)
     exporter.export(out=out)
 

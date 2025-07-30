@@ -5,6 +5,11 @@ from corpus.utils.export_models import User as UserModel
 
 
 def transform_language_dict(language_dict):
+    """
+
+    :param language_dict: 
+
+    """
     language = dict()
     for name, value in language_dict.items():
         language["name"] = name
@@ -13,6 +18,12 @@ def transform_language_dict(language_dict):
 
 
 def find_user_by_name(graph, name):
+    """
+
+    :param graph: 
+    :param name: 
+
+    """
     if name is None or "":
         return None
     node = graph.run("match (u:User) where u.name=$x return u", x=name).evaluate()
