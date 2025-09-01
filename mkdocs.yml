@@ -3,7 +3,7 @@ site_url: https://dlr-sc.github.io/gitlab-corpus
 site_author: "Emanuel Caricato, Stephan Druskat <stephan.druskat@dlr.de>"
 repo_name: dlr-sc/gitlab-corpus
 repo_url: https://github.com/dlr-sc/gitlab-corpus
-copyright: "2021 <a href='https://dlr.de/en/'>German Aerospace Center (DLR)</a> & Emanuel Caricato"
+copyright: "2021 <a href='https://dlr.de/en/'>German Aerospace Center (DLR)</a>"
 theme:
   name: material
   icon:
